@@ -1,3 +1,5 @@
 input $ROWAN_PROJECTS_HOME/RemoteServiceReplication/src-gs/bootstrapRSR.gs
 
 commit
+
+errorcount
