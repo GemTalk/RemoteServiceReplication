@@ -1,10 +1,21 @@
+display resultcheck
 
 ! Topaz format...
 
 run
+| warnings |
+warnings := {}.
 [
 	(Rowan
 		projectFromUrl: 'file:$ROWAN_PROJECTS_HOME/RemoteServiceReplication/rowan/specs/RemoteServiceReplication.ston'
 		gitUrl: 'file:$ROWAN_PROJECTS_HOME/RemoteServiceReplication') load ] 
-	on: Warning do: [:ex | ex resume]
+	on: CompileWarning do: [:ex |
+		(ex description includesString: 'not optimized')
+			ifFalse: [ warnings add: ex asString printString ].
+		ex resume ].
+warnings isEmpty
+	ifTrue: [ true ]
+	ifFalse: [ 
+		GsFile gciLogServer: 'UNEXPECTED CompileWarnings'
+		warnings do:[:warning |  GsFile gciLogServer: '	', warning ] ].
 %
