@@ -72,7 +72,7 @@ port: port [
 RsrSocket >> initialize [
 
 	super initialize.
-	nativeSocket := GsSignalingSocket new.
+	nativeSocket := GsSignalingSocket newIpv6.
 ]
 
 { #category : 'testing' }

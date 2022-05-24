@@ -9,6 +9,14 @@ Class {
 }
 
 { #category : 'instance creation' }
+RsrHandshake class >> steps: anArrayOfSteps [
+
+	^self new
+		steps: anArrayOfSteps;
+		yourself
+]
+
+{ #category : 'instance creation' }
 RsrHandshake class >> steps: anArrayOfSteps
 stream: aStream [
 
@@ -22,7 +30,14 @@ stream: aStream [
 RsrHandshake >> perform [
 	"Perform the sequence of configured steps."
 
-	self steps do: [:each | each performOver: self stream]
+	^self performOver: self stream
+]
+
+{ #category : 'performing' }
+RsrHandshake >> performOver: aStream [
+	"Perform the sequence of configured steps."
+
+	self steps do: [:each | each performOver: aStream]
 ]
 
 { #category : 'accessing' }

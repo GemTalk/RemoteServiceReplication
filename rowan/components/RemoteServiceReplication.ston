@@ -10,7 +10,8 @@ RwSimpleProjectLoadComponentV2 {
 	],
 	#packageNames : [
 		'RemoteServiceReplication-Base',
-		'RemoteServiceReplication'
+		'RemoteServiceReplication',
+		'RemoteServiceReplication-Factory-GemStone'
 	],
 	#comment : 'core packages for RSR'
 }
