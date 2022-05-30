@@ -48,7 +48,7 @@ RsrCommandSink >> executeCycle [
 		do:
 			[:ex |
 			self reportException: ex.
-			self channel channelDisconnected]
+			self channel disconnected]
 ]
 
 { #category : 'commands' }
@@ -98,8 +98,13 @@ RsrCommandSink >> write: aByteArray [
 { #category : 'writing' }
 RsrCommandSink >> writeCommand: aCommand [
 
+	| bytes |
 	self report: aCommand.
-	aCommand
-		encode: self outStream
-		using: self encoder
+	bytes := ByteArray
+		streamContents:
+			[:stream |
+			aCommand
+				encode: stream
+				using: self encoder].
+	self write: bytes
 ]

@@ -39,7 +39,6 @@ RsrTlsConnectionInitiator >> connect [
 		channel: channel
 		transactionSpigot: RsrThreadSafeNumericSpigot naturals negated
 		oidSpigot: RsrThreadSafeNumericSpigot naturals negated.
-	connection log addSink: RsrTranscriptSink new.
 	^connection open
 ]
 

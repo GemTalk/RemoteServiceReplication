@@ -31,7 +31,7 @@ RsrCommandSource >> executeCycle [
 		do:
 			[:ex |
 			self reportException: ex.
-			self channel channelDisconnected]
+			self channel disconnected]
 ]
 
 { #category : 'accessing' }
