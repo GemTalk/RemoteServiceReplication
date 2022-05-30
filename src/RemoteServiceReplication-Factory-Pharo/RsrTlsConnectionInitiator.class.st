@@ -29,6 +29,7 @@ RsrTlsConnectionInitiator >> connect [
 		openConnectionToHostNamed: self host
 		port: self port.
 	stream connect.
+	stream timeout: SmallInteger maxVal.
 	handshake performOver: stream.
 	channel := RsrBinaryStreamChannel
 		inStream: stream
