@@ -7,6 +7,14 @@ Class {
 	#category : 'RemoteServiceReplication-Factory-GemStone'
 }
 
+{ #category : 'instance creation' }
+RsrGsSocketStream class >> on: anRsrSocket [
+
+	^self new
+		socket: anRsrSocket;
+		yourself
+]
+
 { #category : 'testing' }
 RsrGsSocketStream >> atEnd [
 	"Return whether additional bytes could become available on the socket."
@@ -53,6 +61,7 @@ RsrGsSocketStream >> next: count [
 				ifFalse:
 					[socket close.
 					RsrSocketClosed signal].
+			GsFile gciLogClient: 'numRead: ', numRead printString.
 			position := position + numRead].
 	bytes]
 		on: SocketError

@@ -148,7 +148,7 @@ RsrTlsConnectionAcceptor >> waitForConnection [
 		withPrivateKeyFile: self keyPath
 		privateKeyPassphrase: nil.
 	socket secureAccept.
-	stream := RsrSocketStream on: socket.
+	stream := RsrGsSocketStream on: socket.
 	handshake performOver: stream.
 	channel := RsrBinaryStreamChannel
 		inStream: stream
