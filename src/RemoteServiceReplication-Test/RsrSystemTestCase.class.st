@@ -45,11 +45,11 @@ RsrSystemTestCase >> expectWhen: aPromise [
 { #category : 'initialization' }
 RsrSystemTestCase >> initializeInMemoryConnections [
 
-	| spec |
-	spec := RsrInMemoryConnectionSpecification new.
-	spec connect.
-	rsrSessionA := spec connectionA.
-	rsrSessionB := spec connectionB.
+	| template sessionPair |
+	template := RsrInMemoryTransportTemplate new.
+	sessionPair := RsrTransport openRsrSessionFrom: template.
+	rsrSessionA := sessionPair first.
+	rsrSessionB := sessionPair second.
 	self
 		assert: rsrSessionA isOpen;
 		assert: rsrSessionB isOpen

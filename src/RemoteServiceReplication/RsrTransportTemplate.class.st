@@ -1,14 +1,15 @@
 "
-I'm a rather stupid data-holder object that specifies how to build one or two instance of a concrete subclass of RsrTransport.
+I'm abstract. My subclasses define rather stupid data-holder objects that specify how to build one or two instance of a concrete subclass of RsrTransport.
 
 To use a template, 
 	RsrTransport buildFrom: aTemplate.
 or
 	RsrTransport openFrom: aTemplate.
-	
-#buildFrom: will answer an instance of the appropriate subclass of RsrTransport, initialized but not yet open.
+or
+	RsrTransport openSessionFrom: aTemplate.
 
-#openFrom: will send #buildFrom: then open the transport and answer it in an open state. #openFrom will not answer (will block) until the transport is in an open state.
+What is answered differs among my subclasses; see their class comments for details.
+
 "
 Class {
 	#name : 'RsrTransportTemplate',
