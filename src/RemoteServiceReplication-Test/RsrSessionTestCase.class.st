@@ -1,27 +1,27 @@
 Class {
-	#name : 'RsrConnectionTestCase',
+	#name : 'RsrSessionTestCase',
 	#superclass : 'RsrSystemTestCase',
 	#category : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'testing' }
-RsrConnectionTestCase class >> isAbstract [
+RsrSessionTestCase class >> isAbstract [
 
-	^self == RsrConnectionTestCase
+	^self == RsrSessionTestCase
 ]
 
 { #category : 'running' }
-RsrConnectionTestCase >> testAllowExistingInstancesOfDeniedTemplate [
+RsrSessionTestCase >> testAllowExistingInstancesOfDeniedTemplate [
 
 	| policy template allow value promise result |
 	policy := RsrTestPolicy new.
 	template := RsrServiceNoInstVars.
-	connectionB policy: policy.
+	rsrSessionB policy: policy.
 	value := Time millisecondClockValue.
 
 	"Send a new instance before Policy denies it."
 	allow := template clientClass new.
-	allow registerWith: connectionA.
+	allow registerWith: rsrSessionA.
 	promise := allow asyncSendReturnArgument: value.
 	result := self expectWhen: promise.
 	self
@@ -38,17 +38,17 @@ RsrConnectionTestCase >> testAllowExistingInstancesOfDeniedTemplate [
 ]
 
 { #category : 'running' }
-RsrConnectionTestCase >> testPolicyRejection [
+RsrSessionTestCase >> testPolicyRejection [
 
 	| policy template allow reject value promise result reason |
 	policy := RsrTestPolicy new.
 	template := RsrServiceNoInstVars.
-	connectionB policy: policy.
+	rsrSessionB policy: policy.
 	value := Time millisecondClockValue.
 
 	"Send a new instance before Policy denies it."
 	allow := template clientClass new.
-	allow registerWith: connectionA.
+	allow registerWith: rsrSessionA.
 	promise := allow asyncSendReturnArgument: value.
 	result := self expectWhen: promise.
 	self
@@ -58,7 +58,7 @@ RsrConnectionTestCase >> testPolicyRejection [
 	"Reject the template and try again with a new instance."
 	policy deny: template.
 	reject := template clientClass new.
-	reject registerWith: connectionA.
+	reject registerWith: rsrSessionA.
 	promise := reject asyncSendReturnArgument: value.
 	reason := self expectCatch: promise.
 	self
@@ -73,15 +73,15 @@ RsrConnectionTestCase >> testPolicyRejection [
 ]
 
 { #category : 'running' }
-RsrConnectionTestCase >> testPolicyRejectsFrameworkTemplate [
+RsrSessionTestCase >> testPolicyRejectsFrameworkTemplate [
 
 	| policy template service frameworkService promise result |
 	policy := RsrTestPolicy new.
 	template := RsrPolicyRejectedService.
-	connectionA policy: policy.
-	connectionB policy: policy.
+	rsrSessionA policy: policy.
+	rsrSessionB policy: policy.
 	service := RsrServiceNoInstVars clientClass new.
-	service registerWith: connectionA.
+	service registerWith: rsrSessionA.
 
 	"Send a new instance before Policy denies it."
 	frameworkService := template clientClass new.
@@ -102,7 +102,7 @@ RsrConnectionTestCase >> testPolicyRejectsFrameworkTemplate [
 ]
 
 { #category : 'running' }
-RsrConnectionTestCase >> testWaitUntilClose [
+RsrSessionTestCase >> testWaitUntilClose [
 
 	| semaphore marker |
 	semaphore := Semaphore new.
@@ -110,13 +110,13 @@ RsrConnectionTestCase >> testWaitUntilClose [
 	RsrProcessModel
 		fork:
 			[semaphore signal.
-			[connectionB waitUntilClose.
+			[rsrSessionB waitUntilClose.
 			marker := true]
 				ensure: [semaphore signal]]
 		named: 'Pending Connection Closure'.
 	semaphore wait.
 	self deny: marker.
-	connectionA close.
+	rsrSessionA close.
 	semaphore wait.
 	self assert: marker
 ]

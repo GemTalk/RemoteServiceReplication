@@ -15,7 +15,7 @@ RsrServiceTest >> mirror: aService [
 
 	| client |
 	client := RsrClientNoInstVars new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		yourself.
 	^client sendReturnArgument: aService
 ]
@@ -27,12 +27,12 @@ RsrServiceTest >> testAnalyzeServiceRegisteredWithDifferentConnection [
 	instance := RsrRemoteAction clientClass new.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: instance)
-		connection: connectionA.
+		connection: rsrSessionA.
 	analysis perform.
 	self assert: instance isMirrored.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: instance)
-		connection: connectionB.
+		connection: rsrSessionB.
 	self
 		should: [analysis perform]
 		raise: RsrAlreadyRegistered
@@ -43,11 +43,11 @@ RsrServiceTest >> testEnsureServersAreCachedAndReused [
 
 	| client service1 service2 |
 	client := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	service1 := connectionB serviceAt: client _id.
+	service1 := rsrSessionB serviceAt: client _id.
 	self mirror: client.
-	service2 := connectionB serviceAt: client _id.
+	service2 := rsrSessionB serviceAt: client _id.
 	self
 		assert: service1
 		identicalTo: service2
@@ -94,9 +94,9 @@ RsrServiceTest >> testMessageDispatchedConcurrentlyToSingleService [
 
 	| client server counter promise1 promise2 |
 	client := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	counter := 0.
 	server action: [counter := counter + 1. self shortWait. counter].
 	promise1 := client asyncValue.
@@ -115,13 +115,13 @@ RsrServiceTest >> testMessagesDispactchedConcurrentlyForMultipleServices [
 
 	| client1 server1 client2 server2 semaphore expected1 expected2 promise1 promise2 |
 	client1 := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
 	client2 := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server1 := connectionB serviceAt: client1 _id.
-	server2 := connectionB serviceAt: client2 _id.
+	server1 := rsrSessionB serviceAt: client1 _id.
+	server2 := rsrSessionB serviceAt: client2 _id.
 	semaphore := Semaphore new.
 	expected1 := #expected1.
 	expected2 := #expected2.
@@ -150,11 +150,11 @@ RsrServiceTest >> testPostRegistration [
 	self
 		assert: client postRegistrationCount
 		equals: 0.
-	client registerWith: connectionA.
+	client registerWith: rsrSessionA.
 	self
 		assert: client postRegistrationCount
 		equals: 1.
-	client registerWith: connectionA.
+	client registerWith: rsrSessionA.
 	self
 		assert: client postRegistrationCount
 		equals: 1.
@@ -200,7 +200,7 @@ RsrServiceTest >> testPostRegistrationRaisesException [
 	| client server reason tag badService signaledException caughtException |
 	"Return values"
 	client := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
 	server := self peerOf: client.
 	tag := DateAndTime now asString.
@@ -231,7 +231,7 @@ RsrServiceTest >> testPrePostUpdate [
 
 	| client server | 
 	client := RsrInstrumentedClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		yourself.
 	self
 		assert: client preUpdateCount
@@ -240,7 +240,7 @@ RsrServiceTest >> testPrePostUpdate [
 		assert: client postUpdateCount
 		equals: 0.
 	client return: nil.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	self
 		assert: client preUpdateCount
 		equals: 1.
@@ -273,9 +273,9 @@ RsrServiceTest >> testReflectedVariableNames [
 
 	| client server clientNames serverNames |
 	client := RsrClientTestService new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	clientNames := RsrServiceSnapshot reflectedVariablesFor: client.
 	serverNames := RsrServiceSnapshot reflectedVariablesFor: server.
 	self
@@ -288,9 +288,9 @@ RsrServiceTest >> testReflectedVariableNames [
 		assert: (clientNames at: 1) asSymbol
 		equals: #sharedVariable.
 	client := RsrReflectedVariableTestClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	clientNames := RsrServiceSnapshot reflectedVariablesFor: client.
 	serverNames := RsrServiceSnapshot reflectedVariablesFor: server.
 	self
@@ -313,10 +313,10 @@ RsrServiceTest >> testRegisterWith [
 	| instance |
 	instance := RsrRemoteAction clientClass new.
 	self deny: instance isMirrored.
-	instance registerWith: connectionA.
+	instance registerWith: rsrSessionA.
 	self assert: instance isMirrored.
 	self
-		should: [instance registerWith: connectionB]
+		should: [instance registerWith: rsrSessionB]
 		raise: RsrAlreadyRegistered
 ]
 
@@ -325,9 +325,9 @@ RsrServiceTest >> testReturnServerWithoutAssociatedClient [
 
 	| client server reason |
 	client := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	server action: [RsrKnownServer new].
 	reason := self expectCatch: client asyncValue.
 	self
@@ -340,9 +340,9 @@ RsrServiceTest >> testSendClientWithoutAssociatedServer [
 
 	| client server reason |
 	client := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	server action: [:x | x].
 	reason := self expectCatch: (client asyncValue: RsrKnownClient new).
 	self
@@ -362,7 +362,7 @@ RsrServiceTest >> testVariableReflection [
 		privateVariable: #private;
 		yourself.
 	self mirror: localService.
-	remoteService := connectionB serviceAt: localService _id.
+	remoteService := rsrSessionB serviceAt: localService _id.
 	self
 		assert: localService sharedVariable
 		identicalTo: remoteService sharedVariable.

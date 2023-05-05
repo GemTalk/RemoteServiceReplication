@@ -25,7 +25,7 @@ RsrConnectionSpecificationTestCase >> port [
 { #category : 'running' }
 RsrConnectionSpecificationTestCase >> testAcceptOnLocalhost [
 
-	| acceptor initiator semaphore connectionA connectionB |
+	| acceptor initiator semaphore rsrSessionA rsrSessionB |
 	acceptor := RsrAcceptConnection
 		host: self localhost 
 		port: self port.
@@ -34,20 +34,20 @@ RsrConnectionSpecificationTestCase >> testAcceptOnLocalhost [
 		port: self port.
 	semaphore := Semaphore new.
 	RsrProcessModel
-		fork: [[connectionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
-		fork: [[connectionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
+		fork: [[rsrSessionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
+		fork: [[rsrSessionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
 	semaphore wait; wait.
 	self
-		assert: connectionA isOpen;
-		assert: connectionB isOpen.
-	connectionA close.
-	connectionB close
+		assert: rsrSessionA isOpen;
+		assert: rsrSessionB isOpen.
+	rsrSessionA close.
+	rsrSessionB close
 ]
 
 { #category : 'running' }
 RsrConnectionSpecificationTestCase >> testBindToWildcardPort [
 
-	| acceptor initiator semaphore connectionA connectionB |
+	| acceptor initiator semaphore rsrSessionA rsrSessionB |
 	acceptor := RsrAcceptConnection
 		host: self localhost
 		port: RsrAcceptConnection wildcardPort.
@@ -58,14 +58,14 @@ RsrConnectionSpecificationTestCase >> testBindToWildcardPort [
 		port: acceptor listeningPort.
 	semaphore := Semaphore new.
 	RsrProcessModel
-		fork: [[connectionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
-		fork: [[connectionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
+		fork: [[rsrSessionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
+		fork: [[rsrSessionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
 	semaphore wait; wait.
 	self
-		assert: connectionA isOpen;
-		assert: connectionB isOpen.
-	connectionA close.
-	connectionB close
+		assert: rsrSessionA isOpen;
+		assert: rsrSessionB isOpen.
+	rsrSessionA close.
+	rsrSessionB close
 ]
 
 { #category : 'running' }
@@ -84,21 +84,21 @@ RsrConnectionSpecificationTestCase >> testCancelWaitForConnection [
 { #category : 'running' }
 RsrConnectionSpecificationTestCase >> testEstablishConnection [
 
-	| acceptor initiator semaphore connectionA connectionB |
+	| acceptor initiator semaphore rsrSessionA rsrSessionB |
 	acceptor := RsrAcceptConnection port: self port.
 	initiator := RsrInitiateConnection
 		host: self localhost
 		port: self port.
 	semaphore := Semaphore new.
 	RsrProcessModel
-		fork: [[connectionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
-		fork: [[connectionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
+		fork: [[rsrSessionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
+		fork: [[rsrSessionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
 	semaphore wait; wait.
 	self
-		assert: connectionA isOpen;
-		assert: connectionB isOpen.
-	connectionA close.
-	connectionB close
+		assert: rsrSessionA isOpen;
+		assert: rsrSessionB isOpen.
+	rsrSessionA close.
+	rsrSessionB close
 ]
 
 { #category : 'running' }
@@ -141,7 +141,7 @@ RsrConnectionSpecificationTestCase >> testInternalConnectionSpecificationConnect
 { #category : 'running' }
 RsrConnectionSpecificationTestCase >> testListenThenLaterAccept [
 
-	| acceptor initiator semaphore connectionA connectionB |
+	| acceptor initiator semaphore rsrSessionA rsrSessionB |
 	acceptor := RsrAcceptConnection
 		host: self localhost 
 		port: self port.
@@ -151,14 +151,14 @@ RsrConnectionSpecificationTestCase >> testListenThenLaterAccept [
 	semaphore := Semaphore new.
 	acceptor ensureListening.
 	RsrProcessModel
-		fork: [semaphore signal. [connectionB := initiator connect] ensure: [semaphore signal]]
+		fork: [semaphore signal. [rsrSessionB := initiator connect] ensure: [semaphore signal]]
 		named: 'Pending InitiateConnection'.
 	semaphore wait.
-	connectionA := acceptor waitForConnection.
+	rsrSessionA := acceptor waitForConnection.
 	semaphore wait.
 	self
-		assert: connectionA isOpen;
-		assert: connectionB isOpen.
-	connectionA close.
-	connectionB close
+		assert: rsrSessionA isOpen;
+		assert: rsrSessionB isOpen.
+	rsrSessionA close.
+	rsrSessionB close
 ]

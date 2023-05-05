@@ -11,7 +11,7 @@ Class {
 	#name : 'RsrSnapshotAnalysisTest',
 	#superclass : 'RsrTestCase',
 	#instVars : [
-		'connection'
+		'rsrSession'
 	],
 	#category : 'RemoteServiceReplication-Test'
 }
@@ -22,7 +22,7 @@ RsrSnapshotAnalysisTest >> analyze: anObject [
 	| analysis |
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: anObject)
-		connection: connection.
+		connection: rsrSession.
 	analysis perform.
 	^analysis
 ]
@@ -31,18 +31,14 @@ RsrSnapshotAnalysisTest >> analyze: anObject [
 RsrSnapshotAnalysisTest >> setUp [
 
 	super setUp.
-	connection := RsrConnection
-		channel: RsrNullChannel new
-		transactionSpigot: RsrThreadSafeNumericSpigot naturals
-		oidSpigot: RsrThreadSafeNumericSpigot naturals.
-	connection open
+	rsrSession := RsrNullChannel new openRsrSession
 ]
 
 { #category : 'running' }
 RsrSnapshotAnalysisTest >> tearDown [
 
-	connection close.
-	connection := nil.
+	rsrSession close.
+	rsrSession := nil.
 	super tearDown
 ]
 
@@ -184,7 +180,7 @@ RsrSnapshotAnalysisTest >> testServiceNoInstVars [
 		assert: snapshot slots size
 		equals: 0.
 	self assert: snapshot shouldCreateServer.
-	snapshotTemplate := connection templateResolver templateNamed: snapshot templateName.
+	snapshotTemplate := rsrSession templateResolver templateNamed: snapshot templateName.
 	self
 		assert: snapshotTemplate
 		equals: client _template

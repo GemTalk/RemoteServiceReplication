@@ -28,13 +28,13 @@ decodesTo: expected [
 { #category : 'decoding' }
 RsrCommandDecoderTest >> decodeReference: bytes [
 
-	^(self decoder decodeReference: bytes readStream) resolve: self connection
+	^(self decoder decodeReference: bytes readStream) resolve: self rsrSession
 ]
 
 { #category : 'decoding' }
 RsrCommandDecoderTest >> decodeService: anObjectBytes [
 
-	^(self decoder decodeServiceSnapshot: anObjectBytes readStream) reifyIn: self connection
+	^(self decoder decodeServiceSnapshot: anObjectBytes readStream) reifyIn: self rsrSession
 ]
 
 { #category : 'running' }
@@ -42,7 +42,7 @@ RsrCommandDecoderTest >> testDeliverResponse [
 
 	| service response encoding command decodedService |
 	service := RsrServerNoInstVars new.
-	self connection _ensureRegistered: service.
+	self rsrSession _ensureRegistered: service.
 	response := #responseSymbol.
 	encoding :=
 		#[0 0 0 0 0 0 0 2], "DeliverResponse Command"
@@ -63,12 +63,12 @@ RsrCommandDecoderTest >> testDeliverResponse [
 	self
 		assert: command snapshots size
 		equals: 1.
-	decodedService := command snapshots first reifyIn: self connection.
+	decodedService := command snapshots first reifyIn: self rsrSession.
 	self
 		assert: decodedService
 		equals: service.
 	self
-		assert: (command response resolve: self connection)
+		assert: (command response resolve: self rsrSession)
 		equals: response
 ]
 
@@ -95,7 +95,7 @@ RsrCommandDecoderTest >> testSendMessage [
 
 	| service encoding command |
 	service := RsrServerNoInstVars new.
-	self connection _ensureRegistered: service.
+	self rsrSession _ensureRegistered: service.
 	encoding :=
 		#[0 0 0 0 0 0 0 1], "SendMessage Command"
 		#[0 0 0 0 0 0 0 1], "Transaction ID"
@@ -115,10 +115,10 @@ RsrCommandDecoderTest >> testSendMessage [
 		assert: command transaction
 		equals: 1.
 	self
-		assert: (command receiverReference resolve: self connection)
+		assert: (command receiverReference resolve: self rsrSession)
 		identicalTo: service.
 	self
-		assert: (command selectorReference resolve: self connection)
+		assert: (command selectorReference resolve: self rsrSession)
 		identicalTo: #return42.
 	self
 		assert: command argumentReferences
@@ -190,7 +190,7 @@ RsrCommandDecoderTest >> verifyImmediate: expected
 encoding: encoding [
 
 	| actual |
-	actual := (self decoder decodeReference: encoding readStream) resolve: self connection.
+	actual := (self decoder decodeReference: encoding readStream) resolve: self rsrSession.
 	self
 		assert: actual
 		equals: expected

@@ -2,7 +2,7 @@ Class {
 	#name : 'RsrCommandCodecTest',
 	#superclass : 'RsrTestCase',
 	#instVars : [
-		'connection'
+		'rsrSession'
 	],
 	#category : 'RemoteServiceReplication-Test'
 }
@@ -11,12 +11,6 @@ Class {
 RsrCommandCodecTest class >> isAbstract [
 
 	^self == RsrCommandCodecTest
-]
-
-{ #category : 'accessing' }
-RsrCommandCodecTest >> connection [
-
-	^connection
 ]
 
 { #category : 'other' }
@@ -79,6 +73,12 @@ RsrCommandCodecTest >> rootServiceEncoding [
 	#[0 0 0 0 0 0 0 2]. "#RsrServerReferenceService"
 ]
 
+{ #category : 'accessing' }
+RsrCommandCodecTest >> rsrSession [
+
+	^rsrSession
+]
+
 { #category : 'running' }
 RsrCommandCodecTest >> serviceNoInstVarsEncoding [
 
@@ -95,18 +95,16 @@ RsrCommandCodecTest >> serviceNoInstVarsEncoding [
 RsrCommandCodecTest >> setUp [
 
 	super setUp.
-	connection := RsrConnection
-		channel: RsrNullChannel new
-		transactionSpigot: RsrThreadSafeNumericSpigot naturals
-		oidSpigot: RsrThreadSafeNumericSpigot naturals.
-	connection open
+	rsrSession := RsrNullChannel new openRsrSession.
+	
+
 ]
 
 { #category : 'other' }
 RsrCommandCodecTest >> tearDown [
 
-	connection close.
-	connection := nil.
+	rsrSession close.
+	rsrSession := nil.
 	super tearDown
 ]
 
@@ -300,7 +298,7 @@ RsrCommandCodecTest >> testDictionary [
 		at: false put: true;
 		yourself.
 	encoding := self encodeReferenceOf: dictionary.
-	result := (self decoder decodeReference: encoding readStream) resolve: self connection.
+	result := (self decoder decodeReference: encoding readStream) resolve: self rsrSession.
 	self
 		assert: result
 		equals: dictionary.
@@ -495,7 +493,7 @@ RsrCommandCodecTest >> testSet [
 		with: true
 		with: nil.
 	encoding := self encodeReferenceOf: set.
-	result := (self decoder decodeReference: encoding readStream) resolve: self connection.
+	result := (self decoder decodeReference: encoding readStream) resolve: self rsrSession.
 	self
 		assert: result
 		equals: set.

@@ -17,7 +17,7 @@ Class {
 { #category : 'other' }
 RsrCommandEncoderTest >> register: aService [
 
-	self connection _ensureRegistered: aService
+	self rsrSession _ensureRegistered: aService
 ]
 
 { #category : 'running-immediates' }
@@ -88,7 +88,7 @@ RsrCommandEncoderTest >> testSendMessage [
 	self register: service.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: service)
-		connection: self connection.
+		connection: self rsrSession.
 	analysis perform.
 	command := RsrSendMessage
 		transaction: 1

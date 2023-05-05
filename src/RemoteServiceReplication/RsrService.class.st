@@ -6,8 +6,8 @@ Class {
 	#superclass : 'RsrAbstractService',
 	#instVars : [
 		'_id',
-		'_connection',
-		'remoteSelf'
+		'remoteSelf',
+		'_rsrSession'
 	],
 	#category : 'RemoteServiceReplication'
 }
@@ -79,7 +79,7 @@ RsrService class >> templateClassName [
 RsrService >> _connection [
 	"Private - Returns the Connection associated w/ the receiver."
 
-	^_connection
+	^_rsrSession
 ]
 
 { #category : 'private-accessing' }
@@ -95,7 +95,7 @@ connection: aConnection [
 	"Private - Configure this Service w/ a Service ID and Connection. This is a side-effect of registering a Service w/ a Connection."
 
 	_id := anRsrId.
-	_connection := aConnection.
+	_rsrSession := aConnection.
 	remoteSelf := aConnection _forwarderClass on: self
 ]
 
@@ -110,7 +110,7 @@ RsrService >> _synchronize [
 RsrService >> _template [
 	"Returns the template associated with this Service. General users should use #template."
 
-	^_connection templateResolver templateFor: self
+	^_rsrSession templateResolver templateFor: self
 ]
 
 { #category : 'public-events' }
@@ -153,7 +153,7 @@ RsrService >> isClient [
 { #category : 'public-testing' }
 RsrService >> isMirrored [
 
-	^_connection ~~ nil
+	^_rsrSession ~~ nil
 ]
 
 { #category : 'public-testing' }

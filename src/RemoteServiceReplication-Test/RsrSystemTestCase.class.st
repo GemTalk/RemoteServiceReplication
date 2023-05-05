@@ -2,8 +2,8 @@ Class {
 	#name : 'RsrSystemTestCase',
 	#superclass : 'RsrTestCase',
 	#instVars : [
-		'connectionA',
-		'connectionB'
+		'rsrSessionA',
+		'rsrSessionB'
 	],
 	#category : 'RemoteServiceReplication-Test'
 }
@@ -48,11 +48,11 @@ RsrSystemTestCase >> initializeInMemoryConnections [
 	| spec |
 	spec := RsrInMemoryConnectionSpecification new.
 	spec connect.
-	connectionA := spec connectionA.
-	connectionB := spec connectionB.
+	rsrSessionA := spec connectionA.
+	rsrSessionB := spec connectionB.
 	self
-		assert: connectionA isOpen;
-		assert: connectionB isOpen
+		assert: rsrSessionA isOpen;
+		assert: rsrSessionB isOpen
 ]
 
 { #category : 'initialization' }
@@ -61,11 +61,11 @@ RsrSystemTestCase >> initializeSocketConnections [
 	| spec |
 	spec := RsrInternalSocketConnectionSpecification new.
 	spec connect.
-	connectionA := spec connectionA.
-	connectionB := spec connectionB.
+	rsrSessionA := spec connectionA.
+	rsrSessionB := spec connectionB.
 	self
-		assert: connectionA isOpen;
-		assert: connectionB isOpen
+		assert: rsrSessionA isOpen;
+		assert: rsrSessionB isOpen
 ]
 
 { #category : 'accessing' }
@@ -74,9 +74,9 @@ RsrSystemTestCase >> peerOf: aService [
 	| connectionInPeer |
 	connectionInPeer := aService _connection.
 	connectionInPeer ifNil: [self assert: false description: 'Unable to obtain the peer of an unregistered Service.'].
-	^connectionInPeer == connectionA
-		ifTrue: [connectionB serviceAt: aService _id]
-		ifFalse: [connectionA serviceAt: aService _id]
+	^connectionInPeer == rsrSessionA
+		ifTrue: [rsrSessionB serviceAt: aService _id]
+		ifFalse: [rsrSessionA serviceAt: aService _id]
 ]
 
 { #category : 'initialization' }
@@ -91,8 +91,8 @@ RsrSystemTestCase >> setUp [
 { #category : 'initialization' }
 RsrSystemTestCase >> tearDown [
 
-	connectionA ifNotNil: [:conn | conn close].
-	connectionB ifNotNil: [:conn | conn close].
-	connectionA := connectionB := nil.
+	rsrSessionA ifNotNil: [:conn | conn close].
+	rsrSessionB ifNotNil: [:conn | conn close].
+	rsrSessionA := rsrSessionB := nil.
 	super tearDown
 ]

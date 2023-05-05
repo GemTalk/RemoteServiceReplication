@@ -1,11 +1,11 @@
 Class {
-	#name : 'RsrInMemoryConnectionTestCase',
-	#superclass : 'RsrConnectionTestCase',
+	#name : 'RsrInMemorySessionTestCase',
+	#superclass : 'RsrSessionTestCase',
 	#category : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }
-RsrInMemoryConnectionTestCase >> setUp [
+RsrInMemorySessionTestCase >> setUp [
 
 	super setUp.
 	self initializeInMemoryConnections

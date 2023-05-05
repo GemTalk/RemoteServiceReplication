@@ -1,11 +1,11 @@
 Class {
-	#name : 'RsrSocketConnectionTestCase',
-	#superclass : 'RsrConnectionTestCase',
+	#name : 'RsrSocketSessionTestCase',
+	#superclass : 'RsrSessionTestCase',
 	#category : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }
-RsrSocketConnectionTestCase >> setUp [
+RsrSocketSessionTestCase >> setUp [
 
 	super setUp.
 	self initializeSocketConnections

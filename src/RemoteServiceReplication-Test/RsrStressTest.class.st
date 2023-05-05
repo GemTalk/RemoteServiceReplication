@@ -47,9 +47,9 @@ RsrStressTest >> concurrentlyRun: aBlock [
 RsrStressTest >> initializeServices [
 
 	client := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	server action: [:x | x]
 ]
 

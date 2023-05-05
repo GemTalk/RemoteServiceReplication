@@ -135,7 +135,7 @@ RsrSpeciesEquality >> testServiceWithUnsupportedObject [
 
 	| service |
 	service := RsrClientNoInstVars new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		yourself.
 	self
 		should: [service sendReturnArgument: (RsrValueHolderClient value: Object new)]
@@ -199,9 +199,9 @@ RsrSpeciesEquality >> verify: anObject [
 
 	| client server |
 	client := RsrRemoteActionClient new
-		registerWith: connectionA;
+		registerWith: rsrSessionA;
 		synchronize.
-	server := connectionB serviceAt: client _id.
+	server := rsrSessionB serviceAt: client _id.
 	server action: [:object | server sharedVariable: object. object].
 	self
 		assert: (client value: anObject)
