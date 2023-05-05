@@ -25,18 +25,18 @@ RsrCommandCodecTest >> decoder [
 	^RsrCommandDecoder new
 ]
 
-{ #category : 'accessing' }
-RsrCommandCodecTest >> encoder [
-
-	^RsrCommandEncoder new
-]
-
 { #category : 'encode/decode' }
 RsrCommandCodecTest >> encodeReferenceOf: anObject [
 
 	| reference |
 	reference := RsrReference from: anObject.
 	^ByteArray streamContents: [:stream | self encoder encodeReference: reference onto: stream]
+]
+
+{ #category : 'accessing' }
+RsrCommandCodecTest >> encoder [
+
+	^RsrCommandEncoder new
 ]
 
 { #category : 'running-symbol' }

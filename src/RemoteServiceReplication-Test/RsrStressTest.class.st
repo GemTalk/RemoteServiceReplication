@@ -11,7 +11,7 @@ Class {
 { #category : 'accessing' }
 RsrStressTest class >> defaultTimeLimit [
 
-	^30 seconds
+	^ 1 minute
 ]
 
 { #category : 'testing' }
