@@ -34,7 +34,7 @@ RsrInitiateConnection >> connect [
 	channel := RsrBinaryStreamChannel
 		inStream: stream
 		outStream: stream.
-	connection := RsrConnection
+	connection := RsrSession
 		specification: self
 		channel: channel
 		transactionSpigot: RsrThreadSafeNumericSpigot naturals negated

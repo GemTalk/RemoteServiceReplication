@@ -88,7 +88,7 @@ RsrCommandEncoderTest >> testSendMessage [
 	self register: service.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: service)
-		connection: self rsrSession.
+		rsrSession: self rsrSession.
 	analysis perform.
 	command := RsrSendMessage
 		transaction: 1

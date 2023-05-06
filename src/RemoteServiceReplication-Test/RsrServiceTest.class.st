@@ -27,12 +27,12 @@ RsrServiceTest >> testAnalyzeServiceRegisteredWithDifferentConnection [
 	instance := RsrRemoteAction clientClass new.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: instance)
-		connection: rsrSessionA.
+		rsrSession: rsrSessionA.
 	analysis perform.
 	self assert: instance isMirrored.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: instance)
-		connection: rsrSessionB.
+		rsrSession: rsrSessionB.
 	self
 		should: [analysis perform]
 		raise: RsrAlreadyRegistered

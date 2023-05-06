@@ -18,11 +18,11 @@ Class {
 
 { #category : 'instance creation' }
 RsrRemotePromiseResolver class >> for: aSendMessage
-over: aConnection [
+over: anRsrSession [
 
 	^self new
 		sendMessage: aSendMessage;
-		connection: aConnection;
+		rsrSession: anRsrSession;
 		yourself
 ]
 
@@ -44,12 +44,6 @@ RsrRemotePromiseResolver >> break: aReason [
 	"<aReason> can be any object supported by RSR."
 
 	self resolution: (Array with: #break with: aReason)
-]
-
-{ #category : 'accessing' }
-RsrRemotePromiseResolver >> connection: aConnection [
-
-	connection := aConnection
 ]
 
 { #category : 'resolving' }
@@ -104,6 +98,12 @@ RsrRemotePromiseResolver >> rsrSession [
 ]
 
 { #category : 'accessing' }
+RsrRemotePromiseResolver >> rsrSession: aConnection [
+
+	connection := aConnection
+]
+
+{ #category : 'accessing' }
 RsrRemotePromiseResolver >> sendMessage [
 
 	^sendMessage
@@ -122,7 +122,7 @@ closureRoots: roots [
 	| analysis resultReference |
 	analysis := RsrSnapshotAnalysis
 		roots: roots
-		connection: self rsrSession.
+		rsrSession: self rsrSession.
 	analysis perform.
 	resultReference := RsrReference from: result.
 	self

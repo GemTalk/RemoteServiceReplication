@@ -1,7 +1,7 @@
-Extension { #name : 'RsrConnection' }
+Extension { #name : 'RsrSession' }
 
 { #category : '*RemoteServiceReplication-Pharo' }
-RsrConnection >> platformSpecificOpeningTasks [
+RsrSession >> platformSpecificOpeningTasks [
 	"Perform any tasks necessary for the Connection to be fully
 	configured on this platform."
 	

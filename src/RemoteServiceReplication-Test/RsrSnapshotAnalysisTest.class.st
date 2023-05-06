@@ -22,7 +22,7 @@ RsrSnapshotAnalysisTest >> analyze: anObject [
 	| analysis |
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: anObject)
-		connection: rsrSession.
+		rsrSession: rsrSession.
 	analysis perform.
 	^analysis
 ]

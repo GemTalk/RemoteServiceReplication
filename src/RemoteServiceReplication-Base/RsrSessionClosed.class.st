@@ -11,18 +11,11 @@ Class {
 }
 
 { #category : 'instance creation' }
-RsrSessionClosed class >> connection: aConnection [
+RsrSessionClosed class >> rsrSession: aConnection [
 
 	^self new
-		connection: aConnection;
+		rsrSession: aConnection;
 		yourself
-]
-
-{ #category : 'accessing' }
-RsrSessionClosed >> connection: aConnection [
-	"Store the Connection that was closed."
-
-	connection := aConnection
 ]
 
 { #category : 'accessing' }
@@ -30,4 +23,11 @@ RsrSessionClosed >> rsrSession [
 	"The Connection that was closed."
 
 	^connection
+]
+
+{ #category : 'accessing' }
+RsrSessionClosed >> rsrSession: aConnection [
+	"Store the Connection that was closed."
+
+	connection := aConnection
 ]

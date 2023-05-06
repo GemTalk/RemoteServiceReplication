@@ -17,12 +17,12 @@ RsrInMemoryConnectionSpecification >> connect [
 	channelB := RsrInMemoryChannel
 		inQueue: bQueue
 		outQueue: aQueue.
-	connectionA := RsrConnection
+	connectionA := RsrSession
 		specification: self
 		channel: channelA
 		transactionSpigot: RsrThreadSafeNumericSpigot naturals
 		oidSpigot: RsrThreadSafeNumericSpigot naturals.
-	connectionB := RsrConnection
+	connectionB := RsrSession
 		specification: self
 		channel: channelB
 		transactionSpigot: RsrThreadSafeNumericSpigot naturals negated

@@ -9,7 +9,7 @@ Class {
 	#name : 'RsrChannel',
 	#superclass : 'RsrObject',
 	#instVars : [
-		'connection'
+		'rsrSession'
 	],
 	#category : 'RemoteServiceReplication'
 }
@@ -28,12 +28,6 @@ RsrChannel >> close [
 	^self subclassResponsibility
 ]
 
-{ #category : 'accessing' }
-RsrChannel >> connection: aConnection [
-
-	connection := aConnection
-]
-
 { #category : 'events' }
 RsrChannel >> genericError: anError [
 
@@ -45,6 +39,14 @@ RsrChannel >> isConnected [
 	"Report whether the Channel is open between Connections."
 
 	^self subclassResponsibility
+]
+
+{ #category : 'testing' }
+RsrChannel >> isOpen [
+
+	"Report whether the Channel is open between RsrSessions."
+
+	^ self subclassResponsibility
 ]
 
 { #category : 'accessing' }
@@ -70,7 +72,13 @@ RsrChannel >> received: aCommand [
 { #category : 'accessing' }
 RsrChannel >> rsrSession [
 
-	^connection
+	^rsrSession
+]
+
+{ #category : 'accessing' }
+RsrChannel >> rsrSession: anRsrSession [
+
+	rsrSession := anRsrSession
 ]
 
 { #category : 'events' }

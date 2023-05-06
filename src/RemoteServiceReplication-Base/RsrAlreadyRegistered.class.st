@@ -25,9 +25,9 @@ RsrAlreadyRegistered >> intendedRsrSession [
 ]
 
 { #category : 'accessing' }
-RsrAlreadyRegistered >> intendedRsrSession: aConnection [
+RsrAlreadyRegistered >> intendedRsrSession: anRsrSession [
 
-	intendedRsrSession := aConnection
+	intendedRsrSession := anRsrSession
 ]
 
 { #category : 'accessing' }

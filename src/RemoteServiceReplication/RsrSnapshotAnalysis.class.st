@@ -11,20 +11,19 @@ Class {
 	#instVars : [
 		'roots',
 		'snapshots',
-		'connection',
-		'analyzedObjects'
+		'analyzedObjects',
+		'rsrSession'
 	],
 	#category : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }
-RsrSnapshotAnalysis class >> roots: anArray
-connection: aConnection [
+RsrSnapshotAnalysis class >> roots: anArray rsrSession: anRsrSession [
 
-	^self new
-		roots: anArray;
-		connection: aConnection;
-		yourself
+	^ self new
+		  roots: anArray;
+		  rsrSession: anRsrSession;
+		  yourself
 ]
 
 { #category : 'analyzing' }
@@ -74,12 +73,6 @@ RsrSnapshotAnalysis >> analyzedObjects [
 	^ analyzedObjects
 ]
 
-{ #category : 'accessing' }
-RsrSnapshotAnalysis >> connection: aConnection [
-
-	connection := aConnection
-]
-
 { #category : 'actions' }
 RsrSnapshotAnalysis >> ensureRegistered: aService [
 
@@ -123,7 +116,13 @@ RsrSnapshotAnalysis >> roots: anArray [
 { #category : 'accessing' }
 RsrSnapshotAnalysis >> rsrSession [
 
-	^connection
+	^rsrSession
+]
+
+{ #category : 'accessing' }
+RsrSnapshotAnalysis >> rsrSession: aConnection [
+
+	rsrSession := aConnection
 ]
 
 { #category : 'actions' }

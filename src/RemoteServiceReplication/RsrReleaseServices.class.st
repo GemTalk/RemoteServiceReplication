@@ -33,9 +33,9 @@ using: anEncoder [
 ]
 
 { #category : 'executing' }
-RsrReleaseServices >> executeFor: aConnection [
+RsrReleaseServices >> executeFor: anRsrSession [
 
-	sids do: [:sid | aConnection _remoteClientReleased: sid]
+	sids do: [:sid | anRsrSession _remoteClientReleased: sid]
 ]
 
 { #category : 'reporting' }

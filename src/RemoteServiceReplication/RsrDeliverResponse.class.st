@@ -37,17 +37,17 @@ using: anEncoder [
 ]
 
 { #category : 'executing' }
-RsrDeliverResponse >> executeFor: aConnection [
+RsrDeliverResponse >> executeFor: anRsrSession [
 
 	| pendingMessage result servicesStrongly |
-	pendingMessage := aConnection pendingMessages
+	pendingMessage := anRsrSession pendingMessages
 		                  removeKey: self transaction
 		                  ifAbsent: [ 
-		                  ^ self reportUnknownTransactionIn: aConnection ].
+		                  ^ self reportUnknownTransactionIn: anRsrSession ].
 	"Must keep a strong reference to each service until the roots are referenced."
 	[ 
-	servicesStrongly := self reifyAllIn: aConnection.
-	result := self responseReference resolve: aConnection.
+	servicesStrongly := self reifyAllIn: anRsrSession.
+	result := self responseReference resolve: anRsrSession.
 	"result should now be the root of the services graph"
 	servicesStrongly := nil.
 	result first == #fulfill

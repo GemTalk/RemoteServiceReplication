@@ -19,7 +19,7 @@ using: anEncoder [
 ]
 
 { #category : 'executing' }
-RsrCommand >> executeFor: aConnection [
+RsrCommand >> executeFor: anRsrSession [
 
 	self subclassResponsibility
 ]

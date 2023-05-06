@@ -69,20 +69,20 @@ do: aBlock [
 ]
 
 { #category : 'accessing' }
-RsrServiceSnapshot >> createInstanceRegisteredIn: aConnection [
+RsrServiceSnapshot >> createInstanceRegisteredIn: anRsrSession [
 
 	| instance template |
 	templateName isNil
 		ifTrue:
 			[self flag: 'This should go away once we cleanup the on-the-wire encoding.'.
 			RsrUnknownClass signal].
-	template := aConnection templateResolver templateNamed: self templateName.
-	((aConnection policy permits: template) or: [template inheritsFrom: RsrReasonService])
+	template := anRsrSession templateResolver templateNamed: self templateName.
+	((anRsrSession policy permits: template) or: [template inheritsFrom: RsrReasonService])
 		ifFalse: [RsrServiceRejected signalReason: (RsrPolicyRejectedService sid: sid templateName: templateName)].
 	instance := self shouldCreateServer
 		ifTrue: [template serverClass basicNew]
 		ifFalse: [template clientClass basicNew].
-	aConnection
+	anRsrSession
 		_register: instance
 		as: self sid.
 	^instance
@@ -125,14 +125,14 @@ using: anEncoder [
 ]
 
 { #category : 'accessing' }
-RsrServiceSnapshot >> instanceIn: aConnection [
+RsrServiceSnapshot >> instanceIn: anRsrSession [
 
 	| instance |
-	instance := aConnection
+	instance := anRsrSession
 		serviceAt: self sid
-		ifAbsent: [self createInstanceRegisteredIn: aConnection].
+		ifAbsent: [self createInstanceRegisteredIn: anRsrSession].
 	self shouldCreateServer
-		ifTrue: [aConnection _stronglyRetain: instance].
+		ifTrue: [anRsrSession _stronglyRetain: instance].
 	^instance
 ]
 

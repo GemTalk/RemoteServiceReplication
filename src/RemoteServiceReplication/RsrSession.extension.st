@@ -1,7 +1,7 @@
-Extension { #name : 'RsrConnection' }
+Extension { #name : 'RsrSession' }
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _ensureRegistered: aService [
+RsrSession >> _ensureRegistered: aService [
 	aService _rsrSession == nil
 		ifTrue: [ 
 			self _register: aService as: oidSpigot next.
@@ -12,14 +12,14 @@ RsrConnection >> _ensureRegistered: aService [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _forwarderClass [
+RsrSession >> _forwarderClass [
 
 	^RsrForwarder
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _receivedCommand: aCommand [
-	"Execute the command in the context of the receiving Connection."
+RsrSession >> _receivedCommand: aCommand [
+	"Execute the command in the context of the receiving RsrSession."
 
 	RsrProcessModel
 		fork:
@@ -29,13 +29,13 @@ RsrConnection >> _receivedCommand: aCommand [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _register: aService
+RsrSession >> _register: aService
 as: sid [
 
 	| registryEntry mournAction |
 	aService
 		_id: sid
-		connection: self.
+		session: self.
 	mournAction := aService isClient
 		ifTrue: [self mournActionForClientSID: sid]
 		ifFalse: [self mournActionForServerSID: sid].
@@ -48,7 +48,7 @@ as: sid [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _releaseSID: aSID [
+RsrSession >> _releaseSID: aSID [
 
 	| command |
 	self isOpen
@@ -59,7 +59,7 @@ RsrConnection >> _releaseSID: aSID [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _remoteClientReleased: aSID [
+RsrSession >> _remoteClientReleased: aSID [
 	"Remotely, a Client instance has been garbage collected.
 	Ensure we only reference the associated service weakly."
 
@@ -71,14 +71,14 @@ RsrConnection >> _remoteClientReleased: aSID [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _sendCommand: aCommand [
+RsrSession >> _sendCommand: aCommand [
 	"Send the provided Command to our peer."
 
 	channel send: aCommand
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _sendMessage: aMessage
+RsrSession >> _sendMessage: aMessage
 to: aService [
 
 "Open coordination window"
@@ -88,10 +88,10 @@ to: aService [
 	"Return Promise"
 	| analysis receiverReference selectorReference argumentReferences dispatchCommand promise pendingMessage |
 	self isOpen
-		ifFalse: [self error: 'Connection is not open'].
+		ifFalse: [self error: 'Session is not open'].
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: aService), aMessage arguments
-		connection: self.
+		rsrSession: self.
 	analysis perform.
 	receiverReference := RsrReference from: aService.
 	selectorReference := RsrReference from: aMessage selector.
@@ -114,7 +114,7 @@ to: aService [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> _stronglyRetain: aServer [
+RsrSession >> _stronglyRetain: aServer [
 	"Retain the already registered server strongly."
 
 	| entry |
@@ -125,27 +125,27 @@ RsrConnection >> _stronglyRetain: aServer [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> channel [
+RsrSession >> channel [
 
 	^channel
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> channel: aChannel [
+RsrSession >> channel: aChannel [
 
 	channel := aChannel.
-	channel connection: self
+	channel rsrSession: self
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> channelDisconnected [
+RsrSession >> channelDisconnected [
 
 	self log info: 'Disconnected'.
 	self close
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> initialize [
+RsrSession >> initialize [
 
 	super initialize.
 	transactionSpigot := RsrThreadSafeNumericSpigot naturals.
@@ -158,44 +158,44 @@ RsrConnection >> initialize [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> log [
+RsrSession >> log [
 
 	^log
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> mournActionForClientSID: aSID [
+RsrSession >> mournActionForClientSID: aSID [
 
 	^[registry removeKey: aSID.
 			self _releaseSID: aSID]
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> mournActionForServerSID: aSID [
+RsrSession >> mournActionForServerSID: aSID [
 
 	^[registry removeKey: aSID]
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> oidSpigot [
+RsrSession >> oidSpigot [
 
 	^oidSpigot
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> oidSpigot: anIntegerSpigot [
+RsrSession >> oidSpigot: anIntegerSpigot [
 
 	oidSpigot := anIntegerSpigot
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> pendingMessages [
+RsrSession >> pendingMessages [
 
 	^pendingMessages
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> serviceAt: aSID [
+RsrSession >> serviceAt: aSID [
 
 	^self
 		serviceAt: aSID
@@ -203,7 +203,7 @@ RsrConnection >> serviceAt: aSID [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> serviceAt: aSID
+RsrSession >> serviceAt: aSID
 ifAbsent: aBlock [
 	"Return the service associated with the provided SID."
 
@@ -221,19 +221,19 @@ ifAbsent: aBlock [
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> transactionSpigot [
+RsrSession >> transactionSpigot [
 
 	^transactionSpigot
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> transactionSpigot: anObject [
+RsrSession >> transactionSpigot: anObject [
 
 	transactionSpigot := anObject
 ]
 
 { #category : '*remoteservicereplication' }
-RsrConnection >> unknownError: anException [
+RsrSession >> unknownError: anException [
 
 	self close
 ]

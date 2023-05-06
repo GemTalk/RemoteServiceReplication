@@ -14,10 +14,10 @@ Class {
 
 { #category : 'instance creation' }
 RsrService class >> _id: anId
-connection: aConnection [
+session: anRsrSession [
 
 	^super new
-		_id: anId connection: aConnection;
+		_id: anId session: anRsrSession;
 		yourself
 ]
 
@@ -84,17 +84,17 @@ RsrService >> _id [
 
 { #category : 'private-accessing' }
 RsrService >> _id: anRsrId
-connection: aConnection [
-	"Private - Configure this Service w/ a Service ID and Connection. This is a side-effect of registering a Service w/ a Connection."
+session: anRsrSession [
+	"Private - Configure this Service w/ a Service ID and Session. This is a side-effect of registering a Service w/ a Session."
 
 	_id := anRsrId.
-	_rsrSession := aConnection.
-	remoteSelf := aConnection _forwarderClass on: self
+	_rsrSession := anRsrSession.
+	remoteSelf := anRsrSession _forwarderClass on: self
 ]
 
 { #category : 'private-accessing' }
 RsrService >> _rsrSession [
-	"Private - Returns the Connection associated w/ the receiver."
+	"Private - Returns the Session associated w/ the receiver."
 
 	^_rsrSession
 ]
