@@ -8,5 +8,5 @@ Class {
 RsrSocketSessionTestCase >> setUp [
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketSessions
 ]

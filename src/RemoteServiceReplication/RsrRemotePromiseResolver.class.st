@@ -47,12 +47,6 @@ RsrRemotePromiseResolver >> break: aReason [
 ]
 
 { #category : 'accessing' }
-RsrRemotePromiseResolver >> connection [
-
-	^connection
-]
-
-{ #category : 'accessing' }
 RsrRemotePromiseResolver >> connection: aConnection [
 
 	connection := aConnection
@@ -104,6 +98,12 @@ RsrRemotePromiseResolver >> resolution: result [
 ]
 
 { #category : 'accessing' }
+RsrRemotePromiseResolver >> rsrSession [
+
+	^connection
+]
+
+{ #category : 'accessing' }
 RsrRemotePromiseResolver >> sendMessage [
 
 	^sendMessage
@@ -122,7 +122,7 @@ closureRoots: roots [
 	| analysis resultReference |
 	analysis := RsrSnapshotAnalysis
 		roots: roots
-		connection: self connection.
+		connection: self rsrSession.
 	analysis perform.
 	resultReference := RsrReference from: result.
 	self
@@ -139,5 +139,5 @@ snapshots: snapshots [
 				transaction: self sendMessage transaction
 				responseReference: resultReference
 				snapshots: snapshots.
-	self connection _sendCommand: response
+	self rsrSession _sendCommand: response
 ]

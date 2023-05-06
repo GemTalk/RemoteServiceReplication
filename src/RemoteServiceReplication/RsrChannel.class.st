@@ -29,12 +29,6 @@ RsrChannel >> close [
 ]
 
 { #category : 'accessing' }
-RsrChannel >> connection [
-
-	^connection
-]
-
-{ #category : 'accessing' }
 RsrChannel >> connection: aConnection [
 
 	connection := aConnection
@@ -43,7 +37,7 @@ RsrChannel >> connection: aConnection [
 { #category : 'events' }
 RsrChannel >> genericError: anError [
 
-	^self connection unknownError: anError
+	^self rsrSession unknownError: anError
 ]
 
 { #category : 'testing' }
@@ -56,7 +50,7 @@ RsrChannel >> isConnected [
 { #category : 'accessing' }
 RsrChannel >> log [
 
-	^self connection log
+	^self rsrSession log
 ]
 
 { #category : 'lifecycle' }
@@ -70,7 +64,13 @@ RsrChannel >> open [
 RsrChannel >> received: aCommand [
 	"A command has come in over the channel. Propogate it to the Connection."
 
-	self connection _receivedCommand: aCommand
+	self rsrSession _receivedCommand: aCommand
+]
+
+{ #category : 'accessing' }
+RsrChannel >> rsrSession [
+
+	^connection
 ]
 
 { #category : 'events' }

@@ -8,5 +8,5 @@ Class {
 RsrSocketMessageSendingTest >> setUp [
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketSessions
 ]

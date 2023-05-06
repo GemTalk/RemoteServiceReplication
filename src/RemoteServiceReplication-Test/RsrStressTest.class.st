@@ -53,6 +53,12 @@ RsrStressTest >> initializeServices [
 	server action: [:x | x]
 ]
 
+{ #category : 'initialize/release' }
+RsrStressTest >> initializeSessions [
+
+	^ self subclassResponsibility
+]
+
 { #category : 'accessing' }
 RsrStressTest >> numThreads [
 
@@ -94,7 +100,7 @@ RsrStressTest >> setUp [
 
 	super setUp.
 	self
-		initializeConnections;
+		initializeSessions;
 		initializeServices
 ]
 

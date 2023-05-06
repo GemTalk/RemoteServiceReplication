@@ -76,13 +76,6 @@ RsrService class >> templateClassName [
 ]
 
 { #category : 'private-accessing' }
-RsrService >> _connection [
-	"Private - Returns the Connection associated w/ the receiver."
-
-	^_rsrSession
-]
-
-{ #category : 'private-accessing' }
 RsrService >> _id [
 	"Private - Returns the Service ID associated w/ the receiver."
 
@@ -97,6 +90,13 @@ connection: aConnection [
 	_id := anRsrId.
 	_rsrSession := aConnection.
 	remoteSelf := aConnection _forwarderClass on: self
+]
+
+{ #category : 'private-accessing' }
+RsrService >> _rsrSession [
+	"Private - Returns the Connection associated w/ the receiver."
+
+	^_rsrSession
 ]
 
 { #category : 'private-synchronization' }
@@ -120,13 +120,6 @@ RsrService >> configureProcess [
 
 	Processor activeProcess
 		priority: self serviceSchedulingPriority
-]
-
-{ #category : 'public-accessing' }
-RsrService >> connection [
-	"Returns the Connection associated w/ the receiver."
-
-	^self _connection
 ]
 
 { #category : 'public-debugging' }
@@ -201,6 +194,13 @@ RsrService >> preUpdate [
 RsrService >> registerWith: aConnection [
 
 	aConnection _ensureRegistered: self
+]
+
+{ #category : 'public-accessing' }
+RsrService >> rsrSession [
+	"Returns the Connection associated w/ the receiver."
+
+	^self _rsrSession
 ]
 
 { #category : 'public-events' }

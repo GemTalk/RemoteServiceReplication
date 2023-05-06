@@ -8,5 +8,5 @@ Class {
 RsrInMemoryLifetimeTest >> setUp [
 
 	super setUp.
-	self initializeInMemoryConnections
+	self initializeInMemorySessions
 ]

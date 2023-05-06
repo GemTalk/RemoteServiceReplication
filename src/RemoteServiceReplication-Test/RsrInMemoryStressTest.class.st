@@ -4,8 +4,8 @@ Class {
 	#category : 'RemoteServiceReplication-Test'
 }
 
-{ #category : 'initializing' }
-RsrInMemoryStressTest >> initializeConnections [
+{ #category : 'initialize/release' }
+RsrInMemoryStressTest >> initializeSessions [
 
-	self initializeInMemoryConnections
+	self initializeInMemorySessions
 ]

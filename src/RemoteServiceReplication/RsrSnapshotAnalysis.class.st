@@ -75,12 +75,6 @@ RsrSnapshotAnalysis >> analyzedObjects [
 ]
 
 { #category : 'accessing' }
-RsrSnapshotAnalysis >> connection [
-
-	^connection
-]
-
-{ #category : 'accessing' }
 RsrSnapshotAnalysis >> connection: aConnection [
 
 	connection := aConnection
@@ -89,9 +83,9 @@ RsrSnapshotAnalysis >> connection: aConnection [
 { #category : 'actions' }
 RsrSnapshotAnalysis >> ensureRegistered: aService [
 
-	self connection _ensureRegistered: aService.
+	self rsrSession _ensureRegistered: aService.
 	aService isServer
-		ifTrue: [self connection _stronglyRetain: aService]
+		ifTrue: [self rsrSession _stronglyRetain: aService]
 ]
 
 { #category : 'initialization' }
@@ -124,6 +118,12 @@ RsrSnapshotAnalysis >> roots [
 RsrSnapshotAnalysis >> roots: anArray [
 
 	roots := anArray
+]
+
+{ #category : 'accessing' }
+RsrSnapshotAnalysis >> rsrSession [
+
+	^connection
 ]
 
 { #category : 'actions' }

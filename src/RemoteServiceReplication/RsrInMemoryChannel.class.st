@@ -64,7 +64,7 @@ RsrInMemoryChannel >> drainLoop [
 	command isNil]
 		whileFalse:
 			[self received: command].
-	self connection channelDisconnected
+	self rsrSession channelDisconnected
 ]
 
 { #category : 'accessing' }

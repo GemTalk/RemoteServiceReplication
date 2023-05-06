@@ -3,31 +3,31 @@ Class {
 	#superclass : 'RsrError',
 	#instVars : [
 		'service',
-		'intendedConnection'
+		'intendedRsrSession'
 	],
 	#category : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'instance creation' }
 RsrAlreadyRegistered class >> signalService: aService
-intendedConnection: aConnection [
+intendedRsrSession: anRsrSession [
 
 	^self new
 		service: aService;
-		intendedConnection: aConnection;
+		intendedRsrSession: anRsrSession;
 		signal
 ]
 
 { #category : 'accessing' }
-RsrAlreadyRegistered >> intendedConnection [
+RsrAlreadyRegistered >> intendedRsrSession [
 
-	^intendedConnection
+	^intendedRsrSession
 ]
 
 { #category : 'accessing' }
-RsrAlreadyRegistered >> intendedConnection: aConnection [
+RsrAlreadyRegistered >> intendedRsrSession: aConnection [
 
-	intendedConnection := aConnection
+	intendedRsrSession := aConnection
 ]
 
 { #category : 'accessing' }

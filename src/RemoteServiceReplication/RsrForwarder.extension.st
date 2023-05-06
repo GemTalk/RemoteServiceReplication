@@ -9,7 +9,7 @@ RsrForwarder >> _service: aService [
 { #category : '*remoteservicereplication' }
 RsrForwarder >> doesNotUnderstand: aMessage [
 
-	^_service _connection
+	^_service _rsrSession
 		_sendMessage: aMessage
 		to: _service
 ]

@@ -4,8 +4,8 @@ Class {
 	#category : 'RemoteServiceReplication-Test'
 }
 
-{ #category : 'initializing' }
-RsrSocketStressTest >> initializeConnections [
+{ #category : 'initialize/release' }
+RsrSocketStressTest >> initializeSessions [
 
-	self initializeSocketConnections
+	self initializeSocketSessions
 ]

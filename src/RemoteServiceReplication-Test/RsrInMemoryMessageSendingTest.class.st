@@ -8,5 +8,5 @@ Class {
 RsrInMemoryMessageSendingTest >> setUp [
 
 	super setUp.
-	self initializeInMemoryConnections
+	self initializeInMemorySessions
 ]

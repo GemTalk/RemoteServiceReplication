@@ -83,7 +83,7 @@ RsrConnection >> close [
 	pendingMessages := temp.
 	pm do: [:each | each promise break: RsrConnectionClosedBeforeReceivingResponse new].
 	registry := RsrThreadSafeDictionary new.
-	announcer announce: (RsrConnectionClosed connection: self)
+	announcer announce: (RsrSessionClosed connection: self)
 ]
 
 { #category : 'public-testing' }
@@ -162,7 +162,7 @@ RsrConnection >> waitUntilClose [
 	| semaphore |
 	semaphore := Semaphore new.
 	announcer
-		when: RsrConnectionClosed
+		when: RsrSessionClosed
 		send: #signal
 		to: semaphore.
 	semaphore wait

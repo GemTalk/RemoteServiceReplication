@@ -8,5 +8,5 @@ Class {
 RsrSocketLifetimeTest >> setUp [
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketSessions
 ]

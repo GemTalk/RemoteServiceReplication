@@ -43,10 +43,21 @@ RsrSystemTestCase >> expectWhen: aPromise [
 ]
 
 { #category : 'initialization' }
-RsrSystemTestCase >> initializeInMemoryConnections [
+RsrSystemTestCase >> initializeInMemorySessions [
 
-	| template sessionPair |
-	template := RsrInMemoryTransportTemplate new.
+	self openSessionsFromTemplate: RsrInMemoryTransportTemplate new
+]
+
+{ #category : 'initialization' }
+RsrSystemTestCase >> initializeSocketSessions [
+
+	self openSessionsFromTemplate: RsrInternalSocketTransportTemplate new
+]
+
+{ #category : 'private' }
+RsrSystemTestCase >> openSessionsFromTemplate: template [
+
+	| sessionPair |
 	sessionPair := RsrTransport openRsrSessionFrom: template.
 	rsrSessionA := sessionPair first.
 	rsrSessionB := sessionPair second.
@@ -55,26 +66,13 @@ RsrSystemTestCase >> initializeInMemoryConnections [
 		assert: rsrSessionB isOpen
 ]
 
-{ #category : 'initialization' }
-RsrSystemTestCase >> initializeSocketConnections [
-
-	| spec |
-	spec := RsrInternalSocketConnectionSpecification new.
-	spec connect.
-	rsrSessionA := spec connectionA.
-	rsrSessionB := spec connectionB.
-	self
-		assert: rsrSessionA isOpen;
-		assert: rsrSessionB isOpen
-]
-
 { #category : 'accessing' }
 RsrSystemTestCase >> peerOf: aService [
 
-	| connectionInPeer |
-	connectionInPeer := aService _connection.
-	connectionInPeer ifNil: [self assert: false description: 'Unable to obtain the peer of an unregistered Service.'].
-	^connectionInPeer == rsrSessionA
+	| sessionInPeer |
+	sessionInPeer := aService _rsrSession.
+	sessionInPeer ifNil: [self assert: false description: 'Unable to obtain the peer of an unregistered Service.'].
+	^sessionInPeer == rsrSessionA
 		ifTrue: [rsrSessionB serviceAt: aService _id]
 		ifFalse: [rsrSessionA serviceAt: aService _id]
 ]

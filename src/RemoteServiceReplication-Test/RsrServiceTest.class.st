@@ -74,7 +74,7 @@ RsrServiceTest >> testInitialization [
 		assert: instance _id
 		equals: nil.
 	self
-		assert: instance _connection
+		assert: instance _rsrSession
 		equals: nil
 ]
 

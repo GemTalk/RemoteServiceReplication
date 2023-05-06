@@ -8,5 +8,5 @@ Class {
 RsrSocketSpeciesEquality >> setUp [
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketSessions
 ]

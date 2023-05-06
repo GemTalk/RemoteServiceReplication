@@ -52,7 +52,7 @@ RsrBinaryStreamChannel >> close [
 RsrBinaryStreamChannel >> disconnected [
 	"The socket has disconnected so the channel is no longer open."
 
-	self connection channelDisconnected
+	self rsrSession channelDisconnected
 ]
 
 { #category : 'accessing' }

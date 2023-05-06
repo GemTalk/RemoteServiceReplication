@@ -2,13 +2,13 @@ Extension { #name : 'RsrConnection' }
 
 { #category : '*remoteservicereplication' }
 RsrConnection >> _ensureRegistered: aService [
-	aService _connection == nil
+	aService _rsrSession == nil
 		ifTrue: [ 
 			self _register: aService as: oidSpigot next.
 			aService postRegistration.
 			^ self ].
-	aService _connection == self
-		ifFalse: [ ^ RsrAlreadyRegistered signalService: aService intendedConnection: self ]
+	aService _rsrSession == self
+		ifFalse: [ ^ RsrAlreadyRegistered signalService: aService intendedRsrSession: self ]
 ]
 
 { #category : '*remoteservicereplication' }
