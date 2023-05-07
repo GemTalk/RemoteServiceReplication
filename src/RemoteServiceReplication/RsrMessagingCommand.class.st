@@ -9,13 +9,13 @@ Class {
 }
 
 { #category : 'executing' }
-RsrMessagingCommand >> reifyAllIn: aConnection [
+RsrMessagingCommand >> reifyAllIn: anRsrSession [
 
 	| servicesStrongly |
 	"Must keep a strong reference to each service until we're sure a parent service is reified"
 	servicesStrongly := snapshots collect: [ :each | 
-		                    (each instanceIn: aConnection) preUpdate ].
-	snapshots do: [ :each | each reifyIn: aConnection ].
+		                    (each instanceIn: anRsrSession) preUpdate ].
+	snapshots do: [ :each | each reifyIn: anRsrSession ].
 	servicesStrongly do: [ :each | each postUpdate ].
 	^ servicesStrongly "Sender must keep a strong reference until the root is anchored."
 ]

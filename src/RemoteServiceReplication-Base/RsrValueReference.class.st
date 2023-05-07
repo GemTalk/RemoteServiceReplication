@@ -32,7 +32,7 @@ RsrValueReference >> intermediate: anObject [
 ]
 
 { #category : 'resolving' }
-RsrValueReference >> resolve: aConnection [
+RsrValueReference >> resolve: anRsrSession [
 
 	^intermediate
 ]

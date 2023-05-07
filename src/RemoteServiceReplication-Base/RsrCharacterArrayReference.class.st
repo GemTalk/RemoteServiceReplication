@@ -47,7 +47,7 @@ using: anEncoder [
 ]
 
 { #category : 'resolving' }
-RsrCharacterArrayReference >> resolve: aConnection [
+RsrCharacterArrayReference >> resolve: anRsrSession [
 
 	^self convertBytes: intermediate
 ]

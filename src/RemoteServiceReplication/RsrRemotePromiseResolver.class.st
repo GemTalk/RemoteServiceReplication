@@ -9,9 +9,9 @@ Class {
 	#instVars : [
 		'mutex',
 		'sendMessage',
-		'connection',
 		'extraRoots',
-		'hasResolved'
+		'hasResolved',
+		'rsrSession'
 	],
 	#category : 'RemoteServiceReplication'
 }
@@ -94,13 +94,13 @@ RsrRemotePromiseResolver >> resolution: result [
 { #category : 'accessing' }
 RsrRemotePromiseResolver >> rsrSession [
 
-	^connection
+	^rsrSession
 ]
 
 { #category : 'accessing' }
-RsrRemotePromiseResolver >> rsrSession: aConnection [
+RsrRemotePromiseResolver >> rsrSession: anRsrSession [
 
-	connection := aConnection
+	rsrSession := anRsrSession
 ]
 
 { #category : 'accessing' }

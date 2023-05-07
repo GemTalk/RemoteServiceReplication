@@ -21,10 +21,10 @@ RsrOrderedCollectionReference class >> typeIdentifier [
 ]
 
 { #category : 'other' }
-RsrOrderedCollectionReference >> resolve: aConnection [
+RsrOrderedCollectionReference >> resolve: anRsrSession [
 
 	| oc |
 	oc := OrderedCollection new: intermediate size.
-	intermediate do: [:each | oc add: (each resolve: aConnection)].
+	intermediate do: [:each | oc add: (each resolve: anRsrSession)].
 	^oc
 ]

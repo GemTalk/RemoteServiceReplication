@@ -137,17 +137,17 @@ RsrServiceSnapshot >> instanceIn: anRsrSession [
 ]
 
 { #category : 'reifying' }
-RsrServiceSnapshot >> reifyIn: aConnection [
+RsrServiceSnapshot >> reifyIn: anRsrSession [
 
 	| instance referenceStream |
-	instance := self instanceIn: aConnection.
+	instance := self instanceIn: anRsrSession.
 	(self class reflectedVariablesFor: instance) size = slots size 
 		ifFalse: [ self error: 'Incorrectly encoded instance detected' ].
 	referenceStream := ReadStream on: slots.
 	self class reflectedVariableIndicesFor: instance do: [ :index | 
 		instance
 			instVarAt: index
-			put: (referenceStream next resolve: aConnection) ].
+			put: (referenceStream next resolve: anRsrSession) ].
 	^ instance
 ]
 

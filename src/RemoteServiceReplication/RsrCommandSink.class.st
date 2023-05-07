@@ -73,7 +73,7 @@ RsrCommandSink >> outStream [
 { #category : 'accessing' }
 RsrCommandSink >> runLoopName [
 
-	^'Connection Writing'
+	^'Channel Writing'
 ]
 
 { #category : 'commands' }

@@ -164,7 +164,7 @@ RsrService >> isServer [
 { #category : 'public-events' }
 RsrService >> postRegistration [
 	"This message is sent immediately after the Service
-	is registered with a Connection for the first time.
+	is registered with an RsrSession for the first time.
 
 	The framework views both Client and Server peers as
 	the same object. When a peer is created by the
@@ -191,14 +191,14 @@ RsrService >> preUpdate [
 ]
 
 { #category : 'public-registration' }
-RsrService >> registerWith: aConnection [
+RsrService >> registerWith: anRsrSession [
 
-	aConnection _ensureRegistered: self
+	anRsrSession _ensureRegistered: self
 ]
 
 { #category : 'public-accessing' }
 RsrService >> rsrSession [
-	"Returns the Connection associated w/ the receiver."
+	"Returns the Session associated w/ the receiver."
 
 	^self _rsrSession
 ]

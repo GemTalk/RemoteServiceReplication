@@ -17,10 +17,10 @@ Class {
 		'log',
 		'registry',
 		'pendingMessages',
-		'specification',
 		'announcer',
 		'templateResolver',
-		'policy'
+		'policy',
+		'template'
 	],
 	#category : 'RemoteServiceReplication-Base'
 }
@@ -114,18 +114,18 @@ RsrSession >> policy: aPolicy [
 ]
 
 { #category : 'public-accessing' }
-RsrSession >> specification [
-	"Returns the Specification used to create this Connection.
-	If the Connection was not create using a Specification, returns nil."
+RsrSession >> template [
+	"Returns the TransportTemplate used to create this Session.
+	If the Session was not create using a template, returns nil."
 
-	^specification
+	^template
 ]
 
 { #category : 'public-accessing' }
-RsrSession >> specification: aConnectionSpecification [
-	"Store the Specification used to the create this Connection."
+RsrSession >> template: aTransportTemplate [
+	"Store the template used to the create this Session."
 
-	specification := aConnectionSpecification
+	template := aTransportTemplate
 ]
 
 { #category : 'public-accessing' }
@@ -145,7 +145,7 @@ RsrSession >> templateResolver: aTemplateResolver [
 
 { #category : 'public-accessing' }
 RsrSession >> vitalProcesses [
-	"Return the set of processes required in order for this RSR connection to function.
+	"Return the set of processes required in order for this RSR session to function.
 	This may be a subset of the processes used by RSR.
 	For instance, in GemStone, this need not return the ephemeron mourning
 	process as this isn't critical to the basic functioning of RSR."

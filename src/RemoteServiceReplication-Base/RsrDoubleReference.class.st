@@ -39,7 +39,7 @@ using: anEncoder [
 ]
 
 { #category : 'resolving' }
-RsrDoubleReference >> resolve: aConnection [
+RsrDoubleReference >> resolve: anRsrSession [
 
 	^self convertBytes: intermediate
 ]

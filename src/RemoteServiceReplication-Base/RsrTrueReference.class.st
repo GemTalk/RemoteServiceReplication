@@ -20,7 +20,7 @@ RsrTrueReference class >> typeIdentifier [
 ]
 
 { #category : 'resolving' }
-RsrTrueReference >> resolve: aConnection [
+RsrTrueReference >> resolve: anRsrSession [
 
 	^true
 ]

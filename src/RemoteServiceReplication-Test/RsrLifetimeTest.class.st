@@ -33,13 +33,13 @@ RsrLifetimeTest >> testEnsurePushedClientServerLifetime [
 		registerWith: rsrSessionA;
 		synchronize.
 	sid := client _id.
-	self maximumReclamation. "Ensure the Server is strongly referenced in connectionB."
+	self maximumReclamation. "Ensure the Server is strongly referenced in sessionB."
 	server := rsrSessionB
 		serviceAt: sid
 		ifAbsent: [self assert: false].
 	client := nil.
 	self maximumReclamation. "Ensure the Client is garbage collected."
-	(Delay forSeconds: 1) wait. "Ensure the ReleaseServices Command is propogated and processed by connectionB."
+	(Delay forSeconds: 1) wait. "Ensure the ReleaseServices Command is propogated and processed by sessionB."
 	self maximumReclamation. "Ensure the Server is still referenced even after a garbage collect."
 	actual := rsrSessionA
 		serviceAt: sid

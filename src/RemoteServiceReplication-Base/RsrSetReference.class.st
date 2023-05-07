@@ -30,10 +30,10 @@ RsrSetReference class >> typeIdentifier [
 ]
 
 { #category : 'resolving' }
-RsrSetReference >> resolve: aConnection [
+RsrSetReference >> resolve: anRsrSession [
 
 	| set |
 	set := Set new: intermediate size * 2.
-	intermediate do: [:each | set add: (each resolve: aConnection)].
+	intermediate do: [:each | set add: (each resolve: anRsrSession)].
 	^set
 ]

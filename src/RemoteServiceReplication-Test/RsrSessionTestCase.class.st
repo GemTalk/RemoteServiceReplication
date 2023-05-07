@@ -113,7 +113,7 @@ RsrSessionTestCase >> testWaitUntilClose [
 			[rsrSessionB waitUntilClose.
 			marker := true]
 				ensure: [semaphore signal]]
-		named: 'Pending Connection Closure'.
+		named: 'Pending Session Closure'.
 	semaphore wait.
 	self deny: marker.
 	rsrSessionA close.

@@ -50,5 +50,5 @@ RsrCommandSource >> nextCommand [
 { #category : 'accessing' }
 RsrCommandSource >> runLoopName [
 
-	^'Connection Reading'
+	^'Channel Reading'
 ]

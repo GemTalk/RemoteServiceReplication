@@ -51,7 +51,7 @@ using: anEncoder [
 ]
 
 { #category : 'resolving' }
-RsrDateAndTimeReference >> resolve: aConnection [
+RsrDateAndTimeReference >> resolve: anRsrSession [
 
 	^RsrDateAndTime fromMicroseconds: intermediate
 ]

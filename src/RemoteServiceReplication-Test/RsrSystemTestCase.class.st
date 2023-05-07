@@ -79,9 +79,9 @@ RsrSystemTestCase >> peerOf: aService [
 
 { #category : 'initialization' }
 RsrSystemTestCase >> setUp [
-	"Subclasses need to start their connections by calling
-	#initializeInMemoryConnections or #initializeSocketConnections.
-	#tearDown will close connections."
+	"Subclasses need to start their sessions by sending
+	#initializeInMemorySessions or #initializeSocketSessions.
+	#tearDown will close sessions."
 
 	super setUp
 ]
@@ -89,8 +89,8 @@ RsrSystemTestCase >> setUp [
 { #category : 'initialization' }
 RsrSystemTestCase >> tearDown [
 
-	rsrSessionA ifNotNil: [:conn | conn close].
-	rsrSessionB ifNotNil: [:conn | conn close].
+	rsrSessionA ifNotNil: [:sess | sess close].
+	rsrSessionB ifNotNil: [:sess | sess close].
 	rsrSessionA := rsrSessionB := nil.
 	super tearDown
 ]

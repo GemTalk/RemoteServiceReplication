@@ -15,7 +15,7 @@ Class {
 { #category : 'testing' }
 RsrAbstractPolicy >> permits: aTemplate [
 	"Returning true to allow the framework to instantiate 
-	a Service received over the Connection."
+	a Service received over the Session's channel."
 
 	self subclassResponsibility
 ]

@@ -66,9 +66,9 @@ RsrDeliverResponse >> reportOn: aLog [
 ]
 
 { #category : 'reporting' }
-RsrDeliverResponse >> reportUnknownTransactionIn: aConnection [
+RsrDeliverResponse >> reportUnknownTransactionIn: anRsrSession [
 
-	aConnection log error: 'Unknown transaction (', self transaction asString, ') while processing Response'
+	anRsrSession log error: 'Unknown transaction (', self transaction asString, ') while processing Response'
 ]
 
 { #category : 'accessing' }

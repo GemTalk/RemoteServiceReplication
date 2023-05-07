@@ -51,8 +51,8 @@ RsrReference class >> typeIdentifier [
 ]
 
 { #category : 'resolving' }
-RsrReference >> resolve: aConnection [
-	"Resolve the reference in the context of the provided Connection."
+RsrReference >> resolve: anRsrSession [
+	"Resolve the reference in the context of the provided Session."
 
 	^self subclassResponsibility
 ]

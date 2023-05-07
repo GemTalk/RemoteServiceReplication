@@ -21,7 +21,7 @@ RsrArrayReference class >> typeIdentifier [
 ]
 
 { #category : 'resolving' }
-RsrArrayReference >> resolve: aConnection [
+RsrArrayReference >> resolve: anRsrSession [
 
-	^intermediate collect: [:each | each resolve: aConnection]
+	^intermediate collect: [:each | each resolve: anRsrSession]
 ]

@@ -5,29 +5,29 @@ Class {
 	#name : 'RsrSessionClosed',
 	#superclass : 'RsrSessionStateAnnouncement',
 	#instVars : [
-		'connection'
+		'rsrSession'
 	],
 	#category : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'instance creation' }
-RsrSessionClosed class >> rsrSession: aConnection [
+RsrSessionClosed class >> rsrSession: anRsrSession [
 
 	^self new
-		rsrSession: aConnection;
+		rsrSession: anRsrSession;
 		yourself
 ]
 
 { #category : 'accessing' }
 RsrSessionClosed >> rsrSession [
-	"The Connection that was closed."
+	"The Session that was closed."
 
-	^connection
+	^rsrSession
 ]
 
 { #category : 'accessing' }
-RsrSessionClosed >> rsrSession: aConnection [
-	"Store the Connection that was closed."
+RsrSessionClosed >> rsrSession: anRsrSession [
+	"Store the Session that was closed."
 
-	connection := aConnection
+	rsrSession := anRsrSession
 ]

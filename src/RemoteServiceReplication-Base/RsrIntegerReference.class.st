@@ -72,7 +72,7 @@ using: anEncoder [
 ]
 
 { #category : 'resolving' }
-RsrIntegerReference >> resolve: aConnection [
+RsrIntegerReference >> resolve: anRsrSession [
 
 	^self convertBytes: intermediate
 ]

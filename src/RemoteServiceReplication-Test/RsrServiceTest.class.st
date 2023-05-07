@@ -21,7 +21,7 @@ RsrServiceTest >> mirror: aService [
 ]
 
 { #category : 'running' }
-RsrServiceTest >> testAnalyzeServiceRegisteredWithDifferentConnection [
+RsrServiceTest >> testAnalyzeServiceRegisteredWithDifferentSession [
 
 	| instance analysis |
 	instance := RsrRemoteAction clientClass new.

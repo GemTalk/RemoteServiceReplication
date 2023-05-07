@@ -64,7 +64,7 @@ RsrChannel >> open [
 
 { #category : 'events' }
 RsrChannel >> received: aCommand [
-	"A command has come in over the channel. Propogate it to the Connection."
+	"A command has come in over the channel. Propagate it to the Session."
 
 	self rsrSession _receivedCommand: aCommand
 ]

@@ -49,7 +49,7 @@ using: anEncoder [
 ]
 
 { #category : 'resolving' }
-RsrCharacterReference >> resolve: aConnection [
+RsrCharacterReference >> resolve: anRsrSession [
 
 	^Character codePoint: intermediate
 ]

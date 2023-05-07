@@ -87,7 +87,7 @@ RsrMessageSendingTest >> testChangeRemoteState [
 ]
 
 { #category : 'running-close during message' }
-RsrMessageSendingTest >> testCloseConnectionDuringMessageSend [
+RsrMessageSendingTest >> testCloseSessionDuringMessageSend [
 
 	| client server promise reason |
 	client := RsrRemoteActionClient new

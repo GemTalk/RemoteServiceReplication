@@ -46,9 +46,9 @@ using: anEncoder [
 ]
 
 { #category : 'resolving' }
-RsrServiceReference >> resolve: aConnection [
+RsrServiceReference >> resolve: anRsrSession [
 
-	^aConnection serviceAt: self sid
+	^anRsrSession serviceAt: self sid
 ]
 
 { #category : 'accessing' }

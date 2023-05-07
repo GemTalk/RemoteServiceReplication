@@ -45,7 +45,7 @@ using: anEncoder [
 ]
 
 { #category : 'resolving' }
-RsrNilReference >> resolve: aConnection [
+RsrNilReference >> resolve: anRsrSession [
 
 	^nil
 ]

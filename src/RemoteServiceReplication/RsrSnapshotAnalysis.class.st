@@ -120,9 +120,9 @@ RsrSnapshotAnalysis >> rsrSession [
 ]
 
 { #category : 'accessing' }
-RsrSnapshotAnalysis >> rsrSession: aConnection [
+RsrSnapshotAnalysis >> rsrSession: anRsrSession [
 
-	rsrSession := aConnection
+	rsrSession := anRsrSession
 ]
 
 { #category : 'actions' }
