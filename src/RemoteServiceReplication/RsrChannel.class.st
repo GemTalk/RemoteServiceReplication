@@ -14,6 +14,26 @@ Class {
 	#category : 'RemoteServiceReplication'
 }
 
+{ #category : 'private' }
+RsrChannel class >> integerLimit [
+
+	"Answer a large number that is a SmallInteger on all supported 64-bit platforms"
+
+	^ 16rFFFFFFFFFFFFFFF
+]
+
+{ #category : 'private' }
+RsrChannel class >> negativeIdRange [
+
+	^ -1 to: self integerLimit negated by: -1
+]
+
+{ #category : 'private' }
+RsrChannel class >> positiveIdRange [
+
+	^ 1 to: self integerLimit by: 1
+]
+
 { #category : 'accessing' }
 RsrChannel >> addCommunicationProcessesTo: aSet [
 	"Add all processes used for Communication to the provided set."
@@ -32,6 +52,16 @@ RsrChannel >> close [
 RsrChannel >> genericError: anError [
 
 	^self rsrSession unknownError: anError
+]
+
+{ #category : 'accessing' }
+RsrChannel >> idInterval [
+
+	"Answer an Interval that defines acceptable unique IDs for my Session.
+	All elements must be integers, and must be distinct from the interval 
+	used by the other ends of this Channel."
+
+	^ self subclassResponsibility
 ]
 
 { #category : 'testing' }
@@ -60,6 +90,14 @@ RsrChannel >> open [
 	"Ensure the channel is open and ready for communication."
 
 	^self subclassResponsibility
+]
+
+{ #category : 'lifecycle' }
+RsrChannel >> openRsrSession [
+
+	"Create and answer an RsrSession with the receiver as its channel."
+
+	^ RsrSession forChannel: self
 ]
 
 { #category : 'events' }

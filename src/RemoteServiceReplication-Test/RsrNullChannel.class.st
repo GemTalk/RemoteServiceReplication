@@ -21,10 +21,28 @@ RsrNullChannel >> close [
 	"NOP"
 ]
 
+{ #category : 'accessing' }
+RsrNullChannel >> idInterval [
+
+	"Answer an Interval that defines acceptable unique IDs for my Session.
+	All elements must be integers, and must be distinct from the interval 
+	used by the other ends of this Channel."
+
+	^ self class positiveIdRange
+]
+
 { #category : 'testing' }
 RsrNullChannel >> isConnected [
 
 	^true
+]
+
+{ #category : 'testing' }
+RsrNullChannel >> isOpen [
+
+	"At NullChannel, we never close"
+
+	^ true
 ]
 
 { #category : 'accessing' }

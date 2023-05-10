@@ -41,6 +41,12 @@ oidSpigot: anOidSpigot [
 ]
 
 { #category : 'instance creation' }
+RsrSession class >> forChannel: aChannel [
+
+	^ super new initializeForChannel: aChannel
+]
+
+{ #category : 'instance creation' }
 RsrSession class >> new [
 	"Instances of RsrSession should not be created via #new.
 	Instead use a TransportTemplate or build from an open Channel.
@@ -84,6 +90,19 @@ RsrSession >> close [
 	pm do: [:each | each promise break: RsrSessionClosedBeforeReceivingResponse new].
 	registry := RsrThreadSafeDictionary new.
 	announcer announce: (RsrSessionClosed rsrSession: self)
+]
+
+{ #category : 'initialization' }
+RsrSession >> initializeForChannel: aChannel [
+
+	| idInterval |
+	aChannel isOpen ifFalse: [ ^ RsrChannelNotOpen signal ].
+	template := nil. "If there is a template, set it later."
+	channel := aChannel.
+	idInterval := channel idInterval.
+	transactionSpigot := RsrThreadSafeNumericSpigot onInterval:
+		                     idInterval.
+	oidSpigot := RsrThreadSafeNumericSpigot onInterval: idInterval
 ]
 
 { #category : 'public-testing' }

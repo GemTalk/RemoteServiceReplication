@@ -2,53 +2,36 @@ Class {
 	#name : 'RsrNumericSpigot',
 	#superclass : 'RsrObject',
 	#instVars : [
-		'current',
-		'step'
+		'stream'
 	],
 	#category : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }
-RsrNumericSpigot class >> naturals [
-
-	^self
-		start: 1
-		step: 1
-]
-
-{ #category : 'instance creation' }
 RsrNumericSpigot class >> new [
 
-	^self
-		start: 0
-		step: 1
+	"Send #onInterval:, not #new"
+
+	^ self shouldNotImplement
 ]
 
 { #category : 'instance creation' }
-RsrNumericSpigot class >> start: aNumber
-step: anIncrement [
+RsrNumericSpigot class >> onInterval: anInterval [
 
-	^super new
-		start: aNumber;
-		step: anIncrement;
-		yourself
+	^ super new initializeForInterval: anInterval
 ]
 
-{ #category : 'accessing' }
-RsrNumericSpigot >> negated [
+{ #category : 'initializing' }
+RsrNumericSpigot >> initializeForInterval: anInterval [
 
-	^self class
-		start: current negated
-		step: step negated
+	stream := ReadStream on: anInterval
 ]
 
 { #category : 'accessing' }
 RsrNumericSpigot >> next [
 
-	| result |
-	result := current.
-	current := current + step.
-	^result
+	stream atEnd ifTrue: [ ^ RsrOutOfRange signal ].
+	^ stream next
 ]
 
 { #category : 'accessing' }
@@ -58,22 +41,4 @@ RsrNumericSpigot >> next: aCount [
 	result := Array new: aCount.
 	1 to: aCount do: [:i | result at: i put: self next].
 	^result
-]
-
-{ #category : 'accessing' }
-RsrNumericSpigot >> start: aNumber [
-
-	current := aNumber
-]
-
-{ #category : 'accessing' }
-RsrNumericSpigot >> step [
-
-	^step
-]
-
-{ #category : 'accessing' }
-RsrNumericSpigot >> step: anIncrement [
-
-	step := anIncrement
 ]

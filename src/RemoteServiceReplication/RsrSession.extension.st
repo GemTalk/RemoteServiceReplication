@@ -148,7 +148,6 @@ RsrSession >> channelDisconnected [
 RsrSession >> initialize [
 
 	super initialize.
-	transactionSpigot := RsrThreadSafeNumericSpigot naturals.
 	pendingMessages := RsrThreadSafeDictionary new.
 	registry := RsrThreadSafeDictionary new.
 	log := RsrLog new.
