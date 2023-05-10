@@ -1,18 +1,33 @@
 "
 I'm abstract. My subclasses define rather stupid data-holder objects that specify how to build one or two instance of a concrete subclass of RsrTransport.
 
-To use a template, 
-	RsrTransport buildFrom: aTemplate.
-or
-	RsrTransport openFrom: aTemplate.
-or
-	RsrTransport openSessionFrom: aTemplate.
-
-What is answered differs among my subclasses; see their class comments for details.
-
 "
 Class {
 	#name : 'RsrTransportTemplate',
 	#superclass : 'RsrObject',
 	#category : 'RemoteServiceReplication'
 }
+
+{ #category : 'testing' }
+RsrTransportTemplate >> buildsSingleTransport [
+
+	"Answer true if I specify one transport."
+
+	^ false
+]
+
+{ #category : 'testing' }
+RsrTransportTemplate >> buildsTransportPair [
+
+	"Answer true if I specify a pair of internal transports."
+
+	^ false
+]
+
+{ #category : 'accessing' }
+RsrTransportTemplate >> transportClass [
+
+	"Answer the class of Transport that I describe; a concrete subclass of RsrTransport."
+
+	^ self subclassResponsibility
+]

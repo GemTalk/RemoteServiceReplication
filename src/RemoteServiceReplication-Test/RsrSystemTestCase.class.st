@@ -45,7 +45,7 @@ RsrSystemTestCase >> expectWhen: aPromise [
 { #category : 'initialization' }
 RsrSystemTestCase >> initializeInMemorySessions [
 
-	self openSessionsFromTemplate: RsrInMemoryTransportTemplate new
+	self openSessionsFromTemplate: RsrSharedQueueTransportTemplate new
 ]
 
 { #category : 'initialization' }
@@ -58,7 +58,7 @@ RsrSystemTestCase >> initializeSocketSessions [
 RsrSystemTestCase >> openSessionsFromTemplate: template [
 
 	| sessionPair |
-	sessionPair := RsrTransport openRsrSessionFrom: template.
+	sessionPair := RsrExternalTransport openRsrSessionPairFrom: template.
 	rsrSessionA := sessionPair first.
 	rsrSessionB := sessionPair second.
 	self
