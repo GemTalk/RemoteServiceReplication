@@ -1,9 +1,17 @@
 "
 I am abstract. Each RsrChannel uses a Transport to send and receive bytes or objects (depending on the type of Channel). Each Transport is responsible for the delivery of those bytes or objects to its peer Transport.
+
+A Transport provides to a Channel a pair of streams (readStream and writeStream) and a description object which the Channel can use to determine the type and configuration of the Transport it is using.
 "
 Class {
 	#name : 'RsrTransport',
 	#superclass : 'RsrObject',
+	#instVars : [
+		'readStream',
+		'writeStream',
+		'description',
+		'template'
+	],
 	#category : 'RemoteServiceReplication'
 }
 
@@ -51,15 +59,17 @@ RsrTransport class >> openPairFrom: aTransportTemplate [
 	| transports semaphores |
 	transports := self buildPairFrom: aTransportTemplate.
 	semaphores := (1 to: 2) collect: [ :x | Semaphore new ].
-	
+
 	"The transports talk to each other. For some transport types 
 	(e.g. TCP sockets) neither open can succeed until the other
 	is attempted, so do them in separate threads and wait for
 	both to succeed."
 	transports with: semaphores do: [ :xport :sem | 
-		[ 
-		xport open.
-		sem signal ] fork ].
+		RsrProcessModel
+			fork: [ 
+				xport open.
+				sem signal ]
+			named: 'TransportPairOpen' ].
 	semaphores do: [ :sem | sem wait ].
 	^ transports
 ]
@@ -82,4 +92,64 @@ RsrTransport class >> openRsrSessionPairFrom: aTransportTemplate [
 	| transports |
 	transports := self openPairFrom: aTransportTemplate.
 	^ transports collect: [ :each | each openRsrSession ].
+]
+
+{ #category : 'accessing' }
+RsrTransport >> description [
+
+	^ description
+]
+
+{ #category : 'testing' }
+RsrTransport >> isOpen [
+
+	"Answer true if my streams are functional"
+
+	^ self subclassResponsibility
+]
+
+{ #category : 'operations' }
+RsrTransport >> open [
+
+	"Make myself ready to send and receive over my streams."
+
+	^ self subclassResponsibility
+]
+
+{ #category : 'accessing' }
+RsrTransport >> readStream [
+
+	^ readStream
+]
+
+{ #category : 'accessing' }
+RsrTransport >> readStream: aReadStream [
+
+	readStream := aReadStream
+]
+
+{ #category : 'accessing' }
+RsrTransport >> template [
+
+	"If I was created from an RsrTransportTemplate, answer it. Otherwise answer nil."
+
+	^ template
+]
+
+{ #category : 'accessing' }
+RsrTransport >> template: aTransportTemplate [
+
+	template := aTransportTemplate
+]
+
+{ #category : 'accessing' }
+RsrTransport >> writeStream [
+
+	^ writeStream
+]
+
+{ #category : 'accessing' }
+RsrTransport >> writeStream: aWriteStream [
+
+	writeStream := aWriteStream
 ]
