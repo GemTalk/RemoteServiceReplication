@@ -11,10 +11,10 @@ RsrInMemoryConnectionSpecification >> connect [
 	| aQueue bQueue channelA channelB |
 	aQueue := SharedQueue new.
 	bQueue := SharedQueue new.
-	channelA := RsrInMemoryChannel
+	channelA := RsrObjecChannel
 		inQueue: aQueue
 		outQueue: bQueue.
-	channelB := RsrInMemoryChannel
+	channelB := RsrObjecChannel
 		inQueue: bQueue
 		outQueue: aQueue.
 	connectionA := RsrSession

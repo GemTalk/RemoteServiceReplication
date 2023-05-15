@@ -31,7 +31,7 @@ RsrTlsConnectionInitiator >> connect [
 	stream connect.
 	stream timeout: SmallInteger maxVal.
 	handshake performOver: stream.
-	channel := RsrBinaryStreamChannel
+	channel := RsrByteChannel
 		inStream: stream
 		outStream: stream.
 	connection := RsrSession

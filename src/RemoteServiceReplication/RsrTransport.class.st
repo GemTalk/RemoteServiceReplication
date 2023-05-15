@@ -15,7 +15,7 @@ Class {
 	#category : 'RemoteServiceReplication'
 }
 
-{ #category : 'instance creation' }
+{ #category : 'OBSOLETE' }
 RsrTransport class >> buildFrom: aTransportTemplate [
 
 	"Use the given template to create a transport.
@@ -27,7 +27,7 @@ RsrTransport class >> buildFrom: aTransportTemplate [
 	^ aTransportTemplate transportClass buildFrom: aTransportTemplate
 ]
 
-{ #category : 'instance creation' }
+{ #category : 'OBSOLETE' }
 RsrTransport class >> buildPairFrom: aTransportTemplate [
 
 	"Use the given template to create a pair of transports.
@@ -39,7 +39,7 @@ RsrTransport class >> buildPairFrom: aTransportTemplate [
 	^ aTransportTemplate transportClass buildPairFrom: aTransportTemplate
 ]
 
-{ #category : 'instance creation' }
+{ #category : 'OBSOLETE' }
 RsrTransport class >> openFrom: aTransportTemplate [
 
 	"Use the given template to create a transport, and open it.
@@ -50,7 +50,7 @@ RsrTransport class >> openFrom: aTransportTemplate [
 	^ transport open
 ]
 
-{ #category : 'instance creation' }
+{ #category : 'OBSOLETE' }
 RsrTransport class >> openPairFrom: aTransportTemplate [
 
 	"Use the given template to create a transport pair, and open them.
@@ -74,7 +74,7 @@ RsrTransport class >> openPairFrom: aTransportTemplate [
 	^ transports
 ]
 
-{ #category : 'instance creation' }
+{ #category : 'OBSOLETE' }
 RsrTransport class >> openRsrSessionFrom: aTransportTemplate [
 
 	"Use the given template to create a transport, and open a channel and session that will use that transport. Answer the session."
@@ -84,7 +84,7 @@ RsrTransport class >> openRsrSessionFrom: aTransportTemplate [
 	^ transport openRsrSession
 ]
 
-{ #category : 'instance creation' }
+{ #category : 'OBSOLETE' }
 RsrTransport class >> openRsrSessionPairFrom: aTransportTemplate [
 
 	"Use the given template to create a transport, and open a channel and session that will use that transport. Answer the session."
@@ -92,6 +92,12 @@ RsrTransport class >> openRsrSessionPairFrom: aTransportTemplate [
 	| transports |
 	transports := self openPairFrom: aTransportTemplate.
 	^ transports collect: [ :each | each openRsrSession ].
+]
+
+{ #category : 'instance creation' }
+RsrTransport class >> readStream: aReadStream writeStream: aWriteStream [
+
+	^ self new readStream: aReadStream writeStream: aWriteStream
 ]
 
 { #category : 'accessing' }
@@ -116,6 +122,16 @@ RsrTransport >> open [
 	^ self subclassResponsibility
 ]
 
+{ #category : 'operations' }
+RsrTransport >> openRsrSession [
+
+	"Open and answer a Session that uses me as its transport."
+
+	| channel |
+	channel := RsrObsoleteChannel openOn: self.
+	^ channel openRsrSession
+]
+
 { #category : 'accessing' }
 RsrTransport >> readStream [
 
@@ -126,6 +142,14 @@ RsrTransport >> readStream [
 RsrTransport >> readStream: aReadStream [
 
 	readStream := aReadStream
+]
+
+{ #category : 'initialization' }
+RsrTransport >> readStream: aReadStream writeStream: aWriteStream [
+
+	readStream := aReadStream.
+	writeStream := aWriteStream.
+	^ self
 ]
 
 { #category : 'accessing' }

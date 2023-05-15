@@ -1,29 +1,6 @@
-"
-Example usage:
-
-	| aQueue bQueue channelA channelB |
-	aQueue := SharedQueue new.
-	bQueue := SharedQueue new.
-	channelA := RsrInMemoryChannel
-		inQueue: aQueue
-		outQueue: bQueue.
-	channelB := RsrInMemoryChannel
-		inQueue: bQueue
-		outQueue: aQueue.
-	connectionA := RsrConnection
-		channel: channelA
-		transactionSpigot: RsrThreadSafeNumericSpigot naturals
-		oidSpigot: RsrThreadSafeNumericSpigot naturals.
-	connectionB := RsrConnection
-		channel: channelB
-		transactionSpigot: RsrThreadSafeNumericSpigot naturals negated
-		oidSpigot: RsrThreadSafeNumericSpigot naturals negated.
-	connectionA open.
-	connectionB open.
-"
 Class {
-	#name : 'RsrInMemoryChannel',
-	#superclass : 'RsrChannel',
+	#name : 'RsrObjecChannel',
+	#superclass : 'RsrObsoleteChannel',
 	#instVars : [
 		'inQueue',
 		'outQueue',
@@ -33,7 +10,7 @@ Class {
 }
 
 { #category : 'instance creation' }
-RsrInMemoryChannel class >> inQueue: inQueue
+RsrObjecChannel class >> inQueue: inQueue
 outQueue: outQueue [
 
 	^self new
@@ -43,21 +20,21 @@ outQueue: outQueue [
 ]
 
 { #category : 'accessing' }
-RsrInMemoryChannel >> addCommunicationProcessesTo: aSet [
+RsrObjecChannel >> addCommunicationProcessesTo: aSet [
 	"Add all processes used for Communication to the provided set."
 	
 	aSet add: drainProcess 
 ]
 
 { #category : 'lifecycle' }
-RsrInMemoryChannel >> close [
+RsrObjecChannel >> close [
 
 	outQueue nextPut: nil.
 	inQueue nextPut: nil
 ]
 
 { #category : 'processing' }
-RsrInMemoryChannel >> drainLoop [
+RsrObjecChannel >> drainLoop [
 
 	| command |
 	[command := inQueue next.
@@ -68,25 +45,25 @@ RsrInMemoryChannel >> drainLoop [
 ]
 
 { #category : 'accessing' }
-RsrInMemoryChannel >> inQueue [
+RsrObjecChannel >> inQueue [
 
 	^inQueue
 ]
 
 { #category : 'accessing' }
-RsrInMemoryChannel >> inQueue: aSharedQueue [
+RsrObjecChannel >> inQueue: aSharedQueue [
 
 	inQueue := aSharedQueue
 ]
 
 { #category : 'testing' }
-RsrInMemoryChannel >> isConnected [
+RsrObjecChannel >> isConnected [
 
 	^drainProcess isNil not
 ]
 
 { #category : 'lifecycle' }
-RsrInMemoryChannel >> open [
+RsrObjecChannel >> open [
 
 	drainProcess := RsrProcessModel
 		fork:
@@ -97,19 +74,19 @@ RsrInMemoryChannel >> open [
 ]
 
 { #category : 'accessing' }
-RsrInMemoryChannel >> outQueue [
+RsrObjecChannel >> outQueue [
 
 	^outQueue
 ]
 
 { #category : 'accessing' }
-RsrInMemoryChannel >> outQueue: aSharedQueue [
+RsrObjecChannel >> outQueue: aSharedQueue [
 
 	outQueue := aSharedQueue
 ]
 
 { #category : 'lifecycle' }
-RsrInMemoryChannel >> send: aCommand [
+RsrObjecChannel >> send: aCommand [
 
 	outQueue nextPut: aCommand
 ]

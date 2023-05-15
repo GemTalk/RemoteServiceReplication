@@ -1,127 +1,95 @@
 "
-No class-specific documentation for RsrChannel, hierarchy is:
-Object
-  RsrObject
-    RsrChannel
+I manage communication between an RsrSession and an RsrTransport. I communicate with my Session via messages that have a Command as an argument. Communication with the Transport is via a pair of streams. Depending on the type of Transport, this can be a byte stream or an object stream, the latter being able to transmit Command objects as well as byte objects.
 
+I delegate to HandshakeSteps to open a channel, and to ChannelLoops once the channel is open. An appropriate RsrCodec is used to translate between higher-level objects and objects (often bytes) that are the language spoken by the Transport.
+ 
+Internal Representation and Key Implementation Points.
+
+    Instance Variables
+
+	openingSteps:		<SequenceableCollection of RsrHandshakeSteps> 
+			The steps to be followed, in order, to open the channel on top of an already-open Transport.
+
+	rsrSession:		<RsrSession> 
+			The session I serve.
+			
+	shouldInitiate:	<Boolean>
+			True if during openingSteps that require asymmetry I am the party that should
+			""speak"" first, False if I am the party that should listen and reply,
+			nil if my handshake role has not yet been determined.
+			Once I am an open Channel, I am a peer of my counterpart Channel and this
+			distinction is not needed.
+
+	sink:		<RsrCommandSink> 
+			Manages a Process which takes Command objects, encodes them if necessary, 
+			and puts them on my Transport's writeStream
+
+	source:		<RsrCommandSource> 
+			Manages a Process which Reads from my Transport's readStream and decodes
+			what is received into Command objects. 
+
+	transport:		<RsrTransport>
+			One end of a low-level means for communicating with another Session through
+			another Channel
+
+
+    Implementation Points
 "
 Class {
 	#name : 'RsrChannel',
 	#superclass : 'RsrObject',
 	#instVars : [
-		'rsrSession'
+		'rsrSession',
+		'transport',
+		'sink',
+		'source',
+		'openingSteps',
+		'shouldInitiate'
 	],
 	#category : 'RemoteServiceReplication'
 }
 
-{ #category : 'private' }
-RsrChannel class >> integerLimit [
+{ #category : 'instance creation' }
+RsrChannel class >> transport: aTransport [
 
-	"Answer a large number that is a SmallInteger on all supported 64-bit platforms"
+	"Answer an instance that will use the given Transport and with a default collection of 
+	openingSteps. The instance is not yet open."
 
-	^ 16rFFFFFFFFFFFFFFF
+	^ self new transport: aTransport
 ]
 
-{ #category : 'private' }
-RsrChannel class >> negativeIdRange [
+{ #category : 'initialization' }
+RsrChannel >> defaultOpeningSteps [
 
-	^ -1 to: self integerLimit negated by: -1
+	"Answer the default sequence of handshake classes that will handle opening an instance. 
+	These default step classes can be appended to by sending an instance #addOpeningStep:
+	or overridden altogather by sending #openingSteps"
+
+	^ { 
+		  RsrHandshakeRoleNegotiation.
+		  RsrProtocolVersionNegotiation }
 ]
 
-{ #category : 'private' }
-RsrChannel class >> positiveIdRange [
+{ #category : 'initialization' }
+RsrChannel >> initialize [
 
-	^ 1 to: self integerLimit by: 1
-]
-
-{ #category : 'accessing' }
-RsrChannel >> addCommunicationProcessesTo: aSet [
-	"Add all processes used for Communication to the provided set."
-	
-	self subclassResponsibility
-]
-
-{ #category : 'lifecycle' }
-RsrChannel >> close [
-	"Ensure the channel is closed to further communication."
-
-	^self subclassResponsibility
-]
-
-{ #category : 'events' }
-RsrChannel >> genericError: anError [
-
-	^self rsrSession unknownError: anError
+	super initialize.
+	sink := RsrCommandSink on: self.
+	source := RsrCommandSource on: self.
+	self openingSteps: self defaultOpeningSteps
 ]
 
 { #category : 'accessing' }
-RsrChannel >> idInterval [
+RsrChannel >> openingSteps: aSequenceableCollection [
 
-	"Answer an Interval that defines acceptable unique IDs for my Session.
-	All elements must be integers, and must be distinct from the interval 
-	used by the other ends of this Channel."
+	"Note that this is a collection of *classes*, not instances.
+	Each responds to the protocol of RsrHandshakeStep."
 
-	^ self subclassResponsibility
-]
-
-{ #category : 'testing' }
-RsrChannel >> isConnected [
-	"Report whether the Channel is open between Connections."
-
-	^self subclassResponsibility
-]
-
-{ #category : 'testing' }
-RsrChannel >> isOpen [
-
-	"Report whether the Channel is open between RsrSessions."
-
-	^ self subclassResponsibility
+	openingSteps := aSequenceableCollection
 ]
 
 { #category : 'accessing' }
-RsrChannel >> log [
+RsrChannel >> shouldInitiate: aBoolean [
 
-	^self rsrSession log
-]
-
-{ #category : 'lifecycle' }
-RsrChannel >> open [
-	"Ensure the channel is open and ready for communication."
-
-	^self subclassResponsibility
-]
-
-{ #category : 'lifecycle' }
-RsrChannel >> openRsrSession [
-
-	"Create and answer an RsrSession with the receiver as its channel."
-
-	^ RsrSession forChannel: self
-]
-
-{ #category : 'events' }
-RsrChannel >> received: aCommand [
-	"A command has come in over the channel. Propagate it to the Session."
-
-	self rsrSession _receivedCommand: aCommand
-]
-
-{ #category : 'accessing' }
-RsrChannel >> rsrSession [
-
-	^rsrSession
-]
-
-{ #category : 'accessing' }
-RsrChannel >> rsrSession: anRsrSession [
-
-	rsrSession := anRsrSession
-]
-
-{ #category : 'events' }
-RsrChannel >> send: aCommand [
-	"Send the provided command over the channel."
-
-	^self subclassResponsibility
+	shouldInitiate := aBoolean
 ]

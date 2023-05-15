@@ -1,11 +1,3 @@
-"
-No class-specific documentation for RsrCommandSink, hierarchy is:
-Object
-  RsrObject
-    RsrEventLoop( process connection state)
-      RsrCommandSink( queue)
-
-"
 Class {
 	#name : 'RsrCommandSink',
 	#superclass : 'RsrStreamChannelLoop',

@@ -17,8 +17,16 @@ Class {
 	#category : 'RemoteServiceReplication'
 }
 
+{ #category : 'private' }
+RsrProtocolVersionNegotiation class >> classForChannel: aChannel [
+
+	^ aChannel shouldInitiate
+		  ifTrue: [ RsrProtocolVersionNegotiationInitiator ]
+		  ifFalse: [ RsrProtocolVersionNegotiationResponder ]
+]
+
 { #category : 'accessing' }
-RsrProtocolVersionNegotiation >> codec [
+RsrProtocolVersionNegotiation >> newCodec [
 
 	^RsrProtocolVersionNegotiationCodec new
 ]

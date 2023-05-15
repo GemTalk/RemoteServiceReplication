@@ -3,7 +3,7 @@ A not-very-functional channel used only for limited testing of things that requi
 "
 Class {
 	#name : 'RsrNullChannel',
-	#superclass : 'RsrChannel',
+	#superclass : 'RsrObsoleteChannel',
 	#instVars : [
 		'lastCommand'
 	],

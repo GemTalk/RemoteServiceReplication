@@ -37,8 +37,5 @@ RsrNumericSpigot >> next [
 { #category : 'accessing' }
 RsrNumericSpigot >> next: aCount [
 
-	| result |
-	result := Array new: aCount.
-	1 to: aCount do: [:i | result at: i put: self next].
-	^result
+	^ (1 to: aCount) collect: [ :x | self next ]
 ]

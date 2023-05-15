@@ -1,10 +1,3 @@
-"
-No class-specific documentation for RsrCommand, hierarchy is:
-Object
-  RsrObject
-    RsrCommand( encoding)
-
-"
 Class {
 	#name : 'RsrCommand',
 	#superclass : 'RsrObject',

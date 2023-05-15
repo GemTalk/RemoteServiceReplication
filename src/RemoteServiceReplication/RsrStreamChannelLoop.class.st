@@ -1,10 +1,3 @@
-"
-No class-specific documentation for RsrEventLoop, hierarchy is:
-Object
-  RsrObject
-    RsrEventLoop( process connection state)
-
-"
 Class {
 	#name : 'RsrStreamChannelLoop',
 	#superclass : 'RsrObject',

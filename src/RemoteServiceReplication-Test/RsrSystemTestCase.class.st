@@ -45,7 +45,38 @@ RsrSystemTestCase >> expectWhen: aPromise [
 { #category : 'initialization' }
 RsrSystemTestCase >> initializeInMemorySessions [
 
-	self openSessionsFromTemplate: RsrSharedQueueTransportTemplate new
+	| queueA queueB transports channels semaphores failed reason |
+	failed := false.
+	reason := nil.
+	queueA := SharedQueue new.
+	queueB := SharedQueue new.
+	transports := { 
+		              (RsrObjectTransport
+			               readStream: queueA
+			               writeStream: queueB).
+		              (RsrObjectTransport
+			               readStream: queueB
+			               writeStream: queueA) }.
+	channels := transports collect: [ :transport | 
+		            RsrChannel transport: transport ].
+	semaphores := (1 to: 2) collect: [ :x | Semaphore new ].
+	channels with: semaphores do: [ :chan :sem | 
+		RsrProcessModel
+			fork: [ 
+				[ chan open ]
+					on: Error
+					do: [ :ex | 
+						failed := true.
+						reason := ex.
+						ex return ].
+				sem signal ]
+			named: 'ChannelPairOpen' ].
+	semaphores do: [ :sem | sem wait ].
+	failed ifTrue: [ 
+		^ RsrChannelNotOpen signal:
+			  'Channel open failed because ' , reason description ].
+	rsrSessionA := RsrSession forChannel: channels first.
+	rsrSessionB := RsrSession forChannel: channels second
 ]
 
 { #category : 'initialization' }

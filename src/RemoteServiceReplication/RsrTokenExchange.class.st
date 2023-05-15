@@ -18,7 +18,7 @@ RsrTokenExchange class >> token: aToken [
 { #category : 'accessing' }
 RsrTokenExchange >> codec [
 
-	^RsrTokenExchangeCodec new
+	^RsrGciTokenExchangeCodec new
 ]
 
 { #category : 'accessing' }

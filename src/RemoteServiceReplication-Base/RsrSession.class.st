@@ -19,8 +19,7 @@ Class {
 		'pendingMessages',
 		'announcer',
 		'templateResolver',
-		'policy',
-		'template'
+		'policy'
 	],
 	#category : 'RemoteServiceReplication-Base'
 }
@@ -97,7 +96,6 @@ RsrSession >> initializeForChannel: aChannel [
 
 	| idInterval |
 	aChannel isOpen ifFalse: [ ^ RsrChannelNotOpen signal ].
-	template := nil. "If there is a template, set it later."
 	channel := aChannel.
 	idInterval := channel idInterval.
 	transactionSpigot := RsrThreadSafeNumericSpigot onInterval:
@@ -130,21 +128,6 @@ RsrSession >> policy: aPolicy [
 	"Policy which determines if we can reify a received Service."
 
 	policy := aPolicy
-]
-
-{ #category : 'public-accessing' }
-RsrSession >> template [
-	"Returns the TransportTemplate used to create this Session.
-	If the Session was not create using a template, returns nil."
-
-	^template
-]
-
-{ #category : 'public-accessing' }
-RsrSession >> template: aTransportTemplate [
-	"Store the template used to the create this Session."
-
-	template := aTransportTemplate
 ]
 
 { #category : 'public-accessing' }

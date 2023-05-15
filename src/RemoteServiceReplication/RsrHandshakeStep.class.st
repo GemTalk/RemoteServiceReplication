@@ -4,9 +4,22 @@ Class {
 	#category : 'RemoteServiceReplication'
 }
 
+{ #category : 'private' }
+RsrHandshakeStep class >> classForChannel: aChannel [
+
+	^ self subclassResponsibility
+]
+
+{ #category : 'instance creation' }
+RsrHandshakeStep class >> forChannel: aChannel [
+
+	^ (self classForChannel: aChannel) new
+]
+
 { #category : 'performing' }
-RsrHandshakeStep >> performOver: aStream [
+RsrHandshakeStep >> performForChannel: aChannel [
+
 	"Perform the work for this step."
 
-	^self subclassResponsibility
+	^ self subclassResponsibility
 ]

@@ -51,7 +51,7 @@ RsrAcceptConnection >> handshakeSteps [
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationServer new
+		with: RsrProtocolVersionNegotiationResponder new
 ]
 
 { #category : 'other' }
@@ -97,7 +97,7 @@ RsrAcceptConnection >> waitForConnection [
 		steps: self handshakeSteps
 		stream: stream.
 	handshake perform.
-	channel := RsrBinaryStreamChannel
+	channel := RsrByteChannel
 		inStream: stream
 		outStream: stream.
 	connection := RsrSession

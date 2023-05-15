@@ -1,11 +1,11 @@
 Class {
-	#name : 'RsrTokenExchangeCodec',
+	#name : 'RsrGciTokenExchangeCodec',
 	#superclass : 'RsrCodec',
 	#category : 'RemoteServiceReplication'
 }
 
 { #category : 'decoding' }
-RsrTokenExchangeCodec >> decode: aStream [
+RsrGciTokenExchangeCodec >> decode: aStream [
 
 	| identifier |
 	identifier := self decodeControlWord: aStream.
@@ -19,7 +19,7 @@ RsrTokenExchangeCodec >> decode: aStream [
 ]
 
 { #category : 'decoding' }
-RsrTokenExchangeCodec >> decodeToken: aStream [
+RsrGciTokenExchangeCodec >> decodeToken: aStream [
 
 	| size |
 	size := self decodeControlWord: aStream.
@@ -27,7 +27,7 @@ RsrTokenExchangeCodec >> decodeToken: aStream [
 ]
 
 { #category : 'encoding' }
-RsrTokenExchangeCodec >> encodeToken: aToken
+RsrGciTokenExchangeCodec >> encodeToken: aToken
 onto: aStream [
 
 	self
@@ -40,7 +40,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding' }
-RsrTokenExchangeCodec >> encodeTokenAccepted: aTokenAccepted
+RsrGciTokenExchangeCodec >> encodeTokenAccepted: aTokenAccepted
 onto: aStream [
 
 	self
@@ -49,7 +49,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding' }
-RsrTokenExchangeCodec >> encodeTokenRejected: aTokenRejected
+RsrGciTokenExchangeCodec >> encodeTokenRejected: aTokenRejected
 onto: aStream [
 
 	self
@@ -58,19 +58,19 @@ onto: aStream [
 ]
 
 { #category : 'accessing' }
-RsrTokenExchangeCodec >> tokenAcceptedIdentifier [
+RsrGciTokenExchangeCodec >> tokenAcceptedIdentifier [
 
 	^1
 ]
 
 { #category : 'accessing' }
-RsrTokenExchangeCodec >> tokenIdentifier [
+RsrGciTokenExchangeCodec >> tokenIdentifier [
 
 	^0
 ]
 
 { #category : 'accessing' }
-RsrTokenExchangeCodec >> tokenRejectedIdentifier [
+RsrGciTokenExchangeCodec >> tokenRejectedIdentifier [
 
 	^2
 ]

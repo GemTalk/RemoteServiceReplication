@@ -21,7 +21,7 @@ RsrGciInitiateConnection >> handshakeSteps [
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationClient new
+		with: RsrProtocolVersionNegotiationInitiator new
 		with: (RsrTokenSender token: self token)
 ]
 

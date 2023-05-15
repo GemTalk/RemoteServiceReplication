@@ -7,7 +7,7 @@ Class {
 { #category : 'accessing' }
 RsrTokenExchangeCodecTestCase >> codec [
 
-	^RsrTokenExchangeCodec new
+	^RsrGciTokenExchangeCodec new
 ]
 
 { #category : 'utilities' }
