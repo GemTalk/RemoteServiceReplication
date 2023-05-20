@@ -51,7 +51,10 @@ RsrSocketStreamTestCase >> testNextPutAllAfterClose [
 	aStream close.
 	self assert: aStream atEnd.
 	self
-		should: [aStream nextPutAll: #[1 2 3]]
+		should: [ 
+			aStream
+				nextPutAll: #[ 1 2 3 ];
+				flush ]
 		raise: RsrSocketClosed
 ]
 
