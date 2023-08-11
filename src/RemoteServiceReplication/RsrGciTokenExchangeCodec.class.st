@@ -1,6 +1,6 @@
 Class {
 	#name : 'RsrGciTokenExchangeCodec',
-	#superclass : 'RsrCodec',
+	#superclass : 'RsrObsoleteCodec',
 	#category : 'RemoteServiceReplication'
 }
 

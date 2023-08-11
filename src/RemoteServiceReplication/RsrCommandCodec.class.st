@@ -1,6 +1,6 @@
 Class {
 	#name : 'RsrCommandCodec',
-	#superclass : 'RsrCodec',
+	#superclass : 'RsrObsoleteCodec',
 	#category : 'RemoteServiceReplication'
 }
 

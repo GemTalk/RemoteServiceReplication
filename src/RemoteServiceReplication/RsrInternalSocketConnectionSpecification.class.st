@@ -14,6 +14,7 @@ RsrInternalSocketConnectionSpecification >> connect [
 	RsrProcessModel
 		fork: [connectionA := acceptor waitForConnection]
 		named: 'Pending AcceptConnection'.
+	self flag: #GetRidOfMinimalWait.
 	self minimalWait. "Allow other process to schedule."
 	connectionB := initiator connect.
 	self minimalWait. "Allow other process to schedule."

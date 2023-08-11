@@ -49,17 +49,8 @@ Class {
 	#category : 'RemoteServiceReplication'
 }
 
-{ #category : 'instance creation' }
-RsrChannel class >> transport: aTransport [
-
-	"Answer an instance that will use the given Transport and with a default collection of 
-	openingSteps. The instance is not yet open."
-
-	^ self new transport: aTransport
-]
-
 { #category : 'initialization' }
-RsrChannel >> defaultOpeningSteps [
+RsrChannel class >> defaultOpeningSteps [
 
 	"Answer the default sequence of handshake classes that will handle opening an instance. 
 	These default step classes can be appended to by sending an instance #addOpeningStep:
@@ -70,13 +61,26 @@ RsrChannel >> defaultOpeningSteps [
 		  RsrProtocolVersionNegotiation }
 ]
 
+{ #category : 'instance creation' }
+RsrChannel class >> forCodec: codec openingSteps: openingSteps [
+
+	| channel | 
+	channel := self new.
+	channel
+		initializeSourceFor: codec channelReadStream;
+		initializeSinkFor: codec channelWriteStream ;
+		openingSteps: openingSteps.
+	^ channel
+]
+
 { #category : 'initialization' }
 RsrChannel >> initialize [
 
 	super initialize.
-	sink := RsrCommandSink on: self.
+	self flag: #cleanup.
+	"	sink := RsrCommandSink on: self.
 	source := RsrCommandSource on: self.
-	self openingSteps: self defaultOpeningSteps
+	self openingSteps: self defaultOpeningSteps"
 ]
 
 { #category : 'accessing' }
@@ -91,5 +95,6 @@ RsrChannel >> openingSteps: aSequenceableCollection [
 { #category : 'accessing' }
 RsrChannel >> shouldInitiate: aBoolean [
 
+	self flag: #Obsolete.
 	shouldInitiate := aBoolean
 ]

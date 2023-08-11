@@ -1,5 +1,5 @@
 Class {
 	#name : 'RsrHandshakeRoleNegotiationCodec',
-	#superclass : 'RsrCodec',
+	#superclass : 'RsrObsoleteCodec',
 	#category : 'RemoteServiceReplication'
 }

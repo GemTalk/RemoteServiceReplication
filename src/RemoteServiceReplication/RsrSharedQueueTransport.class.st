@@ -11,6 +11,7 @@ Class {
 RsrSharedQueueTransport class >> buildPairFrom: aTransportTemplate [
 
 	| queueA queueB transportA transportB |
+	self flag: #obsolete.
 	queueA := SharedQueue new.
 	queueB := SharedQueue new.
 
@@ -28,6 +29,22 @@ RsrSharedQueueTransport class >> buildPairFrom: aTransportTemplate [
 	^ { 
 		  transportA.
 		  transportB }
+]
+
+{ #category : 'instance creation' }
+RsrSharedQueueTransport class >> readStream: aReadStream writeStream: aWriteStream [
+
+	^ self new
+		  readStream: aReadStream writeStream: aWriteStream;
+		  yourself
+]
+
+{ #category : 'private' }
+RsrSharedQueueTransport >> codecClass [
+
+	"SharedQueueTransports can transport arbitrary objects, so do not need byte encoding."
+
+	^ RsrNullCodec
 ]
 
 { #category : 'initialization' }

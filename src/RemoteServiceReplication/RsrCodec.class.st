@@ -1,80 +1,72 @@
+"
+Encode and decode between Command object structures and whatever a Transport needs (typically a byte stream encoding, or if the Transport can transport Commands directly the Command objects themselves).
+
+Stream based -- a pair of channel streams to communicate in Command objects with a Channel, and a pair of transport streams to communicate with a Transport.
+
+On creation, a Codec is given a pair of transport streams. 
+The Codec is then responsible for creating and making available the pair of channel streams.
+
+A note on ""read"" vs. ""write."" 
+In the stack of an RSR session, ""reading"" always refers to information coming into a Transport from its counterpart, and passing ""up"" the protocol stack toward the Session, and ""writing"" always refers to information passing ""down"" the stack from the Session toward the Transport.
+
+Public API and Key Messages
+
+- message one   
+- message two 
+- (for bonus points) how to create instances.
+
+   One simple example is simply gorgeous.
+ 
+Internal Representation and Key Implementation Points.
+
+    Instance Variables
+	transportReadStream:		<ReadStream>
+	transportWriteStream:		<WriteStream>
+
+
+    Implementation Points
+"
 Class {
 	#name : 'RsrCodec',
 	#superclass : 'RsrObject',
+	#instVars : [
+		'transportReadStream',
+		'transportWriteStream',
+		'transport'
+	],
 	#category : 'RemoteServiceReplication'
 }
 
-{ #category : 'converting' }
-RsrCodec >> bytesAsInteger: bytes [
+{ #category : 'accessing' }
+RsrCodec >> channelReadStream [
 
-	| res |
-	res := 0.
-	bytes do: [:e | res := (res bitShift: 8) bitOr: e].
-	^res
+	self subclassResponsibility
 ]
 
 { #category : 'accessing' }
-RsrCodec >> controlWordMax [
+RsrCodec >> channelWriteStream [
 
-	^(2 raisedTo: 63) - 1
+	self subclassResponsibility
 ]
 
-{ #category : 'accessing' }
-RsrCodec >> controlWordMin [
+{ #category : 'private' }
+RsrCodec >> createChannelStreams [
 
-	^(2 raisedTo: 63) negated
+	self subclassResponsibility
 ]
 
-{ #category : 'decoding' }
-RsrCodec >> decodeControlWord: aStream [
+{ #category : 'testing' }
+RsrCodec >> isOpen [
 
-	| bytes unsignedResult |
-	bytes := aStream next: self sizeOfInteger.
-	unsignedResult := self bytesAsInteger: bytes.
-	^unsignedResult > self controlWordMax
-		ifTrue: [(2 raisedTo: 64) negated + unsignedResult]
-		ifFalse: [unsignedResult]
+	^ transport ifNil: [ false ] ifNotNil: [ :t | t isOpen ]
 ]
 
-{ #category : 'encoding' }
-RsrCodec >> encodeControlWord: anInteger
-onto: aStream [
+{ #category : 'initialization' }
+RsrCodec >> transport: anOpenTransport [
 
-	| encodedInteger encodedBytes |
-	(anInteger between: self controlWordMin and: self controlWordMax)
-		ifFalse: [self error: anInteger printString, ' is outside the supported size of a control word.'].
-	encodedInteger := (anInteger positive
-		ifTrue: [anInteger]
-		ifFalse: [(2 raisedTo: 64) + anInteger]).
-	encodedBytes := self
-		integerAsByteArray: encodedInteger
-		ofSize: self sizeOfInteger.
-	aStream nextPutAll: encodedBytes
-]
-
-{ #category : 'converting' }
-RsrCodec >> integerAsByteArray: anInteger
-ofSize: aNumberOfBytes [
-
-	| bytes int |
-	bytes := ByteArray new: aNumberOfBytes.
-	int := anInteger.
-	aNumberOfBytes
-		to: 1
-		by: -1
-		do:
-			[:i | | byte |
-			byte := int bitAnd: 16rFF.
-			int := int bitShift: -8.
-			bytes at: i put: byte].
-	int ~= 0
-		ifTrue: [self error: 'Loss of precision detected'].
-	^bytes
-]
-
-{ #category : 'accessing' }
-RsrCodec >> sizeOfInteger [
-	"Return the number of bytes used to encode an integer"
-
-	^8
+	anOpenTransport isOpen ifFalse: [ ^ RsrTransportNotOpen signal ].
+	transport := anOpenTransport.
+	transportReadStream := transport readStream.
+	transportWriteStream := transport writeStream.
+	self createChannelStreams
 ]

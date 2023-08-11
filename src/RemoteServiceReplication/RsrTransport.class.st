@@ -57,6 +57,7 @@ RsrTransport class >> openPairFrom: aTransportTemplate [
 	Answer an array of two open, ready-to-use, transports."
 
 	| transports semaphores |
+	self flag: #obsolete.
 	transports := self buildPairFrom: aTransportTemplate.
 	semaphores := (1 to: 2) collect: [ :x | Semaphore new ].
 
@@ -100,6 +101,25 @@ RsrTransport class >> readStream: aReadStream writeStream: aWriteStream [
 	^ self new readStream: aReadStream writeStream: aWriteStream
 ]
 
+{ #category : 'private' }
+RsrTransport >> codecClass [
+
+	"Most of my subclasses are byte-encoded; any that are not will override this method."
+	^ RsrByteCodec
+]
+
+{ #category : 'initialization' }
+RsrTransport >> createCodec [
+
+	"Create and answer an appropriate codec for this Transport."
+
+	| codec |
+	self isOpen ifFalse: [ RsrTransportNotOpen signal ].
+	codec := self codecClass new.
+	codec transport: self.
+	^ codec
+]
+
 { #category : 'accessing' }
 RsrTransport >> description [
 
@@ -128,6 +148,7 @@ RsrTransport >> openRsrSession [
 	"Open and answer a Session that uses me as its transport."
 
 	| channel |
+	self flag: #obsolete.
 	channel := RsrObsoleteChannel openOn: self.
 	^ channel openRsrSession
 ]
@@ -156,13 +177,14 @@ RsrTransport >> readStream: aReadStream writeStream: aWriteStream [
 RsrTransport >> template [
 
 	"If I was created from an RsrTransportTemplate, answer it. Otherwise answer nil."
-
+	self flag: #obsolete.
 	^ template
 ]
 
 { #category : 'accessing' }
 RsrTransport >> template: aTransportTemplate [
 
+	self flag: #obsolete.
 	template := aTransportTemplate
 ]
 
