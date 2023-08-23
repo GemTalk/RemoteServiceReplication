@@ -18,6 +18,7 @@ RsrSessionBuilder >> buildSessionForTransport: anOpenTransport [
 	channel := self
 		           createChannelForCodec: codec
 		           openingSteps: self openingSteps.
+	channel open.
 	^ channel createSession
 ]
 

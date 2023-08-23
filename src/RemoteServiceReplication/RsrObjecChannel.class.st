@@ -67,7 +67,7 @@ RsrObjecChannel >> open [
 
 	drainProcess := RsrProcessModel
 		fork:
-			[RsrProcessModel configureCommunicationsProcess.
+			[RsrProcessModel configureAsCommunicationsProcess.
 			self drainLoop.
 			drainProcess := nil]
 		named: 'InMemoryChannel Receiving'

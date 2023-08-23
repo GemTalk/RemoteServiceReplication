@@ -8,10 +8,10 @@ Class {
 }
 
 { #category : 'configuring' }
-RsrProcessModel class >> configureCommunicationsProcess [
+RsrProcessModel class >> configureAsCommunicationsProcess [
 	"Apply framework configuration to the currently running communications process."
 
-	^self current configureCommunicationsProcess
+	^self current configureAsCommunicationsProcess
 ]
 
 { #category : 'configuring' }
@@ -67,7 +67,7 @@ RsrProcessModel >> communicationsSchedulePriority [
 ]
 
 { #category : 'configuring' }
-RsrProcessModel >> configureCommunicationsProcess [
+RsrProcessModel >> configureAsCommunicationsProcess [
 	"Apply framework configuration to the currently running communications process."
 
 	Processor activeProcess

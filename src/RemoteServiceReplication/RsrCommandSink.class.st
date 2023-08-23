@@ -46,7 +46,7 @@ RsrCommandSink >> executeCycle [
 { #category : 'commands' }
 RsrCommandSink >> flush [
 
-	self outStream flush
+	stream flush
 ]
 
 { #category : 'initialization' }
@@ -54,12 +54,6 @@ RsrCommandSink >> initialize [
 
 	super initialize.
 	queue := SharedQueue new
-]
-
-{ #category : 'accessing' }
-RsrCommandSink >> outStream [
-
-	^self channel outStream
 ]
 
 { #category : 'accessing' }
@@ -84,7 +78,7 @@ RsrCommandSink >> stopToken [
 { #category : 'writing' }
 RsrCommandSink >> write: aByteArray [
 
-	self outStream nextPutAll: aByteArray
+	stream nextPutAll: aByteArray
 ]
 
 { #category : 'writing' }

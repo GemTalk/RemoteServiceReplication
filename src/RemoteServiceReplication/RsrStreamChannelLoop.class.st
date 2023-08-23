@@ -4,17 +4,19 @@ Class {
 	#instVars : [
 		'process',
 		'channel',
-		'state'
+		'state',
+		'stream'
 	],
 	#category : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }
-RsrStreamChannelLoop class >> on: aChannel [
+RsrStreamChannelLoop class >> on: aStream for: aChannel [
 
-	^self new
-		channel: aChannel;
-		yourself
+	^ self new
+		  stream: aStream;
+		  channel: aChannel;
+		  yourself
 ]
 
 { #category : 'accessing' }
@@ -113,7 +115,7 @@ RsrStreamChannelLoop >> start [
 	state := self runningState.
 	process := RsrProcessModel
 		fork:
-			[RsrProcessModel configureCommunicationsProcess.
+			[RsrProcessModel configureAsCommunicationsProcess.
 			self runLoop.
 			process := nil]
 		named: self runLoopName
@@ -130,4 +132,10 @@ RsrStreamChannelLoop >> stop [
 RsrStreamChannelLoop >> stoppedState [
 
 	^#Stop
+]
+
+{ #category : 'accessing' }
+RsrStreamChannelLoop >> stream: anObject [
+
+	stream := anObject
 ]

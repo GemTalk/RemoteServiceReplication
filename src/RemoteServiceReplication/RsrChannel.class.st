@@ -44,7 +44,8 @@ Class {
 		'sink',
 		'source',
 		'openingSteps',
-		'shouldInitiate'
+		'shouldInitiate',
+		'state'
 	],
 	#category : 'RemoteServiceReplication'
 }
@@ -73,14 +74,67 @@ RsrChannel class >> forCodec: codec openingSteps: openingSteps [
 	^ channel
 ]
 
+{ #category : 'accessing' }
+RsrChannel >> addCommunicationProcessesTo: aSet [
+	"Add all processes used for Communication to the provided set."
+
+	sink addCommunicationProcessesTo: aSet.
+	source addCommunicationProcessesTo: aSet
+]
+
+{ #category : 'lifecycle' }
+RsrChannel >> close [
+
+	"Shutdown the Command sink and source."
+
+	source stop.
+	sink stop
+]
+
+{ #category : 'lifecycle' }
+RsrChannel >> disconnected [
+
+	"The socket has disconnected so the channel is no longer open."
+
+	rsrSession channelDisconnected
+]
+
+{ #category : 'private' }
+RsrChannel >> initialState [ 
+	^ #Initial
+]
+
 { #category : 'initialization' }
 RsrChannel >> initialize [
 
 	super initialize.
-	self flag: #cleanup.
-	"	sink := RsrCommandSink on: self.
-	source := RsrCommandSource on: self.
-	self openingSteps: self defaultOpeningSteps"
+	state := self initialState
+]
+
+{ #category : 'initialization' }
+RsrChannel >> initializeSinkFor: aWriteStream [
+
+	sink := RsrCommandSink on: aWriteStream for: self
+]
+
+{ #category : 'initialization' }
+RsrChannel >> initializeSourceFor: aReadStream [
+
+	source := RsrCommandSource on: aReadStream for: self
+]
+
+{ #category : 'testing' }
+RsrChannel >> isOpen [
+
+	^ state == self openState and: [ transport isOpen ]
+]
+
+{ #category : 'lifecycle' }
+RsrChannel >> open [
+	"Ensure the Command sink and source are running"
+
+	source start.
+	sink start
 ]
 
 { #category : 'accessing' }

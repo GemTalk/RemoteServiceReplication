@@ -34,17 +34,10 @@ RsrCommandSource >> executeCycle [
 			self channel disconnected]
 ]
 
-{ #category : 'accessing' }
-RsrCommandSource >> inStream [
-	"Return the read stream associated w/ this channel."
-
-	^self channel inStream
-]
-
 { #category : 'commands' }
 RsrCommandSource >> nextCommand [
 
-	^self decoder decodeCommand: self inStream
+	^self decoder decodeCommand: stream
 ]
 
 { #category : 'accessing' }
