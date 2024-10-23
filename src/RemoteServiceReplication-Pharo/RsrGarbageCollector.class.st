@@ -18,5 +18,7 @@ RsrGarbageCollector class >> maximumReclamation [
 	obj := nil.
 	Smalltalk garbageCollect.
 	Processor yield.
-	^(sema waitTimeoutMilliseconds: 10) not
+	^(sema respondsTo: #waitTimeoutMilliseconds:)
+		ifTrue: [(sema waitTimeoutMilliseconds: 10) not]
+		ifFalse: [(sema waitTimeoutMSecs: 10) not]
 ]
