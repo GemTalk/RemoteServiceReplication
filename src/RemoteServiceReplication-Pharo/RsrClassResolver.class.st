@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrClassResolver',
 	#superclass : 'RsrObject',
-	#category : 'RemoteServiceReplication-Pharo'
+	#category : 'RemoteServiceReplication-Pharo',
+	#package : 'RemoteServiceReplication-Pharo'
 }
 
 { #category : 'accessing' }
