@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrInMemoryConnectionTestCase',
 	#superclass : 'RsrConnectionTestCase',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }

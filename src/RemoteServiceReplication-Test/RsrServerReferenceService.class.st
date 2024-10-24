@@ -1,5 +1,6 @@
 Class {
 	#name : 'RsrServerReferenceService',
 	#superclass : 'RsrServiceReferenceService',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }

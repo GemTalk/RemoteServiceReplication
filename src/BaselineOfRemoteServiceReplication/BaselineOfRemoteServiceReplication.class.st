@@ -15,13 +15,20 @@ BaselineOfRemoteServiceReplication >> baseline: spec [
 					with: [ spec requires: #('RemoteServiceReplication') ];
 				package: 'RemoteServiceReplication-Test'
 					with: [ spec requires: #('RemoteServiceReplication-Platform-Test') ] ];
-		for: #pharo
+		for: #'pharo11.x'
 			do: [ spec
 				package: 'TonelFixes';
-				package: 'RemoteServiceReplication-Pharo'
+				package: 'RemoteServiceReplication-Pharo-11'
 					with: [ spec requires: #('TonelFixes' 'RemoteServiceReplication-Base') ];
 				package: 'RemoteServiceReplication'
-					with: [ spec requires: #('RemoteServiceReplication-Pharo') ] ].
+					with: [ spec requires: #('RemoteServiceReplication-Pharo-11') ] ];
+		for: #'pharo12.x'
+			do: [ spec
+				package: 'TonelFixes';
+				package: 'RemoteServiceReplication-Pharo-12'
+					with: [ spec requires: #('TonelFixes' 'RemoteServiceReplication-Base') ];
+				package: 'RemoteServiceReplication'
+					with: [ spec requires: #('RemoteServiceReplication-Pharo-12') ] ].
 	spec
 		group: 'default' with: #('All');
 		group: 'All' with: #('RemoteServiceReplication-Test');

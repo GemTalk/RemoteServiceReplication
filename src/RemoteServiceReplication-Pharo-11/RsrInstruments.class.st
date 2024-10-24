@@ -1,8 +1,7 @@
 Class {
 	#name : 'RsrInstruments',
 	#superclass : 'RsrObject',
-	#category : 'RemoteServiceReplication-Pharo',
-	#package : 'RemoteServiceReplication-Pharo'
+	#category : 'RemoteServiceReplication-Pharo-11'
 }
 
 { #category : 'instrumenting' }

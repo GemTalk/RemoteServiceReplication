@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrClientNoInstVars',
 	#superclass : 'RsrServiceNoInstVars',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'test selectors' }

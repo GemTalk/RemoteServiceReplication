@@ -1,8 +1,7 @@
 Class {
 	#name : 'RsrGarbageCollector',
 	#superclass : 'RsrObject',
-	#category : 'RemoteServiceReplication-Pharo',
-	#package : 'RemoteServiceReplication-Pharo'
+	#category : 'RemoteServiceReplication-Pharo-11'
 }
 
 { #category : 'cleaning' }
@@ -18,7 +17,5 @@ RsrGarbageCollector class >> maximumReclamation [
 	obj := nil.
 	Smalltalk garbageCollect.
 	Processor yield.
-	^(sema respondsTo: #waitTimeoutMilliseconds:)
-		ifTrue: [(sema waitTimeoutMilliseconds: 10) not]
-		ifFalse: [(sema waitTimeoutMSecs: 10) not]
+	^(sema waitTimeoutMSecs: 10) not
 ]

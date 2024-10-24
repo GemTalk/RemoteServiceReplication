@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'varA'
 	],
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }

@@ -5,7 +5,8 @@ Class {
 		'firstSocket',
 		'secondSocket'
 	],
-	#category : 'RemoteServiceReplication-Platform-Test'
+	#category : 'RemoteServiceReplication-Platform-Test',
+	#package : 'RemoteServiceReplication-Platform-Test'
 }
 
 { #category : 'instance creation' }

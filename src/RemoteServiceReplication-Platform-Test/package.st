@@ -1,1 +1,1 @@
-Package { #name : #'RemoteServiceReplication-Platform-Test' }
+Package { #name : 'RemoteServiceReplication-Platform-Test' }

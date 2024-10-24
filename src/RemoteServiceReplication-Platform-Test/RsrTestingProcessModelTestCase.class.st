@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrTestingProcessModelTestCase',
 	#superclass : 'RsrTestCase',
-	#category : 'RemoteServiceReplication-Platform-Test'
+	#category : 'RemoteServiceReplication-Platform-Test',
+	#package : 'RemoteServiceReplication-Platform-Test'
 }
 
 { #category : 'running' }

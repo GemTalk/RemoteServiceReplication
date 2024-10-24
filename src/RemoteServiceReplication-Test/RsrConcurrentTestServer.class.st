@@ -6,7 +6,8 @@ Class {
 		'semaphore',
 		'stashedProcess'
 	],
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }

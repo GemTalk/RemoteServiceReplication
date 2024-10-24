@@ -11,7 +11,8 @@ Object
 Class {
 	#name : 'RsrCommandDecoderTest',
 	#superclass : 'RsrCommandCodecTest',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'asserting' }

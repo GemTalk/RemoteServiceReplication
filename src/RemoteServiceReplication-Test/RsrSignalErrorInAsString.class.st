@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrSignalErrorInAsString',
 	#superclass : 'RsrObject',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'converting' }

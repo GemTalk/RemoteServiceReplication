@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrSocketSpeciesEquality',
 	#superclass : 'RsrSpeciesEquality',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }

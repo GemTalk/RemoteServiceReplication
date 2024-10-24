@@ -1,5 +1,6 @@
 Class {
 	#name : 'RsrKnownClient',
 	#superclass : 'RsrSendUnknownService',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }

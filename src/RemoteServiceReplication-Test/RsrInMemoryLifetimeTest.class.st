@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrInMemoryLifetimeTest',
 	#superclass : 'RsrLifetimeTest',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }

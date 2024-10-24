@@ -17,7 +17,8 @@ Class {
 		'postRegistrationCount',
 		'action'
 	],
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }

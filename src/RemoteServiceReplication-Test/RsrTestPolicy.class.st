@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'deniedTemplates'
 	],
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }

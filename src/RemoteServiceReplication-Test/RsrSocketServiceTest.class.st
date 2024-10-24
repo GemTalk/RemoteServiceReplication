@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrSocketServiceTest',
 	#superclass : 'RsrServiceTest',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }

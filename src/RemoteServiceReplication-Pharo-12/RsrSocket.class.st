@@ -4,8 +4,8 @@ Class {
 	#instVars : [
 		'nativeSocket'
 	],
-	#category : 'RemoteServiceReplication-Pharo',
-	#package : 'RemoteServiceReplication-Pharo'
+	#category : 'RemoteServiceReplication-Pharo-12',
+	#package : 'RemoteServiceReplication-Pharo-12'
 }
 
 { #category : 'instance creation' }
@@ -29,16 +29,17 @@ RsrSocket >> _nativeSocket: aSocket [
 RsrSocket >> accept [
 	"Return an RsrSocket which is connected to a peer. In the event that the socket is closed while waiting, signal RsrSocketClosed."
 
-	| timeoutHandler ns |
-	timeoutHandler :=
+	| errorHandler ns |
+	errorHandler :=
 		[nativeSocket isValid
 			ifTrue: [nil]
 			ifFalse: [RsrSocketClosed signal: 'Socket closed during #accept']].
 	[ns isNil]
 		whileTrue:
 			[ns := nativeSocket
-				waitForAcceptFor: 2
-				ifTimedOut: timeoutHandler].
+				waitForAcceptFor: SmallInteger maxVal
+				ifClosed: errorHandler
+				ifTimedOut: errorHandler].
 	^self class _nativeSocket: ns
 ]
 
@@ -62,7 +63,7 @@ port: port [
 	nativeSocket
 		bindTo: address
 		port: port]
-			on: NameLookupFailure, PrimitiveFailed, InvalidSocketStatusException
+			on: NameLookupFailure, PrimitiveFailed, InvalidSocketStatusException, SocketError
 			do: [:ex | ex resignalAs: (RsrInvalidBind new messageText: ex messageText)]
 ]
 
@@ -81,14 +82,13 @@ port: aPort [
 	<hostname> - The name or ip address of a machine which should accept a connection.
 	<port> - An integer representing a valid TCP port."
 
-
 	[| hostAddress |
 	hostAddress := NetNameResolver addressForName: aHostname.
 	nativeSocket
 		connectTo: hostAddress
 		port: aPort
 		waitForConnectionFor: 5]
-			on: NameLookupFailure, ConnectionTimedOut, InvalidSocketStatusException
+			on: NameLookupFailure, ConnectionTimedOut, InvalidSocketStatusException, ConnectionClosed
 			do: [:ex | ex resignalAs: (RsrConnectFailed new messageText: ex messageText)]
 ]
 
@@ -96,7 +96,7 @@ port: aPort [
 RsrSocket >> initialize [
 
 	super initialize.
-	nativeSocket := Socket new
+	nativeSocket := Socket newTCP
 ]
 
 { #category : 'testing' }
@@ -111,9 +111,9 @@ RsrSocket >> listen: backlog [
 	"Starting listening for connections. <backlogLength> specifies the number of connections to allow in a pending state.
 	The actual backlog may support fewer prending connections depending upon implementation."
 
-	nativeSocket
-		listenOn: nativeSocket port
-		backlogSize: (backlog max: 2) "Ensure a new socket is created"
+	"Note, if this is set to 1, the listening socket becomes the socket connected to the peer.
+	Setting this to 2, ensures we get a separate socket."
+	nativeSocket listenWithBacklog: (backlog max: 2)
 ]
 
 { #category : 'accessing' }

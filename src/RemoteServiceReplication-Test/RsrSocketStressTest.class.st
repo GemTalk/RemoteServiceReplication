@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrSocketStressTest',
 	#superclass : 'RsrStressTest',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }

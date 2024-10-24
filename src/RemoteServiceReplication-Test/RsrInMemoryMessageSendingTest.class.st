@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrInMemoryMessageSendingTest',
 	#superclass : 'RsrMessageSendingTest',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }

@@ -5,7 +5,8 @@ Class {
 		'connectionA',
 		'connectionB'
 	],
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'testing' }

@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrServiceTest',
 	#superclass : 'RsrSystemTestCase',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'testing' }

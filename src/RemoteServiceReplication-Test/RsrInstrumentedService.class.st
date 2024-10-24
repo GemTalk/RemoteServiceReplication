@@ -10,7 +10,8 @@ Object
 Class {
 	#name : 'RsrInstrumentedService',
 	#superclass : 'RsrService',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }

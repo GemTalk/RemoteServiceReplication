@@ -4,6 +4,5 @@ Class {
 	#instVars : [
 		'_service'
 	],
-	#category : 'RemoteServiceReplication-Pharo',
-	#package : 'RemoteServiceReplication-Pharo'
+	#category : 'RemoteServiceReplication-Pharo-11'
 }

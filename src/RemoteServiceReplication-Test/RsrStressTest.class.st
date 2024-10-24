@@ -5,7 +5,8 @@ Class {
 		'client',
 		'server'
 	],
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }
@@ -110,7 +111,9 @@ RsrStressTest >> test10MBytes [
 
 	| bytes |
 	bytes := ByteArray new: 1024 * 1024 * 10.
-	50 timesRepeat: [self send: bytes]
+	1
+		to: 10
+		do: [:i | self send: bytes]
 ]
 
 { #category : 'running' }

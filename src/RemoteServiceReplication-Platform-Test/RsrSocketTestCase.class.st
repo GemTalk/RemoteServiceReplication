@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'sockets'
 	],
-	#category : 'RemoteServiceReplication-Platform-Test'
+	#category : 'RemoteServiceReplication-Platform-Test',
+	#package : 'RemoteServiceReplication-Platform-Test'
 }
 
 { #category : 'accessing' }
@@ -23,7 +24,7 @@ RsrSocketTestCase >> createPair: aBlock [
 	listener
 		bindAddress: address
 		port: port.
-	listener listen: 1.
+	listener listen: 2.
 	peerB := self newSocket.
 	semaphore := Semaphore new.
 	RsrProcessModel

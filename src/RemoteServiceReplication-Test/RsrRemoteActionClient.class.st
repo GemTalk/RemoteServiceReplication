@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrRemoteActionClient',
 	#superclass : 'RsrRemoteAction',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'evaluating' }

@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrConcurrentTestClient',
 	#superclass : 'RsrConcurrentTestService',
-	#category : 'RemoteServiceReplication-Test'
+	#category : 'RemoteServiceReplication-Test',
+	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'accessing' }
