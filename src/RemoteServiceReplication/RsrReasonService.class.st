@@ -4,5 +4,6 @@ This Service services as an abstract superclass for various Promise break reason
 Class {
 	#name : 'RsrReasonService',
 	#superclass : 'RsrService',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }

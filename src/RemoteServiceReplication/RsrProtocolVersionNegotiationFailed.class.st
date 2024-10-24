@@ -1,5 +1,6 @@
 Class {
 	#name : 'RsrProtocolVersionNegotiationFailed',
 	#superclass : 'RsrHandshakeError',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }

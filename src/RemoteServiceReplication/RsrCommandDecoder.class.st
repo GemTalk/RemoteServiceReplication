@@ -9,7 +9,8 @@ Object
 Class {
 	#name : 'RsrCommandDecoder',
 	#superclass : 'RsrCommandCodec',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }

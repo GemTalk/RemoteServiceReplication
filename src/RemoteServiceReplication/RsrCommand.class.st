@@ -8,7 +8,8 @@ Object
 Class {
 	#name : 'RsrCommand',
 	#superclass : 'RsrObject',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'encoding' }

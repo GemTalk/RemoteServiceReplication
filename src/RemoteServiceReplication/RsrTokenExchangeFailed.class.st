@@ -1,5 +1,6 @@
 Class {
 	#name : 'RsrTokenExchangeFailed',
 	#superclass : 'RsrHandshakeError',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }

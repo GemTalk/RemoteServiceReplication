@@ -5,7 +5,8 @@ Class {
 		'prefix',
 		'log'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'logging' }

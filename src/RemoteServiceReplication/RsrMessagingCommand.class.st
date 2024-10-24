@@ -5,7 +5,8 @@ Class {
 		'snapshots',
 		'transaction'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'executing' }

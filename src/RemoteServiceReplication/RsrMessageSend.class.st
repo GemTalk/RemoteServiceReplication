@@ -6,7 +6,8 @@ Class {
 		'selector',
 		'arguments'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }

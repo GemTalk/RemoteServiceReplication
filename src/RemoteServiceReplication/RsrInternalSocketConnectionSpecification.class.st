@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrInternalSocketConnectionSpecification',
 	#superclass : 'RsrInternalConnectionSpecification',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'connecting' }

@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrTokenExchangeCodec',
 	#superclass : 'RsrCodec',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'decoding' }

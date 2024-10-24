@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrDefaultPolicy',
 	#superclass : 'RsrAbstractPolicy',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'testing' }

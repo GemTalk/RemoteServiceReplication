@@ -12,7 +12,8 @@ Class {
 	#instVars : [
 		'queue'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'accessing' }

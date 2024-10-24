@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'socket'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }

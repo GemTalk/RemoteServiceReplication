@@ -6,7 +6,8 @@ Class {
 		'isListening',
 		'isWaitingForConnection'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }

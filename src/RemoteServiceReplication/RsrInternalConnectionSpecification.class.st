@@ -5,7 +5,8 @@ Class {
 		'connectionA',
 		'connectionB'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'asserting' }

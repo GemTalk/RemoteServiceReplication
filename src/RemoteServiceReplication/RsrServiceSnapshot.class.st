@@ -21,7 +21,8 @@ Class {
 		'shouldCreateServer',
 		'slots'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }

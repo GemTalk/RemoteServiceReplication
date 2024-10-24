@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrProtocolVersionNegotiationCodec',
 	#superclass : 'RsrCodec',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'accessing' }

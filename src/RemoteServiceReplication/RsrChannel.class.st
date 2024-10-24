@@ -11,7 +11,8 @@ Class {
 	#instVars : [
 		'connection'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'accessing' }

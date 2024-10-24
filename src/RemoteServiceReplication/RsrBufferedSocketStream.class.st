@@ -7,7 +7,8 @@ Class {
 		'writePosition',
 		'nextToWrite'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }

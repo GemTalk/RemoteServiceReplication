@@ -4,7 +4,8 @@ Does load-time initialization of any class instance variables of classes defined
 Class {
 	#name : 'RsrPlatformInitializer',
 	#superclass : 'Object',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'class initialization' }

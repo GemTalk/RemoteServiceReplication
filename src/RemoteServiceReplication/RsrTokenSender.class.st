@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrTokenSender',
 	#superclass : 'RsrTokenExchange',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'performing' }

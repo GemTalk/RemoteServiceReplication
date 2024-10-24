@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'decoder'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'accessing' }

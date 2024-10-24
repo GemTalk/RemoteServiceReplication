@@ -4,5 +4,6 @@ HandshakeMessage serves as a superclass for all Messages used while processing a
 Class {
 	#name : 'RsrProtocolVersionNegotiationMessage',
 	#superclass : 'RsrObject',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }

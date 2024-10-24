@@ -92,6 +92,50 @@ RsrPromiseTest >> testAsyncFulfill [
 ]
 
 { #category : 'running' }
+RsrPromiseTest >> testNoArgWhenCatchBlocks [
+
+	| promise semaphore whenRan catchRan |
+	promise := RsrPromise new.
+	semaphore := Semaphore new.
+	whenRan := false.
+	catchRan := false.
+	promise
+		when: [whenRan := true. semaphore signal]
+		catch: [catchRan := true. semaphore signal].
+	self
+		deny: promise isResolved;
+		deny: promise isBroken;
+		deny: promise isFulfilled.
+	promise fulfill: Object new.
+	semaphore wait.
+	self
+		assert: whenRan;
+		deny: catchRan;
+		assert: promise isResolved;
+		deny: promise isBroken;
+		assert: promise isFulfilled.
+
+	promise := RsrPromise new.
+	whenRan := false.
+	catchRan := false.
+	promise
+		when: [whenRan := true. semaphore signal]
+		catch: [catchRan := true. semaphore signal].
+	self
+		deny: promise isResolved;
+		deny: promise isBroken;
+		deny: promise isFulfilled.
+	promise break: Object new.
+	semaphore wait.
+	self
+		deny: whenRan;
+		assert: catchRan;
+		assert: promise isResolved;
+		assert: promise isBroken;
+		deny: promise isFulfilled.
+]
+
+{ #category : 'running' }
 RsrPromiseTest >> testSyncBreak [
 
 	| promise expected exceptionRaised first second third |

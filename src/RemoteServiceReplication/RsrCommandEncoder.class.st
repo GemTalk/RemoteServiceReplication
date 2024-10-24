@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrCommandEncoder',
 	#superclass : 'RsrCommandCodec',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'private-encoding' }

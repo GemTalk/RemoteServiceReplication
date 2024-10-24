@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrStream',
 	#superclass : 'RsrObject',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'testing' }

@@ -15,7 +15,8 @@ Class {
 	#instVars : [
 		'token'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'connecting' }

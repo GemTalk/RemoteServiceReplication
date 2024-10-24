@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrTranscriptSink',
 	#superclass : 'RsrLogSink',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'writing' }

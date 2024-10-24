@@ -14,7 +14,8 @@ Server -> Client:
 Class {
 	#name : 'RsrProtocolVersionNegotiation',
 	#superclass : 'RsrHandshakeStep',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'accessing' }

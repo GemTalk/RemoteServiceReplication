@@ -41,7 +41,8 @@ Class {
 		'resolvedMutex',
 		'resolutionActions'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'private' }
@@ -123,8 +124,8 @@ RsrPromise >> notifyActions [
 		do:
 			[:each |
 			self isFulfilled
-				ifTrue: [RsrProcessModel fork: [each when value: value] named: 'Promise Fulfillment Notification']
-				ifFalse: [RsrProcessModel fork: [each catch value: value] named: 'Promise Break Notification']]
+				ifTrue: [RsrProcessModel fork: [each when cull: value] named: 'Promise Fulfillment Notification']
+				ifFalse: [RsrProcessModel fork: [each catch cull: value] named: 'Promise Break Notification']]
 ]
 
 { #category : 'observing' }

@@ -4,7 +4,8 @@ This message is sent when a Server has determined it cannot talk any version of 
 Class {
 	#name : 'RsrNoVersionOverlap',
 	#superclass : 'RsrProtocolVersionNegotiationMessage',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'comparing' }

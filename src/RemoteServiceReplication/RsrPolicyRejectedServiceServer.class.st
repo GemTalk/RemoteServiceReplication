@@ -1,5 +1,6 @@
 Class {
 	#name : 'RsrPolicyRejectedServiceServer',
 	#superclass : 'RsrPolicyRejectedService',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }

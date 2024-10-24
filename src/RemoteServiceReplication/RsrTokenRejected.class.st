@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrTokenRejected',
 	#superclass : 'RsrTokenExchangeMessage',
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'testing' }

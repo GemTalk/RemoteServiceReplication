@@ -12,7 +12,8 @@ Class {
 	#instVars : [
 		'responseReference'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }

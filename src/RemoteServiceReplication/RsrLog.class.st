@@ -5,7 +5,8 @@ Class {
 		'verbosity',
 		'sinks'
 	],
-	#category : 'RemoteServiceReplication'
+	#category : 'RemoteServiceReplication',
+	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'configuring' }
