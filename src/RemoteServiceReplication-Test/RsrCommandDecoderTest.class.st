@@ -49,7 +49,7 @@ RsrCommandDecoderTest >> testDeliverResponse [
 		#[0 0 0 0 0 0 0 2], "DeliverResponse Command"
 		#[0 0 0 0 0 0 0 1], "Transaction Id"
 		#[0 0 0 0 0 0 0 1], "Number of services"
-		self serviceNoInstVarsEncoding,
+		self serviceNoInstVarsServerPersonaEncoding,
 		#[0 0 0 0 0 0 0 0], "Service Name Symbol Reference"
 		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
 		#[0 0 0 0 0 0 0 14], "Length of UTF-8 bytes"
@@ -101,7 +101,7 @@ RsrCommandDecoderTest >> testSendMessage [
 		#[0 0 0 0 0 0 0 1], "SendMessage Command"
 		#[0 0 0 0 0 0 0 1], "Transaction ID"
 		#[0 0 0 0 0 0 0 1], "One service is part of this message"
-		self serviceNoInstVarsEncoding,
+		self serviceNoInstVarsServerPersonaEncoding,
 		#[0 0 0 0 0 0 0 1], "Receiver OID"
 		#[0 0 0 0 0 0 0 0], "Selector Reference"
 		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
@@ -135,8 +135,8 @@ RsrCommandDecoderTest >> testServiceDecodeIdentity [
 	a single object getting created."
 
 	| firstService secondService |
-	firstService := self decodeService: self serviceNoInstVarsEncoding.
-	secondService := self decodeService: self serviceNoInstVarsEncoding.
+	firstService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
+	secondService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
 	self
 		assert: firstService
 		identicalTo: secondService
@@ -146,7 +146,7 @@ RsrCommandDecoderTest >> testServiceDecodeIdentity [
 RsrCommandDecoderTest >> testServiceNoInstVars [
 
 	| decodedService |
-	decodedService := self decodeService: self serviceNoInstVarsEncoding.
+	decodedService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
 	self
 		assert: decodedService class
 		equals: RsrServerNoInstVars.
@@ -159,17 +159,20 @@ RsrCommandDecoderTest >> testServiceNoInstVars [
 RsrCommandDecoderTest >> testServiceReferenceService [
 
 	| rootService referencedService |
-	referencedService := self decodeService: self referencedServiceEncoding.
+	referencedService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
 	self
 		assert: referencedService class
 		equals: RsrServerNoInstVars.
 	self
 		assert: referencedService _id
-		equals: 2.
-	rootService := self decodeService: self rootServiceEncoding.
+		equals: 1.
+	rootService := self decodeService: self serviceReferenceServiceServerPersona.
 	self
 		assert: rootService class
 		equals: RsrServerReferenceService.
+	self
+		assert: rootService _id
+		equals: 2.
 	self
 		assert: rootService service
 		equals: referencedService

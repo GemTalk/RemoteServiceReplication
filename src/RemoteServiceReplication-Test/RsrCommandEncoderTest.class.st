@@ -37,7 +37,7 @@ RsrCommandEncoderTest >> testDeliverResponse [
 		#[0 0 0 0 0 0 0 2], "DeliverResponse Command"
 		#[0 0 0 0 0 0 0 1], "Transaction Id"
 		#[0 0 0 0 0 0 0 1], "One service is part of this response"
-		self serviceNoInstVarsEncoding,
+		self serviceNoInstVarsServerPersonaEncoding,
 		#[0 0 0 0 0 0 0 0], "Service Name Symbol Reference"
 		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
 		#[0 0 0 0 0 0 0 14], "Length of UTF-8 bytes"
@@ -102,7 +102,7 @@ RsrCommandEncoderTest >> testSendMessage [
 		#[0 0 0 0 0 0 0 1], "SendMessage Command"
 		#[0 0 0 0 0 0 0 1], "Transaction ID"
 		#[0 0 0 0 0 0 0 1], "One service is part of this message"
-		self serviceNoInstVarsEncoding,
+		self serviceNoInstVarsServerPersonaEncoding,
 		#[0 0 0 0 0 0 0 1], "Receiver OID"
 		#[0 0 0 0 0 0 0 0], "Selector Reference"
 		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
@@ -121,7 +121,7 @@ RsrCommandEncoderTest >> testServiceNoInstVars [
 	rootService := RsrClientNoInstVars new.
 	self register: rootService.
 	encodedBytes := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: rootService).
-	expectedEncoding := self serviceNoInstVarsEncoding.
+	expectedEncoding := self serviceNoInstVarsServerPersonaEncoding.
 	self
 		assert: encodedBytes
 		equals: expectedEncoding
@@ -134,30 +134,15 @@ RsrCommandEncoderTest >> testServiceReferenceService [
 	referencedService := RsrClientNoInstVars new.
 	rootService := RsrClientReferenceService service: referencedService.
 	self
-		register: rootService;
-		register: referencedService.
+		register: referencedService;
+		register: rootService.
 	encodedObject := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: rootService).
-	expectedEncoding :=
-		#[0 0 0 0 0 0 0 0], "type"
-		#[0 0 0 0 0 0 0 1], "rootService's OID = 1"
-		#[0 0 0 0 0 0 0 1], "Inst Var Count"
-		#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
-		#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
-		#[0 0 0 0 0 0 0 25], "Length of UTF-8 encoded bytes"
-		#[82 115 114 83 101 114 118 101 114 82 101 102 101 114 101 110 99 101 83 101 114 118 105 99 101],
-		#[0 0 0 0 0 0 0 2]. "#RsrServerReferenceService"
+	expectedEncoding := self serviceReferenceServiceServerPersona.
 	self
 		assert: encodedObject
 		equals: expectedEncoding.
 	encodedObject := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: referencedService).
-	expectedEncoding :=
-		#[0 0 0 0 0 0 0 0], "type"
-		#[0 0 0 0 0 0 0 2], "referencedService's OID = 2"
-		#[0 0 0 0 0 0 0 0], "Inst Var Count"
-		#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
-		#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
-		#[0 0 0 0 0 0 0 19], "Length of UTF-8 encoded bytes"
-		#[82 115 114 83 101 114 118 101 114 78 111 73 110 115 116 86 97 114 115]. "#RsrServerNoInstVars"
+	expectedEncoding := self serviceNoInstVarsServerPersonaEncoding.
 	self
 		assert: encodedObject
 		equals: expectedEncoding

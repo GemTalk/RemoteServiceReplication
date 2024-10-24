@@ -11,10 +11,10 @@ RsrProtocolVersionNegotiationServer >> performOver: aStream [
 
 	| supportedVersions |
 	supportedVersions := self codec decode: aStream.
-	(supportedVersions versions includes: 1)
+	(supportedVersions versions includes: 2)
 		ifTrue:
 			[self codec
-				encodeChosenVersion: (RsrChosenVersion version: 1)
+				encodeChosenVersion: (RsrChosenVersion version: 2)
 				onto: aStream.
 			aStream flush]
 		ifFalse:

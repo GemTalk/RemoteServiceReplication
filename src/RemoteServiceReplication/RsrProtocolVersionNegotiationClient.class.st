@@ -10,7 +10,7 @@ RsrProtocolVersionNegotiationClient >> performOver: aStream [
 	"Perform the Client's porition of the handshake"
 
 	| supportedVersions answer |
-	supportedVersions := RsrSupportedVersions versions: #(1).
+	supportedVersions := RsrSupportedVersions versions: #(2).
 	self codec
 		encodeSupportedVersions: supportedVersions
 		onto: aStream.
