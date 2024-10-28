@@ -29,7 +29,7 @@ RsrTemplateResolverWithClassVersions >> testVersionClassAfterCreatingService [
 
 	| template service result |
 	template := RsrVersionService.
-	service := template clientClass new.
+	service := RsrVersionServiceClient new.
 	result := self resolver templateFor: service.
 	self
 		assert: result
@@ -37,7 +37,7 @@ RsrTemplateResolverWithClassVersions >> testVersionClassAfterCreatingService [
 	"Revision the Service class and Template"
 	RsrService
 		rwSubclass: 'RsrVersionService'
-		instVarNames: {'a' + Time millisecondClockValue printString}
+		instVarNames: {'a', Time millisecondClockValue printString}
 		classVars: #()
 		classInstVars: #()
 		poolDictionaries: #()
@@ -50,7 +50,7 @@ RsrTemplateResolverWithClassVersions >> testVersionClassAfterCreatingService [
 	self
 		deny: result
 		identicalTo: RsrVersionService.
-	result := self resolver templateFor: RsrVersionService clientClass new.
+	result := self resolver templateFor: RsrVersionServiceClient new.
 	self
 		assert: result
 		identicalTo: RsrVersionService

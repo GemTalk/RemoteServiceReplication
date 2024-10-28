@@ -94,7 +94,9 @@ RsrSocket >> listen: backlogLength [
 RsrSocket >> port [
 	"Return the port associated with the socket."
 
-	^nativeSocket port
+	^[nativeSocket port]
+    on: SocketError
+    do: [:ex | ex return: 0]
 ]
 
 { #category : 'read/write' }
