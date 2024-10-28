@@ -30,3 +30,10 @@ RsrInternalSocketConnectionSpecification >> defaultPort [
 
 	^61982
 ]
+
+{ #category : 'waiting' }
+RsrInternalSocketConnectionSpecification >> minimalWait [
+	"Ensure the calling process is not schedulable for a short period of time."
+
+	(Delay forMilliseconds: 1) wait
+]
