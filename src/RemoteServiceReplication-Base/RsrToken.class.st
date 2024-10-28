@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'bytes'
 	],
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'instance creation' }

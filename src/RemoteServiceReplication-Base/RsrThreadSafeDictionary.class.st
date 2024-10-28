@@ -8,7 +8,8 @@ Class {
 		'mutex',
 		'map'
 	],
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'accessing' }

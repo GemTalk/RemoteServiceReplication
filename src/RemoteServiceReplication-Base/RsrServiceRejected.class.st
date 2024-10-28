@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'reason'
 	],
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'signaling' }

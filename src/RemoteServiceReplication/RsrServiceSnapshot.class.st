@@ -49,9 +49,10 @@ do: aBlock [
 { #category : 'variable utilites' }
 RsrServiceSnapshot class >> reflectedVariablesFor: aService [
 
-	| currentClass variables template |
+	| currentClass variables templateResolver template |
 	variables := OrderedCollection new.
-	template := aService _template.
+	templateResolver := aService _connection templateResolver.
+	template := templateResolver templateFor: aService.
 	currentClass := template.
 	[currentClass == RsrService]
 		whileFalse:
@@ -72,13 +73,15 @@ do: aBlock [
 { #category : 'accessing' }
 RsrServiceSnapshot >> createInstanceRegisteredIn: aConnection [
 
-	| instance template |
-	template := aConnection templateResolver templateNamed: self templateName.
+	| templateResolver template instanceClass instance |
+	templateResolver := aConnection templateResolver.
+	template := templateResolver templateNamed: self templateName.
 	((aConnection policy permits: template) or: [template inheritsFrom: RsrReasonService])
 		ifFalse: [RsrServiceRejected signalReason: (RsrPolicyRejectedService sid: sid templateName: templateName)].
-	instance := self shouldCreateServer
-		ifTrue: [template serverClass basicNew]
-		ifFalse: [template clientClass basicNew].
+	instanceClass := self shouldCreateServer
+		ifTrue: [templateResolver serverClassForTemplate: template]
+		ifFalse: [templateResolver clientClassForTemplate: template].
+	instance := instanceClass basicNew.
 	aConnection
 		_register: instance
 		as: self sid.
@@ -196,8 +199,9 @@ RsrServiceSnapshot >> slots: anArrayOfReferences [
 { #category : 'other' }
 RsrServiceSnapshot >> snapshot: aService [
 
-	| template |
-	template := aService _template.
+	| templateResolver template |
+	templateResolver := aService _connection templateResolver.
+	template := templateResolver templateFor: aService.
 	sid := aService _id.
 	templateName := template name.
 	"If I am snapshotting a Client, the Snapshot represents a Server."

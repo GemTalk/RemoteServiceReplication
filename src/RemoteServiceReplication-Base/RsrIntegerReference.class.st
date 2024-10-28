@@ -10,7 +10,8 @@ Object
 Class {
 	#name : 'RsrIntegerReference',
 	#superclass : 'RsrValueReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'converting' }

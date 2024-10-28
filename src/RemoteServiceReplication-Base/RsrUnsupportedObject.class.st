@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'object'
 	],
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'exceptioninstantiator' }

@@ -21,7 +21,7 @@ RsrConnectionTestCase >> testAllowExistingInstancesOfDeniedTemplate [
 	value := Time millisecondClockValue.
 
 	"Send a new instance before Policy denies it."
-	allow := template clientClass new.
+	allow := RsrClientNoInstVars new.
 	allow registerWith: connectionA.
 	promise := allow asyncSendReturnArgument: value.
 	result := self expectWhen: promise.
@@ -48,7 +48,7 @@ RsrConnectionTestCase >> testPolicyRejection [
 	value := Time millisecondClockValue.
 
 	"Send a new instance before Policy denies it."
-	allow := template clientClass new.
+	allow := RsrClientNoInstVars new.
 	allow registerWith: connectionA.
 	promise := allow asyncSendReturnArgument: value.
 	result := self expectWhen: promise.
@@ -58,7 +58,7 @@ RsrConnectionTestCase >> testPolicyRejection [
 
 	"Reject the template and try again with a new instance."
 	policy deny: template.
-	reject := template clientClass new.
+	reject := RsrClientNoInstVars new.
 	reject registerWith: connectionA.
 	promise := reject asyncSendReturnArgument: value.
 	reason := self expectCatch: promise.
@@ -81,11 +81,11 @@ RsrConnectionTestCase >> testPolicyRejectsFrameworkTemplate [
 	template := RsrPolicyRejectedService.
 	connectionA policy: policy.
 	connectionB policy: policy.
-	service := RsrServiceNoInstVars clientClass new.
+	service := RsrClientNoInstVars new.
 	service registerWith: connectionA.
 
 	"Send a new instance before Policy denies it."
-	frameworkService := template clientClass new.
+	frameworkService := RsrPolicyRejectedServiceClient new.
 	promise := service asyncSendReturnArgument: frameworkService.
 	result := self expectWhen: promise.
 	self
@@ -94,7 +94,7 @@ RsrConnectionTestCase >> testPolicyRejectsFrameworkTemplate [
 
 	"Ensure it is allowed even if the Policy rejects it."
 	policy deny: template.
-	frameworkService := template clientClass new.
+	frameworkService := RsrPolicyRejectedServiceClient new.
 	promise := service asyncSendReturnArgument: frameworkService.
 	result := self expectWhen: promise.
 	self

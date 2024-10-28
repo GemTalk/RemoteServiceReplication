@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrObject',
 	#superclass : 'Object',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'tracing' }

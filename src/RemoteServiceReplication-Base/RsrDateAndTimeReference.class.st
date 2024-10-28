@@ -11,7 +11,8 @@ Object
 Class {
 	#name : 'RsrDateAndTimeReference',
 	#superclass : 'RsrValueReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'instance creation' }

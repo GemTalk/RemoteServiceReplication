@@ -11,7 +11,8 @@ Object
 Class {
 	#name : 'RsrDictionaryReference',
 	#superclass : 'RsrCollectionReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'analyzing' }

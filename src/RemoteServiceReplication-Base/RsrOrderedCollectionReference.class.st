@@ -11,7 +11,8 @@ Object
 Class {
 	#name : 'RsrOrderedCollectionReference',
 	#superclass : 'RsrCollectionReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'accessing' }

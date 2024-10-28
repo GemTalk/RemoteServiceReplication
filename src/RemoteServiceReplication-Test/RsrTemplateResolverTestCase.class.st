@@ -12,6 +12,70 @@ RsrTemplateResolverTestCase >> resolver [
 ]
 
 { #category : 'running' }
+RsrTemplateResolverTestCase >> testClientClassForTemplate [
+
+	| result |
+	result := self resolver clientClassForTemplate: RsrNoServerService.
+	self
+		assert: result
+		equals: RsrNoServerServiceClient.
+	self
+		should: [ self resolver clientClassForTemplate: RsrNoClientService ]
+		raise: RsrUnknownClass
+]
+
+{ #category : 'running' }
+RsrTemplateResolverTestCase >> testClientClassForTemplateIfAbsent [
+
+	| marker result |
+	marker := Object new.
+	result := self resolver
+		clientClassForTemplate: RsrNoServerService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: RsrNoServerServiceClient.
+	result := self resolver
+		clientClassForTemplate: RsrNoClientService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: marker
+]
+
+{ #category : 'running' }
+RsrTemplateResolverTestCase >> testServerClassForTemplate [
+
+	| result |
+	result := self resolver serverClassForTemplate: RsrNoClientService.
+	self
+		assert: result
+		equals: RsrNoClientServiceServer.
+	self
+		should: [ self resolver serverClassForTemplate: RsrNoServerService ]
+		raise: RsrUnknownClass
+]
+
+{ #category : 'running' }
+RsrTemplateResolverTestCase >> testServerClassForTemplateIfAbsent [
+
+	| marker result |
+	marker := Object new.
+	result := self resolver
+		serverClassForTemplate: RsrNoClientService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: RsrNoClientServiceServer.
+	result := self resolver
+		serverClassForTemplate: RsrNoServerService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: marker
+]
+
+{ #category : 'running' }
 RsrTemplateResolverTestCase >> testTemplateFor [
 
 	| service template |

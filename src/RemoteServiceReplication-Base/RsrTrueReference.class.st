@@ -10,7 +10,8 @@ Object
 Class {
 	#name : 'RsrTrueReference',
 	#superclass : 'RsrBooleanReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'accessing' }

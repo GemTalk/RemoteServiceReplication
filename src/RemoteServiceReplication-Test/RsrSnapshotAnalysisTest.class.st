@@ -90,8 +90,8 @@ RsrSnapshotAnalysisTest >> testMultiPathsToSameService [
 	"Tests issue 76, Unnecessary duplicate snapshots being sent."
 
 	| childService parentService orderedCollection analysis |
-	childService := RsrRemoteAction clientClass new.
-	parentService := RsrRemoteAction clientClass sharedVariable:
+	childService := RsrRemoteActionClient new.
+	parentService := RsrRemoteActionClient sharedVariable:
 		                 childService.
 	orderedCollection := OrderedCollection
 		                     with: childService
@@ -160,7 +160,7 @@ RsrSnapshotAnalysisTest >> testServiceAllDataObjects [
 	that Data Objects are actually encoded in-line."
 
 	| client analysis expected |
-	client := RsrRemoteAction clientClass new.
+	client := RsrRemoteActionClient new.
 	analysis := self analyze: client.
 	expected := OrderedCollection with: client.
 	self
@@ -188,7 +188,7 @@ RsrSnapshotAnalysisTest >> testServiceNoInstVars [
 	snapshotTemplate := connection templateResolver templateNamed: snapshot templateName.
 	self
 		assert: snapshotTemplate
-		equals: client _template
+		equals: RsrServiceNoInstVars
 ]
 
 { #category : 'running' }
@@ -197,8 +197,8 @@ RsrSnapshotAnalysisTest >> testServiceReferencingAnotherService [
 	that Data Objects are actually encoded in-line."
 
 	| referencedService client analysis |
-	referencedService := RsrRemoteAction clientClass new.
-	client := RsrRemoteAction clientClass sharedVariable: referencedService.
+	referencedService := RsrRemoteActionClient new.
+	client := RsrRemoteActionClient sharedVariable: referencedService.
 	analysis := self analyze: client.
 	self
 		assert: analysis snapshots size

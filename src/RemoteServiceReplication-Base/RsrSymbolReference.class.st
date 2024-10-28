@@ -11,7 +11,8 @@ Object
 Class {
 	#name : 'RsrSymbolReference',
 	#superclass : 'RsrCharacterArrayReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'accessing' }

@@ -25,7 +25,7 @@ RsrServiceTest >> mirror: aService [
 RsrServiceTest >> testAnalyzeServiceRegisteredWithDifferentConnection [
 
 	| instance analysis |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: instance)
 		connection: connectionA.
@@ -58,7 +58,7 @@ RsrServiceTest >> testEnsureServersAreCachedAndReused [
 RsrServiceTest >> testHasRemoteSelf [
 
 	| service |
-	service := RsrTestService clientClass new.
+	service := RsrClientTestService new.
 	self mirror: service.
 	self deny: nil == service remoteSelf
 ]
@@ -67,7 +67,7 @@ RsrServiceTest >> testHasRemoteSelf [
 RsrServiceTest >> testInitialization [
 
 	| instance |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	self
 		assert: instance isMirrored
 		equals: false.
@@ -83,7 +83,7 @@ RsrServiceTest >> testInitialization [
 RsrServiceTest >> testIsMirrored [
 
 	| instance |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	self deny: instance isMirrored.
 	self mirror: instance.
 	self assert: instance isMirrored
@@ -312,7 +312,7 @@ RsrServiceTest >> testReflectedVariableNames [
 RsrServiceTest >> testRegisterWith [
 
 	| instance |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	self deny: instance isMirrored.
 	instance registerWith: connectionA.
 	self assert: instance isMirrored.
@@ -358,7 +358,7 @@ RsrServiceTest >> testSendClientWithoutAssociatedServer [
 RsrServiceTest >> testVariableReflection [
 
 	| localService remoteService |
-	localService := RsrTestService clientClass new
+	localService := RsrClientTestService new
 		sharedVariable: #shared;
 		privateVariable: #private;
 		yourself.

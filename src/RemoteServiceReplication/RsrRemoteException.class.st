@@ -30,7 +30,7 @@ RsrRemoteException class >> from: anException [
 			[[anException tag asString]
 				on: Error
 				do: [:ex | ex return: 'Unable to pack #tag containing an instance of ', anException tag class name]].
-	^self clientClass new
+	^RsrRemoteExceptionClient new
 		exceptionClassName: anException class name;
 		tag: tag;
 		messageText: anException messageText;

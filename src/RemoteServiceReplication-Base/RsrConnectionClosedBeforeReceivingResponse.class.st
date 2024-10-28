@@ -1,5 +1,6 @@
 Class {
 	#name : 'RsrConnectionClosedBeforeReceivingResponse',
 	#superclass : 'RsrAbstractReason',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }

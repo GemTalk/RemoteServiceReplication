@@ -20,7 +20,7 @@ templateName: aTemplateName [
 	The client will GC and the server will later GC. We don't care to have
 	a server hanging around if we don't need it."
 
-	^self clientClass new
+	^RsrPolicyRejectedServiceClient new
 		sid: aSID;
 		templateName: aTemplateName;
 		yourself

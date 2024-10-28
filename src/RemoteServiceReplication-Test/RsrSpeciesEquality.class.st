@@ -123,8 +123,8 @@ RsrSpeciesEquality >> testOrderedCollection [
 RsrSpeciesEquality >> testService [
 
 	| clientClass serverClass |
-	clientClass := RsrRemoteAction clientClass.
-	serverClass := RsrRemoteAction serverClass.
+	clientClass := RsrRemoteActionClient.
+	serverClass := RsrRemoteActionServer.
 	self
 		verify: clientClass new;
 		verify: (clientClass sharedVariable: clientClass new);

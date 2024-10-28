@@ -1,7 +1,8 @@
 Class {
 	#name : 'RsrResumableError',
 	#superclass : 'RsrError',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'testing' }

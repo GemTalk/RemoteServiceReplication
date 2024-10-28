@@ -1,5 +1,6 @@
 Class {
 	#name : 'RsrNotification',
 	#superclass : 'Notification',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }

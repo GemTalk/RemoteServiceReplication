@@ -23,12 +23,6 @@ connection: aConnection [
 ]
 
 { #category : 'accessing' }
-RsrService class >> clientClass [
-
-	^RsrClassResolver classNamed: self clientClassName
-]
-
-{ #category : 'accessing' }
 RsrService class >> clientClassName [
 
 	^(self templateClassName, 'Client') asSymbol
@@ -53,21 +47,9 @@ RsrService class >> isTemplateClass [
 ]
 
 { #category : 'accessing' }
-RsrService class >> serverClass [
-
-	^RsrClassResolver classNamed: self serverClassName
-]
-
-{ #category : 'accessing' }
 RsrService class >> serverClassName [
 
 	^(self templateClassName, 'Server') asSymbol
-]
-
-{ #category : 'accessing' }
-RsrService class >> templateClass [
-
-	^RsrClassResolver classNamed: self templateClassName
 ]
 
 { #category : 'accessing' }
@@ -105,13 +87,6 @@ RsrService >> _synchronize [
 	"Return self to synchronize with the remote peer"
 
 	^self
-]
-
-{ #category : 'private-accessing' }
-RsrService >> _template [
-	"Returns the template associated with this Service. General users should use #template."
-
-	^_connection templateResolver templateFor: self
 ]
 
 { #category : 'public-events' }
@@ -220,8 +195,7 @@ RsrService >> synchronize [
 
 { #category : 'public-accessing' }
 RsrService >> template [
-	"Returns the template associated with this Service.
-	This method should NOT be redefined."
+	"Returns the template associated with this Service."
 
-	^self _template
+	^_connection templateResolver templateFor: self
 ]

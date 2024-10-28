@@ -4,7 +4,8 @@ Class {
 	#classInstVars : [
 		'current'
 	],
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'configuring' }

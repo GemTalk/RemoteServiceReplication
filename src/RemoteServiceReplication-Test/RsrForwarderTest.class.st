@@ -10,7 +10,7 @@ RsrForwarderTest >> testForwarding [
 	"This test needs to be improved. It is out of sync."
 
 	| service id connection forwarder sendMessage |
-	service := RsrTestService clientClass new.
+	service := RsrClientTestService new.
 	id := 1.
 	connection := RsrConnection
 		channel: RsrNullChannel new

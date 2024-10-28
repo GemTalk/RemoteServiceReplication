@@ -6,14 +6,21 @@ Class {
 }
 
 { #category : 'resolving' }
-RsrTemplateResolver >> templateFor: aService [
-	"Resolve the template associated with the provided Service."
+RsrTemplateResolver >> clientClassForTemplate: aTemplate
+ifAbsent: absentBlock [
 
-	| template |
-	template := aService class.
-	[template isTemplateClass]
-		whileFalse: [template := template superclass].
-	^template
+	^RsrClassResolver
+		classNamed: aTemplate clientClassName
+		ifAbsent: absentBlock
+]
+
+{ #category : 'resolving' }
+RsrTemplateResolver >> serverClassForTemplate: aTemplate
+ifAbsent: absentBlock [
+
+	^RsrClassResolver
+		classNamed: aTemplate serverClassName
+		ifAbsent: absentBlock
 ]
 
 { #category : 'resolving' }
@@ -21,6 +28,7 @@ RsrTemplateResolver >> templateNamed: aTemplateName
 ifAbsent: aBlock [
 	"Resolve a template with the provided name."
 
-	self flag: 'This should not send #templateClass. This can go away once ServiceSnapshot wire encoding is updated.'.
-	^(RsrClassResolver classNamed: aTemplateName ifAbsent: [^aBlock value]) templateClass
+	^RsrClassResolver
+		classNamed: aTemplateName
+		ifAbsent: aBlock
 ]

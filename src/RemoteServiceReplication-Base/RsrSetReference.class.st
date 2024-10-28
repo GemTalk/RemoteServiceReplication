@@ -11,7 +11,8 @@ Object
 Class {
 	#name : 'RsrSetReference',
 	#superclass : 'RsrCollectionReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'instance creation' }

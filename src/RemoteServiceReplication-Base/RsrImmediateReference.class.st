@@ -9,7 +9,8 @@ Object
 Class {
 	#name : 'RsrImmediateReference',
 	#superclass : 'RsrReference',
-	#category : 'RemoteServiceReplication-Base'
+	#category : 'RemoteServiceReplication-Base',
+	#package : 'RemoteServiceReplication-Base'
 }
 
 { #category : 'analyzing' }
