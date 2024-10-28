@@ -7,6 +7,7 @@ Class {
 
 { #category : 'resolving' }
 RsrAbstractTemplateResolver >> clientClassForTemplate: aTemplate [
+	"Lookup the client class for the provided template."
 
 	^self
 		clientClassForTemplate: aTemplate
@@ -14,7 +15,16 @@ RsrAbstractTemplateResolver >> clientClassForTemplate: aTemplate [
 ]
 
 { #category : 'resolving' }
+RsrAbstractTemplateResolver >> clientClassForTemplate: aTemplate
+ifAbsent: absentBlock [
+	"Lookup the client class for the provided template."
+	
+	self subclassResponsibility
+]
+
+{ #category : 'resolving' }
 RsrAbstractTemplateResolver >> serverClassForTemplate: aTemplate [
+	"Lookup the server class for the provided template."
 
 	^self
 		serverClassForTemplate: aTemplate
@@ -24,6 +34,7 @@ RsrAbstractTemplateResolver >> serverClassForTemplate: aTemplate [
 { #category : 'resolving' }
 RsrAbstractTemplateResolver >> serverClassForTemplate: aTemplate
 ifAbsent: absentBlock [
+	"Lookup the server class for the provided template."
 
 	self subclassResponsibility
 ]

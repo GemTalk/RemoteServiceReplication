@@ -8,6 +8,7 @@ Class {
 { #category : 'resolving' }
 RsrTemplateResolver >> clientClassForTemplate: aTemplate
 ifAbsent: absentBlock [
+	"Lookup the client class for the provided template."
 
 	^RsrClassResolver
 		classNamed: aTemplate clientClassName
@@ -17,6 +18,7 @@ ifAbsent: absentBlock [
 { #category : 'resolving' }
 RsrTemplateResolver >> serverClassForTemplate: aTemplate
 ifAbsent: absentBlock [
+	"Lookup the server class for the provided template."
 
 	^RsrClassResolver
 		classNamed: aTemplate serverClassName
