@@ -13,14 +13,16 @@ RsrTemplateResolverWithClassVersions >> resolver [
 { #category : 'cleanup' }
 RsrTemplateResolverWithClassVersions >> tearDown [
 
-	RsrService
+	[RsrService
 		rwSubclass: 'RsrVersionService'
 		instVarNames: #()
 		classVars: #()
 		classInstVars: #()
 		poolDictionaries: #()
 		category: 'RemoteServiceReplication-GemStone-Test'
-		options: #().
+		options: #().]
+    on: SecurityError "Ignore errors indicating we cannot version the test class."
+    do: [:ex | ex return].
 	super tearDown
 ]
 
@@ -35,14 +37,16 @@ RsrTemplateResolverWithClassVersions >> testVersionClassAfterCreatingService [
 		assert: result
 		identicalTo: template.
 	"Revision the Service class and Template"
-	RsrService
+	[RsrService
 		rwSubclass: 'RsrVersionService'
 		instVarNames: {'a', Time millisecondClockValue printString}
 		classVars: #()
 		classInstVars: #()
 		poolDictionaries: #()
 		category: 'RemoteServiceReplication-GemStone-Test'
-		options: #().
+		options: #().]
+    on: SecurityError "This user does not have permissions to alter this class. Skip the test."
+    do: [:ex | ^self].
 	result := self resolver templateFor: service.
 	self
 		assert: result
