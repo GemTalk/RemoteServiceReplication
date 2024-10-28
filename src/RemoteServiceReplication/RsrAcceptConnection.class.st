@@ -93,7 +93,7 @@ RsrAcceptConnection >> waitForConnection [
 				[listener close.
 				listener := nil.
 				isWaitingForConnection := false].
-	stream := RsrSocketStream on: socket.
+	stream := socket bufferedSocketStream.
 	handshake := RsrHandshake
 		steps: self handshakeSteps
 		stream: stream.

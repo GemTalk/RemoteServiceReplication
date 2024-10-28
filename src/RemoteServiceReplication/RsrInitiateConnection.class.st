@@ -27,7 +27,7 @@ RsrInitiateConnection >> connect [
 	socket
 		connectToHost: self host
 		port: self port.
-	stream := RsrSocketStream on: socket.
+	stream := socket bufferedSocketStream.
 	handshake := RsrHandshake
 		steps: self handshakeSteps
 		stream: stream.

@@ -23,13 +23,6 @@ RsrSocketStream >> atEnd [
 	^socket isConnected not
 ]
 
-{ #category : 'accessing' }
-RsrSocketStream >> chunkSize [
-	"The largest size that should be read from or written to a Socket in each attempt."
-
-	^4096
-]
-
 { #category : 'closing' }
 RsrSocketStream >> close [
 

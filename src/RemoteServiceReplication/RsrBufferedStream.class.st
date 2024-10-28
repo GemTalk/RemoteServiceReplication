@@ -1,10 +1,10 @@
 Class {
-	#name : 'RsrBufferedSocketStream',
-	#superclass : 'RsrObject',
+	#name : 'RsrBufferedStream',
+	#superclass : 'RsrStream',
 	#instVars : [
 		'stream',
 		'outBuffer',
-		'writePosition',
+		'firstByte',
 		'nextToWrite'
 	],
 	#category : 'RemoteServiceReplication',
@@ -12,7 +12,7 @@ Class {
 }
 
 { #category : 'instance creation' }
-RsrBufferedSocketStream class >> on: aSocketStream [
+RsrBufferedStream class >> on: aSocketStream [
 
 	^self new
 		stream: aSocketStream;
@@ -20,74 +20,81 @@ RsrBufferedSocketStream class >> on: aSocketStream [
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> atEnd [
+RsrBufferedStream >> atEnd [
 
 	^stream atEnd
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> checkAutoFlush [
+RsrBufferedStream >> checkAutoFlush [
 
-	nextToWrite > 4096
+	nextToWrite > self flushThreshold
 		ifTrue: [ self flush ]
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> close [
+RsrBufferedStream >> close [
 
 	stream close
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> flush [
+RsrBufferedStream >> flush [
 
-	writePosition = nextToWrite
+	firstByte = nextToWrite
 		ifTrue: [^self].
-	stream nextPutAll: (outBuffer copyFrom: writePosition to: nextToWrite - 1).
-	writePosition := nextToWrite := 1.
+	stream nextPutAll: (outBuffer copyFrom: firstByte to: nextToWrite - 1).
+	firstByte := nextToWrite := 1.
 	stream flush
 ]
 
+{ #category : 'accessing' }
+RsrBufferedStream >> flushThreshold [
+	"After how much data should we automatically flush?"
+
+	^self chunkSize
+]
+
 { #category : 'writing' }
-RsrBufferedSocketStream >> growOutBufferTo: aNumberOfBytes [
+RsrBufferedStream >> growOutBufferTo: aNumberOfBytes [
 
 	| rounding |
-	rounding := ((aNumberOfBytes \\ 4096) + 1) * 4096.
+	rounding := ((aNumberOfBytes // self chunkSize) + 1) * self chunkSize.
 	outBuffer := outBuffer , (ByteArray new: rounding - outBuffer size)
 ]
 
 { #category : 'initialization' }
-RsrBufferedSocketStream >> initialize [
+RsrBufferedStream >> initialize [
 
 	super initialize.
-	outBuffer := ByteArray new: 4096.
+	outBuffer := ByteArray new: self chunkSize.
 	nextToWrite := 1.
-	writePosition := 1
+	firstByte := 1
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> isConnected [
+RsrBufferedStream >> isConnected [
 
 	^stream isConnected
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> next [
+RsrBufferedStream >> next [
 
 	^self next: 1
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> next: aCount [
+RsrBufferedStream >> next: aCount [
 
 	^stream next: aCount
 ]
 
 { #category : 'writing' }
-RsrBufferedSocketStream >> nextPutAll: aByteArray [
+RsrBufferedStream >> nextPutAll: aByteArray [
 
 	(outBuffer size >= (aByteArray size + nextToWrite))
-		ifFalse: [self growOutBufferTo: outBuffer size + nextToWrite].
+		ifFalse: [self growOutBufferTo: aByteArray size + (nextToWrite - firstByte)].
 	outBuffer
 		replaceFrom: nextToWrite
 		to: nextToWrite + aByteArray size - 1
@@ -98,7 +105,7 @@ RsrBufferedSocketStream >> nextPutAll: aByteArray [
 ]
 
 { #category : 'accessing' }
-RsrBufferedSocketStream >> stream: aStream [
+RsrBufferedStream >> stream: aStream [
 
 	stream := aStream
 ]

@@ -77,7 +77,7 @@ RsrSocketPair >> firstSocket: anObject [
 { #category : 'accessing' }
 RsrSocketPair >> firstStream [
 
-	^self socketStreamClass on: firstSocket
+	^firstSocket bufferedSocketStream
 ]
 
 { #category : 'accessing' }
@@ -95,11 +95,5 @@ RsrSocketPair >> secondSocket: anObject [
 { #category : 'accessing' }
 RsrSocketPair >> secondStream [
 
-	^self socketStreamClass on: secondSocket
-]
-
-{ #category : 'accessing' }
-RsrSocketPair >> socketStreamClass [
-
-	^(RsrClassResolver classNamed: #RsrSocketStream)
+	^secondSocket bufferedSocketStream
 ]

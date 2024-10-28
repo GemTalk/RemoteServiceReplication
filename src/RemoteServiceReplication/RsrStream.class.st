@@ -13,6 +13,13 @@ RsrStream >> atEnd [
 ]
 
 { #category : 'closing' }
+RsrStream >> chunkSize [
+	"Size of each chunk"
+
+	^16384
+]
+
+{ #category : 'closing' }
 RsrStream >> close [
 	"Close the Stream. The semantics of this are defined by the subclass."
 
