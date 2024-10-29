@@ -40,6 +40,40 @@ RsrServiceTest >> testAnalyzeServiceRegisteredWithDifferentConnection [
 ]
 
 { #category : 'running' }
+RsrServiceTest >> testCustomTemplateResolver [
+
+	| serviceClass templateClass replicatedService testResolver newService |
+	"Replicate a service initially to verify it continues to function."
+	serviceClass := RsrRemoteActionClient.
+	templateClass := RsrRemoteAction.
+	replicatedService := serviceClass new.
+	replicatedService
+		registerWith: connectionA;
+		synchronize.
+	self
+		assert: (connectionB serviceAt: replicatedService _id) class
+		equals: RsrRemoteActionServer.
+
+	"Set the template resolver to a test resolver which cannot resolve any templates initially."
+	testResolver := RsrTestTemplateResolver new.
+	connectionB templateResolver: testResolver.
+	self "Ensure that the existing service continues to function."
+		shouldnt: [replicatedService synchronize]
+		raise: RsrBrokenPromise.
+	newService := serviceClass new.
+	newService registerWith: connectionA.
+	self
+		should: [newService synchronize]
+		raise: RsrBrokenPromise.
+	
+	"Add the template to the resolver. The service should now replicate successfully."
+	testResolver addTemplate: templateClass.
+	self
+		shouldnt: [newService synchronize]
+		raise: RsrBrokenPromise.
+]
+
+{ #category : 'running' }
 RsrServiceTest >> testEnsureServersAreCachedAndReused [
 
 	| client service1 service2 |
