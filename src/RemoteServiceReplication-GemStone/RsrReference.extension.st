@@ -17,15 +17,21 @@ RsrReference class >> initializeReferenceMapping [
 	referenceMapping
 		at: String
 		put: RsrStringReference.
-    referenceMapping
-        at: Unicode7
-        put: RsrStringReference.
-    referenceMapping
-        at: DoubleByteString
-        put: RsrStringReference.
-    referenceMapping
-        at: QuadByteString
-        put: RsrStringReference.
+	referenceMapping
+		at: Unicode7
+		put: RsrStringReference.
+	referenceMapping
+		at: Unicode16
+		put: RsrStringReference.
+	referenceMapping
+		at: Unicode32
+		put: RsrStringReference.
+	referenceMapping
+		at: DoubleByteString
+		put: RsrStringReference.
+	referenceMapping
+		at: QuadByteString
+		put: RsrStringReference.
 	referenceMapping
 		at: LargeInteger
 		put: RsrIntegerReference.
