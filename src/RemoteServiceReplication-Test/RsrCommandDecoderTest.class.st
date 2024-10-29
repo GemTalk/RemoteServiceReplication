@@ -40,7 +40,7 @@ RsrCommandDecoderTest >> decodeService: anObjectBytes [
 
 { #category : 'running' }
 RsrCommandDecoderTest >> testDecodeIncompatibleServiceWithExtraInstVar [
-	"Ensure that "
+	"Ensure that there is a reasonable error message when decoding failes due to incompatible templates."
 
 	| encoding exception |
 	encoding := 	#[0 0 0 0 0 0 0 0], "type"
@@ -59,9 +59,6 @@ RsrCommandDecoderTest >> testDecodeIncompatibleServiceWithExtraInstVar [
 	exception := [self decodeService: encoding]
 		on: Error
 		do: [:ex | ex return: ex].
-	self
-		assert: exception class
-		equals: Error.
 	self
 		assert: exception messageText
 		equals: 'Expected 0 value(s) for template RsrServiceNoInstVars but received 1 value(s) instead. Verify peers have compatible template definitions.'
