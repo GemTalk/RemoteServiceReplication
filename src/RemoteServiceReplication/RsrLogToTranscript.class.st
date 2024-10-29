@@ -1,12 +1,12 @@
 Class {
-	#name : 'RsrTranscriptSink',
-	#superclass : 'RsrLogSink',
+	#name : 'RsrLogToTranscript',
+	#superclass : 'RsrLogDestination',
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'writing' }
-RsrTranscriptSink >> write: aMessageString [
+RsrLogToTranscript >> write: aMessageString [
 
 	Transcript
 		show: aMessageString;

@@ -3,16 +3,17 @@ Class {
 	#superclass : 'RsrObject',
 	#instVars : [
 		'verbosity',
-		'sinks'
+		'destinations'
 	],
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'configuring' }
-RsrLog >> addSink: aLogSink [
+RsrLog >> addDestination: aLogDestination [
+	"Add an additional destination for logs"
 
-	sinks add: aLogSink
+	destinations add: aLogDestination
 ]
 
 { #category : 'logging' }
@@ -48,7 +49,7 @@ RsrLog >> initialize [
 
 	super initialize.
 	verbosity := self levelTrace.
-	sinks := OrderedCollection new
+	destinations := OrderedCollection new
 ]
 
 { #category : 'accessing' }
@@ -93,7 +94,7 @@ level: aLevelString [
 
 	| message |
 	message := RsrDateAndTime now printString, '-', aLevelString, '-', aMessage.
-	sinks do: [:each | each write: message]
+	destinations do: [:each | each write: message]
 ]
 
 { #category : 'logging' }

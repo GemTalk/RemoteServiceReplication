@@ -1,6 +1,6 @@
 Class {
-	#name : 'RsrCustomSink',
-	#superclass : 'RsrLogSink',
+	#name : 'RsrLogViaBlock',
+	#superclass : 'RsrLogDestination',
 	#instVars : [
 		'action'
 	],
@@ -9,7 +9,7 @@ Class {
 }
 
 { #category : 'instance creation' }
-RsrCustomSink class >> action: aBlock [
+RsrLogViaBlock class >> action: aBlock [
 
 	^self new
 		action: aBlock;
@@ -17,19 +17,19 @@ RsrCustomSink class >> action: aBlock [
 ]
 
 { #category : 'accessing' }
-RsrCustomSink >> action [
+RsrLogViaBlock >> action [
 
 	^action
 ]
 
 { #category : 'accessing' }
-RsrCustomSink >> action: aBlock [
+RsrLogViaBlock >> action: aBlock [
 
 	action := aBlock
 ]
 
 { #category : 'writing' }
-RsrCustomSink >> write: aMessage [
+RsrLogViaBlock >> write: aMessage [
 
 	self action value: aMessage
 ]

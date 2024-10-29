@@ -1,12 +1,12 @@
 Class {
-	#name : 'RsrLogSink',
+	#name : 'RsrLogDestination',
 	#superclass : 'RsrObject',
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'writing' }
-RsrLogSink >> write: aMessage [
+RsrLogDestination >> write: aMessage [
 
 	self subclassResponsibility
 ]
