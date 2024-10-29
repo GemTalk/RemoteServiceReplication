@@ -36,7 +36,7 @@ RsrServiceTest >> testAnalyzeServiceRegisteredWithDifferentConnection [
 		connection: connectionB.
 	self
 		should: [analysis perform]
-		raise: RsrAlreadyRegistered
+		raise: RsrAlreadyRegisteredWithAnotherConnection
 ]
 
 { #category : 'running' }
@@ -311,7 +311,7 @@ RsrServiceTest >> testRegisterWith [
 	self assert: instance isMirrored.
 	self
 		should: [instance registerWith: connectionB]
-		raise: RsrAlreadyRegistered
+		raise: RsrAlreadyRegisteredWithAnotherConnection
 ]
 
 { #category : 'running' }

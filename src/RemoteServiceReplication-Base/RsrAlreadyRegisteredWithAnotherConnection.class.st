@@ -1,5 +1,5 @@
 Class {
-	#name : 'RsrAlreadyRegistered',
+	#name : 'RsrAlreadyRegisteredWithAnotherConnection',
 	#superclass : 'RsrError',
 	#instVars : [
 		'service',
@@ -10,7 +10,7 @@ Class {
 }
 
 { #category : 'instance creation' }
-RsrAlreadyRegistered class >> signalService: aService
+RsrAlreadyRegisteredWithAnotherConnection class >> signalService: aService
 intendedConnection: aConnection [
 
 	^self new
@@ -20,25 +20,25 @@ intendedConnection: aConnection [
 ]
 
 { #category : 'accessing' }
-RsrAlreadyRegistered >> intendedConnection [
+RsrAlreadyRegisteredWithAnotherConnection >> intendedConnection [
 
 	^intendedConnection
 ]
 
 { #category : 'accessing' }
-RsrAlreadyRegistered >> intendedConnection: aConnection [
+RsrAlreadyRegisteredWithAnotherConnection >> intendedConnection: aConnection [
 
 	intendedConnection := aConnection
 ]
 
 { #category : 'accessing' }
-RsrAlreadyRegistered >> service [
+RsrAlreadyRegisteredWithAnotherConnection >> service [
 
 	^service
 ]
 
 { #category : 'accessing' }
-RsrAlreadyRegistered >> service: aService [
+RsrAlreadyRegisteredWithAnotherConnection >> service: aService [
 
 	service := aService
 ]

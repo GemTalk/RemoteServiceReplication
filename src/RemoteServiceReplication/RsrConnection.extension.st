@@ -8,7 +8,7 @@ RsrConnection >> _ensureRegistered: aService [
 			aService postRegistration.
 			^ self ].
 	aService _connection == self
-		ifFalse: [ ^ RsrAlreadyRegistered signalService: aService intendedConnection: self ]
+		ifFalse: [ ^ RsrAlreadyRegisteredWithAnotherConnection signalService: aService intendedConnection: self ]
 ]
 
 { #category : '*remoteservicereplication' }
