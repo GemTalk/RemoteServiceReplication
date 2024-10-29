@@ -272,40 +272,33 @@ RsrServiceTest >> testPrePostUpdate [
 { #category : 'running' }
 RsrServiceTest >> testReflectedVariableNames [
 
-	| client server clientNames serverNames |
-	client := RsrClientTestService new
+	| client server expectedNames clientNames serverNames |
+	client := RsrTestTemplateClient new
 		registerWith: connectionA;
 		synchronize.
 	server := connectionB serviceAt: client _id.
+	expectedNames := #(#abstractTemplateVariable #templateVariable) asOrderedCollection.
 	clientNames := RsrServiceSnapshot reflectedVariablesFor: client.
 	serverNames := RsrServiceSnapshot reflectedVariablesFor: server.
 	self
 		assert: clientNames
-		equals: serverNames.
+		equals: expectedNames.
 	self
-		assert: clientNames size
-		equals: 1.
-	self
-		assert: (clientNames at: 1) asSymbol
-		equals: #sharedVariable.
+		assert: serverNames
+		equals: expectedNames.
 	client := RsrReflectedVariableTestClient new
 		registerWith: connectionA;
 		synchronize.
 	server := connectionB serviceAt: client _id.
+	expectedNames := #( #varA #varB ) asOrderedCollection.
 	clientNames := RsrServiceSnapshot reflectedVariablesFor: client.
 	serverNames := RsrServiceSnapshot reflectedVariablesFor: server.
 	self
 		assert: clientNames
-		equals: serverNames.
+		equals: expectedNames.
 	self
-		assert: clientNames size
-		equals: 2.
-	self
-		assert: (clientNames at: 1) asSymbol
-		equals: #varA.
-	self
-		assert: (clientNames at: 2) asSymbol
-		equals: #varB
+		assert: serverNames
+		equals: expectedNames
 ]
 
 { #category : 'running' }
