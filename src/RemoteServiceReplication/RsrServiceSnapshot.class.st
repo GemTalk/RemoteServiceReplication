@@ -157,7 +157,7 @@ RsrServiceSnapshot >> reifyIn: aConnection [
 	| instance referenceStream |
 	instance := self instanceIn: aConnection.
 	(self class reflectedVariablesFor: instance) size = slots size 
-		ifFalse: [ self error: 'Incorrectly encoded instance detected' ].
+		ifFalse: [ self error: 'Expected ', (self class reflectedVariablesFor: instance) size printString, ' value(s) for template ', templateName, ' but received ', slots size printString, ' value(s) instead. Verify peers have compatible template definitions.'  ].
 	referenceStream := ReadStream on: slots.
 	self class reflectedVariableIndicesFor: instance do: [ :index | 
 		instance

@@ -39,6 +39,35 @@ RsrCommandDecoderTest >> decodeService: anObjectBytes [
 ]
 
 { #category : 'running' }
+RsrCommandDecoderTest >> testDecodeIncompatibleServiceWithExtraInstVar [
+	"Ensure that "
+
+	| encoding exception |
+	encoding := 	#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 1], "referencedService's OID = 1"
+	#[0 0 0 0 0 0 0 1], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 20], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 105 99 101 78 111 73 110 115 116 86 97 114 115], "#RsrServiceNoInstVars"
+	#[0 0 0 0 0 0 0 0], "Start of persona. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 6], "Length of UTF-8 encoded bytes"
+	#[115 101 114 118 101 114], "#server"
+	"inst var referencing itself"
+	#[0 0 0 0 0 0 0 1].
+	exception := [self decodeService: encoding]
+		on: Error
+		do: [:ex | ex return: ex].
+	self
+		assert: exception class
+		equals: Error.
+	self
+		assert: exception messageText
+		equals: 'Expected 0 value(s) for template RsrServiceNoInstVars but received 1 value(s) instead. Verify peers have compatible template definitions.'
+]
+
+{ #category : 'running' }
 RsrCommandDecoderTest >> testDeliverResponse [
 
 	| service response encoding command decodedService |
