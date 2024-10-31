@@ -227,16 +227,6 @@ RsrSocketTestCase >> testPartialRead [
 		equals: writeBuffer
 ]
 
-{ #category : 'running' }
-RsrSocketTestCase >> testPort [
-
-	| socket |
-	socket := self newSocket.
-	self
-		assert: socket port
-		equals: 0
-]
-
 { #category : 'running-read/write' }
 RsrSocketTestCase >> testReadAfterPeerClose [
 

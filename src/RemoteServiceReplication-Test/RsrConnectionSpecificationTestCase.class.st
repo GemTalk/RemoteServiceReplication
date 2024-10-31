@@ -27,22 +27,124 @@ RsrConnectionSpecificationTestCase >> port [
 RsrConnectionSpecificationTestCase >> testAcceptOnLocalhost [
 
 	| acceptor initiator semaphore connectionA connectionB |
-	acceptor := RsrAcceptConnection
-		host: self localhost 
-		port: self port.
+	acceptor := RsrAcceptConnection host: self localhost port: self port.
+	acceptor ensureListening.
+	self assert: acceptor listeningPort equals: self port.
 	initiator := RsrInitiateConnection
-		host: self localhost
-		port: self port.
+		             host: self localhost
+		             port: self port.
 	semaphore := Semaphore new.
 	RsrProcessModel
-		fork: [[connectionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
-		fork: [[connectionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
-	semaphore wait; wait.
+		fork: [ 
+			[ connectionA := acceptor waitForConnection ] ensure: [ 
+					semaphore signal ] ]
+		named: 'Pending AcceptConnection';
+		fork: [ 
+			[ connectionB := initiator connect ] ensure: [ semaphore signal ] ]
+		named: 'Pending InitiateConnection'.
+	semaphore
+		wait;
+		wait.
 	self
 		assert: connectionA isOpen;
 		assert: connectionB isOpen.
 	connectionA close.
 	connectionB close
+]
+
+{ #category : 'running' }
+RsrConnectionSpecificationTestCase >> testBindToAvailablePortRange [
+
+	"If no one is listening on self port, we should get that port."
+
+	| acceptor initiator semaphore connectionA connectionB |
+	acceptor := RsrAcceptConnection
+		            host: self localhost
+		            portRange: (self port to: self port + 1).
+	acceptor ensureListening.
+	self assert: acceptor listeningPort equals: self port.
+	initiator := RsrInitiateConnection
+		             host: self localhost
+		             port: acceptor listeningPort.
+	semaphore := Semaphore new.
+	RsrProcessModel
+		fork: [ 
+			[ connectionA := acceptor waitForConnection ] ensure: [ 
+					semaphore signal ] ]
+		named: 'Pending AcceptConnection';
+		fork: [ 
+			[ connectionB := initiator connect ] ensure: [ semaphore signal ] ]
+		named: 'Pending InitiateConnection'.
+	semaphore
+		wait;
+		wait.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	connectionA close.
+	connectionB close
+]
+
+{ #category : 'running' }
+RsrConnectionSpecificationTestCase >> testBindToPartlyAvailablePortRange [
+
+	"Listen on first port to force range to listen on second port."
+
+	| blocker acceptor initiator semaphore connectionA connectionB |
+	blocker := RsrAcceptConnection host: self localhost port: self port.
+	[ 
+	blocker ensureListening.
+	self assert: blocker listeningPort equals: self port.
+	acceptor := RsrAcceptConnection
+		            host: self localhost
+		            portRange: (self port to: self port + 1).
+	acceptor ensureListening.
+	self assert: acceptor listeningPort equals: self port + 1.
+	initiator := RsrInitiateConnection
+		             host: self localhost
+		             port: acceptor listeningPort.
+	semaphore := Semaphore new.
+	RsrProcessModel
+		fork: [ 
+			[ connectionA := acceptor waitForConnection ] ensure: [ 
+					semaphore signal ] ]
+		named: 'Pending AcceptConnection';
+		fork: [ 
+			[ connectionB := initiator connect ] ensure: [ semaphore signal ] ]
+		named: 'Pending InitiateConnection'.
+	semaphore
+		wait;
+		wait.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	connectionA close.
+	connectionB close ] ensure: [ blocker cancelWaitForConnection ]
+]
+
+{ #category : 'running' }
+RsrConnectionSpecificationTestCase >> testBindToUnavailablePortRange [
+
+	"Listen on both ports in range -- range should then fail."
+
+	| blocker1 blocker2 acceptor |
+	blocker1 := RsrAcceptConnection host: self localhost port: self port.
+	blocker2 := RsrAcceptConnection
+		            host: self localhost
+		            port: self port + 1.
+	[ 
+	blocker1 ensureListening.
+	self assert: blocker1 listeningPort equals: self port.
+	blocker2 ensureListening.
+	self assert: blocker2 listeningPort equals: self port + 1.
+	acceptor := RsrAcceptConnection
+		            host: self localhost
+		            portRange: (self port to: self port + 1).
+	self should: [ acceptor ensureListening ] raise: RsrInvalidBind ] 
+		ensure: [ 
+			{ 
+				blocker1.
+				blocker2 } do: [ :each | each cancelWaitForConnection ] ]
 ]
 
 { #category : 'running' }

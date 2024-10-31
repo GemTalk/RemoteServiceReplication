@@ -15,13 +15,9 @@ Class {
 }
 
 { #category : 'instance creation' }
-RsrSocketConnectionSpecification class >> host: hostnameOrAddress
-port: port [
+RsrSocketConnectionSpecification class >> host: hostnameOrAddress port: port [
 
-	^self new
-		host: hostnameOrAddress;
-		port: port;
-		yourself
+	^ self subclassResponsibility
 ]
 
 { #category : 'accessing' }
