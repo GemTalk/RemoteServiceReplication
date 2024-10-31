@@ -21,6 +21,9 @@ RsrSocket >> _nativeSocket: aGsSignalingSocket [
 	"Private - Configure w/ a platform socket"
 
 	nativeSocket := aGsSignalingSocket.
+	nativeSocket
+		option: 'NODELAY'
+		put: true.
 	nativeSocket interrupting: true
 ]
 
@@ -95,8 +98,8 @@ RsrSocket >> port [
 	"Return the port associated with the socket."
 
 	^[nativeSocket port]
-    on: SocketError
-    do: [:ex | ex return: 0]
+		on: SocketError
+		do: [:ex | ex return: 0]
 ]
 
 { #category : 'read/write' }
