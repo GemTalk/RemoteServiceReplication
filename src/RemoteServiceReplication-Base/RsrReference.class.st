@@ -17,9 +17,6 @@ Collaborators:
 Class {
 	#name : 'RsrReference',
 	#superclass : 'RsrObject',
-	#classInstVars : [
-		'referenceMapping'
-	],
 	#category : 'RemoteServiceReplication-Base',
 	#package : 'RemoteServiceReplication-Base'
 }
@@ -37,12 +34,6 @@ RsrReference class >> from: anObject [
 	| referenceClass |
 	referenceClass := self referenceClassFor: anObject.
 	^referenceClass from: anObject
-]
-
-{ #category : 'accessing' }
-RsrReference class >> referenceMapping [
-
-	^referenceMapping
 ]
 
 { #category : 'accessing' }

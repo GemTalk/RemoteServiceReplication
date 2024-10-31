@@ -1,78 +1,74 @@
 Extension { #name : 'RsrReference' }
 
 { #category : '*remoteservicereplication-gemstone' }
-RsrReference class >> initializeReferenceMapping [
-	"RsrReference initializeReferenceMapping"
+RsrReference class >> referenceClassFor: anObject [
+	"This method is called for each object in the transitive closure of a send to #remoteSelf.
 
-	referenceMapping := Dictionary new.
-	referenceMapping
-		at: Symbol
-		put: RsrSymbolReference.
-	referenceMapping
-		at: DoubleByteSymbol
-		put: RsrSymbolReference.
-	referenceMapping
-		at: QuadByteSymbol
-		put: RsrSymbolReference.
-	referenceMapping
-		at: String
-		put: RsrStringReference.
-	referenceMapping
-		at: Unicode7
-		put: RsrStringReference.
-	referenceMapping
-		at: Unicode16
-		put: RsrStringReference.
-	referenceMapping
-		at: Unicode32
-		put: RsrStringReference.
-	referenceMapping
-		at: DoubleByteString
-		put: RsrStringReference.
-	referenceMapping
-		at: QuadByteString
-		put: RsrStringReference.
-	referenceMapping
-		at: LargeInteger
-		put: RsrIntegerReference.
-	referenceMapping
-		at: SmallInteger
-		put: RsrIntegerReference.
-	referenceMapping
-		at: Character
-		put: RsrCharacterReference.
-	referenceMapping
-		at: UndefinedObject
-		put: RsrNilReference.
-	referenceMapping
-		at: Boolean
-		put: RsrTrueReference.
-	referenceMapping
-		at: Array
-		put: RsrArrayReference.
-	referenceMapping
-		at: ByteArray
-		put: RsrByteArrayReference.
-	referenceMapping
-		at: Set
-		put: RsrSetReference.
-	referenceMapping
-		at: OrderedCollection
-		put: RsrOrderedCollectionReference.
-	referenceMapping
-		at: Dictionary
-		put: RsrDictionaryReference.
-	referenceMapping
-		at: DateAndTime
-		put: RsrDateAndTimeReference.
-	referenceMapping
-		at: SmallDateAndTime
-		put: RsrDateAndTimeReference.
-	referenceMapping
-		at: SmallDouble
-		put: RsrDoubleReference.
-	referenceMapping
-		at: Float
-		put: RsrDoubleReference.
-	^referenceMapping
+	This implementation takes advantage of open-coded selectors. Testing in Pharo showed this
+	is 2.5x faster than a Dictionary lookup. This multiplier is likely different in GemStone
+	but hasn't be tested."
+
+	| oc |
+	oc := anObject class.
+
+	"Text"
+	oc == Symbol
+		ifTrue: [^RsrSymbolReference].
+	oc == DoubleByteSymbol
+		ifTrue: [^RsrSymbolReference].
+	oc == QuadByteSymbol
+		ifTrue: [^RsrSymbolReference].
+	oc == String
+		ifTrue: [^RsrStringReference].
+	oc == Unicode7
+		ifTrue: [^RsrStringReference].
+	oc == Unicode16
+		ifTrue: [^RsrStringReference].
+	oc == Unicode32
+		ifTrue: [^RsrStringReference].
+	oc == DoubleByteString
+		ifTrue: [^RsrStringReference].
+	oc == QuadByteString
+		ifTrue: [^RsrStringReference].
+	oc == Character
+		ifTrue: [^RsrCharacterReference].
+
+	"Numbers"
+	oc == LargeInteger
+		ifTrue: [^RsrIntegerReference].
+	oc == SmallInteger
+		ifTrue: [^RsrIntegerReference].
+	oc == SmallDouble
+		ifTrue: [^RsrDoubleReference].
+	oc == Float
+		ifTrue: [^RsrDoubleReference].
+
+	"Keywords"
+	oc == UndefinedObject
+		ifTrue: [^RsrNilReference].
+	oc == Boolean
+		ifTrue: [^RsrTrueReference].
+
+	"Collections"
+	oc == Array
+		ifTrue: [^RsrArrayReference].
+	oc == ByteArray
+		ifTrue: [^RsrByteArrayReference].
+	oc == Set
+		ifTrue: [^RsrSetReference].
+	oc == OrderedCollection
+		ifTrue: [^RsrOrderedCollectionReference].
+	oc == Dictionary
+		ifTrue: [^RsrDictionaryReference].
+	oc == DateAndTime
+		ifTrue: [^RsrDateAndTimeReference].
+	oc == SmallDateAndTime
+		ifTrue: [^RsrDateAndTimeReference].
+
+	"Services"
+	(anObject isKindOf: RsrService)
+		ifTrue: [^RsrServiceReference].
+
+	"Unsupported"
+	^RsrUnsupportedObject signal: anObject
 ]
