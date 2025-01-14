@@ -5,13 +5,7 @@ Class {
 	#package : 'RemoteServiceReplication'
 }
 
-{ #category : 'private-encoding' }
-RsrCommandEncoder >> encodeDeliverResponse: aDeliverResponse [
-
-	^ByteArray streamContents: [:stream | self encodeDeliverResponse: aDeliverResponse onto: stream]
-]
-
-{ #category : 'private-encoding' }
+{ #category : 'encoding' }
 RsrCommandEncoder >> encodeDeliverResponse: aDeliverResponse
 onto: aStream [
 
@@ -30,7 +24,7 @@ onto: aStream [
 		onto: aStream
 ]
 
-{ #category : 'private-encoding' }
+{ #category : 'encoding' }
 RsrCommandEncoder >> encodeReference: aReference
 onto: aStream [
 
@@ -39,13 +33,7 @@ onto: aStream [
 		using: self
 ]
 
-{ #category : 'private-encoding' }
-RsrCommandEncoder >> encodeReleaseServices: aReleaseServices [
-
-	^ByteArray streamContents: [:stream | self encodeReleaseServices: aReleaseServices onto: stream]
-]
-
-{ #category : 'private-encoding' }
+{ #category : 'encoding' }
 RsrCommandEncoder >> encodeReleaseServices: aReleaseServices
 onto: aStream [
 
@@ -63,13 +51,7 @@ onto: aStream [
 				onto: aStream]
 ]
 
-{ #category : 'private-encoding' }
-RsrCommandEncoder >> encodeSendMessage: aSendMessage [
-
-	^ByteArray streamContents: [:stream | self encodeSendMessage: aSendMessage onto: stream]
-]
-
-{ #category : 'private-encoding' }
+{ #category : 'encoding' }
 RsrCommandEncoder >> encodeSendMessage: aSendMessage
 onto: aStream [
 
@@ -106,17 +88,6 @@ onto: aStream [
 ]
 
 { #category : 'encoding' }
-RsrCommandEncoder >> encodeServiceSnapshot: aServiceSnapshot [
-
-	^ByteArray
-		streamContents:
-			[:stream |
-			self
-				encodeServiceSnapshot: aServiceSnapshot
-				onto: stream]
-]
-
-{ #category : 'private-encoding' }
 RsrCommandEncoder >> encodeServiceSnapshot: aServiceSnapshot
 onto: aStream [
 
