@@ -38,24 +38,3 @@ using: aDecoder [
 	size := aDecoder decodeControlWord: aStream.
 	intermediate := (1 to: size) collect: [:i | aDecoder decodeReference: aStream]
 ]
-
-{ #category : 'encoding/decoding' }
-RsrCollectionReference >> encode: aStream
-using: anEncoder [
-
-	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	intermediate
-		do:
-			[:each |
-			each
-				encode: aStream
-				using: anEncoder]
-]

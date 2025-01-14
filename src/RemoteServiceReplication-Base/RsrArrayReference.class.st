@@ -21,6 +21,15 @@ RsrArrayReference class >> typeIdentifier [
 	^9
 ]
 
+{ #category : 'encoding/decoding' }
+RsrArrayReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeArrayReference: self
+		onto: aStream
+]
+
 { #category : 'resolving' }
 RsrArrayReference >> resolve: aConnection [
 

@@ -30,6 +30,15 @@ RsrSetReference class >> typeIdentifier [
 	^11
 ]
 
+{ #category : 'encoding/decoding' }
+RsrSetReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeSetReference: self
+		onto: aStream
+]
+
 { #category : 'resolving' }
 RsrSetReference >> resolve: aConnection [
 

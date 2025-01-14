@@ -21,6 +21,15 @@ RsrOrderedCollectionReference class >> typeIdentifier [
 	^12
 ]
 
+{ #category : 'encoding/decoding' }
+RsrOrderedCollectionReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeOrderedCollectionReference: self
+		onto: aStream
+]
+
 { #category : 'other' }
 RsrOrderedCollectionReference >> resolve: aConnection [
 

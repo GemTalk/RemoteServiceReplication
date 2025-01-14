@@ -38,10 +38,7 @@ RsrNilReference >> encode: aStream
 using: anEncoder [
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
+		encodeNilReference: self
 		onto: aStream
 ]
 

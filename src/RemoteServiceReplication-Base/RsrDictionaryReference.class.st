@@ -56,15 +56,8 @@ RsrDictionaryReference >> encode: aStream
 using: anEncoder [
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size / 2
-		onto: aStream.
-	intermediate do: [:each | each encode: aStream using: anEncoder]
+		encodeDictionaryReference: self
+		onto: aStream
 ]
 
 { #category : 'resolving' }

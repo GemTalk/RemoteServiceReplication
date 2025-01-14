@@ -20,6 +20,15 @@ RsrFalseReference class >> typeIdentifier [
 	^8
 ]
 
+{ #category : 'encoding/decoding' }
+RsrFalseReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeFalseReference: self
+		onto: aStream
+]
+
 { #category : 'resolving' }
 RsrFalseReference >> resolve: aConnection [
 

@@ -20,3 +20,12 @@ RsrStringReference class >> typeIdentifier [
 
 	^2
 ]
+
+{ #category : 'encoding/decoding' }
+RsrStringReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeStringReference: self
+		onto: aStream
+]

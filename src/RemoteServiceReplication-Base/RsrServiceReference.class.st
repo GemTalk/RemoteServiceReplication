@@ -42,7 +42,7 @@ RsrServiceReference >> encode: aStream
 using: anEncoder [
 
 	anEncoder
-		encodeControlWord: self sid
+		encodeServiceReference: self
 		onto: aStream
 ]
 

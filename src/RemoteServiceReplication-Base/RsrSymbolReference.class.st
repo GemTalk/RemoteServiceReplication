@@ -26,3 +26,12 @@ RsrSymbolReference >> convertBytes: aByteArray [
 
 	^(super convertBytes: aByteArray) asSymbol
 ]
+
+{ #category : 'encoding/decoding' }
+RsrSymbolReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeSymbolReference: self
+		onto: aStream
+]
