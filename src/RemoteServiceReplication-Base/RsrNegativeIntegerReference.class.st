@@ -26,3 +26,12 @@ RsrNegativeIntegerReference >> convertBytes: aByteArray [
 
 	^(super convertBytes: aByteArray) negated
 ]
+
+{ #category : 'encoding/decoding' }
+RsrNegativeIntegerReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeNegativeIntegerReference: self
+		onto: aStream
+]

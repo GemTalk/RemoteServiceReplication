@@ -31,12 +31,8 @@ RsrDoubleReference >> encode: aStream
 using: anEncoder [
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	aStream nextPutAll: intermediate
+		encodeDoubleReference: self
+		onto: aStream
 ]
 
 { #category : 'resolving' }

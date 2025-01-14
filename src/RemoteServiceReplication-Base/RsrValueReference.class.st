@@ -25,7 +25,13 @@ RsrValueReference class >> intermediate: anObject [
 		yourself
 ]
 
-{ #category : 'private-accessing' }
+{ #category : 'accessing' }
+RsrValueReference >> intermediate [
+
+	^intermediate
+]
+
+{ #category : 'accessing' }
 RsrValueReference >> intermediate: anObject [
 	"Store the intermediate form of this object"
 

@@ -41,13 +41,7 @@ RsrDateAndTimeReference >> encode: aStream
 using: anEncoder [
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate
+		encodeDateAndTimeReference: self 
 		onto: aStream
 ]
 

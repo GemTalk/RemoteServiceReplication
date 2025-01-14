@@ -56,22 +56,6 @@ using: aDecoder [
 	intermediate := aStream next: length
 ]
 
-{ #category : 'encoding/decoding' }
-RsrIntegerReference >> encode: aStream
-using: anEncoder [
-
-	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	aStream nextPutAll: intermediate
-]
-
 { #category : 'resolving' }
 RsrIntegerReference >> resolve: aConnection [
 

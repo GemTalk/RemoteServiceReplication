@@ -20,6 +20,15 @@ RsrTrueReference class >> typeIdentifier [
 	^7
 ]
 
+{ #category : 'encoding/decoding' }
+RsrTrueReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodeTrueReference: self
+		onto: aStream
+]
+
 { #category : 'resolving' }
 RsrTrueReference >> resolve: aConnection [
 

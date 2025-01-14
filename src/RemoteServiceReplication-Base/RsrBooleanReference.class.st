@@ -28,15 +28,3 @@ using: aDecoder [
 
 	"Boolean has no additional value"
 ]
-
-{ #category : 'encoding/decoding' }
-RsrBooleanReference >> encode: aStream
-using: anEncoder [
-
-	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream
-]

@@ -41,13 +41,6 @@ RsrByteArrayReference >> encode: aStream
 using: anEncoder [
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	aStream nextPutAll: intermediate
+		encodeByteArrayReference: self
+		onto: aStream
 ]

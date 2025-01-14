@@ -20,3 +20,12 @@ RsrPositiveIntegerReference class >> typeIdentifier [
 
 	^3
 ]
+
+{ #category : 'encoding/decoding' }
+RsrPositiveIntegerReference >> encode: aStream
+using: anEncoder [
+
+	anEncoder
+		encodePositiveIntegerReference: self
+		onto: aStream
+]

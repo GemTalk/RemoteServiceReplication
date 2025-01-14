@@ -31,22 +31,6 @@ using: aDecoder [
 	intermediate := aStream next: length
 ]
 
-{ #category : 'encoding/decoding' }
-RsrCharacterArrayReference >> encode: aStream
-using: anEncoder [
-
-	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	aStream nextPutAll: intermediate
-]
-
 { #category : 'resolving' }
 RsrCharacterArrayReference >> resolve: aConnection [
 

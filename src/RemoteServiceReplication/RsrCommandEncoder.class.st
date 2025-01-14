@@ -5,7 +5,74 @@ Class {
 	#package : 'RemoteServiceReplication'
 }
 
-{ #category : 'encoding' }
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeArrayReference: aArrayReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aArrayReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aArrayReference intermediate size
+		onto: aStream.
+	aArrayReference intermediate
+		do:
+			[:each |
+			each
+				encode: aStream
+				using: self]
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeByteArrayReference: aByteArrayReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aByteArrayReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aByteArrayReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aByteArrayReference intermediate
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeCharacterReference: aCharacterReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aCharacterReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aCharacterReference intermediate
+		onto: aStream
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeDateAndTimeReference: aDateAndTimeReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aDateAndTimeReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aDateAndTimeReference intermediate
+		onto: aStream
+]
+
+{ #category : 'encoding-commands' }
 RsrCommandEncoder >> encodeDeliverResponse: aDeliverResponse
 onto: aStream [
 
@@ -24,7 +91,113 @@ onto: aStream [
 		onto: aStream
 ]
 
-{ #category : 'encoding' }
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeDictionaryReference: aDictionaryReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aDictionaryReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aDictionaryReference intermediate size / 2
+		onto: aStream.
+	aDictionaryReference intermediate do: [:each | each encode: aStream using: self]
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeDoubleReference: aDoubleReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aDoubleReference typeIdentifier
+		onto: aStream.
+	aStream nextPutAll: aDoubleReference intermediate
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeFalseReference: aFalseReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aFalseReference typeIdentifier
+		onto: aStream
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeNegativeIntegerReference: aNegativeIntegerReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aNegativeIntegerReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aNegativeIntegerReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aNegativeIntegerReference intermediate
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeNilReference: aNilReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aNilReference typeIdentifier
+		onto: aStream
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeOrderedCollectionReference: anOrderedCollectionReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: anOrderedCollectionReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: anOrderedCollectionReference intermediate size
+		onto: aStream.
+	anOrderedCollectionReference intermediate
+		do:
+			[:each |
+			each
+				encode: aStream
+				using: self]
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodePositiveIntegerReference: aPositiveIntegerReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aPositiveIntegerReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aPositiveIntegerReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aPositiveIntegerReference intermediate
+]
+
+{ #category : 'encoding-commands' }
 RsrCommandEncoder >> encodeReference: aReference
 onto: aStream [
 
@@ -33,7 +206,7 @@ onto: aStream [
 		using: self
 ]
 
-{ #category : 'encoding' }
+{ #category : 'encoding-commands' }
 RsrCommandEncoder >> encodeReleaseServices: aReleaseServices
 onto: aStream [
 
@@ -51,7 +224,7 @@ onto: aStream [
 				onto: aStream]
 ]
 
-{ #category : 'encoding' }
+{ #category : 'encoding-commands' }
 RsrCommandEncoder >> encodeSendMessage: aSendMessage
 onto: aStream [
 
@@ -87,11 +260,98 @@ onto: aStream [
 				onto: aStream]
 ]
 
-{ #category : 'encoding' }
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeServiceReference: aServiceReference
+onto: aStream [
+
+	self
+		encodeControlWord: aServiceReference sid
+		onto: aStream
+]
+
+{ #category : 'encoding-snapshots' }
 RsrCommandEncoder >> encodeServiceSnapshot: aServiceSnapshot
 onto: aStream [
 
-	aServiceSnapshot
+	self
+		encodeControlWord: aServiceSnapshot snapshotIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aServiceSnapshot sid
+		onto: aStream.
+	self
+		encodeControlWord: aServiceSnapshot slots size
+		onto: aStream.
+	aServiceSnapshot templateNameReference
 		encode: aStream
-		using: self
+		using: self.
+	aServiceSnapshot personaReference
+		encode: aStream
+		using: self.
+	aServiceSnapshot slots do: [:each | each encode: aStream using: self]
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeSetReference: aSetReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aSetReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aSetReference intermediate size
+		onto: aStream.
+	aSetReference intermediate
+		do:
+			[:each |
+			each
+				encode: aStream
+				using: self]
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeStringReference: aStringReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aStringReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aStringReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aStringReference intermediate
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeSymbolReference: aSymbolReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aSymbolReference typeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aSymbolReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aSymbolReference intermediate
+]
+
+{ #category : 'encoding-references' }
+RsrCommandEncoder >> encodeTrueReference: aTrueReference
+onto: aStream [
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: aTrueReference typeIdentifier
+		onto: aStream
 ]

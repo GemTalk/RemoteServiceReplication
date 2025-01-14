@@ -107,21 +107,8 @@ RsrServiceSnapshot >> encode: aStream
 using: anEncoder [
 
 	anEncoder
-		encodeControlWord: self snapshotIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self sid
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self slots size
-		onto: aStream.
-	self templateNameReference
-		encode: aStream
-		using: anEncoder.
-	self personaReference
-		encode: aStream
-		using: anEncoder.
-	self slots do: [:each | each encode: aStream using: anEncoder]
+		encodeServiceSnapshot: self
+		onto: aStream
 ]
 
 { #category : 'accessing' }
