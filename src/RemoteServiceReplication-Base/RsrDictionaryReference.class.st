@@ -36,12 +36,6 @@ RsrDictionaryReference class >> from: aDictionary [
 	^self intermediate: referenceStream contents
 ]
 
-{ #category : 'accessing' }
-RsrDictionaryReference class >> typeIdentifier [
-
-	^13
-]
-
 { #category : 'encoding/decoding' }
 RsrDictionaryReference >> decode: aStream
 using: aDecoder [

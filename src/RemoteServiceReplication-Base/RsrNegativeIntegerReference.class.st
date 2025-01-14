@@ -15,12 +15,6 @@ Class {
 	#package : 'RemoteServiceReplication-Base'
 }
 
-{ #category : 'accessing' }
-RsrNegativeIntegerReference class >> typeIdentifier [
-
-	^4
-]
-
 { #category : 'converting' }
 RsrNegativeIntegerReference >> convertBytes: aByteArray [
 

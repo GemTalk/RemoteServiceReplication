@@ -20,12 +20,6 @@ RsrNilReference class >> from: aNil [
 	^self new
 ]
 
-{ #category : 'accessing' }
-RsrNilReference class >> typeIdentifier [
-
-	^6
-]
-
 { #category : 'encoding/decoding' }
 RsrNilReference >> decode: aStream
 using: aDecoder [

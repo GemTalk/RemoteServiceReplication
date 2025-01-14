@@ -13,7 +13,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aArrayReference typeIdentifier
+		encodeControlWord: self arrayIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aArrayReference intermediate size
@@ -34,7 +34,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aByteArrayReference typeIdentifier
+		encodeControlWord: self byteArrayIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aByteArrayReference intermediate size
@@ -50,7 +50,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aCharacterReference typeIdentifier
+		encodeControlWord: self characterIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aCharacterReference intermediate
@@ -65,7 +65,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aDateAndTimeReference typeIdentifier
+		encodeControlWord: self dateAndTimeIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aDateAndTimeReference intermediate
@@ -99,7 +99,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aDictionaryReference typeIdentifier
+		encodeControlWord: self dictionaryIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aDictionaryReference intermediate size / 2
@@ -115,7 +115,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aDoubleReference typeIdentifier
+		encodeControlWord: self doubleIdentifier
 		onto: aStream.
 	aStream nextPutAll: aDoubleReference intermediate
 ]
@@ -128,7 +128,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aFalseReference typeIdentifier
+		encodeControlWord: self falseIdentifier
 		onto: aStream
 ]
 
@@ -140,7 +140,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aNegativeIntegerReference typeIdentifier
+		encodeControlWord: self negativeIntegerIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aNegativeIntegerReference intermediate size
@@ -156,7 +156,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aNilReference typeIdentifier
+		encodeControlWord: self nilIdentifier
 		onto: aStream
 ]
 
@@ -168,7 +168,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: anOrderedCollectionReference typeIdentifier
+		encodeControlWord: self orderedCollectionIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: anOrderedCollectionReference intermediate size
@@ -189,7 +189,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aPositiveIntegerReference typeIdentifier
+		encodeControlWord: self positiveIntegerIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aPositiveIntegerReference intermediate size
@@ -274,7 +274,7 @@ RsrCommandEncoder >> encodeServiceSnapshot: aServiceSnapshot
 onto: aStream [
 
 	self
-		encodeControlWord: aServiceSnapshot snapshotIdentifier
+		encodeControlWord: self snapshotIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aServiceSnapshot sid
@@ -299,7 +299,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aSetReference typeIdentifier
+		encodeControlWord: self setIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aSetReference intermediate size
@@ -320,7 +320,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aStringReference typeIdentifier
+		encodeControlWord: self stringIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aStringReference intermediate size
@@ -336,7 +336,7 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aSymbolReference typeIdentifier
+		encodeControlWord: self symbolIdentifier
 		onto: aStream.
 	self
 		encodeControlWord: aSymbolReference intermediate size
@@ -352,6 +352,6 @@ onto: aStream [
 		encodeControlWord: self immediateOID
 		onto: aStream.
 	self
-		encodeControlWord: aTrueReference typeIdentifier
+		encodeControlWord: self trueIdentifier
 		onto: aStream
 ]

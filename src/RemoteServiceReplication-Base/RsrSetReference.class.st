@@ -24,12 +24,6 @@ RsrSetReference class >> from: aSet [
 	^self intermediate: referenceStream contents
 ]
 
-{ #category : 'accessing' }
-RsrSetReference class >> typeIdentifier [
-
-	^11
-]
-
 { #category : 'encoding/decoding' }
 RsrSetReference >> encode: aStream
 using: anEncoder [

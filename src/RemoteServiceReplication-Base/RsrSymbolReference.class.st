@@ -15,12 +15,6 @@ Class {
 	#package : 'RemoteServiceReplication-Base'
 }
 
-{ #category : 'accessing' }
-RsrSymbolReference class >> typeIdentifier [
-
-	^1
-]
-
 { #category : 'converting' }
 RsrSymbolReference >> convertBytes: aByteArray [
 

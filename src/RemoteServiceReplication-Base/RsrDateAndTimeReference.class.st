@@ -23,12 +23,6 @@ RsrDateAndTimeReference class >> from: aDateAndTime [
 	^self intermediate: intermediate
 ]
 
-{ #category : 'accessing' }
-RsrDateAndTimeReference class >> typeIdentifier [
-
-	^14
-]
-
 { #category : 'encoding/decoding' }
 RsrDateAndTimeReference >> decode: aStream
 using: aDecoder [

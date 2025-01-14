@@ -15,12 +15,6 @@ Class {
 	#package : 'RemoteServiceReplication-Base'
 }
 
-{ #category : 'accessing' }
-RsrArrayReference class >> typeIdentifier [
-
-	^9
-]
-
 { #category : 'encoding/decoding' }
 RsrArrayReference >> encode: aStream
 using: anEncoder [
