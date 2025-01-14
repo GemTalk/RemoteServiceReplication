@@ -116,35 +116,35 @@ RsrCommandDecoder >> decodeServiceSnapshot: aStream [
 { #category : 'decoding-services' }
 RsrCommandDecoder >> instanceOfImmediate: aReferenceType [
 
-	aReferenceType = 1
+	aReferenceType = self symbolIdentifier
 		ifTrue: [^RsrSymbolReference new].
-	aReferenceType = 2
+	aReferenceType = self stringIdentifier
 		ifTrue: [^RsrStringReference new].
-	aReferenceType = 3
+	aReferenceType = self positiveIntegerIdentifier
 		ifTrue: [^RsrPositiveIntegerReference new].
-	aReferenceType = 4
+	aReferenceType = self negativeIntegerIdentifier
 		ifTrue: [^RsrNegativeIntegerReference new].
-	aReferenceType = 5
+	aReferenceType = self characterIdentifier
 		ifTrue: [^RsrCharacterReference new].
-	aReferenceType = 6
+	aReferenceType = self nilIdentifier
 		ifTrue: [^RsrNilReference new].
-	aReferenceType = 7
+	aReferenceType = self trueIdentifier
 		ifTrue: [^RsrTrueReference new].
-	aReferenceType = 8
+	aReferenceType = self falseIdentifier
 		ifTrue: [^RsrFalseReference new].
-	aReferenceType = 9
+	aReferenceType = self arrayIdentifier
 		ifTrue: [^RsrArrayReference new].
-	aReferenceType = 10
+	aReferenceType = self byteArrayIdentifier
 		ifTrue: [^RsrByteArrayReference new].
-	aReferenceType = 11
+	aReferenceType = self setIdentifier
 		ifTrue: [^RsrSetReference new].
-	aReferenceType = 12
+	aReferenceType = self orderedCollectionIdentifier
 		ifTrue: [^RsrOrderedCollectionReference new].
-	aReferenceType = 13
+	aReferenceType = self dictionaryIdentifier
 		ifTrue: [^RsrDictionaryReference new].
-	aReferenceType = 14
+	aReferenceType = self dateAndTimeIdentifier
 		ifTrue: [^RsrDateAndTimeReference new].
-	aReferenceType = 15
+	aReferenceType = self doubleIdentifier
 		ifTrue: [^RsrDoubleReference new].
 	self error: 'ReferenceType(', aReferenceType printString, ') not yet implemented'.
 ]

@@ -201,12 +201,6 @@ RsrServiceSnapshot >> snapshot: aService [
 		do: [:each | slots add: (RsrReference from: each)]
 ]
 
-{ #category : 'accessing' }
-RsrServiceSnapshot >> snapshotIdentifier [
-
-	^0
-]
-
 { #category : 'other' }
 RsrServiceSnapshot >> templateName [
 

@@ -21,12 +21,6 @@ RsrCharacterReference class >> from: aCharacter [
 	^self intermediate: aCharacter codePoint
 ]
 
-{ #category : 'accessing' }
-RsrCharacterReference class >> typeIdentifier [
-
-	^5
-]
-
 { #category : 'encoding/decoding' }
 RsrCharacterReference >> decode: aStream
 using: aDecoder [

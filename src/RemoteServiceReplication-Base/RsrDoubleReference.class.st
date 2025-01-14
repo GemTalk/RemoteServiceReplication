@@ -13,12 +13,6 @@ RsrDoubleReference class >> from: aFloat [
 	^self intermediate: intermediate
 ]
 
-{ #category : 'accessing' }
-RsrDoubleReference class >> typeIdentifier [
-
-	^15
-]
-
 { #category : 'encoding/decoding' }
 RsrDoubleReference >> decode: aStream
 using: aDecoder [

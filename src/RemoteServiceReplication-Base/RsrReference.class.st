@@ -36,21 +36,9 @@ RsrReference class >> from: anObject [
 	^referenceClass from: anObject
 ]
 
-{ #category : 'accessing' }
-RsrReference class >> typeIdentifier [
-
-	^self subclassResponsibility
-]
-
 { #category : 'resolving' }
 RsrReference >> resolve: aConnection [
 	"Resolve the reference in the context of the provided Connection."
 
 	^self subclassResponsibility
-]
-
-{ #category : 'accessing' }
-RsrReference >> typeIdentifier [
-
-	^self class typeIdentifier
 ]

@@ -21,12 +21,6 @@ RsrByteArrayReference class >> from: aByteArray [
 	^self intermediate: aByteArray copy
 ]
 
-{ #category : 'accessing' }
-RsrByteArrayReference class >> typeIdentifier [
-
-	^10
-]
-
 { #category : 'encoding/decoding' }
 RsrByteArrayReference >> decode: aStream
 using: aDecoder [
