@@ -24,7 +24,9 @@ RsrNilReference class >> from: aNil [
 RsrNilReference >> decode: aStream
 using: aDecoder [
 
-	"Nil has no additional value"
+	aDecoder
+		decodeNilReference: self
+		from: aStream
 ]
 
 { #category : 'encoding/decoding' }

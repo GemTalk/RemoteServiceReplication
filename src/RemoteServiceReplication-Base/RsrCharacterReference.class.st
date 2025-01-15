@@ -25,7 +25,9 @@ RsrCharacterReference class >> from: aCharacter [
 RsrCharacterReference >> decode: aStream
 using: aDecoder [
 
-	intermediate := aDecoder decodeControlWord: aStream
+	aDecoder
+		decodeCharacterReference: self
+		from: aStream
 ]
 
 { #category : 'encoding/decoding' }

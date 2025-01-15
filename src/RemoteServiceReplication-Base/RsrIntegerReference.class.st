@@ -51,9 +51,9 @@ RsrIntegerReference >> convertBytes: aByteArray [
 RsrIntegerReference >> decode: aStream
 using: aDecoder [
 
-	| length |
-	length := aDecoder decodeControlWord: aStream.
-	intermediate := aStream next: length
+	aDecoder
+		decodeIntegerReference: self
+		from: aStream
 ]
 
 { #category : 'resolving' }

@@ -15,6 +15,15 @@ Class {
 }
 
 { #category : 'encoding/decoding' }
+RsrTrueReference >> decode: aStream
+using: aDecoder [
+
+	aDecoder
+		decodeTrueReference: self
+		from: aStream
+]
+
+{ #category : 'encoding/decoding' }
 RsrTrueReference >> encode: aStream
 using: anEncoder [
 

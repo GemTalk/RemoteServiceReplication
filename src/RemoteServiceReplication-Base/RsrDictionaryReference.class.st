@@ -40,9 +40,9 @@ RsrDictionaryReference class >> from: aDictionary [
 RsrDictionaryReference >> decode: aStream
 using: aDecoder [
 
-	| size |
-	size := aDecoder decodeControlWord: aStream.
-	intermediate := (1 to: size * 2) collect: [:each | aDecoder decodeReference: aStream]
+	aDecoder
+		decodeDictionaryReference: self
+		from: aStream
 ]
 
 { #category : 'encoding/decoding' }

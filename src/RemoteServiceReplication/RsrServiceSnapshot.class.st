@@ -88,29 +88,6 @@ RsrServiceSnapshot >> createInstanceRegisteredIn: aConnection [
 	^instance
 ]
 
-{ #category : 'other' }
-RsrServiceSnapshot >> decode: aStream
-using: aDecoder [
-
-	| species instVarCount |
-	species := aDecoder decodeControlWord: aStream.
-	sid := aDecoder decodeControlWord: aStream.
-	instVarCount := aDecoder decodeControlWord: aStream.
-	templateName := (aDecoder decodeReference: aStream) resolve: nil.
-	persona := (aDecoder decodeReference: aStream) resolve: nil.
-	slots := OrderedCollection new: instVarCount.
-	instVarCount timesRepeat: [slots add: (aDecoder decodeReference: aStream)]
-]
-
-{ #category : 'encoding/decoding' }
-RsrServiceSnapshot >> encode: aStream
-using: anEncoder [
-
-	anEncoder
-		encodeServiceSnapshot: self
-		onto: aStream
-]
-
 { #category : 'accessing' }
 RsrServiceSnapshot >> instanceIn: aConnection [
 
@@ -123,14 +100,21 @@ RsrServiceSnapshot >> instanceIn: aConnection [
 	^instance
 ]
 
-{ #category : 'other' }
+{ #category : 'accessing' }
 RsrServiceSnapshot >> persona [
 	"What persona should be used when this ServiceSnapshot is reified?"
 	
 	^persona
 ]
 
-{ #category : 'other' }
+{ #category : 'accessing' }
+RsrServiceSnapshot >> persona: aSymbol [
+	"What persona should be used when this ServiceSnapshot is reified?"
+	
+	persona := aSymbol
+]
+
+{ #category : 'accessing' }
 RsrServiceSnapshot >> personaReference [
 	"What persona should be used when this ServiceSnapshot is reified?
 	As an RsrReference object."
@@ -183,7 +167,7 @@ RsrServiceSnapshot >> slots: anArrayOfReferences [
 	slots := anArrayOfReferences
 ]
 
-{ #category : 'other' }
+{ #category : 'snapshotting' }
 RsrServiceSnapshot >> snapshot: aService [
 
 	| templateResolver template |
@@ -201,13 +185,19 @@ RsrServiceSnapshot >> snapshot: aService [
 		do: [:each | slots add: (RsrReference from: each)]
 ]
 
-{ #category : 'other' }
+{ #category : 'accessing' }
 RsrServiceSnapshot >> templateName [
 
 	^templateName
 ]
 
-{ #category : 'other' }
+{ #category : 'accessing' }
+RsrServiceSnapshot >> templateName: aSymbol [
+
+	templateName := aSymbol
+]
+
+{ #category : 'accessing' }
 RsrServiceSnapshot >> templateNameReference [
 
 	^RsrSymbolReference from: self templateName

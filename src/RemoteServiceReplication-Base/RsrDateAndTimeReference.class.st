@@ -27,7 +27,9 @@ RsrDateAndTimeReference class >> from: aDateAndTime [
 RsrDateAndTimeReference >> decode: aStream
 using: aDecoder [
 
-	intermediate := aDecoder decodeControlWord: aStream
+	aDecoder
+		decodeDateAndTimeReference: self
+		from: aStream
 ]
 
 { #category : 'encoding/decoding' }

@@ -36,6 +36,22 @@ RsrReference class >> from: anObject [
 	^referenceClass from: anObject
 ]
 
+{ #category : 'encoding/decoding' }
+RsrReference >> decode: aStream
+using: aDecoder [
+	"Double dispatch - tell the encoder to decode the receiver from the stream"
+
+	self subclassResponsibility
+]
+
+{ #category : 'encoding/decoding' }
+RsrReference >> encode: aStream
+using: anEncoder [
+	"Double dispatch - tell the encoder to encode the receiver onto the stream"
+
+	self subclassResponsibility
+]
+
 { #category : 'resolving' }
 RsrReference >> resolve: aConnection [
 	"Resolve the reference in the context of the provided Connection."

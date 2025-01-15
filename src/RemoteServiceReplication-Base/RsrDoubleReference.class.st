@@ -17,7 +17,9 @@ RsrDoubleReference class >> from: aFloat [
 RsrDoubleReference >> decode: aStream
 using: aDecoder [
 
-	intermediate := aStream next: 8
+	aDecoder
+		decodeDoubleReference: self
+		from: aStream
 ]
 
 { #category : 'encoding/decoding' }
