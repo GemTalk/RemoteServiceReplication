@@ -23,7 +23,11 @@ RsrProtocolCodecTest >> connection [
 { #category : 'other' }
 RsrProtocolCodecTest >> decoder [
 
-	^RsrProtocolDecoderV2 new
+	self protocolVersion == 1
+		ifTrue: [^RsrProtocolDecoderV1 new].
+	self protocolVersion == 2
+		ifTrue: [^RsrProtocolDecoderV2 new].
+	^self error
 ]
 
 { #category : 'encode/decode' }
@@ -37,7 +41,11 @@ RsrProtocolCodecTest >> encodeReferenceOf: anObject [
 { #category : 'accessing' }
 RsrProtocolCodecTest >> encoder [
 
-	^RsrProtocolEncoderV2 new
+	self protocolVersion == 1
+		ifTrue: [^RsrProtocolEncoderV1 new].
+	self protocolVersion == 2
+		ifTrue: [^RsrProtocolEncoderV2 new].
+	^self error
 ]
 
 { #category : 'running-symbol' }
@@ -55,8 +63,36 @@ RsrProtocolCodecTest >> genericSymbolEncoding [
 	#[103 101 110 101 114 105 99 83 121 109 98 111 108]	"#genericSymbol"
 ]
 
+{ #category : 'accessing' }
+RsrProtocolCodecTest >> protocolVersion [
+
+	self subclassResponsibility
+]
+
 { #category : 'accessing-objects' }
 RsrProtocolCodecTest >> serviceNoInstVarsServerPersonaEncoding [
+
+	self protocolVersion == 1
+		ifTrue: [^self serviceNoInstVarsServerPersonaEncodingV1].
+	self protocolVersion == 2
+		ifTrue: [^self serviceNoInstVarsServerPersonaEncodingV2].
+	^self error
+]
+
+{ #category : 'accessing-objects' }
+RsrProtocolCodecTest >> serviceNoInstVarsServerPersonaEncodingV1 [
+
+	^#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 1], "referencedService's OID = 1"
+	#[0 0 0 0 0 0 0 0], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 19], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 101 114 78 111 73 110 115 116 86 97 114 115] "#RsrServerNoInstVars"
+]
+
+{ #category : 'accessing-objects' }
+RsrProtocolCodecTest >> serviceNoInstVarsServerPersonaEncodingV2 [
 
 	^#[0 0 0 0 0 0 0 0], "type"
 	#[0 0 0 0 0 0 0 1], "referencedService's OID = 1"
@@ -72,7 +108,32 @@ RsrProtocolCodecTest >> serviceNoInstVarsServerPersonaEncoding [
 ]
 
 { #category : 'accessing-objects' }
-RsrProtocolCodecTest >> serviceReferenceServiceServerPersona [
+RsrProtocolCodecTest >> serviceReferenceServiceServerPersonaEncoding [
+
+	self protocolVersion == 1
+		ifTrue: [^self serviceReferenceServiceServerPersonaEncodingV1].
+	self protocolVersion == 2
+		ifTrue: [^self serviceReferenceServiceServerPersonaEncodingV2].
+	^self error
+]
+
+{ #category : 'accessing-objects' }
+RsrProtocolCodecTest >> serviceReferenceServiceServerPersonaEncodingV1 [
+
+	^#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 2], "rootService's OID = 2"
+	#[0 0 0 0 0 0 0 1], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 25], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 101 114 82 101 102 101 114 101 110 99 101 83 101
+114 118 105 99 101], "#RsrServerReferenceService"
+	"inst var  to the nested service w/ SID 1"
+	#[0 0 0 0 0 0 0 1]
+]
+
+{ #category : 'accessing-objects' }
+RsrProtocolCodecTest >> serviceReferenceServiceServerPersonaEncodingV2 [
 
 	^#[0 0 0 0 0 0 0 0], "type"
 	#[0 0 0 0 0 0 0 2], "rootService's OID = 2"
