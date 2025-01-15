@@ -9,14 +9,14 @@ Object
 
 "
 Class {
-	#name : 'RsrCommandDecoderTest',
-	#superclass : 'RsrCommandCodecTest',
+	#name : 'RsrProtocolDecoderV2Test',
+	#superclass : 'RsrProtocolCodecTest',
 	#category : 'RemoteServiceReplication-Test',
 	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'asserting' }
-RsrCommandDecoderTest >> assertReference: bytes
+RsrProtocolDecoderV2Test >> assertReference: bytes
 decodesTo: expected [
 
 	| actual |
@@ -27,19 +27,19 @@ decodesTo: expected [
 ]
 
 { #category : 'decoding' }
-RsrCommandDecoderTest >> decodeReference: bytes [
+RsrProtocolDecoderV2Test >> decodeReference: bytes [
 
 	^(self decoder decodeReference: bytes readStream) resolve: self connection
 ]
 
 { #category : 'decoding' }
-RsrCommandDecoderTest >> decodeService: anObjectBytes [
+RsrProtocolDecoderV2Test >> decodeService: anObjectBytes [
 
 	^(self decoder decodeServiceSnapshot: anObjectBytes readStream) reifyIn: self connection
 ]
 
 { #category : 'running' }
-RsrCommandDecoderTest >> testDecodeIncompatibleServiceWithExtraInstVar [
+RsrProtocolDecoderV2Test >> testDecodeIncompatibleServiceWithExtraInstVar [
 	"Ensure that there is a reasonable error message when decoding failes due to incompatible templates."
 
 	| encoding exception |
@@ -65,7 +65,7 @@ RsrCommandDecoderTest >> testDecodeIncompatibleServiceWithExtraInstVar [
 ]
 
 { #category : 'running' }
-RsrCommandDecoderTest >> testDeliverResponse [
+RsrProtocolDecoderV2Test >> testDeliverResponse [
 
 	| service response encoding command decodedService |
 	service := RsrServerNoInstVars new.
@@ -100,7 +100,7 @@ RsrCommandDecoderTest >> testDeliverResponse [
 ]
 
 { #category : 'running' }
-RsrCommandDecoderTest >> testReleaseServices [
+RsrProtocolDecoderV2Test >> testReleaseServices [
 
 	| command encoding |
 	encoding :=
@@ -118,7 +118,7 @@ RsrCommandDecoderTest >> testReleaseServices [
 ]
 
 { #category : 'running' }
-RsrCommandDecoderTest >> testSendMessage [
+RsrProtocolDecoderV2Test >> testSendMessage [
 
 	| service encoding command |
 	service := RsrServerNoInstVars new.
@@ -156,7 +156,7 @@ RsrCommandDecoderTest >> testSendMessage [
 ]
 
 { #category : 'running' }
-RsrCommandDecoderTest >> testServiceDecodeIdentity [
+RsrProtocolDecoderV2Test >> testServiceDecodeIdentity [
 	"Ensure that decoding an object multiple times results in
 	a single object getting created."
 
@@ -169,7 +169,7 @@ RsrCommandDecoderTest >> testServiceDecodeIdentity [
 ]
 
 { #category : 'running' }
-RsrCommandDecoderTest >> testServiceNoInstVars [
+RsrProtocolDecoderV2Test >> testServiceNoInstVars [
 
 	| decodedService |
 	decodedService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
@@ -182,7 +182,7 @@ RsrCommandDecoderTest >> testServiceNoInstVars [
 ]
 
 { #category : 'running' }
-RsrCommandDecoderTest >> testServiceReferenceService [
+RsrProtocolDecoderV2Test >> testServiceReferenceService [
 
 	| rootService referencedService |
 	referencedService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
@@ -205,7 +205,7 @@ RsrCommandDecoderTest >> testServiceReferenceService [
 ]
 
 { #category : 'asserting' }
-RsrCommandDecoderTest >> verifyControlWord: expected
+RsrProtocolDecoderV2Test >> verifyControlWord: expected
 encoding: bytes [
 
 	| actual |
@@ -216,7 +216,7 @@ encoding: bytes [
 ]
 
 { #category : 'asserting' }
-RsrCommandDecoderTest >> verifyImmediate: expected
+RsrProtocolDecoderV2Test >> verifyImmediate: expected
 encoding: encoding [
 
 	| actual |

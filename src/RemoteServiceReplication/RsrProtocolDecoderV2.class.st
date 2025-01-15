@@ -7,14 +7,14 @@ Object
 
 "
 Class {
-	#name : 'RsrCommandDecoder',
-	#superclass : 'RsrCommandCodec',
+	#name : 'RsrProtocolDecoderV2',
+	#superclass : 'RsrProtocolCodec',
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'instance creation' }
-RsrCommandDecoder class >> registry: aRegistry [
+RsrProtocolDecoderV2 class >> registry: aRegistry [
 
 	^self new
 		registry: aRegistry;
@@ -22,7 +22,7 @@ RsrCommandDecoder class >> registry: aRegistry [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeByteArrayReference: aByteArrayReference
+RsrProtocolDecoderV2 >> decodeByteArrayReference: aByteArrayReference
 from: aStream [
 
 	| length |
@@ -31,7 +31,7 @@ from: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeCharacterArrayReference: aCharacterArrayReference
+RsrProtocolDecoderV2 >> decodeCharacterArrayReference: aCharacterArrayReference
 from: aStream [
 
 	| length |
@@ -40,14 +40,14 @@ from: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeCharacterReference: aCharacterReference
+RsrProtocolDecoderV2 >> decodeCharacterReference: aCharacterReference
 from: aStream [
 
 	aCharacterReference intermediate: (self decodeControlWord: aStream)
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeCollectionReference: aCollectionReference
+RsrProtocolDecoderV2 >> decodeCollectionReference: aCollectionReference
 from: aStream [
 
 	| size |
@@ -56,7 +56,7 @@ from: aStream [
 ]
 
 { #category : 'decoding-commands' }
-RsrCommandDecoder >> decodeCommand: aStream [
+RsrProtocolDecoderV2 >> decodeCommand: aStream [
 	"Decode an object from the stream"
 
 	| command |
@@ -68,14 +68,14 @@ RsrCommandDecoder >> decodeCommand: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeDateAndTimeReference: aDateAndTimeReference
+RsrProtocolDecoderV2 >> decodeDateAndTimeReference: aDateAndTimeReference
 from: aStream [
 
 	aDateAndTimeReference intermediate: (self decodeControlWord: aStream)
 ]
 
 { #category : 'decoding-commands' }
-RsrCommandDecoder >> decodeDeliverResponse: aStream [
+RsrProtocolDecoderV2 >> decodeDeliverResponse: aStream [
 
     | transaction numServices serviceSnapshots response |
     transaction := self decodeControlWord: aStream.
@@ -90,7 +90,7 @@ RsrCommandDecoder >> decodeDeliverResponse: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeDictionaryReference: aDictionaryReference
+RsrProtocolDecoderV2 >> decodeDictionaryReference: aDictionaryReference
 from: aStream [
 
 	| size |
@@ -99,20 +99,20 @@ from: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeDoubleReference: aDoubleReference
+RsrProtocolDecoderV2 >> decodeDoubleReference: aDoubleReference
 from: aStream [
 
 	aDoubleReference intermediate: (aStream next: 8)
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeFalseReference: aTrueReference
+RsrProtocolDecoderV2 >> decodeFalseReference: aTrueReference
 from: aStream [
 	"No additional information to decode."
 ]
 
 { #category : 'decoding-services' }
-RsrCommandDecoder >> decodeImmediateReference: aStream [
+RsrProtocolDecoderV2 >> decodeImmediateReference: aStream [
 
 	| referenceType |
 	referenceType := self decodeControlWord: aStream.
@@ -122,7 +122,7 @@ RsrCommandDecoder >> decodeImmediateReference: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeIntegerReference: anIntegerReference
+RsrProtocolDecoderV2 >> decodeIntegerReference: anIntegerReference
 from: aStream [
 
 	| length |
@@ -131,13 +131,13 @@ from: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeNilReference: aNilReference
+RsrProtocolDecoderV2 >> decodeNilReference: aNilReference
 from: aStream [
 	"No additional information to decode."
 ]
 
 { #category : 'decoding' }
-RsrCommandDecoder >> decodeReference: aStream [
+RsrProtocolDecoderV2 >> decodeReference: aStream [
 
 	| oid |
 	oid := self decodeControlWord: aStream.
@@ -146,7 +146,7 @@ RsrCommandDecoder >> decodeReference: aStream [
 ]
 
 { #category : 'decoding-commands' }
-RsrCommandDecoder >> decodeReleaseServices: aStream [
+RsrProtocolDecoderV2 >> decodeReleaseServices: aStream [
 
 	| count oids |
 	count := self decodeControlWord: aStream.
@@ -161,7 +161,7 @@ RsrCommandDecoder >> decodeReleaseServices: aStream [
 ]
 
 { #category : 'decoding-commands' }
-RsrCommandDecoder >> decodeSendMessage: aStream [
+RsrProtocolDecoderV2 >> decodeSendMessage: aStream [
 
 	| transaction argCount receiverReference selector numServices serviceSnapshots arguments instance |
 	transaction := self decodeControlWord: aStream.
@@ -181,7 +181,7 @@ RsrCommandDecoder >> decodeSendMessage: aStream [
 ]
 
 { #category : 'decoding-services' }
-RsrCommandDecoder >> decodeServiceSnapshot: aStream [
+RsrProtocolDecoderV2 >> decodeServiceSnapshot: aStream [
 
 	| species sid templateName persona slots instVarCount |
 	species := self decodeControlWord: aStream.
@@ -201,13 +201,13 @@ RsrCommandDecoder >> decodeServiceSnapshot: aStream [
 ]
 
 { #category : 'decoding-references' }
-RsrCommandDecoder >> decodeTrueReference: aTrueReference
+RsrProtocolDecoderV2 >> decodeTrueReference: aTrueReference
 from: aStream [
 	"No additional information to decode."
 ]
 
 { #category : 'decoding-services' }
-RsrCommandDecoder >> instanceOfImmediate: aReferenceType [
+RsrProtocolDecoderV2 >> instanceOfImmediate: aReferenceType [
 
 	aReferenceType = self symbolIdentifier
 		ifTrue: [^RsrSymbolReference new].

@@ -18,7 +18,7 @@ RsrCommandSource >> addCommunicationProcessesTo: aSet [
 { #category : 'accessing' }
 RsrCommandSource >> decoder [
 
-	^RsrCommandDecoder new
+	^RsrProtocolDecoderV2 new
 ]
 
 { #category : 'commands' }
