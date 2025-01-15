@@ -25,9 +25,9 @@ RsrByteArrayReference class >> from: aByteArray [
 RsrByteArrayReference >> decode: aStream
 using: aDecoder [
 
-	| length |
-	length := aDecoder decodeControlWord: aStream.
-	intermediate := aStream next: length
+	aDecoder
+		decodeByteArrayReference: self
+		from: aStream
 ]
 
 { #category : 'encoding/decoding' }

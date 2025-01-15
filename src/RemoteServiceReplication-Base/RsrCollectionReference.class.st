@@ -34,7 +34,7 @@ RsrCollectionReference class >> from: aSequencedCollection [
 RsrCollectionReference >> decode: aStream
 using: aDecoder [
 
-	| size |
-	size := aDecoder decodeControlWord: aStream.
-	intermediate := (1 to: size) collect: [:i | aDecoder decodeReference: aStream]
+	aDecoder
+		decodeCollectionReference: self
+		from: aStream
 ]

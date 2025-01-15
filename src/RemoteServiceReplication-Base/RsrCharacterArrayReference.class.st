@@ -26,9 +26,9 @@ RsrCharacterArrayReference class >> from: aCharacterArray [
 RsrCharacterArrayReference >> decode: aStream
 using: aDecoder [
 
-	| length |
-	length := aDecoder decodeControlWord: aStream.
-	intermediate := aStream next: length
+	aDecoder
+		decodeCharacterArrayReference: self
+		from: aStream
 ]
 
 { #category : 'resolving' }

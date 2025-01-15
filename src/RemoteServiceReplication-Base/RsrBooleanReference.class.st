@@ -21,10 +21,3 @@ RsrBooleanReference class >> from: aBoolean [
 		ifTrue: [RsrTrueReference new]
 		ifFalse: [RsrFalseReference new]
 ]
-
-{ #category : 'encoding/decoding' }
-RsrBooleanReference >> decode: aStream
-using: aDecoder [
-
-	"Boolean has no additional value"
-]

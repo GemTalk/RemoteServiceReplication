@@ -21,6 +21,40 @@ RsrCommandDecoder class >> registry: aRegistry [
 		yourself
 ]
 
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeByteArrayReference: aByteArrayReference
+from: aStream [
+
+	| length |
+	length := self decodeControlWord: aStream.
+	aByteArrayReference intermediate: (aStream next: length)
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeCharacterArrayReference: aCharacterArrayReference
+from: aStream [
+
+	| length |
+	length := self decodeControlWord: aStream.
+	aCharacterArrayReference intermediate: (aStream next: length)
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeCharacterReference: aCharacterReference
+from: aStream [
+
+	aCharacterReference intermediate: (self decodeControlWord: aStream)
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeCollectionReference: aCollectionReference
+from: aStream [
+
+	| size |
+	size := self decodeControlWord: aStream.
+	aCollectionReference intermediate: ((1 to: size) collect: [:i | self decodeReference: aStream])
+]
+
 { #category : 'decoding-commands' }
 RsrCommandDecoder >> decodeCommand: aStream [
 	"Decode an object from the stream"
@@ -31,6 +65,13 @@ RsrCommandDecoder >> decodeCommand: aStream [
 	command == self deliverResponseCommand ifTrue: [^self decodeDeliverResponse: aStream].
 	command == self releaseObjectsCommand ifTrue: [^self decodeReleaseServices: aStream].
 	^RsrError signal: 'Unknown command identifier: ', command printString
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeDateAndTimeReference: aDateAndTimeReference
+from: aStream [
+
+	aDateAndTimeReference intermediate: (self decodeControlWord: aStream)
 ]
 
 { #category : 'decoding-commands' }
@@ -48,6 +89,28 @@ RsrCommandDecoder >> decodeDeliverResponse: aStream [
         yourself
 ]
 
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeDictionaryReference: aDictionaryReference
+from: aStream [
+
+	| size |
+	size := self decodeControlWord: aStream.
+	aDictionaryReference intermediate: ((1 to: size * 2) collect: [:each | self decodeReference: aStream])
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeDoubleReference: aDoubleReference
+from: aStream [
+
+	aDoubleReference intermediate: (aStream next: 8)
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeFalseReference: aTrueReference
+from: aStream [
+	"No additional information to decode."
+]
+
 { #category : 'decoding-services' }
 RsrCommandDecoder >> decodeImmediateReference: aStream [
 
@@ -56,6 +119,21 @@ RsrCommandDecoder >> decodeImmediateReference: aStream [
 	^(self instanceOfImmediate: referenceType)
 		decode: aStream
 		using: self
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeIntegerReference: anIntegerReference
+from: aStream [
+
+	| length |
+	length := self decodeControlWord: aStream.
+	anIntegerReference intermediate: (aStream next: length)
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeNilReference: aNilReference
+from: aStream [
+	"No additional information to decode."
 ]
 
 { #category : 'decoding' }
@@ -105,12 +183,27 @@ RsrCommandDecoder >> decodeSendMessage: aStream [
 { #category : 'decoding-services' }
 RsrCommandDecoder >> decodeServiceSnapshot: aStream [
 
-	| snapshot |
-	snapshot := RsrServiceSnapshot new.
-	snapshot
-		decode: aStream
-		using: self.
-	^snapshot
+	| species sid templateName persona slots instVarCount |
+	species := self decodeControlWord: aStream.
+	sid := self decodeControlWord: aStream.
+	instVarCount := self decodeControlWord: aStream.
+	templateName := (self decodeReference: aStream) resolve: nil.
+	persona := (self decodeReference: aStream) resolve: nil.
+	slots := OrderedCollection new: instVarCount.
+	instVarCount timesRepeat: [slots add: (self decodeReference: aStream)].
+
+	^RsrServiceSnapshot new
+		sid: sid;
+		templateName: templateName;
+		persona: persona;
+		slots: slots;
+		yourself
+]
+
+{ #category : 'decoding-references' }
+RsrCommandDecoder >> decodeTrueReference: aTrueReference
+from: aStream [
+	"No additional information to decode."
 ]
 
 { #category : 'decoding-services' }
