@@ -17,5 +17,9 @@ Class {
 { #category : 'instance creation' }
 RsrBooleanReference class >> from: aBoolean [
 
-	^self new
+	"True and False are Boolean instances in GemStone. This correctly distinguishes
+	the appropriate subclass in all Smalltalk environments."
+	^aBoolean
+		ifTrue: [RsrTrueReference new]
+		ifFalse: [RsrFalseReference new]
 ]
