@@ -17,7 +17,5 @@ Class {
 { #category : 'instance creation' }
 RsrBooleanReference class >> from: aBoolean [
 
-	^aBoolean
-		ifTrue: [RsrTrueReference new]
-		ifFalse: [RsrFalseReference new]
+	^self new
 ]

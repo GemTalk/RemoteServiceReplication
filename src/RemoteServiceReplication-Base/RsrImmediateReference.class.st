@@ -23,7 +23,7 @@ using: anAnalyzer [
 { #category : 'instance creation' }
 RsrImmediateReference class >> from: anObject [
 
-	^self subclassResponsiblity
+	self subclassResponsibility 
 ]
 
 { #category : 'accessing' }

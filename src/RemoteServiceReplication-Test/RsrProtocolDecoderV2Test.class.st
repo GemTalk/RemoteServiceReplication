@@ -10,7 +10,7 @@ Object
 "
 Class {
 	#name : 'RsrProtocolDecoderV2Test',
-	#superclass : 'RsrProtocolCodecTest',
+	#superclass : 'RsrProtocolDecoderTest',
 	#category : 'RemoteServiceReplication-Test',
 	#package : 'RemoteServiceReplication-Test'
 }
