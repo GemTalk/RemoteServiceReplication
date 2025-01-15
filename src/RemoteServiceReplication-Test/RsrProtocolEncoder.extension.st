@@ -1,25 +1,25 @@
-Extension { #name : 'RsrProtocolEncoderV2' }
+Extension { #name : 'RsrProtocolEncoder' }
 
 { #category : '*RemoteServiceReplication-Test' }
-RsrProtocolEncoderV2 >> encodeDeliverResponse: aDeliverResponse [
+RsrProtocolEncoder >> encodeDeliverResponse: aDeliverResponse [
 
 	^ByteArray streamContents: [:stream | self encodeDeliverResponse: aDeliverResponse onto: stream]
 ]
 
 { #category : '*RemoteServiceReplication-Test' }
-RsrProtocolEncoderV2 >> encodeReleaseServices: aReleaseServices [
+RsrProtocolEncoder >> encodeReleaseServices: aReleaseServices [
 
 	^ByteArray streamContents: [:stream | self encodeReleaseServices: aReleaseServices onto: stream]
 ]
 
 { #category : '*RemoteServiceReplication-Test' }
-RsrProtocolEncoderV2 >> encodeSendMessage: aSendMessage [
+RsrProtocolEncoder >> encodeSendMessage: aSendMessage [
 
 	^ByteArray streamContents: [:stream | self encodeSendMessage: aSendMessage onto: stream]
 ]
 
 { #category : '*RemoteServiceReplication-Test' }
-RsrProtocolEncoderV2 >> encodeServiceSnapshot: aServiceSnapshot [
+RsrProtocolEncoder >> encodeServiceSnapshot: aServiceSnapshot [
 
 	^ByteArray
 		streamContents:
