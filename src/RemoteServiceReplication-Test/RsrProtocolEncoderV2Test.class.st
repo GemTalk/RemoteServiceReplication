@@ -9,20 +9,20 @@ Object
 
 "
 Class {
-	#name : 'RsrCommandEncoderTest',
-	#superclass : 'RsrCommandCodecTest',
+	#name : 'RsrProtocolEncoderV2Test',
+	#superclass : 'RsrProtocolCodecTest',
 	#category : 'RemoteServiceReplication-Test',
 	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'other' }
-RsrCommandEncoderTest >> register: aService [
+RsrProtocolEncoderV2Test >> register: aService [
 
 	self connection _ensureRegistered: aService
 ]
 
 { #category : 'running-immediates' }
-RsrCommandEncoderTest >> testDeliverResponse [
+RsrProtocolEncoderV2Test >> testDeliverResponse [
 
 	| service response command result expectedEncoding |
 	service := RsrClientNoInstVars new.
@@ -48,7 +48,7 @@ RsrCommandEncoderTest >> testDeliverResponse [
 ]
 
 { #category : 'running' }
-RsrCommandEncoderTest >> testNaN [
+RsrProtocolEncoderV2Test >> testNaN [
 
 	| encoding |
 	"Signaling NaN is not tested.
@@ -63,7 +63,7 @@ RsrCommandEncoderTest >> testNaN [
 ]
 
 { #category : 'running-immediates' }
-RsrCommandEncoderTest >> testReleaseServices [
+RsrProtocolEncoderV2Test >> testReleaseServices [
 
 	| command result expectedEncoding |
 	command := RsrReleaseServices sids: #(1 2 3 4 5).
@@ -82,7 +82,7 @@ RsrCommandEncoderTest >> testReleaseServices [
 ]
 
 { #category : 'running-immediates' }
-RsrCommandEncoderTest >> testSendMessage [
+RsrProtocolEncoderV2Test >> testSendMessage [
 
 	| service analysis command result expectedEncoding |
 	service := RsrClientNoInstVars new.
@@ -115,7 +115,7 @@ RsrCommandEncoderTest >> testSendMessage [
 ]
 
 { #category : 'running' }
-RsrCommandEncoderTest >> testServiceNoInstVars [
+RsrProtocolEncoderV2Test >> testServiceNoInstVars [
 
 	| rootService encodedBytes expectedEncoding |
 	rootService := RsrClientNoInstVars new.
@@ -128,7 +128,7 @@ RsrCommandEncoderTest >> testServiceNoInstVars [
 ]
 
 { #category : 'running' }
-RsrCommandEncoderTest >> testServiceReferenceService [
+RsrProtocolEncoderV2Test >> testServiceReferenceService [
 
 	| rootService referencedService encodedObject expectedEncoding |
 	referencedService := RsrClientNoInstVars new.
@@ -149,7 +149,7 @@ RsrCommandEncoderTest >> testServiceReferenceService [
 ]
 
 { #category : 'running' }
-RsrCommandEncoderTest >> testUnsupportedObject [
+RsrProtocolEncoderV2Test >> testUnsupportedObject [
 
 	self
 		should: [self encoder encodeReference: (RsrReference from: Object new) onto: (WriteStream on: ByteArray new)]
@@ -157,7 +157,7 @@ RsrCommandEncoderTest >> testUnsupportedObject [
 ]
 
 { #category : 'running-immediates' }
-RsrCommandEncoderTest >> verifyControlWord: anInteger
+RsrProtocolEncoderV2Test >> verifyControlWord: anInteger
 encoding: expected [
 
 	| actual |
@@ -168,7 +168,7 @@ encoding: expected [
 ]
 
 { #category : 'running-immediates' }
-RsrCommandEncoderTest >> verifyImmediate: anObject
+RsrProtocolEncoderV2Test >> verifyImmediate: anObject
 encoding: expected [
 
 	| actual |

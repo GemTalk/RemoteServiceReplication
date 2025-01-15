@@ -1,12 +1,12 @@
 Class {
-	#name : 'RsrCommandEncoder',
-	#superclass : 'RsrCommandCodec',
+	#name : 'RsrProtocolEncoderV2',
+	#superclass : 'RsrProtocolCodec',
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeArrayReference: aArrayReference
+RsrProtocolEncoderV2 >> encodeArrayReference: aArrayReference
 onto: aStream [
 
 	self
@@ -27,7 +27,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeByteArrayReference: aByteArrayReference
+RsrProtocolEncoderV2 >> encodeByteArrayReference: aByteArrayReference
 onto: aStream [
 
 	self
@@ -43,7 +43,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeCharacterReference: aCharacterReference
+RsrProtocolEncoderV2 >> encodeCharacterReference: aCharacterReference
 onto: aStream [
 
 	self
@@ -58,7 +58,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeDateAndTimeReference: aDateAndTimeReference
+RsrProtocolEncoderV2 >> encodeDateAndTimeReference: aDateAndTimeReference
 onto: aStream [
 
 	self
@@ -73,7 +73,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-commands' }
-RsrCommandEncoder >> encodeDeliverResponse: aDeliverResponse
+RsrProtocolEncoderV2 >> encodeDeliverResponse: aDeliverResponse
 onto: aStream [
 
 	self
@@ -92,7 +92,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeDictionaryReference: aDictionaryReference
+RsrProtocolEncoderV2 >> encodeDictionaryReference: aDictionaryReference
 onto: aStream [
 
 	self
@@ -108,7 +108,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeDoubleReference: aDoubleReference
+RsrProtocolEncoderV2 >> encodeDoubleReference: aDoubleReference
 onto: aStream [
 
 	self
@@ -121,7 +121,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeFalseReference: aFalseReference
+RsrProtocolEncoderV2 >> encodeFalseReference: aFalseReference
 onto: aStream [
 
 	self
@@ -133,7 +133,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeNegativeIntegerReference: aNegativeIntegerReference
+RsrProtocolEncoderV2 >> encodeNegativeIntegerReference: aNegativeIntegerReference
 onto: aStream [
 
 	self
@@ -149,7 +149,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeNilReference: aNilReference
+RsrProtocolEncoderV2 >> encodeNilReference: aNilReference
 onto: aStream [
 
 	self
@@ -161,7 +161,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeOrderedCollectionReference: anOrderedCollectionReference
+RsrProtocolEncoderV2 >> encodeOrderedCollectionReference: anOrderedCollectionReference
 onto: aStream [
 
 	self
@@ -182,7 +182,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodePositiveIntegerReference: aPositiveIntegerReference
+RsrProtocolEncoderV2 >> encodePositiveIntegerReference: aPositiveIntegerReference
 onto: aStream [
 
 	self
@@ -198,7 +198,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-commands' }
-RsrCommandEncoder >> encodeReference: aReference
+RsrProtocolEncoderV2 >> encodeReference: aReference
 onto: aStream [
 
 	aReference
@@ -207,7 +207,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-commands' }
-RsrCommandEncoder >> encodeReleaseServices: aReleaseServices
+RsrProtocolEncoderV2 >> encodeReleaseServices: aReleaseServices
 onto: aStream [
 
 	self
@@ -225,7 +225,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-commands' }
-RsrCommandEncoder >> encodeSendMessage: aSendMessage
+RsrProtocolEncoderV2 >> encodeSendMessage: aSendMessage
 onto: aStream [
 
 	self
@@ -261,7 +261,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeServiceReference: aServiceReference
+RsrProtocolEncoderV2 >> encodeServiceReference: aServiceReference
 onto: aStream [
 
 	self
@@ -270,7 +270,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-snapshots' }
-RsrCommandEncoder >> encodeServiceSnapshot: aServiceSnapshot
+RsrProtocolEncoderV2 >> encodeServiceSnapshot: aServiceSnapshot
 onto: aStream [
 
 	self
@@ -292,7 +292,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeSetReference: aSetReference
+RsrProtocolEncoderV2 >> encodeSetReference: aSetReference
 onto: aStream [
 
 	self
@@ -313,7 +313,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeStringReference: aStringReference
+RsrProtocolEncoderV2 >> encodeStringReference: aStringReference
 onto: aStream [
 
 	self
@@ -329,7 +329,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeSymbolReference: aSymbolReference
+RsrProtocolEncoderV2 >> encodeSymbolReference: aSymbolReference
 onto: aStream [
 
 	self
@@ -345,7 +345,7 @@ onto: aStream [
 ]
 
 { #category : 'encoding-references' }
-RsrCommandEncoder >> encodeTrueReference: aTrueReference
+RsrProtocolEncoderV2 >> encodeTrueReference: aTrueReference
 onto: aStream [
 
 	self

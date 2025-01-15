@@ -1,132 +1,132 @@
 Class {
-	#name : 'RsrCommandCodec',
+	#name : 'RsrProtocolCodec',
 	#superclass : 'RsrCodec',
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> arrayIdentifier [
+RsrProtocolCodec >> arrayIdentifier [
 
 	^9
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> byteArrayIdentifier [
+RsrProtocolCodec >> byteArrayIdentifier [
 
 	^10
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> characterIdentifier [
+RsrProtocolCodec >> characterIdentifier [
 
 	^5
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> dateAndTimeIdentifier [
+RsrProtocolCodec >> dateAndTimeIdentifier [
 
 	^14
 ]
 
 { #category : 'private-accessing-commands' }
-RsrCommandCodec >> deliverErrorResponseCommand [
+RsrProtocolCodec >> deliverErrorResponseCommand [
 
 	^4
 ]
 
 { #category : 'private-accessing-commands' }
-RsrCommandCodec >> deliverResponseCommand [
+RsrProtocolCodec >> deliverResponseCommand [
 
 	^2
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> dictionaryIdentifier [
+RsrProtocolCodec >> dictionaryIdentifier [
 
 	^13
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> doubleIdentifier [
+RsrProtocolCodec >> doubleIdentifier [
 
 	^15
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> falseIdentifier [
+RsrProtocolCodec >> falseIdentifier [
 
 	^8
 ]
 
 { #category : 'private-accessing' }
-RsrCommandCodec >> immediateOID [
+RsrProtocolCodec >> immediateOID [
 
 	^0
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> negativeIntegerIdentifier [
+RsrProtocolCodec >> negativeIntegerIdentifier [
 
 	^4
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> nilIdentifier [
+RsrProtocolCodec >> nilIdentifier [
 
 	^6
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> orderedCollectionIdentifier [
+RsrProtocolCodec >> orderedCollectionIdentifier [
 
 	^12
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> positiveIntegerIdentifier [
+RsrProtocolCodec >> positiveIntegerIdentifier [
 
 	^3
 ]
 
 { #category : 'private-accessing-commands' }
-RsrCommandCodec >> releaseObjectsCommand [
+RsrProtocolCodec >> releaseObjectsCommand [
 
 	^3
 ]
 
 { #category : 'private-accessing-commands' }
-RsrCommandCodec >> sendMessageCommand [
+RsrProtocolCodec >> sendMessageCommand [
 
 	^1
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> setIdentifier [
+RsrProtocolCodec >> setIdentifier [
 
 	^11
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> snapshotIdentifier [
+RsrProtocolCodec >> snapshotIdentifier [
 
 	^0
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> stringIdentifier [
+RsrProtocolCodec >> stringIdentifier [
 
 	^2
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> symbolIdentifier [
+RsrProtocolCodec >> symbolIdentifier [
 
 	^1
 ]
 
 { #category : 'accessing-types' }
-RsrCommandCodec >> trueIdentifier [
+RsrProtocolCodec >> trueIdentifier [
 
 	^7
 ]
