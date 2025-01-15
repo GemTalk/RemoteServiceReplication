@@ -1,6 +1,6 @@
 Class {
 	#name : 'RsrProtocolEncoderV2',
-	#superclass : 'RsrProtocolCodec',
+	#superclass : 'RsrProtocolEncoder',
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }

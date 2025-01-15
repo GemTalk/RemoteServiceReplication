@@ -8,7 +8,7 @@ Object
 "
 Class {
 	#name : 'RsrProtocolDecoderV2',
-	#superclass : 'RsrProtocolCodec',
+	#superclass : 'RsrProtocolDecoder',
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
