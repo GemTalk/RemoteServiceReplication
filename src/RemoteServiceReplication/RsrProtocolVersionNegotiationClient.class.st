@@ -5,8 +5,9 @@ Class {
 	#package : 'RemoteServiceReplication'
 }
 
-{ #category : 'handshaking' }
-RsrProtocolVersionNegotiationClient >> performOver: aStream [
+{ #category : 'performing' }
+RsrProtocolVersionNegotiationClient >> performFor: aHandshake
+over: aStream [
 	"Perform the Client's porition of the handshake"
 
 	| supportedVersions answer |
