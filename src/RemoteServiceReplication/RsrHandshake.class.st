@@ -23,7 +23,7 @@ stream: aStream [
 RsrHandshake >> perform [
 	"Perform the sequence of configured steps."
 
-	self steps do: [:each | each performOver: self stream]
+	self steps do: [:each | each performFor: self over: self stream]
 ]
 
 { #category : 'accessing' }
