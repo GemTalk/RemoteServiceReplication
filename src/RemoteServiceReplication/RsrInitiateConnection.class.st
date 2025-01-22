@@ -42,6 +42,7 @@ RsrInitiateConnection >> connect [
 		stream: stream.
 	handshake perform.
 	channel := RsrBinaryStreamChannel
+		wireProtocol: RsrWireProtocolV2 new
 		inStream: stream
 		outStream: stream.
 	connection := RsrConnection

@@ -13,7 +13,8 @@ Class {
 		'sink',
 		'source',
 		'inStream',
-		'outStream'
+		'outStream',
+		'wireProtocol'
 	],
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
@@ -23,7 +24,19 @@ Class {
 RsrBinaryStreamChannel class >> inStream: inStream
 outStream: outStream [
 
+	^self
+		wireProtocol: RsrWireProtocolV2 new
+		inStream: inStream
+		outStream: outStream
+]
+
+{ #category : 'instance creation' }
+RsrBinaryStreamChannel class >> wireProtocol: aWireProtocol
+inStream: inStream
+outStream: outStream [
+
 	^self new
+		wireProtocol: aWireProtocol;
 		inStream: inStream;
 		outStream: outStream;
 		yourself
@@ -123,4 +136,18 @@ RsrBinaryStreamChannel >> sink [
 RsrBinaryStreamChannel >> source [
 
 	^source
+]
+
+{ #category : 'accessing' }
+RsrBinaryStreamChannel >> wireProtocol [
+	"Returns the wire protocol instance."
+	
+	^wireProtocol
+]
+
+{ #category : 'accessing' }
+RsrBinaryStreamChannel >> wireProtocol: aWireProtocol [
+	"Set the wire protocol instance to use"
+	
+	wireProtocol := aWireProtocol
 ]

@@ -139,3 +139,10 @@ RsrStreamChannelLoop >> stoppedState [
 
 	^#Stop
 ]
+
+{ #category : 'accessing' }
+RsrStreamChannelLoop >> wireProtocol [
+	"Return the protocol we are using to talk on the wire"
+
+	^self channel wireProtocol
+]
