@@ -26,7 +26,7 @@ RsrCommandSink >> addCommunicationProcessesTo: aSet [
 { #category : 'accessing' }
 RsrCommandSink >> encoder [
 
-	^RsrProtocolEncoderV2 new
+	^self wireProtocol encoder
 ]
 
 { #category : 'commands' }
