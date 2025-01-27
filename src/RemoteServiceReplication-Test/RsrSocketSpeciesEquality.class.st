@@ -5,9 +5,8 @@ Class {
 	#package : 'RemoteServiceReplication-Test'
 }
 
-{ #category : 'running' }
-RsrSocketSpeciesEquality >> setUp [
+{ #category : 'testing' }
+RsrSocketSpeciesEquality class >> isAbstract [
 
-	super setUp.
-	self initializeSocketConnections
+	^self == RsrSocketSpeciesEquality
 ]

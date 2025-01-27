@@ -69,6 +69,44 @@ RsrSystemTestCase >> initializeSocketConnections [
 		assert: connectionB isOpen
 ]
 
+{ #category : 'initialization' }
+RsrSystemTestCase >> initializeSocketConnectionsV1 [
+
+	| spec |
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV1 new }.
+	spec connect.
+	connectionA := spec connectionA.
+	connectionB := spec connectionB.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	self
+		assert: connectionA channel wireProtocol version
+		equals: 1.
+	self
+		assert: connectionB channel wireProtocol version
+		equals: 1.
+]
+
+{ #category : 'initialization' }
+RsrSystemTestCase >> initializeSocketConnectionsV2 [
+
+	| spec |
+	spec := RsrInternalSocketConnectionSpecification new.
+	spec connect.
+	connectionA := spec connectionA.
+	connectionB := spec connectionB.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	self
+		assert: connectionA channel wireProtocol version
+		equals: 2.
+	self
+		assert: connectionB channel wireProtocol version
+		equals: 2.
+]
+
 { #category : 'accessing' }
 RsrSystemTestCase >> peerOf: aService [
 

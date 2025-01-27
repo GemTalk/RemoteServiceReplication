@@ -5,9 +5,8 @@ Class {
 	#package : 'RemoteServiceReplication-Test'
 }
 
-{ #category : 'running' }
-RsrSocketServiceTest >> setUp [
+{ #category : 'testing' }
+RsrSocketServiceTest class >> isAbstract [
 
-	super setUp.
-	self initializeSocketConnections
+	^self == RsrSocketServiceTest
 ]
