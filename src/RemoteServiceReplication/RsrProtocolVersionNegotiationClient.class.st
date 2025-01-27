@@ -18,5 +18,6 @@ over: aStream [
 	aStream flush.
 	answer := self codec decode: aStream.
 	answer hasSharedVersion
-		ifFalse: [^RsrProtocolVersionNegotiationFailed signal: 'The Client and Server could not agree on an RSR protocol version.']
+		ifFalse: [^RsrProtocolVersionNegotiationFailed signal: 'The Client and Server could not agree on an RSR protocol version.'].
+	aHandshake wireProtocol: RsrWireProtocolV2 new
 ]

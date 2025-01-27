@@ -3,7 +3,8 @@ Class {
 	#superclass : 'RsrObject',
 	#instVars : [
 		'steps',
-		'stream'
+		'stream',
+		'wireProtocol'
 	],
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
@@ -52,4 +53,19 @@ RsrHandshake >> stream: aStream [
 	"The stream used by each step."
 
 	stream := aStream
+]
+
+{ #category : 'accessing' }
+RsrHandshake >> wireProtocol [
+	"Returns the chosen wire protocol.
+	nil - if no protocol negotiation happened."
+
+	^wireProtocol
+]
+
+{ #category : 'accessing' }
+RsrHandshake >> wireProtocol: aWireProtocol [
+	"Sets the chosen wire protocol."
+
+	wireProtocol := aWireProtocol
 ]
