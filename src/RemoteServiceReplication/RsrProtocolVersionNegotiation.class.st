@@ -14,12 +14,43 @@ Server -> Client:
 Class {
 	#name : 'RsrProtocolVersionNegotiation',
 	#superclass : 'RsrHandshakeStep',
+	#instVars : [
+		'wireProtocols'
+	],
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
+
+{ #category : 'instance creation' }
+RsrProtocolVersionNegotiation class >> new [
+
+	^self wireProtocols: { RsrWireProtocolV2 new }
+]
+
+{ #category : 'instance creation' }
+RsrProtocolVersionNegotiation class >> wireProtocols: aPrioritizedListOfWireProtocols [
+
+	^super new
+		wireProtocols: aPrioritizedListOfWireProtocols;
+		yourself
+]
 
 { #category : 'accessing' }
 RsrProtocolVersionNegotiation >> codec [
 
 	^RsrProtocolVersionNegotiationCodec new
+]
+
+{ #category : 'accessing' }
+RsrProtocolVersionNegotiation >> wireProtocols [
+	"Return the supported protocols."
+
+	^wireProtocols
+]
+
+{ #category : 'accessing' }
+RsrProtocolVersionNegotiation >> wireProtocols: aPrioritizedListOfWireProtocols [
+	"Configure the list and priority of supported wire protocols."
+
+	wireProtocols := aPrioritizedListOfWireProtocols
 ]

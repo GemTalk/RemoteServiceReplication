@@ -8,20 +8,21 @@ Class {
 { #category : 'performing' }
 RsrProtocolVersionNegotiationServer >> performFor: aHandshake
 over: aStream [
-	"Peform the Server's side of the handshake."
+	"Perform the Server's side of the handshake."
 
-	| supportedVersions |
+	| supportedVersions selectedProtocol |
 	supportedVersions := self codec decode: aStream.
-	(supportedVersions versions includes: 2)
-		ifFalse:
+	selectedProtocol := self wireProtocols
+		detect: [:protocol | supportedVersions versions includes: protocol version]
+		ifNone:
 			[self codec
 				encodeNoVersionOverlap: RsrNoVersionOverlap new
 				onto: aStream.
 			aStream flush; close.
-			^RsrProtocolVersionNegotiationFailed signal: 'Client versions did not overlap w/ Server'].
+			^RsrProtocolVersionNegotiationFailed signal: 'Client versions do not overlap w/ Server'].
 	self codec
-		encodeChosenVersion: (RsrChosenVersion version: 2)
+		encodeChosenVersion: (RsrChosenVersion version: selectedProtocol version)
 		onto: aStream.
 	aStream flush.
-	aHandshake wireProtocol: RsrWireProtocolV2 new
+	aHandshake wireProtocol: selectedProtocol
 ]
