@@ -12,8 +12,8 @@ RsrSocketStressTest class >> defaultTimeLimit [
 	^60 seconds
 ]
 
-{ #category : 'initializing' }
-RsrSocketStressTest >> initializeConnections [
+{ #category : 'testing' }
+RsrSocketStressTest class >> isAbstract [
 
-	self initializeSocketConnections
+	^self == RsrSocketStressTest
 ]

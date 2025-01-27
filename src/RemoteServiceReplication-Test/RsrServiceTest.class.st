@@ -364,24 +364,6 @@ RsrServiceTest >> testReturnServerWithoutAssociatedClient [
 ]
 
 { #category : 'running' }
-RsrServiceTest >> testSendClientWithoutAssociatedServer [
-
-	| client server reason |
-	client := RsrRemoteActionClient new
-		registerWith: connectionA;
-		synchronize.
-	server := connectionB serviceAt: client _id.
-	server action: [:x | x].
-	reason := self expectCatch: (client asyncValue: RsrKnownClient new).
-	self
-		assert: reason class
-		equals: RsrRemoteExceptionServer.
-	self
-		assert: reason exceptionClassName
-		equals: #RsrUnknownClass
-]
-
-{ #category : 'running' }
 RsrServiceTest >> testVariableReflection [
 
 	| localService remoteService |

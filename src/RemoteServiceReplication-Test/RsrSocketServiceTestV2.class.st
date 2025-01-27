@@ -1,20 +1,20 @@
 Class {
-	#name : 'RsrInMemoryServiceTest',
-	#superclass : 'RsrServiceTest',
+	#name : 'RsrSocketServiceTestV2',
+	#superclass : 'RsrSocketServiceTest',
 	#category : 'RemoteServiceReplication-Test',
 	#package : 'RemoteServiceReplication-Test'
 }
 
 { #category : 'running' }
-RsrInMemoryServiceTest >> setUp [
+RsrSocketServiceTestV2 >> setUp [
 
 	super setUp.
-	self initializeInMemoryConnections
+	self initializeSocketConnectionsV2
 ]
 
 { #category : 'running' }
-RsrInMemoryServiceTest >> testSendClientWithoutAssociatedServer [
-	"See RsrSocketServiceTestV2>>testSendClientWithoutAssociatedServer"
+RsrSocketServiceTestV2 >> testSendClientWithoutAssociatedServer [
+	"See RsrInMemoryServiceTest>>testSendClientWithoutAssociatedServer"
 
 	| client server reason |
 	client := RsrRemoteActionClient new
