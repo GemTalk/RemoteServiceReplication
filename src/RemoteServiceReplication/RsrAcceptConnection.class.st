@@ -14,10 +14,9 @@ Class {
 { #category : 'instance creation' }
 RsrAcceptConnection class >> host: hostnameOrAddress port: portNumber [
 
-	^ self new
-		  host: hostnameOrAddress;
-		  portRange: (portNumber to: portNumber);
-		  yourself
+	^ self
+		  host: hostnameOrAddress
+		  portRange: (portNumber to: portNumber)
 ]
 
 { #category : 'instance creation' }
@@ -147,7 +146,7 @@ RsrAcceptConnection >> waitForConnection [
 		stream: stream.
 	handshake perform.
 	channel := RsrBinaryStreamChannel
-		wireProtocol: RsrWireProtocolV2 new
+		wireProtocol: handshake wireProtocol
 		inStream: stream
 		outStream: stream.
 	connection := RsrConnection
