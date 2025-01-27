@@ -10,14 +10,22 @@ RsrProtocolVersionNegotiationClient >> performFor: aHandshake
 over: aStream [
 	"Perform the Client's porition of the handshake"
 
-	| supportedVersions answer |
-	supportedVersions := RsrSupportedVersions versions: #(2).
+	| answer wireProtocol |
 	self codec
-		encodeSupportedVersions: supportedVersions
+		encodeSupportedVersions: self supportedVersions
 		onto: aStream.
 	aStream flush.
 	answer := self codec decode: aStream.
 	answer hasSharedVersion
 		ifFalse: [^RsrProtocolVersionNegotiationFailed signal: 'The Client and Server could not agree on an RSR protocol version.'].
-	aHandshake wireProtocol: RsrWireProtocolV2 new
+	wireProtocol := self wireProtocols
+		detect: [:each | each version = answer version]
+		ifNone: [^RsrProtocolVersionNegotiationFailed signal: 'Server''s chosen protocol version is unsupported.'].
+	aHandshake wireProtocol: wireProtocol
+]
+
+{ #category : 'accessing' }
+RsrProtocolVersionNegotiationClient >> supportedVersions [
+
+	^RsrSupportedVersions versions: (self wireProtocols collect: [:each | each version])
 ]
