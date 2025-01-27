@@ -25,7 +25,7 @@ RsrGciAcceptConnection >> handshakeSteps [
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationServer new
+		with: (RsrProtocolVersionNegotiationServer wireProtocols: self wireProtocols)
 		with: (RsrTokenReceiver token: self token)
 ]
 

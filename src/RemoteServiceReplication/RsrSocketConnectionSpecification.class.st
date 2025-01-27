@@ -8,16 +8,17 @@ Class {
 	#superclass : 'RsrConnectionSpecification',
 	#instVars : [
 		'host',
-		'port'
+		'wireProtocols'
 	],
 	#category : 'RemoteServiceReplication',
 	#package : 'RemoteServiceReplication'
 }
 
-{ #category : 'instance creation' }
-RsrSocketConnectionSpecification class >> host: hostnameOrAddress port: port [
+{ #category : 'accessing' }
+RsrSocketConnectionSpecification class >> defaultWireProtocols [
+	"Return the default list of supported WireProtocol version."
 
-	^ self subclassResponsibility
+	^{ RsrWireProtocolV2 new }
 ]
 
 { #category : 'accessing' }
@@ -35,22 +36,23 @@ RsrSocketConnectionSpecification >> host: hostnameOrAddress [
 ]
 
 { #category : 'accessing' }
-RsrSocketConnectionSpecification >> port [
-	"The port number used for establishing a socket"
-
-	^port
-]
-
-{ #category : 'accessing' }
-RsrSocketConnectionSpecification >> port: aPort [
-	"The port number used for establishing a socket"
-
-	port := aPort
-]
-
-{ #category : 'accessing' }
 RsrSocketConnectionSpecification >> socketClass [
 	"Return the class that should be used for creating Socket instances."
 
 	^RsrSocket
+]
+
+{ #category : 'accessing' }
+RsrSocketConnectionSpecification >> wireProtocols [
+	"Returns the prioritized protocols that should be used
+	when negotiating a connection."
+
+	^wireProtocols ifNil: [^self class defaultWireProtocols]
+]
+
+{ #category : 'accessing' }
+RsrSocketConnectionSpecification >> wireProtocols: prioritizedWireProtocols [
+	"Configure the list of supported WireProtocols."
+
+	wireProtocols := prioritizedWireProtocols
 ]

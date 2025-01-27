@@ -185,6 +185,55 @@ RsrConnectionSpecificationTestCase >> testCancelWaitForConnection [
 ]
 
 { #category : 'running' }
+RsrConnectionSpecificationTestCase >> testConfiguredInternalSocketConnectionSpecification [
+	"Ensure that sending #connect to an InternalConnectionSpecification
+	results in returning one of the created Connections."
+
+	| spec connection |
+	"Only v1"
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV1 new }.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 1.
+	connection close.
+	
+	"v1 is prioritized"
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV1 new. RsrWireProtocolV2 new }.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 1.
+	connection close.
+	
+	"v2 is prioritized"
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV2 new. RsrWireProtocolV1 new }.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 2.
+	connection close.
+]
+
+{ #category : 'running' }
+RsrConnectionSpecificationTestCase >> testDefaultInternalSocketConnectionSpecification [
+	"Ensure that sending #connect to an InternalConnectionSpecification
+	results in returning one of the created Connections."
+
+	| spec connection |
+	spec := RsrInternalSocketConnectionSpecification new.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 2.
+	connection close
+]
+
+{ #category : 'running' }
 RsrConnectionSpecificationTestCase >> testEstablishConnection [
 
 	| acceptor initiator semaphore connectionA connectionB |
@@ -226,7 +275,7 @@ RsrConnectionSpecificationTestCase >> testFailedAcceptOnAlternativeLocalhost [
 ]
 
 { #category : 'running' }
-RsrConnectionSpecificationTestCase >> testInternalConnectionSpecificationConnectReturnsConnection [
+RsrConnectionSpecificationTestCase >> testInternalInMemoryConnectionSpecificationConnectReturnsConnection [
 	"Ensure that sending #connect to an InternalConnectionSpecification
 	results in returning one of the created Connections."
 
@@ -235,10 +284,6 @@ RsrConnectionSpecificationTestCase >> testInternalConnectionSpecificationConnect
 	connection := spec connect.
 	self assert: connection isOpen.
 	connection close.
-	spec := RsrInternalSocketConnectionSpecification new.
-	connection := spec connect.
-	self assert: connection isOpen.
-	connection close
 ]
 
 { #category : 'running' }

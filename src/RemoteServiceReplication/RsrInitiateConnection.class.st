@@ -13,6 +13,7 @@ Class {
 	#name : 'RsrInitiateConnection',
 	#superclass : 'RsrSocketConnectionSpecification',
 	#instVars : [
+		'port',
 		'token'
 	],
 	#category : 'RemoteServiceReplication',
@@ -22,10 +23,22 @@ Class {
 { #category : 'instance creation' }
 RsrInitiateConnection class >> host: hostnameOrAddress port: port [
 
-	^ self new
-		  host: hostnameOrAddress;
-		  port: port;
-		  yourself
+	^self
+		host: hostnameOrAddress
+		port: port
+		wireProtocols: self defaultWireProtocols
+]
+
+{ #category : 'instance creation' }
+RsrInitiateConnection class >> host: hostnameOrAddress
+port: port
+wireProtocols: prioritizedProtocols [
+
+	^self new
+		host: hostnameOrAddress;
+		port: port;
+		wireProtocols: prioritizedProtocols;
+		yourself
 ]
 
 { #category : 'connecting' }
@@ -58,5 +71,19 @@ RsrInitiateConnection >> handshakeSteps [
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationClient new
+		with: (RsrProtocolVersionNegotiationClient wireProtocols: self wireProtocols)
+]
+
+{ #category : 'accessing' }
+RsrInitiateConnection >> port [
+	"The port number used for establishing a socket"
+
+	^port
+]
+
+{ #category : 'accessing' }
+RsrInitiateConnection >> port: aPort [
+	"The port number used for establishing a socket"
+
+	port := aPort
 ]
