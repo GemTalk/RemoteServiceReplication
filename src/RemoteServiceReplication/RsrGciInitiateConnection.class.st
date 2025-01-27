@@ -10,9 +10,23 @@ RsrGciInitiateConnection class >> host: hostnameOrAddress
 port: port
 token: aToken [
 
+	^self
+		host: hostnameOrAddress
+		port: port
+		wireProtocols: self defaultWireProtocols
+		token: aToken
+]
+
+{ #category : 'instance creation' }
+RsrGciInitiateConnection class >> host: hostnameOrAddress
+port: port
+wireProtocols: prioritizedWireProtocols
+token: aToken [
+
 	^self new
 		host: hostnameOrAddress;
 		port: port;
+		wireProtocols: prioritizedWireProtocols;
 		token: aToken;
 		yourself
 ]
@@ -22,7 +36,7 @@ RsrGciInitiateConnection >> handshakeSteps [
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationClient new
+		with: (RsrProtocolVersionNegotiationClient wireProtocols: self wireProtocols)
 		with: (RsrTokenSender token: self token)
 ]
 

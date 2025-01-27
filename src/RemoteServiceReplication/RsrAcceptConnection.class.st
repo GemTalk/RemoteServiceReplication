@@ -22,16 +22,38 @@ RsrAcceptConnection class >> host: hostnameOrAddress port: portNumber [
 { #category : 'instance creation' }
 RsrAcceptConnection class >> host: hostnameOrAddress portRange: anInterval [
 
-	^ self new
-		  host: hostnameOrAddress;
-		  portRange: anInterval;
-		  yourself
+	^self
+		host: hostnameOrAddress
+		portRange: anInterval
+		wireProtocols: self defaultWireProtocols
+]
+
+{ #category : 'instance creation' }
+RsrAcceptConnection class >> host: hostnameOrAddress
+portRange: anInterval
+wireProtocols: prioritizedWireProtocols [
+
+	^self new
+		host: hostnameOrAddress;
+		portRange: anInterval;
+		wireProtocols: prioritizedWireProtocols;
+		yourself
 ]
 
 { #category : 'instance creation' }
 RsrAcceptConnection class >> port: aPortInteger [
 
 	^ self host: self wildcardAddress port: aPortInteger
+]
+
+{ #category : 'instance creation' }
+RsrAcceptConnection class >> port: aPortInteger
+wireProtocols: prioritizedWireProtocols [
+
+	^self
+		host: self wildcardAddress
+		portRange: (aPortInteger to: aPortInteger)
+		wireProtocols: prioritizedWireProtocols
 ]
 
 { #category : 'instance creation' }
@@ -87,7 +109,7 @@ RsrAcceptConnection >> handshakeSteps [
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationServer new
+		with: (RsrProtocolVersionNegotiationServer wireProtocols: self wireProtocols)
 ]
 
 { #category : 'other' }
