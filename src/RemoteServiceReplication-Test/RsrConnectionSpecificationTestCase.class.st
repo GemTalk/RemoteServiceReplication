@@ -23,6 +23,12 @@ RsrConnectionSpecificationTestCase >> port [
 	^47652
 ]
 
+{ #category : 'accessing' }
+RsrConnectionSpecificationTestCase >> portAsRange [
+
+	^self port to: self port
+]
+
 { #category : 'running' }
 RsrConnectionSpecificationTestCase >> testAcceptOnLocalhost [
 
@@ -307,6 +313,39 @@ RsrConnectionSpecificationTestCase >> testListenThenLaterAccept [
 	self
 		assert: connectionA isOpen;
 		assert: connectionB isOpen.
+	connectionA close.
+	connectionB close
+]
+
+{ #category : 'running' }
+RsrConnectionSpecificationTestCase >> testV1ClientV2V1Server [
+
+	| acceptor initiator semaphore connectionA connectionB |
+	acceptor := RsrAcceptConnection
+		host: self localhost 
+		portRange: self portAsRange
+		wireProtocols: { RsrWireProtocolV2 new. RsrWireProtocolV1 new }.
+	initiator := RsrInitiateConnection
+		host: self localhost
+		port: self port
+		wireProtocols: { RsrWireProtocolV1 new }.
+	semaphore := Semaphore new.
+	acceptor ensureListening.
+	RsrProcessModel
+		fork: [semaphore signal. [connectionB := initiator connect] ensure: [semaphore signal]]
+		named: 'Pending InitiateConnection'.
+	semaphore wait.
+	connectionA := acceptor waitForConnection.
+	semaphore wait.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	self
+		assert: connectionA channel wireProtocol version
+		equals: 1.
+	self
+		assert: connectionB channel wireProtocol version
+		equals: 1.
 	connectionA close.
 	connectionB close
 ]
