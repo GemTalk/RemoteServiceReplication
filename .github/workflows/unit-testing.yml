@@ -1,0 +1,25 @@
+name: RSR Unit Testing
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+        smalltalk:
+          - Pharo64-stable
+          - Pharo64-12
+          - Pharo64-11
+    name: ${{ matrix.os }} - ${{ matrix.smalltalk }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hpi-swa/setup-smalltalkCI@v1
+        with:
+          smalltalk-image: ${{ matrix.smalltalk }}
+      - run: smalltalkci -s ${{ matrix.smalltalk }}
+        shell: bash
+        timeout-minutes: 15
