@@ -18,7 +18,7 @@ Class {
 RsrSocketConnectionSpecification class >> defaultWireProtocols [
 	"Return the default list of supported WireProtocol version."
 
-	^{ RsrWireProtocolV2 new }
+	^{ RsrWireProtocolV2 new. RsrWireProtocolV1 new }
 ]
 
 { #category : 'accessing' }
