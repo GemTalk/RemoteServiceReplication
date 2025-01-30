@@ -9,7 +9,7 @@ Class {
 RsrSocketStressTest class >> defaultTimeLimit [
 	"These tests take longer over a Socket"
 
-	^60 seconds
+	^120 seconds
 ]
 
 { #category : 'testing' }
