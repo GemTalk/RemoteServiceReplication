@@ -12,7 +12,7 @@ Class {
 { #category : 'accessing' }
 RsrStressTest class >> defaultTimeLimit [
 
-	^30 seconds
+	^Duration seconds: 30
 ]
 
 { #category : 'testing' }
@@ -44,6 +44,12 @@ RsrStressTest >> concurrentlyRun: aBlock [
 	self deny: anyCurtailed
 ]
 
+{ #category : 'accessing' }
+RsrStressTest >> defaultTestDuration [
+
+	^self class defaultTimeLimit / 2
+]
+
 { #category : 'initialize/release' }
 RsrStressTest >> initializeServices [
 
@@ -63,19 +69,25 @@ RsrStressTest >> numThreads [
 { #category : 'running-utilities' }
 RsrStressTest >> repeatedlyRun: aBlock [
 
-	self repetitions timesRepeat: aBlock
+	| endTime |
+	endTime := DateAndTime now + self defaultTestDuration.
+	self
+		repeatedlyRun: aBlock
+		until: endTime
+]
+
+{ #category : 'running-utilities' }
+RsrStressTest >> repeatedlyRun: aBlock
+until: endTime [
+
+	[DateAndTime now < endTime]
+		whileTrue: [aBlock value]
 ]
 
 { #category : 'running-utilities' }
 RsrStressTest >> repeatedlySend: anObject [
 
 	self repeatedlyRun: [self send: anObject]
-]
-
-{ #category : 'accessing' }
-RsrStressTest >> repetitions [
-
-	^1000
 ]
 
 { #category : 'running-utilities' }
@@ -109,11 +121,7 @@ RsrStressTest >> tearDown [
 { #category : 'running' }
 RsrStressTest >> test10MBytes [
 
-	| bytes |
-	bytes := ByteArray new: 1024 * 1024 * 10.
-	1
-		to: 10
-		do: [:i | self send: bytes]
+	self repeatedlySend: (ByteArray new: 1024 * 1024 * 10)
 ]
 
 { #category : 'running' }
