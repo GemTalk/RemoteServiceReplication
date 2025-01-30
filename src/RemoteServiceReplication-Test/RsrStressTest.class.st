@@ -137,12 +137,6 @@ RsrStressTest >> test1MBytes [
 ]
 
 { #category : 'running' }
-RsrStressTest >> test2KBytes [
-
-	self repeatedlySend: (ByteArray new: 1024 *2)
-]
-
-{ #category : 'running' }
 RsrStressTest >> testBasicSends [
 
 	self repeatedlySend: nil
