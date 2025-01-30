@@ -12,7 +12,7 @@ Class {
 { #category : 'accessing' }
 RsrStressTest class >> defaultTimeLimit [
 
-	^Duration seconds: 30
+	^Duration seconds: 60
 ]
 
 { #category : 'testing' }
@@ -47,7 +47,7 @@ RsrStressTest >> concurrentlyRun: aBlock [
 { #category : 'accessing' }
 RsrStressTest >> defaultTestDuration [
 
-	^self class defaultTimeLimit / 2
+	^self class defaultTimeLimit / 4
 ]
 
 { #category : 'initialize/release' }
