@@ -1,0 +1,2288 @@
+{
+	"branch" : "",
+	"commitSha" : "",
+	"deprecationWarnings" : [ ],
+	"gsVersion" : "3.7.3.1",
+	"notes" : "",
+	"properties" : { },
+	"resultsSummary" : {
+		"errors" : 0,
+		"failures" : 0,
+		"passed" : 378,
+		"summary" : "378 Tests with 0 Failures, 0 Errors and 0 DeprecationWarnings in 329.33s",
+		"tests" : 378,
+		"time" : 329.327
+	},
+	"suiteName" : "RemoteServiceReplication projects Test Suite",
+	"testCases" : [
+		{
+			"className" : "RsrAsyncMournHandlerTestCase",
+			"status" : "passed",
+			"selector" : "testAnotherAsyncHandlerExists",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrAsyncMournHandlerTestCase",
+			"status" : "passed",
+			"selector" : "testEnsureSingletonWhileActive",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrAsyncMournHandlerTestCase",
+			"status" : "passed",
+			"selector" : "testEnsureStarted",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrAsyncMournHandlerTestCase",
+			"status" : "passed",
+			"selector" : "testHandlerStops",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrAsyncMournHandlerTestCase",
+			"status" : "passed",
+			"selector" : "testMournEphemeron",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrAsyncMournHandlerTestCase",
+			"status" : "passed",
+			"selector" : "testNewRaisesError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrClassResolverTestCase",
+			"status" : "passed",
+			"selector" : "testFailedResolution",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrClassResolverTestCase",
+			"status" : "passed",
+			"selector" : "testSuccessfulResolution",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testAcceptOnLocalhost",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testBindToAvailablePortRange",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testBindToPartlyAvailablePortRange",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testBindToUnavailablePortRange",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testBindToWildcardPort",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testCancelWaitForConnection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testConfiguredInternalSocketConnectionSpecification",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testDefaultInternalSocketConnectionSpecification",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testEstablishConnection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testFailedConnect",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testInternalInMemoryConnectionSpecificationConnectReturnsConnection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testListenThenLaterAccept",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrConnectionSpecificationTestCase",
+			"status" : "passed",
+			"selector" : "testV1ClientV2V1Server",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrEphemeronMourningDeadlock",
+			"status" : "passed",
+			"selector" : "testEphemeronMourningDoesNotDeadlock",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrForwarderTest",
+			"status" : "passed",
+			"selector" : "testForwarding",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrGarbageCollectorTestCase",
+			"status" : "passed",
+			"selector" : "testMaximumReclamation",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryConnectionTestCase",
+			"status" : "passed",
+			"selector" : "testAllowExistingInstancesOfDeniedTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryConnectionTestCase",
+			"status" : "passed",
+			"selector" : "testPolicyRejection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryConnectionTestCase",
+			"status" : "passed",
+			"selector" : "testPolicyRejectsFrameworkTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryConnectionTestCase",
+			"status" : "passed",
+			"selector" : "testWaitUntilClose",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryLifetimeTest",
+			"status" : "passed",
+			"selector" : "testEnsurePushedClientServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryLifetimeTest",
+			"status" : "passed",
+			"selector" : "testEnsureReturnedServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryLifetimeTest",
+			"status" : "passed",
+			"selector" : "testEnsureReturnRegisteredServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testAsyncRemoteError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testAsyncReturnArgument",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testAsyncReturnService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testChangeRemoteState",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testCloseConnectionDuringMessageSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testDebugHandlerBreak",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testDebugHandlerException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testDebugHandlerFulfill",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testDebugHandlerNoResolutionWithNonresumableException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testDebugHandlerNoResolutionWithResumableException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testPrePostUpdateError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testRemoteError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testRemoteErrorWithTag",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringDebugHandler",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringMessageSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testReturnAlsoUpdatesLocalService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testReturnArgument",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testReturnInvalidObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testReturnNewService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testReturnNewServiceInArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testReturnSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testSendInvalidObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryMessageSendingTest",
+			"status" : "passed",
+			"selector" : "testUnimplementedRemoteSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testAnalyzeServiceRegisteredWithDifferentConnection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testCustomTemplateResolver",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testEnsureServersAreCachedAndReused",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testHasRemoteSelf",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testInitialization",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testIsMirrored",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testMessageDispatchedConcurrentlyToSingleService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testMessagesDispactchedConcurrentlyForMultipleServices",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testPostRegistration",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testPostRegistrationRaisesException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testReflectedVariableNames",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testRegisterWith",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testReturnServerWithoutAssociatedClient",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testSendClientWithoutAssociatedServer",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryServiceTest",
+			"status" : "passed",
+			"selector" : "testVariableReflection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testBoolean",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testByteArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testCharacter",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testDateAndTime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testInteger",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testOrderedCollection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testServiceWithUnsupportedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testSet",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testUndefinedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testUnicodeString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemorySpeciesEquality",
+			"status" : "passed",
+			"selector" : "testUnicodeSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryStressTest",
+			"status" : "passed",
+			"selector" : "test10MBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryStressTest",
+			"status" : "passed",
+			"selector" : "test1KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryStressTest",
+			"status" : "passed",
+			"selector" : "test1MBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryStressTest",
+			"status" : "passed",
+			"selector" : "testBasicSends",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryStressTest",
+			"status" : "passed",
+			"selector" : "testConcurrent1KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryStressTest",
+			"status" : "passed",
+			"selector" : "testConcurrent2KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrInMemoryStressTest",
+			"status" : "passed",
+			"selector" : "testConcurrentBasicSends",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testDefault",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testFloat",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testNaturals",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testNegativeStep",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testNext",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrPromiseTest",
+			"status" : "passed",
+			"selector" : "testAsyncBreak",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrPromiseTest",
+			"status" : "passed",
+			"selector" : "testAsyncFulfill",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrPromiseTest",
+			"status" : "passed",
+			"selector" : "testNoArgWhenCatchBlocks",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrPromiseTest",
+			"status" : "passed",
+			"selector" : "testSyncBreak",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrPromiseTest",
+			"status" : "passed",
+			"selector" : "testSyncFulfill",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testBoolean",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testByteArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testCharacter",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testControlWord",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testDateTime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testDecodeIncompatibleServiceWithExtraInstVar",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testDeliverResponse",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testDouble",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testInteger",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testNil",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testOrderedCollection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testReleaseServices",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testSendMessage",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testServiceDecodeIdentity",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testServiceNoInstVars",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testServiceReferenceService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testSet",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV1Test",
+			"status" : "passed",
+			"selector" : "testSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testBoolean",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testByteArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testCharacter",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testControlWord",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testDateTime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testDecodeIncompatibleServiceWithExtraInstVar",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testDeliverResponse",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testDouble",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testInteger",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testNil",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testOrderedCollection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testReleaseServices",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testSendMessage",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testServiceDecodeIdentity",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testServiceNoInstVars",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testServiceReferenceService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testSet",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolDecoderV2Test",
+			"status" : "passed",
+			"selector" : "testSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testBoolean",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testByteArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testCharacter",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testControlWord",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testDateTime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testDeliverResponse",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testDouble",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testInteger",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testNaN",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testNil",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testOrderedCollection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testReleaseServices",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testSendMessage",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testServiceNoInstVars",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testServiceReferenceService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testSet",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV1Test",
+			"status" : "passed",
+			"selector" : "testUnsupportedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testBoolean",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testByteArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testCharacter",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testControlWord",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testDateTime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testDeliverResponse",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testDouble",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testInteger",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testNaN",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testNil",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testOrderedCollection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testReleaseServices",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testSendMessage",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testServiceNoInstVars",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testServiceReferenceService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testSet",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolEncoderV2Test",
+			"status" : "passed",
+			"selector" : "testUnsupportedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolVersionNegotiationCodecTestCase",
+			"status" : "passed",
+			"selector" : "testChosenVersion",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolVersionNegotiationCodecTestCase",
+			"status" : "passed",
+			"selector" : "testNoVersionOverlap",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrProtocolVersionNegotiationCodecTestCase",
+			"status" : "passed",
+			"selector" : "testSupportedVersions",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testArrayCycle",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testDictionaryCycle",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testMultiPathsToSameService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testNewServiceInArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testNewServicesInDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testOrderedCollectionCycle",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testServiceAllDataObjects",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testServiceNoInstVars",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testServiceReferencingAnotherService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testServiceWithCycle",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSnapshotAnalysisTest",
+			"status" : "passed",
+			"selector" : "testSetCycle",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV1",
+			"status" : "passed",
+			"selector" : "testAllowExistingInstancesOfDeniedTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV1",
+			"status" : "passed",
+			"selector" : "testPolicyRejection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV1",
+			"status" : "passed",
+			"selector" : "testPolicyRejectsFrameworkTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV1",
+			"status" : "passed",
+			"selector" : "testWaitUntilClose",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV2",
+			"status" : "passed",
+			"selector" : "testAllowExistingInstancesOfDeniedTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV2",
+			"status" : "passed",
+			"selector" : "testPolicyRejection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV2",
+			"status" : "passed",
+			"selector" : "testPolicyRejectsFrameworkTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketConnectionTestCaseV2",
+			"status" : "passed",
+			"selector" : "testWaitUntilClose",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketLifetimeTestV1",
+			"status" : "passed",
+			"selector" : "testEnsurePushedClientServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketLifetimeTestV1",
+			"status" : "passed",
+			"selector" : "testEnsureReturnedServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketLifetimeTestV1",
+			"status" : "passed",
+			"selector" : "testEnsureReturnRegisteredServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketLifetimeTestV2",
+			"status" : "passed",
+			"selector" : "testEnsurePushedClientServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketLifetimeTestV2",
+			"status" : "passed",
+			"selector" : "testEnsureReturnedServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketLifetimeTestV2",
+			"status" : "passed",
+			"selector" : "testEnsureReturnRegisteredServerLifetime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testAsyncRemoteError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testAsyncReturnArgument",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testAsyncReturnService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testChangeRemoteState",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testCloseConnectionDuringMessageSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testDebugHandlerBreak",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testDebugHandlerException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testDebugHandlerFulfill",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testDebugHandlerNoResolutionWithNonresumableException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testDebugHandlerNoResolutionWithResumableException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testPrePostUpdateError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testRemoteError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testRemoteErrorWithTag",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringDebugHandler",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringMessageSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testReturnAlsoUpdatesLocalService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testReturnArgument",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testReturnInvalidObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testReturnNewService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testReturnNewServiceInArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testReturnSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testSendInvalidObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV1",
+			"status" : "passed",
+			"selector" : "testUnimplementedRemoteSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testAsyncRemoteError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testAsyncReturnArgument",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testAsyncReturnService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testChangeRemoteState",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testCloseConnectionDuringMessageSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testDebugHandlerBreak",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testDebugHandlerException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testDebugHandlerFulfill",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testDebugHandlerNoResolutionWithNonresumableException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testDebugHandlerNoResolutionWithResumableException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testPrePostUpdateError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testRemoteError",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testRemoteErrorWithTag",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringDebugHandler",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringMessageSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testRemoteProcessTerminationDuringPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testReturnAlsoUpdatesLocalService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testReturnArgument",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testReturnInvalidObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testReturnNewService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testReturnNewServiceInArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testReturnSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testSendInvalidObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketMessageSendingTestV2",
+			"status" : "passed",
+			"selector" : "testUnimplementedRemoteSend",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testAnalyzeServiceRegisteredWithDifferentConnection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testCustomTemplateResolver",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testEnsureServersAreCachedAndReused",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testHasRemoteSelf",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testInitialization",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testIsMirrored",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testMessageDispatchedConcurrentlyToSingleService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testMessagesDispactchedConcurrentlyForMultipleServices",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testPostRegistration",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testPostRegistrationRaisesException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testReflectedVariableNames",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testRegisterWith",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testReturnServerWithoutAssociatedClient",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV1",
+			"status" : "passed",
+			"selector" : "testVariableReflection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testAnalyzeServiceRegisteredWithDifferentConnection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testCustomTemplateResolver",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testEnsureServersAreCachedAndReused",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testHasRemoteSelf",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testInitialization",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testIsMirrored",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testMessageDispatchedConcurrentlyToSingleService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testMessagesDispactchedConcurrentlyForMultipleServices",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testPostRegistration",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testPostRegistrationRaisesException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testPrePostUpdate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testReflectedVariableNames",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testRegisterWith",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testReturnServerWithoutAssociatedClient",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testSendClientWithoutAssociatedServer",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketServiceTestV2",
+			"status" : "passed",
+			"selector" : "testVariableReflection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testBoolean",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testByteArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testCharacter",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testDateAndTime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testInteger",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testOrderedCollection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testServiceWithUnsupportedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testSet",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testUndefinedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testUnicodeString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV1",
+			"status" : "passed",
+			"selector" : "testUnicodeSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testBoolean",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testByteArray",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testCharacter",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testDateAndTime",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testDictionary",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testInteger",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testOrderedCollection",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testServiceWithUnsupportedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testSet",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testUndefinedObject",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testUnicodeString",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketSpeciesEqualityV2",
+			"status" : "passed",
+			"selector" : "testUnicodeSymbol",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStreamTestCase",
+			"status" : "passed",
+			"selector" : "testNextAfterClose",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStreamTestCase",
+			"status" : "passed",
+			"selector" : "testNextPutAllAfterClose",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStreamTestCase",
+			"status" : "passed",
+			"selector" : "testSendReceive",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV1",
+			"status" : "passed",
+			"selector" : "test10MBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV1",
+			"status" : "passed",
+			"selector" : "test1KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV1",
+			"status" : "passed",
+			"selector" : "test1MBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV1",
+			"status" : "passed",
+			"selector" : "testBasicSends",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV1",
+			"status" : "passed",
+			"selector" : "testConcurrent1KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV1",
+			"status" : "passed",
+			"selector" : "testConcurrent2KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV1",
+			"status" : "passed",
+			"selector" : "testConcurrentBasicSends",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV2",
+			"status" : "passed",
+			"selector" : "test10MBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV2",
+			"status" : "passed",
+			"selector" : "test1KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV2",
+			"status" : "passed",
+			"selector" : "test1MBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV2",
+			"status" : "passed",
+			"selector" : "testBasicSends",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV2",
+			"status" : "passed",
+			"selector" : "testConcurrent1KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV2",
+			"status" : "passed",
+			"selector" : "testConcurrent2KBytes",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketStressTestV2",
+			"status" : "passed",
+			"selector" : "testConcurrentBasicSends",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testAcceptConnects",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testAcceptOnAlreadyClosedSocket",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testCloseDuringAccept",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testConnectBoundSocket",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testFailedConnects",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testInvalidBind",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testListenWithoutBind",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testPartialRead",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testReadAfterPeerClose",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testReadWrite",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testSuccessfulConnect",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrSocketTestCase",
+			"status" : "passed",
+			"selector" : "testUnconnectedReadWrite",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverTestCase",
+			"status" : "passed",
+			"selector" : "testClientClassForTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverTestCase",
+			"status" : "passed",
+			"selector" : "testClientClassForTemplateIfAbsent",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverTestCase",
+			"status" : "passed",
+			"selector" : "testServerClassForTemplate",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverTestCase",
+			"status" : "passed",
+			"selector" : "testServerClassForTemplateIfAbsent",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverTestCase",
+			"status" : "passed",
+			"selector" : "testTemplateFor",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverTestCase",
+			"status" : "passed",
+			"selector" : "testTemplateNamed",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverTestCase",
+			"status" : "passed",
+			"selector" : "testTemplateNamedIfAbsent",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTemplateResolverWithClassVersions",
+			"status" : "passed",
+			"selector" : "testVersionClassAfterCreatingService",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTestingProcessModelTestCase",
+			"status" : "passed",
+			"selector" : "testCurrentStackDump",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTestingProcessModelTestCase",
+			"status" : "passed",
+			"selector" : "testException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTestingProcessModelTestCase",
+			"status" : "passed",
+			"selector" : "testNoException",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrThreadSafeNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testDefault",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrThreadSafeNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testFloat",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrThreadSafeNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testNaturals",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrThreadSafeNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testNegativeStep",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrThreadSafeNumericSpigotTest",
+			"status" : "passed",
+			"selector" : "testNext",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTokenExchangeCodecTestCase",
+			"status" : "passed",
+			"selector" : "testToken",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTokenExchangeCodecTestCase",
+			"status" : "passed",
+			"selector" : "testTokenAccepted",
+			"time" : "0"
+		},
+		{
+			"className" : "RsrTokenExchangeCodecTestCase",
+			"status" : "passed",
+			"selector" : "testTokenRejected",
+			"time" : "0"
+		}
+	],
+	"timeStamp" : "2025-02-12T17:25:44.535668-08:00"
+}
