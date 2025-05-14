@@ -58,14 +58,17 @@ RsrAsyncMournHandler >> process [
 	^process
 ]
 
-{ #category : 'other' }
+{ #category : 'lifecycle' }
 RsrAsyncMournHandler >> runLoop [
 
 	[[self isActive]
 		whileTrue:
 			[[notifier readNotification]
-				on: GcFinalizeNotification
-				do: [:ex | ex _finalizeEphemerons]]]
+				onException: { GcFinalizeNotification. TransactionBacklog. }
+				do: {
+					[:ex | ex _finalizeEphemerons].
+					[:ex | System abortTransaction].
+				}]]
 		on: SocketError
 		do: [:ex | ex return]
 ]
@@ -73,7 +76,7 @@ RsrAsyncMournHandler >> runLoop [
 { #category : 'lifecycle' }
 RsrAsyncMournHandler >> start [
 
-	[notifier := GsSignalingSocket newForAsyncExceptions: {GcFinalizeNotification }.
+	[notifier := GsSignalingSocket newForAsyncExceptions: {GcFinalizeNotification. TransactionBacklog. }.
 	notifier interrupting: true]
 		on: SocketError
 		do:
