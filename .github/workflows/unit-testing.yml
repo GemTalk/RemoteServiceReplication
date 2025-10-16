@@ -12,6 +12,7 @@ jobs:
           - macos-latest
         smalltalk:
           - Pharo64-stable
+          - Pharo64-13
           - Pharo64-12
           - Pharo64-11
     name: ${{ matrix.os }} - ${{ matrix.smalltalk }}
