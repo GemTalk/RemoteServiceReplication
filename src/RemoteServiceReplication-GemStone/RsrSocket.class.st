@@ -24,6 +24,9 @@ RsrSocket >> _nativeSocket: aGsSignalingSocket [
 	nativeSocket
 		option: 'NODELAY'
 		put: true.
+	nativeSocket
+		option: 'KEEPALIVE'
+		put: true.
 	nativeSocket interrupting: true
 ]
 
@@ -75,7 +78,7 @@ port: port [
 RsrSocket >> initialize [
 
 	super initialize.
-	nativeSocket := GsSignalingSocket new.
+	self _nativeSocket: GsSignalingSocket new.
 ]
 
 { #category : 'testing' }
