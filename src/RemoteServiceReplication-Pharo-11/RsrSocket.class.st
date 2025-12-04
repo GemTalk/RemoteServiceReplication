@@ -21,6 +21,7 @@ RsrSocket >> _nativeSocket: aSocket [
 	"Private - Configure w/ a platform socket"
 
 	aSocket setOption: 'TCP_NODELAY' value: 1.
+	aSocket setOption: 'SO_KEEPALIVE' value: 1.
 	nativeSocket := aSocket
 ]
 
@@ -95,7 +96,7 @@ port: aPort [
 RsrSocket >> initialize [
 
 	super initialize.
-	nativeSocket := Socket new
+	self _nativeSocket: Socket new
 ]
 
 { #category : 'testing' }
