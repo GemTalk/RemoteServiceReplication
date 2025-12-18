@@ -56,9 +56,7 @@ RsrBinaryStreamChannel >> close [
 
 	source stop.
 	sink stop.
-	outStream
-		flush;
-		close.
+	outStream close.
 	inStream close
 ]
 
