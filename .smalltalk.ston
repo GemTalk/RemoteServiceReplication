@@ -5,7 +5,7 @@ SmalltalkCISpec {
       #load : [ 'All' ],
       #directory : 'src',
       #onWarningLog : true,
-      #platforms : [ #pharo ]
+      #platforms : [ #pharo , #gemstone ]
     }
   ]
 }
