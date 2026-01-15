@@ -1,13 +1,13 @@
-! Copyright (C) GemTalk Systems 1986-2024.  All Rights Reserved.
+! Copyright (C) GemTalk Systems 1986-2026.  All Rights Reserved.
 ! Class Declarations
 ! Generated file, do not Edit
 
 doit
 (Announcement
 	subclass: 'RsrAnnouncement'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -23,9 +23,9 @@ removeallclassmethods RsrAnnouncement
 doit
 (RsrAnnouncement
 	subclass: 'RsrConnectionStateAnnouncement'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -41,9 +41,9 @@ removeallclassmethods RsrConnectionStateAnnouncement
 doit
 (RsrConnectionStateAnnouncement
 	subclass: 'RsrConnectionClosed'
-	instVarNames: #( connection )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(connection)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -60,9 +60,9 @@ removeallclassmethods RsrConnectionClosed
 doit
 (Error
 	subclass: 'RsrError'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -77,10 +77,10 @@ removeallclassmethods RsrError
 
 doit
 (RsrError
-	subclass: 'RsrAlreadyRegistered'
-	instVarNames: #( service intendedConnection )
-	classVars: #(  )
-	classInstVars: #(  )
+	subclass: 'RsrAlreadyRegisteredWithAnotherConnection'
+	instVarNames: #(service intendedConnection)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -90,15 +90,15 @@ doit
 true.
 %
 
-removeallmethods RsrAlreadyRegistered
-removeallclassmethods RsrAlreadyRegistered
+removeallmethods RsrAlreadyRegisteredWithAnotherConnection
+removeallclassmethods RsrAlreadyRegisteredWithAnotherConnection
 
 doit
 (RsrError
 	subclass: 'RsrConnectionFailed'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -114,9 +114,9 @@ removeallclassmethods RsrConnectionFailed
 doit
 (RsrError
 	subclass: 'RsrHandshakeError'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -132,9 +132,9 @@ removeallclassmethods RsrHandshakeError
 doit
 (RsrHandshakeError
 	subclass: 'RsrProtocolVersionNegotiationFailed'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -150,9 +150,9 @@ removeallclassmethods RsrProtocolVersionNegotiationFailed
 doit
 (RsrHandshakeError
 	subclass: 'RsrTokenExchangeFailed'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -168,9 +168,9 @@ removeallclassmethods RsrTokenExchangeFailed
 doit
 (RsrError
 	subclass: 'RsrNonresumableError'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -186,9 +186,9 @@ removeallclassmethods RsrNonresumableError
 doit
 (RsrError
 	subclass: 'RsrOutOfRange'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -204,9 +204,9 @@ removeallclassmethods RsrOutOfRange
 doit
 (RsrError
 	subclass: 'RsrPromiseError'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -222,9 +222,9 @@ removeallclassmethods RsrPromiseError
 doit
 (RsrPromiseError
 	subclass: 'RsrAlreadyResolved'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -240,9 +240,9 @@ removeallclassmethods RsrAlreadyResolved
 doit
 (RsrPromiseError
 	subclass: 'RsrBrokenPromise'
-	instVarNames: #( reason )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(reason)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -258,9 +258,9 @@ removeallclassmethods RsrBrokenPromise
 doit
 (RsrError
 	subclass: 'RsrRemoteError'
-	instVarNames: #( originalClassName stack )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(originalClassName stack)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -276,9 +276,9 @@ removeallclassmethods RsrRemoteError
 doit
 (RsrError
 	subclass: 'RsrResumableError'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -294,9 +294,9 @@ removeallclassmethods RsrResumableError
 doit
 (RsrError
 	subclass: 'RsrServiceRejected'
-	instVarNames: #( reason )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(reason)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -312,9 +312,9 @@ removeallclassmethods RsrServiceRejected
 doit
 (RsrError
 	subclass: 'RsrSocketError'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -330,9 +330,9 @@ removeallclassmethods RsrSocketError
 doit
 (RsrSocketError
 	subclass: 'RsrConnectFailed'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -348,9 +348,9 @@ removeallclassmethods RsrConnectFailed
 doit
 (RsrSocketError
 	subclass: 'RsrInvalidBind'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -366,9 +366,9 @@ removeallclassmethods RsrInvalidBind
 doit
 (RsrSocketError
 	subclass: 'RsrSocketClosed'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -384,9 +384,9 @@ removeallclassmethods RsrSocketClosed
 doit
 (RsrError
 	subclass: 'RsrUnknownClass'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -402,9 +402,9 @@ removeallclassmethods RsrUnknownClass
 doit
 (RsrError
 	subclass: 'RsrUnknownSID'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -420,9 +420,9 @@ removeallclassmethods RsrUnknownSID
 doit
 (RsrError
 	subclass: 'RsrUnknownTemplate'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -438,9 +438,9 @@ removeallclassmethods RsrUnknownTemplate
 doit
 (RsrError
 	subclass: 'RsrUnsupportedObject'
-	instVarNames: #( object )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(object)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -456,9 +456,9 @@ removeallclassmethods RsrUnsupportedObject
 doit
 (RsrError
 	subclass: 'RsrWaitForConnectionCancelled'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -474,9 +474,9 @@ removeallclassmethods RsrWaitForConnectionCancelled
 doit
 (Exception
 	subclass: 'RsrUnhandledException'
-	instVarNames: #( exception )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(exception)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -495,9 +495,9 @@ removeallclassmethods RsrUnhandledException
 doit
 (Notification
 	subclass: 'RsrNotification'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -513,9 +513,9 @@ removeallclassmethods RsrNotification
 doit
 (Object
 	subclass: 'RsrForwarder'
-	instVarNames: #( _service )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(_service)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -531,9 +531,9 @@ removeallclassmethods RsrForwarder
 doit
 (Object
 	subclass: 'RsrObject'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -549,9 +549,9 @@ removeallclassmethods RsrObject
 doit
 (RsrObject
 	subclass: 'RsrAbstractPolicy'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -573,9 +573,9 @@ removeallclassmethods RsrAbstractPolicy
 doit
 (RsrAbstractPolicy
 	subclass: 'RsrDefaultPolicy'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -591,9 +591,9 @@ removeallclassmethods RsrDefaultPolicy
 doit
 (RsrAbstractPolicy
 	subclass: 'RsrTestPolicy'
-	instVarNames: #( deniedTemplates )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(deniedTemplates)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -609,9 +609,9 @@ removeallclassmethods RsrTestPolicy
 doit
 (RsrObject
 	subclass: 'RsrAbstractReason'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -630,9 +630,9 @@ removeallclassmethods RsrAbstractReason
 doit
 (RsrAbstractReason
 	subclass: 'RsrConnectionClosedBeforeReceivingResponse'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -648,9 +648,9 @@ removeallclassmethods RsrConnectionClosedBeforeReceivingResponse
 doit
 (RsrAbstractReason
 	subclass: 'RsrDecodingRaisedException'
-	instVarNames: #( exception )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(exception)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -666,9 +666,9 @@ removeallclassmethods RsrDecodingRaisedException
 doit
 (RsrObject
 	subclass: 'RsrAbstractService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -684,9 +684,9 @@ removeallclassmethods RsrAbstractService
 doit
 (RsrAbstractService
 	subclass: 'RsrService'
-	instVarNames: #( _id _connection remoteSelf )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(_id _connection remoteSelf)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -702,10 +702,100 @@ removeallclassmethods RsrService
 
 doit
 (RsrService
+	subclass: 'RsrAbstractTestTemplate'
+	instVarNames: #(abstractTemplateVariable)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrAbstractTestTemplate
+removeallclassmethods RsrAbstractTestTemplate
+
+doit
+(RsrAbstractTestTemplate
+	subclass: 'RsrTestTemplate'
+	instVarNames: #(templateVariable)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrTestTemplate
+removeallclassmethods RsrTestTemplate
+
+doit
+(RsrTestTemplate
+	subclass: 'RsrAbstractTestTemplateClient'
+	instVarNames: #(abstractClientVariable)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrAbstractTestTemplateClient
+removeallclassmethods RsrAbstractTestTemplateClient
+
+doit
+(RsrAbstractTestTemplateClient
+	subclass: 'RsrTestTemplateClient'
+	instVarNames: #(clientVariable)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrTestTemplateClient
+removeallclassmethods RsrTestTemplateClient
+
+doit
+(RsrTestTemplate
+	subclass: 'RsrTestTemplateServer'
+	instVarNames: #(serverVariable)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrTestTemplateServer
+removeallclassmethods RsrTestTemplateServer
+
+doit
+(RsrService
 	subclass: 'RsrConcurrentTestService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -721,9 +811,9 @@ removeallclassmethods RsrConcurrentTestService
 doit
 (RsrConcurrentTestService
 	subclass: 'RsrConcurrentTestClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -739,9 +829,9 @@ removeallclassmethods RsrConcurrentTestClient
 doit
 (RsrConcurrentTestService
 	subclass: 'RsrConcurrentTestServer'
-	instVarNames: #( counter semaphore stashedProcess )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(counter semaphore stashedProcess)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -757,9 +847,9 @@ removeallclassmethods RsrConcurrentTestServer
 doit
 (RsrService
 	subclass: 'RsrInstrumentedService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -782,9 +872,9 @@ removeallclassmethods RsrInstrumentedService
 doit
 (RsrInstrumentedService
 	subclass: 'RsrInstrumentedClient'
-	instVarNames: #( preUpdateCount postUpdateCount postRegistrationCount )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(preUpdateCount postUpdateCount postRegistrationCount)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -808,9 +898,9 @@ removeallclassmethods RsrInstrumentedClient
 doit
 (RsrInstrumentedService
 	subclass: 'RsrInstrumentedServer'
-	instVarNames: #( preUpdateCount postUpdateCount postRegistrationCount action )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(preUpdateCount postUpdateCount postRegistrationCount action)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -834,9 +924,9 @@ removeallclassmethods RsrInstrumentedServer
 doit
 (RsrService
 	subclass: 'RsrMockService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -852,9 +942,9 @@ removeallclassmethods RsrMockService
 doit
 (RsrMockService
 	subclass: 'RsrMockClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -870,9 +960,9 @@ removeallclassmethods RsrMockClient
 doit
 (RsrMockService
 	subclass: 'RsrMockServer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -887,10 +977,82 @@ removeallclassmethods RsrMockServer
 
 doit
 (RsrService
+	subclass: 'RsrNoClientService'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrNoClientService
+removeallclassmethods RsrNoClientService
+
+doit
+(RsrNoClientService
+	subclass: 'RsrNoClientServiceServer'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrNoClientServiceServer
+removeallclassmethods RsrNoClientServiceServer
+
+doit
+(RsrService
+	subclass: 'RsrNoServerService'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrNoServerService
+removeallclassmethods RsrNoServerService
+
+doit
+(RsrNoServerService
+	subclass: 'RsrNoServerServiceClient'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrNoServerServiceClient
+removeallclassmethods RsrNoServerServiceClient
+
+doit
+(RsrService
 	subclass: 'RsrReasonService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -907,9 +1069,9 @@ removeallclassmethods RsrReasonService
 doit
 (RsrReasonService
 	subclass: 'RsrPolicyRejectedService'
-	instVarNames: #( sid templateName )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sid templateName)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -926,9 +1088,9 @@ removeallclassmethods RsrPolicyRejectedService
 doit
 (RsrPolicyRejectedService
 	subclass: 'RsrPolicyRejectedServiceClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -944,9 +1106,9 @@ removeallclassmethods RsrPolicyRejectedServiceClient
 doit
 (RsrPolicyRejectedService
 	subclass: 'RsrPolicyRejectedServiceServer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -962,9 +1124,9 @@ removeallclassmethods RsrPolicyRejectedServiceServer
 doit
 (RsrReasonService
 	subclass: 'RsrRemoteException'
-	instVarNames: #( exceptionClassName tag messageText stack )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(exceptionClassName tag messageText stack)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -980,9 +1142,9 @@ removeallclassmethods RsrRemoteException
 doit
 (RsrRemoteException
 	subclass: 'RsrRemoteExceptionClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -998,9 +1160,9 @@ removeallclassmethods RsrRemoteExceptionClient
 doit
 (RsrRemoteException
 	subclass: 'RsrRemoteExceptionServer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1016,9 +1178,9 @@ removeallclassmethods RsrRemoteExceptionServer
 doit
 (RsrService
 	subclass: 'RsrReflectedVariableTestServiceA'
-	instVarNames: #( varA )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(varA)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1034,9 +1196,9 @@ removeallclassmethods RsrReflectedVariableTestServiceA
 doit
 (RsrReflectedVariableTestServiceA
 	subclass: 'RsrReflectedVariableTestServiceB'
-	instVarNames: #( varB )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(varB)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1052,9 +1214,9 @@ removeallclassmethods RsrReflectedVariableTestServiceB
 doit
 (RsrReflectedVariableTestServiceB
 	subclass: 'RsrReflectedVariableTestClient'
-	instVarNames: #( private )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(private)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1070,9 +1232,9 @@ removeallclassmethods RsrReflectedVariableTestClient
 doit
 (RsrReflectedVariableTestServiceB
 	subclass: 'RsrReflectedVariableTestServer'
-	instVarNames: #( private )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(private)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1088,9 +1250,9 @@ removeallclassmethods RsrReflectedVariableTestServer
 doit
 (RsrService
 	subclass: 'RsrRemoteAction'
-	instVarNames: #( sharedVariable )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sharedVariable)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1106,9 +1268,9 @@ removeallclassmethods RsrRemoteAction
 doit
 (RsrRemoteAction
 	subclass: 'RsrRemoteActionClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1124,9 +1286,9 @@ removeallclassmethods RsrRemoteActionClient
 doit
 (RsrRemoteAction
 	subclass: 'RsrRemoteActionServer'
-	instVarNames: #( action debugHandler preUpdateHandler postUpdateHandler postRegistrationHandler )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(action debugHandler preUpdateHandler postUpdateHandler postRegistrationHandler)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1142,9 +1304,9 @@ removeallclassmethods RsrRemoteActionServer
 doit
 (RsrService
 	subclass: 'RsrReturnUnknownService'
-	instVarNames: #( sharedVariable )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sharedVariable)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1160,9 +1322,9 @@ removeallclassmethods RsrReturnUnknownService
 doit
 (RsrReturnUnknownService
 	subclass: 'RsrKnownServer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1178,9 +1340,9 @@ removeallclassmethods RsrKnownServer
 doit
 (RsrService
 	subclass: 'RsrSendUnknownService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1196,9 +1358,9 @@ removeallclassmethods RsrSendUnknownService
 doit
 (RsrSendUnknownService
 	subclass: 'RsrKnownClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1214,9 +1376,9 @@ removeallclassmethods RsrKnownClient
 doit
 (RsrService
 	subclass: 'RsrServiceNoInstVars'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1232,9 +1394,9 @@ removeallclassmethods RsrServiceNoInstVars
 doit
 (RsrServiceNoInstVars
 	subclass: 'RsrClientNoInstVars'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1250,9 +1412,9 @@ removeallclassmethods RsrClientNoInstVars
 doit
 (RsrServiceNoInstVars
 	subclass: 'RsrServerNoInstVars'
-	instVarNames: #( marker )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(marker)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1268,9 +1430,9 @@ removeallclassmethods RsrServerNoInstVars
 doit
 (RsrService
 	subclass: 'RsrServiceReferenceService'
-	instVarNames: #( service )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(service)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1286,9 +1448,9 @@ removeallclassmethods RsrServiceReferenceService
 doit
 (RsrServiceReferenceService
 	subclass: 'RsrClientReferenceService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1304,9 +1466,9 @@ removeallclassmethods RsrClientReferenceService
 doit
 (RsrServiceReferenceService
 	subclass: 'RsrServerReferenceService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1322,9 +1484,9 @@ removeallclassmethods RsrServerReferenceService
 doit
 (RsrService
 	subclass: 'RsrTestService'
-	instVarNames: #( sharedVariable )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sharedVariable)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1340,9 +1502,9 @@ removeallclassmethods RsrTestService
 doit
 (RsrTestService
 	subclass: 'RsrClientTestService'
-	instVarNames: #( privateVariable )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(privateVariable)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1358,9 +1520,9 @@ removeallclassmethods RsrClientTestService
 doit
 (RsrTestService
 	subclass: 'RsrServerTestService'
-	instVarNames: #( privateVariable )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(privateVariable)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1376,9 +1538,9 @@ removeallclassmethods RsrServerTestService
 doit
 (RsrService
 	subclass: 'RsrValueHolder'
-	instVarNames: #( value )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(value)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1394,9 +1556,9 @@ removeallclassmethods RsrValueHolder
 doit
 (RsrValueHolder
 	subclass: 'RsrValueHolderClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1412,9 +1574,9 @@ removeallclassmethods RsrValueHolderClient
 doit
 (RsrValueHolder
 	subclass: 'RsrValueHolderServer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1430,9 +1592,9 @@ removeallclassmethods RsrValueHolderServer
 doit
 (RsrService
 	subclass: 'RsrVersionService'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1448,9 +1610,9 @@ removeallclassmethods RsrVersionService
 doit
 (RsrVersionService
 	subclass: 'RsrVersionServiceClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1466,9 +1628,9 @@ removeallclassmethods RsrVersionServiceClient
 doit
 (RsrVersionService
 	subclass: 'RsrVersionServiceServer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1484,9 +1646,9 @@ removeallclassmethods RsrVersionServiceServer
 doit
 (RsrObject
 	subclass: 'RsrAbstractTemplateResolver'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1502,9 +1664,9 @@ removeallclassmethods RsrAbstractTemplateResolver
 doit
 (RsrAbstractTemplateResolver
 	subclass: 'RsrTemplateResolver'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1518,11 +1680,29 @@ removeallmethods RsrTemplateResolver
 removeallclassmethods RsrTemplateResolver
 
 doit
+(RsrAbstractTemplateResolver
+	subclass: 'RsrTestTemplateResolver'
+	instVarNames: #(templates)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrTestTemplateResolver
+removeallclassmethods RsrTestTemplateResolver
+
+doit
 (RsrObject
 	subclass: 'RsrAsyncMournHandler'
-	instVarNames: #( process notifier isActive )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(process notifier isActive)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1544,28 +1724,10 @@ removeallclassmethods RsrAsyncMournHandler
 
 doit
 (RsrObject
-	subclass: 'RsrBufferedSocketStream'
-	instVarNames: #( stream outBuffer writePosition nextToWrite )
-	classVars: #(  )
-	classInstVars: #(  )
-	poolDictionaries: #()
-	inDictionary: Globals
-	options: #()
-)
-		category: 'RemoteServiceReplication';
-		immediateInvariant.
-true.
-%
-
-removeallmethods RsrBufferedSocketStream
-removeallclassmethods RsrBufferedSocketStream
-
-doit
-(RsrObject
 	subclass: 'RsrChannel'
-	instVarNames: #( connection )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(connection)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1586,9 +1748,9 @@ removeallclassmethods RsrChannel
 doit
 (RsrChannel
 	subclass: 'RsrBinaryStreamChannel'
-	instVarNames: #( sink source inStream outStream )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sink source inStream outStream wireProtocol)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1610,9 +1772,9 @@ removeallclassmethods RsrBinaryStreamChannel
 doit
 (RsrChannel
 	subclass: 'RsrInMemoryChannel'
-	instVarNames: #( inQueue outQueue drainProcess )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(inQueue outQueue drainProcess)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1649,9 +1811,9 @@ removeallclassmethods RsrInMemoryChannel
 doit
 (RsrChannel
 	subclass: 'RsrNullChannel'
-	instVarNames: #( lastCommand )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(lastCommand)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1667,9 +1829,9 @@ removeallclassmethods RsrNullChannel
 doit
 (RsrObject
 	subclass: 'RsrClassResolver'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1685,9 +1847,9 @@ removeallclassmethods RsrClassResolver
 doit
 (RsrObject
 	subclass: 'RsrCodec'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1702,10 +1864,10 @@ removeallclassmethods RsrCodec
 
 doit
 (RsrCodec
-	subclass: 'RsrCommandCodec'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	subclass: 'RsrProtocolCodec'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1715,15 +1877,51 @@ doit
 true.
 %
 
-removeallmethods RsrCommandCodec
-removeallclassmethods RsrCommandCodec
+removeallmethods RsrProtocolCodec
+removeallclassmethods RsrProtocolCodec
 
 doit
-(RsrCommandCodec
-	subclass: 'RsrCommandDecoder'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+(RsrProtocolCodec
+	subclass: 'RsrProtocolDecoder'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolDecoder
+removeallclassmethods RsrProtocolDecoder
+
+doit
+(RsrProtocolDecoder
+	subclass: 'RsrProtocolDecoderV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolDecoderV1
+removeallclassmethods RsrProtocolDecoderV1
+
+doit
+(RsrProtocolDecoder
+	subclass: 'RsrProtocolDecoderV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1739,15 +1937,15 @@ Object
 true.
 %
 
-removeallmethods RsrCommandDecoder
-removeallclassmethods RsrCommandDecoder
+removeallmethods RsrProtocolDecoderV2
+removeallclassmethods RsrProtocolDecoderV2
 
 doit
-(RsrCommandCodec
-	subclass: 'RsrCommandEncoder'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+(RsrProtocolCodec
+	subclass: 'RsrProtocolEncoder'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1757,15 +1955,51 @@ doit
 true.
 %
 
-removeallmethods RsrCommandEncoder
-removeallclassmethods RsrCommandEncoder
+removeallmethods RsrProtocolEncoder
+removeallclassmethods RsrProtocolEncoder
+
+doit
+(RsrProtocolEncoder
+	subclass: 'RsrProtocolEncoderV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolEncoderV1
+removeallclassmethods RsrProtocolEncoderV1
+
+doit
+(RsrProtocolEncoder
+	subclass: 'RsrProtocolEncoderV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolEncoderV2
+removeallclassmethods RsrProtocolEncoderV2
 
 doit
 (RsrCodec
 	subclass: 'RsrProtocolVersionNegotiationCodec'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1781,9 +2015,9 @@ removeallclassmethods RsrProtocolVersionNegotiationCodec
 doit
 (RsrCodec
 	subclass: 'RsrTokenExchangeCodec'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1799,9 +2033,9 @@ removeallclassmethods RsrTokenExchangeCodec
 doit
 (RsrObject
 	subclass: 'RsrCommand'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1822,9 +2056,9 @@ removeallclassmethods RsrCommand
 doit
 (RsrCommand
 	subclass: 'RsrMessagingCommand'
-	instVarNames: #( snapshots transaction )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(snapshots transaction)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1840,9 +2074,9 @@ removeallclassmethods RsrMessagingCommand
 doit
 (RsrMessagingCommand
 	subclass: 'RsrDeliverResponse'
-	instVarNames: #( responseReference )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(responseReference)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1864,9 +2098,9 @@ removeallclassmethods RsrDeliverResponse
 doit
 (RsrMessagingCommand
 	subclass: 'RsrSendMessage'
-	instVarNames: #( receiverReference selectorReference argumentReferences )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(receiverReference selectorReference argumentReferences)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1888,9 +2122,9 @@ removeallclassmethods RsrSendMessage
 doit
 (RsrCommand
 	subclass: 'RsrReleaseServices'
-	instVarNames: #( sids )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sids)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1912,9 +2146,9 @@ removeallclassmethods RsrReleaseServices
 doit
 (RsrObject
 	subclass: 'RsrConnection'
-	instVarNames: #( channel transactionSpigot oidSpigot log registry pendingMessages specification announcer templateResolver policy )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(channel transactionSpigot oidSpigot log registry pendingMessages specification announcer templateResolver policy)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1937,9 +2171,9 @@ removeallclassmethods RsrConnection
 doit
 (RsrObject
 	subclass: 'RsrConnectionSpecification'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1955,9 +2189,9 @@ removeallclassmethods RsrConnectionSpecification
 doit
 (RsrConnectionSpecification
 	subclass: 'RsrInternalConnectionSpecification'
-	instVarNames: #( connectionA connectionB )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(connectionA connectionB)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1973,9 +2207,9 @@ removeallclassmethods RsrInternalConnectionSpecification
 doit
 (RsrInternalConnectionSpecification
 	subclass: 'RsrInMemoryConnectionSpecification'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -1991,9 +2225,9 @@ removeallclassmethods RsrInMemoryConnectionSpecification
 doit
 (RsrInternalConnectionSpecification
 	subclass: 'RsrInternalSocketConnectionSpecification'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(wireProtocols)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2009,9 +2243,9 @@ removeallclassmethods RsrInternalSocketConnectionSpecification
 doit
 (RsrConnectionSpecification
 	subclass: 'RsrSocketConnectionSpecification'
-	instVarNames: #( host port )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(host wireProtocols)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2030,9 +2264,9 @@ removeallclassmethods RsrSocketConnectionSpecification
 doit
 (RsrSocketConnectionSpecification
 	subclass: 'RsrAcceptConnection'
-	instVarNames: #( listener isListening isWaitingForConnection )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(portRange listener isListening isWaitingForConnection)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2048,9 +2282,9 @@ removeallclassmethods RsrAcceptConnection
 doit
 (RsrAcceptConnection
 	subclass: 'RsrGciAcceptConnection'
-	instVarNames: #( token )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(token)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2066,9 +2300,9 @@ removeallclassmethods RsrGciAcceptConnection
 doit
 (RsrSocketConnectionSpecification
 	subclass: 'RsrInitiateConnection'
-	instVarNames: #( token )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(port token)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2093,9 +2327,9 @@ removeallclassmethods RsrInitiateConnection
 doit
 (RsrInitiateConnection
 	subclass: 'RsrGciInitiateConnection'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2111,9 +2345,9 @@ removeallclassmethods RsrGciInitiateConnection
 doit
 (RsrObject
 	subclass: 'RsrDateAndTime'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2129,9 +2363,9 @@ removeallclassmethods RsrDateAndTime
 doit
 (RsrObject
 	subclass: 'RsrEnvironment'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2147,9 +2381,9 @@ removeallclassmethods RsrEnvironment
 doit
 (RsrObject
 	subclass: 'RsrEphemeron'
-	instVarNames: #( key mournAction )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(key mournAction)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2165,9 +2399,9 @@ removeallclassmethods RsrEphemeron
 doit
 (RsrObject
 	subclass: 'RsrGarbageCollector'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2183,9 +2417,9 @@ removeallclassmethods RsrGarbageCollector
 doit
 (RsrObject
 	subclass: 'RsrHandshake'
-	instVarNames: #( steps stream )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(steps stream wireProtocol)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2201,9 +2435,9 @@ removeallclassmethods RsrHandshake
 doit
 (RsrObject
 	subclass: 'RsrHandshakeStep'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2219,9 +2453,9 @@ removeallclassmethods RsrHandshakeStep
 doit
 (RsrHandshakeStep
 	subclass: 'RsrProtocolVersionNegotiation'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(wireProtocols)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2248,9 +2482,9 @@ removeallclassmethods RsrProtocolVersionNegotiation
 doit
 (RsrProtocolVersionNegotiation
 	subclass: 'RsrProtocolVersionNegotiationClient'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2266,9 +2500,9 @@ removeallclassmethods RsrProtocolVersionNegotiationClient
 doit
 (RsrProtocolVersionNegotiation
 	subclass: 'RsrProtocolVersionNegotiationServer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2284,9 +2518,9 @@ removeallclassmethods RsrProtocolVersionNegotiationServer
 doit
 (RsrHandshakeStep
 	subclass: 'RsrTokenExchange'
-	instVarNames: #( token )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(token)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2302,9 +2536,9 @@ removeallclassmethods RsrTokenExchange
 doit
 (RsrTokenExchange
 	subclass: 'RsrTokenReceiver'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2320,9 +2554,9 @@ removeallclassmethods RsrTokenReceiver
 doit
 (RsrTokenExchange
 	subclass: 'RsrTokenSender'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2338,9 +2572,9 @@ removeallclassmethods RsrTokenSender
 doit
 (RsrObject
 	subclass: 'RsrLog'
-	instVarNames: #( verbosity sinks )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(verbosity destinations)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2355,10 +2589,10 @@ removeallclassmethods RsrLog
 
 doit
 (RsrObject
-	subclass: 'RsrLogSink'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	subclass: 'RsrLogDestination'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2368,15 +2602,15 @@ doit
 true.
 %
 
-removeallmethods RsrLogSink
-removeallclassmethods RsrLogSink
+removeallmethods RsrLogDestination
+removeallclassmethods RsrLogDestination
 
 doit
-(RsrLogSink
-	subclass: 'RsrCustomSink'
-	instVarNames: #( action )
-	classVars: #(  )
-	classInstVars: #(  )
+(RsrLogDestination
+	subclass: 'RsrLogToTranscript'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2386,15 +2620,15 @@ doit
 true.
 %
 
-removeallmethods RsrCustomSink
-removeallclassmethods RsrCustomSink
+removeallmethods RsrLogToTranscript
+removeallclassmethods RsrLogToTranscript
 
 doit
-(RsrLogSink
-	subclass: 'RsrTranscriptSink'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+(RsrLogDestination
+	subclass: 'RsrLogViaBlock'
+	instVarNames: #(action)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2404,15 +2638,15 @@ doit
 true.
 %
 
-removeallmethods RsrTranscriptSink
-removeallclassmethods RsrTranscriptSink
+removeallmethods RsrLogViaBlock
+removeallclassmethods RsrLogViaBlock
 
 doit
 (RsrObject
 	subclass: 'RsrLogWithPrefix'
-	instVarNames: #( prefix log )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(prefix log)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2428,9 +2662,9 @@ removeallclassmethods RsrLogWithPrefix
 doit
 (RsrObject
 	subclass: 'RsrMessageSend'
-	instVarNames: #( receiver selector arguments )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(receiver selector arguments)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2446,9 +2680,9 @@ removeallclassmethods RsrMessageSend
 doit
 (RsrObject
 	subclass: 'RsrNumericSpigot'
-	instVarNames: #( current step )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(current step)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2464,9 +2698,9 @@ removeallclassmethods RsrNumericSpigot
 doit
 (RsrNumericSpigot
 	subclass: 'RsrThreadSafeNumericSpigot'
-	instVarNames: #( mutex )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(mutex)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2482,9 +2716,9 @@ removeallclassmethods RsrThreadSafeNumericSpigot
 doit
 (RsrObject
 	subclass: 'RsrPendingMessage'
-	instVarNames: #( services promise )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(services promise)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2500,9 +2734,9 @@ removeallclassmethods RsrPendingMessage
 doit
 (RsrObject
 	subclass: 'RsrPromise'
-	instVarNames: #( mutex value state resolvedMutex resolutionActions )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(mutex value state resolvedMutex resolutionActions)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2549,9 +2783,9 @@ removeallclassmethods RsrPromise
 doit
 (RsrObject
 	subclass: 'RsrPromiseResolutionAction'
-	instVarNames: #( when catch )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(when catch)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2567,9 +2801,9 @@ removeallclassmethods RsrPromiseResolutionAction
 doit
 (RsrObject
 	subclass: 'RsrProtocolVersionNegotiationMessage'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2586,9 +2820,9 @@ removeallclassmethods RsrProtocolVersionNegotiationMessage
 doit
 (RsrProtocolVersionNegotiationMessage
 	subclass: 'RsrChosenVersion'
-	instVarNames: #( version )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(version)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2605,9 +2839,9 @@ removeallclassmethods RsrChosenVersion
 doit
 (RsrProtocolVersionNegotiationMessage
 	subclass: 'RsrNoVersionOverlap'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2624,9 +2858,9 @@ removeallclassmethods RsrNoVersionOverlap
 doit
 (RsrProtocolVersionNegotiationMessage
 	subclass: 'RsrSupportedVersions'
-	instVarNames: #( versions )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(versions)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2643,9 +2877,9 @@ removeallclassmethods RsrSupportedVersions
 doit
 (RsrObject
 	subclass: 'RsrReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #( referenceMapping )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2675,9 +2909,9 @@ removeallclassmethods RsrReference
 doit
 (RsrReference
 	subclass: 'RsrImmediateReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2699,9 +2933,9 @@ removeallclassmethods RsrImmediateReference
 doit
 (RsrImmediateReference
 	subclass: 'RsrBooleanReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2724,9 +2958,9 @@ removeallclassmethods RsrBooleanReference
 doit
 (RsrBooleanReference
 	subclass: 'RsrFalseReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2749,9 +2983,9 @@ removeallclassmethods RsrFalseReference
 doit
 (RsrBooleanReference
 	subclass: 'RsrTrueReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2774,9 +3008,9 @@ removeallclassmethods RsrTrueReference
 doit
 (RsrImmediateReference
 	subclass: 'RsrNilReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2799,9 +3033,9 @@ removeallclassmethods RsrNilReference
 doit
 (RsrImmediateReference
 	subclass: 'RsrValueReference'
-	instVarNames: #( intermediate )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(intermediate)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2824,9 +3058,9 @@ removeallclassmethods RsrValueReference
 doit
 (RsrValueReference
 	subclass: 'RsrByteArrayReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2850,9 +3084,9 @@ removeallclassmethods RsrByteArrayReference
 doit
 (RsrValueReference
 	subclass: 'RsrCharacterArrayReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2875,9 +3109,9 @@ removeallclassmethods RsrCharacterArrayReference
 doit
 (RsrCharacterArrayReference
 	subclass: 'RsrStringReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2901,9 +3135,9 @@ removeallclassmethods RsrStringReference
 doit
 (RsrCharacterArrayReference
 	subclass: 'RsrSymbolReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2927,9 +3161,9 @@ removeallclassmethods RsrSymbolReference
 doit
 (RsrValueReference
 	subclass: 'RsrCharacterReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2953,9 +3187,9 @@ removeallclassmethods RsrCharacterReference
 doit
 (RsrValueReference
 	subclass: 'RsrCollectionReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -2979,9 +3213,9 @@ removeallclassmethods RsrCollectionReference
 doit
 (RsrCollectionReference
 	subclass: 'RsrArrayReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3005,9 +3239,9 @@ removeallclassmethods RsrArrayReference
 doit
 (RsrCollectionReference
 	subclass: 'RsrDictionaryReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3031,9 +3265,9 @@ removeallclassmethods RsrDictionaryReference
 doit
 (RsrCollectionReference
 	subclass: 'RsrOrderedCollectionReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3057,9 +3291,9 @@ removeallclassmethods RsrOrderedCollectionReference
 doit
 (RsrCollectionReference
 	subclass: 'RsrSetReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3083,9 +3317,9 @@ removeallclassmethods RsrSetReference
 doit
 (RsrValueReference
 	subclass: 'RsrDateAndTimeReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3109,9 +3343,9 @@ removeallclassmethods RsrDateAndTimeReference
 doit
 (RsrValueReference
 	subclass: 'RsrDoubleReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3127,9 +3361,9 @@ removeallclassmethods RsrDoubleReference
 doit
 (RsrValueReference
 	subclass: 'RsrIntegerReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3152,9 +3386,9 @@ removeallclassmethods RsrIntegerReference
 doit
 (RsrIntegerReference
 	subclass: 'RsrNegativeIntegerReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3178,9 +3412,9 @@ removeallclassmethods RsrNegativeIntegerReference
 doit
 (RsrIntegerReference
 	subclass: 'RsrPositiveIntegerReference'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3204,9 +3438,9 @@ removeallclassmethods RsrPositiveIntegerReference
 doit
 (RsrReference
 	subclass: 'RsrServiceReference'
-	instVarNames: #( sid )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sid)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3228,9 +3462,9 @@ removeallclassmethods RsrServiceReference
 doit
 (RsrObject
 	subclass: 'RsrRegistryEntry'
-	instVarNames: #( ephemeron strongStorage )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(ephemeron strongStorage)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3246,9 +3480,9 @@ removeallclassmethods RsrRegistryEntry
 doit
 (RsrObject
 	subclass: 'RsrRemotePromiseResolver'
-	instVarNames: #( mutex sendMessage connection extraRoots hasResolved )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(mutex sendMessage connection extraRoots hasResolved)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3267,9 +3501,9 @@ removeallclassmethods RsrRemotePromiseResolver
 doit
 (RsrObject
 	subclass: 'RsrScientist'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3285,9 +3519,9 @@ removeallclassmethods RsrScientist
 doit
 (RsrObject
 	subclass: 'RsrServiceEphemeron'
-	instVarNames: #( service action )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(service action)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3303,9 +3537,9 @@ removeallclassmethods RsrServiceEphemeron
 doit
 (RsrObject
 	subclass: 'RsrServiceSnapshot'
-	instVarNames: #( sid templateName shouldCreateServer slots )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sid templateName persona slots)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3333,9 +3567,9 @@ removeallclassmethods RsrServiceSnapshot
 doit
 (RsrObject
 	subclass: 'RsrSignalErrorInAsString'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3351,9 +3585,9 @@ removeallclassmethods RsrSignalErrorInAsString
 doit
 (RsrObject
 	subclass: 'RsrSnapshotAnalysis'
-	instVarNames: #( roots snapshots connection analyzedObjects )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(roots snapshots connection analyzedObjects)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3374,9 +3608,9 @@ removeallclassmethods RsrSnapshotAnalysis
 doit
 (RsrObject
 	subclass: 'RsrSocket'
-	instVarNames: #( nativeSocket )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(nativeSocket)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3392,9 +3626,9 @@ removeallclassmethods RsrSocket
 doit
 (RsrObject
 	subclass: 'RsrSocketPair'
-	instVarNames: #( firstSocket secondSocket )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(firstSocket secondSocket)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3410,9 +3644,9 @@ removeallclassmethods RsrSocketPair
 doit
 (RsrObject
 	subclass: 'RsrStream'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3427,10 +3661,28 @@ removeallclassmethods RsrStream
 
 doit
 (RsrStream
+	subclass: 'RsrBufferedStream'
+	instVarNames: #(stream outBuffer firstByte nextToWrite)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrBufferedStream
+removeallclassmethods RsrBufferedStream
+
+doit
+(RsrStream
 	subclass: 'RsrSocketStream'
-	instVarNames: #( socket )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(socket)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3446,9 +3698,9 @@ removeallclassmethods RsrSocketStream
 doit
 (RsrObject
 	subclass: 'RsrStreamChannelLoop'
-	instVarNames: #( process channel state )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(process channel state)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3469,9 +3721,9 @@ removeallclassmethods RsrStreamChannelLoop
 doit
 (RsrStreamChannelLoop
 	subclass: 'RsrCommandSink'
-	instVarNames: #( queue )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(queue)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3493,9 +3745,9 @@ removeallclassmethods RsrCommandSink
 doit
 (RsrStreamChannelLoop
 	subclass: 'RsrCommandSource'
-	instVarNames: #( decoder )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(decoder)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3511,9 +3763,9 @@ removeallclassmethods RsrCommandSource
 doit
 (RsrObject
 	subclass: 'RsrThreadSafeDictionary'
-	instVarNames: #( mutex map )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(mutex map)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3530,9 +3782,9 @@ removeallclassmethods RsrThreadSafeDictionary
 doit
 (RsrObject
 	subclass: 'RsrTokenExchangeMessage'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3548,9 +3800,9 @@ removeallclassmethods RsrTokenExchangeMessage
 doit
 (RsrTokenExchangeMessage
 	subclass: 'RsrToken'
-	instVarNames: #( bytes )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(bytes)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3566,9 +3818,9 @@ removeallclassmethods RsrToken
 doit
 (RsrTokenExchangeMessage
 	subclass: 'RsrTokenAccepted'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3584,9 +3836,9 @@ removeallclassmethods RsrTokenAccepted
 doit
 (RsrTokenExchangeMessage
 	subclass: 'RsrTokenRejected'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3600,30 +3852,65 @@ removeallmethods RsrTokenRejected
 removeallclassmethods RsrTokenRejected
 
 doit
-(Object
-	subclass: 'RsrPlatformInitializer'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+(RsrObject
+	subclass: 'RsrWireProtocol'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
 )
 		category: 'RemoteServiceReplication';
-		comment: 'Does load-time initialization of any class instance variables of classes defined in Base but that have platform-specific contents and thus can''t be initialized by their own package, and can''t be lazily initialized because that fails on GemStone for non-privileged users.';
 		immediateInvariant.
 true.
 %
 
-removeallmethods RsrPlatformInitializer
-removeallclassmethods RsrPlatformInitializer
+removeallmethods RsrWireProtocol
+removeallclassmethods RsrWireProtocol
+
+doit
+(RsrWireProtocol
+	subclass: 'RsrWireProtocolV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrWireProtocolV1
+removeallclassmethods RsrWireProtocolV1
+
+doit
+(RsrWireProtocol
+	subclass: 'RsrWireProtocolV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrWireProtocolV2
+removeallclassmethods RsrWireProtocolV2
 
 doit
 (Object
 	subclass: 'RsrProcessModel'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #( current )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #(current)
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3639,9 +3926,9 @@ removeallclassmethods RsrProcessModel
 doit
 (RsrProcessModel
 	subclass: 'RsrTestingProcessModel'
-	instVarNames: #( forkedException )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(forkedException)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3657,9 +3944,9 @@ removeallclassmethods RsrTestingProcessModel
 doit
 (TestCase
 	subclass: 'RsrTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3676,9 +3963,9 @@ removeallclassmethods RsrTestCase
 doit
 (RsrTestCase
 	subclass: 'RsrAsyncMournHandlerTestCase'
-	instVarNames: #( handler )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(handler)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3694,9 +3981,9 @@ removeallclassmethods RsrAsyncMournHandlerTestCase
 doit
 (RsrTestCase
 	subclass: 'RsrClassResolverTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3711,10 +3998,10 @@ removeallclassmethods RsrClassResolverTestCase
 
 doit
 (RsrTestCase
-	subclass: 'RsrCommandCodecTest'
-	instVarNames: #( connection )
-	classVars: #(  )
-	classInstVars: #(  )
+	subclass: 'RsrConnectionSpecificationTestCase'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3724,15 +4011,159 @@ doit
 true.
 %
 
-removeallmethods RsrCommandCodecTest
-removeallclassmethods RsrCommandCodecTest
+removeallmethods RsrConnectionSpecificationTestCase
+removeallclassmethods RsrConnectionSpecificationTestCase
 
 doit
-(RsrCommandCodecTest
-	subclass: 'RsrCommandDecoderTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+(RsrTestCase
+	subclass: 'RsrForwarderTest'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrForwarderTest
+removeallclassmethods RsrForwarderTest
+
+doit
+(RsrTestCase
+	subclass: 'RsrGarbageCollectorTestCase'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Platform-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrGarbageCollectorTestCase
+removeallclassmethods RsrGarbageCollectorTestCase
+
+doit
+(RsrTestCase
+	subclass: 'RsrNumericSpigotTest'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrNumericSpigotTest
+removeallclassmethods RsrNumericSpigotTest
+
+doit
+(RsrNumericSpigotTest
+	subclass: 'RsrThreadSafeNumericSpigotTest'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrThreadSafeNumericSpigotTest
+removeallclassmethods RsrThreadSafeNumericSpigotTest
+
+doit
+(RsrTestCase
+	subclass: 'RsrPromiseTest'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrPromiseTest
+removeallclassmethods RsrPromiseTest
+
+doit
+(RsrTestCase
+	subclass: 'RsrProtocolCodecTest'
+	instVarNames: #(connection)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolCodecTest
+removeallclassmethods RsrProtocolCodecTest
+
+doit
+(RsrProtocolCodecTest
+	subclass: 'RsrProtocolDecoderTest'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolDecoderTest
+removeallclassmethods RsrProtocolDecoderTest
+
+doit
+(RsrProtocolDecoderTest
+	subclass: 'RsrProtocolDecoderV1Test'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolDecoderV1Test
+removeallclassmethods RsrProtocolDecoderV1Test
+
+doit
+(RsrProtocolDecoderTest
+	subclass: 'RsrProtocolDecoderV2Test'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3750,15 +4181,51 @@ Object
 true.
 %
 
-removeallmethods RsrCommandDecoderTest
-removeallclassmethods RsrCommandDecoderTest
+removeallmethods RsrProtocolDecoderV2Test
+removeallclassmethods RsrProtocolDecoderV2Test
 
 doit
-(RsrCommandCodecTest
-	subclass: 'RsrCommandEncoderTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+(RsrProtocolCodecTest
+	subclass: 'RsrProtocolEncoderTest'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolEncoderTest
+removeallclassmethods RsrProtocolEncoderTest
+
+doit
+(RsrProtocolEncoderTest
+	subclass: 'RsrProtocolEncoderV1Test'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrProtocolEncoderV1Test
+removeallclassmethods RsrProtocolEncoderV1Test
+
+doit
+(RsrProtocolEncoderTest
+	subclass: 'RsrProtocolEncoderV2Test'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3776,123 +4243,15 @@ Object
 true.
 %
 
-removeallmethods RsrCommandEncoderTest
-removeallclassmethods RsrCommandEncoderTest
-
-doit
-(RsrTestCase
-	subclass: 'RsrConnectionSpecificationTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
-	poolDictionaries: #()
-	inDictionary: Globals
-	options: #()
-)
-		category: 'RemoteServiceReplication-Test';
-		immediateInvariant.
-true.
-%
-
-removeallmethods RsrConnectionSpecificationTestCase
-removeallclassmethods RsrConnectionSpecificationTestCase
-
-doit
-(RsrTestCase
-	subclass: 'RsrForwarderTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
-	poolDictionaries: #()
-	inDictionary: Globals
-	options: #()
-)
-		category: 'RemoteServiceReplication-Test';
-		immediateInvariant.
-true.
-%
-
-removeallmethods RsrForwarderTest
-removeallclassmethods RsrForwarderTest
-
-doit
-(RsrTestCase
-	subclass: 'RsrGarbageCollectorTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
-	poolDictionaries: #()
-	inDictionary: Globals
-	options: #()
-)
-		category: 'RemoteServiceReplication-Platform-Test';
-		immediateInvariant.
-true.
-%
-
-removeallmethods RsrGarbageCollectorTestCase
-removeallclassmethods RsrGarbageCollectorTestCase
-
-doit
-(RsrTestCase
-	subclass: 'RsrNumericSpigotTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
-	poolDictionaries: #()
-	inDictionary: Globals
-	options: #()
-)
-		category: 'RemoteServiceReplication-Test';
-		immediateInvariant.
-true.
-%
-
-removeallmethods RsrNumericSpigotTest
-removeallclassmethods RsrNumericSpigotTest
-
-doit
-(RsrNumericSpigotTest
-	subclass: 'RsrThreadSafeNumericSpigotTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
-	poolDictionaries: #()
-	inDictionary: Globals
-	options: #()
-)
-		category: 'RemoteServiceReplication-Test';
-		immediateInvariant.
-true.
-%
-
-removeallmethods RsrThreadSafeNumericSpigotTest
-removeallclassmethods RsrThreadSafeNumericSpigotTest
-
-doit
-(RsrTestCase
-	subclass: 'RsrPromiseTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
-	poolDictionaries: #()
-	inDictionary: Globals
-	options: #()
-)
-		category: 'RemoteServiceReplication-Test';
-		immediateInvariant.
-true.
-%
-
-removeallmethods RsrPromiseTest
-removeallclassmethods RsrPromiseTest
+removeallmethods RsrProtocolEncoderV2Test
+removeallclassmethods RsrProtocolEncoderV2Test
 
 doit
 (RsrTestCase
 	subclass: 'RsrProtocolVersionNegotiationCodecTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3908,9 +4267,9 @@ removeallclassmethods RsrProtocolVersionNegotiationCodecTestCase
 doit
 (RsrTestCase
 	subclass: 'RsrSnapshotAnalysisTest'
-	instVarNames: #( connection )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(connection)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3933,9 +4292,9 @@ removeallclassmethods RsrSnapshotAnalysisTest
 doit
 (RsrTestCase
 	subclass: 'RsrSocketStreamTestCase'
-	instVarNames: #( aStream bStream )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(aStream bStream)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3951,9 +4310,9 @@ removeallclassmethods RsrSocketStreamTestCase
 doit
 (RsrTestCase
 	subclass: 'RsrSocketTestCase'
-	instVarNames: #( sockets )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(sockets)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3969,9 +4328,9 @@ removeallclassmethods RsrSocketTestCase
 doit
 (RsrTestCase
 	subclass: 'RsrSystemTestCase'
-	instVarNames: #( connectionA connectionB )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(connectionA connectionB)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -3987,9 +4346,9 @@ removeallclassmethods RsrSystemTestCase
 doit
 (RsrSystemTestCase
 	subclass: 'RsrConnectionTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4005,9 +4364,9 @@ removeallclassmethods RsrConnectionTestCase
 doit
 (RsrConnectionTestCase
 	subclass: 'RsrInMemoryConnectionTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4023,9 +4382,9 @@ removeallclassmethods RsrInMemoryConnectionTestCase
 doit
 (RsrConnectionTestCase
 	subclass: 'RsrSocketConnectionTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4039,11 +4398,47 @@ removeallmethods RsrSocketConnectionTestCase
 removeallclassmethods RsrSocketConnectionTestCase
 
 doit
+(RsrSocketConnectionTestCase
+	subclass: 'RsrSocketConnectionTestCaseV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketConnectionTestCaseV1
+removeallclassmethods RsrSocketConnectionTestCaseV1
+
+doit
+(RsrSocketConnectionTestCase
+	subclass: 'RsrSocketConnectionTestCaseV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketConnectionTestCaseV2
+removeallclassmethods RsrSocketConnectionTestCaseV2
+
+doit
 (RsrSystemTestCase
 	subclass: 'RsrEphemeronMourningDeadlock'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4059,9 +4454,9 @@ removeallclassmethods RsrEphemeronMourningDeadlock
 doit
 (RsrSystemTestCase
 	subclass: 'RsrLifetimeTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4077,9 +4472,9 @@ removeallclassmethods RsrLifetimeTest
 doit
 (RsrLifetimeTest
 	subclass: 'RsrInMemoryLifetimeTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4095,9 +4490,9 @@ removeallclassmethods RsrInMemoryLifetimeTest
 doit
 (RsrLifetimeTest
 	subclass: 'RsrSocketLifetimeTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4111,11 +4506,47 @@ removeallmethods RsrSocketLifetimeTest
 removeallclassmethods RsrSocketLifetimeTest
 
 doit
+(RsrSocketLifetimeTest
+	subclass: 'RsrSocketLifetimeTestV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketLifetimeTestV1
+removeallclassmethods RsrSocketLifetimeTestV1
+
+doit
+(RsrSocketLifetimeTest
+	subclass: 'RsrSocketLifetimeTestV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketLifetimeTestV2
+removeallclassmethods RsrSocketLifetimeTestV2
+
+doit
 (RsrSystemTestCase
 	subclass: 'RsrMessageSendingTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4131,9 +4562,9 @@ removeallclassmethods RsrMessageSendingTest
 doit
 (RsrMessageSendingTest
 	subclass: 'RsrInMemoryMessageSendingTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4149,9 +4580,9 @@ removeallclassmethods RsrInMemoryMessageSendingTest
 doit
 (RsrMessageSendingTest
 	subclass: 'RsrSocketMessageSendingTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4165,11 +4596,47 @@ removeallmethods RsrSocketMessageSendingTest
 removeallclassmethods RsrSocketMessageSendingTest
 
 doit
+(RsrSocketMessageSendingTest
+	subclass: 'RsrSocketMessageSendingTestV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketMessageSendingTestV1
+removeallclassmethods RsrSocketMessageSendingTestV1
+
+doit
+(RsrSocketMessageSendingTest
+	subclass: 'RsrSocketMessageSendingTestV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketMessageSendingTestV2
+removeallclassmethods RsrSocketMessageSendingTestV2
+
+doit
 (RsrSystemTestCase
 	subclass: 'RsrServiceTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4185,9 +4652,9 @@ removeallclassmethods RsrServiceTest
 doit
 (RsrServiceTest
 	subclass: 'RsrInMemoryServiceTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4203,9 +4670,9 @@ removeallclassmethods RsrInMemoryServiceTest
 doit
 (RsrServiceTest
 	subclass: 'RsrSocketServiceTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4219,11 +4686,47 @@ removeallmethods RsrSocketServiceTest
 removeallclassmethods RsrSocketServiceTest
 
 doit
+(RsrSocketServiceTest
+	subclass: 'RsrSocketServiceTestV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketServiceTestV1
+removeallclassmethods RsrSocketServiceTestV1
+
+doit
+(RsrSocketServiceTest
+	subclass: 'RsrSocketServiceTestV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketServiceTestV2
+removeallclassmethods RsrSocketServiceTestV2
+
+doit
 (RsrSystemTestCase
 	subclass: 'RsrSpeciesEquality'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4239,9 +4742,9 @@ removeallclassmethods RsrSpeciesEquality
 doit
 (RsrSpeciesEquality
 	subclass: 'RsrInMemorySpeciesEquality'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4257,9 +4760,9 @@ removeallclassmethods RsrInMemorySpeciesEquality
 doit
 (RsrSpeciesEquality
 	subclass: 'RsrSocketSpeciesEquality'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4273,11 +4776,47 @@ removeallmethods RsrSocketSpeciesEquality
 removeallclassmethods RsrSocketSpeciesEquality
 
 doit
+(RsrSocketSpeciesEquality
+	subclass: 'RsrSocketSpeciesEqualityV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketSpeciesEqualityV1
+removeallclassmethods RsrSocketSpeciesEqualityV1
+
+doit
+(RsrSocketSpeciesEquality
+	subclass: 'RsrSocketSpeciesEqualityV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketSpeciesEqualityV2
+removeallclassmethods RsrSocketSpeciesEqualityV2
+
+doit
 (RsrSystemTestCase
 	subclass: 'RsrStressTest'
-	instVarNames: #( client server )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #(client server)
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4293,9 +4832,9 @@ removeallclassmethods RsrStressTest
 doit
 (RsrStressTest
 	subclass: 'RsrInMemoryStressTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4311,9 +4850,9 @@ removeallclassmethods RsrInMemoryStressTest
 doit
 (RsrStressTest
 	subclass: 'RsrSocketStressTest'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4327,11 +4866,47 @@ removeallmethods RsrSocketStressTest
 removeallclassmethods RsrSocketStressTest
 
 doit
+(RsrSocketStressTest
+	subclass: 'RsrSocketStressTestV1'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketStressTestV1
+removeallclassmethods RsrSocketStressTestV1
+
+doit
+(RsrSocketStressTest
+	subclass: 'RsrSocketStressTestV2'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: Globals
+	options: #()
+)
+		category: 'RemoteServiceReplication-Test';
+		immediateInvariant.
+true.
+%
+
+removeallmethods RsrSocketStressTestV2
+removeallclassmethods RsrSocketStressTestV2
+
+doit
 (RsrTestCase
 	subclass: 'RsrTemplateResolverTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4347,9 +4922,9 @@ removeallclassmethods RsrTemplateResolverTestCase
 doit
 (RsrTestCase
 	subclass: 'RsrTemplateResolverWithClassVersions'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4365,9 +4940,9 @@ removeallclassmethods RsrTemplateResolverWithClassVersions
 doit
 (RsrTestCase
 	subclass: 'RsrTestingProcessModelTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4383,9 +4958,9 @@ removeallclassmethods RsrTestingProcessModelTestCase
 doit
 (RsrTestCase
 	subclass: 'RsrTokenExchangeCodecTestCase'
-	instVarNames: #(  )
-	classVars: #(  )
-	classInstVars: #(  )
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: Globals
 	options: #()
@@ -4429,12 +5004,12 @@ connection: aConnection
 	connection := aConnection
 %
 
-! Class implementation for 'RsrAlreadyRegistered'
+! Class implementation for 'RsrAlreadyRegisteredWithAnotherConnection'
 
-!		Class methods for 'RsrAlreadyRegistered'
+!		Class methods for 'RsrAlreadyRegisteredWithAnotherConnection'
 
 category: 'instance creation'
-classmethod: RsrAlreadyRegistered
+classmethod: RsrAlreadyRegisteredWithAnotherConnection
 signalService: aService
 intendedConnection: aConnection
 
@@ -4444,31 +5019,31 @@ intendedConnection: aConnection
 		signal
 %
 
-!		Instance methods for 'RsrAlreadyRegistered'
+!		Instance methods for 'RsrAlreadyRegisteredWithAnotherConnection'
 
 category: 'accessing'
-method: RsrAlreadyRegistered
+method: RsrAlreadyRegisteredWithAnotherConnection
 intendedConnection
 
 	^intendedConnection
 %
 
 category: 'accessing'
-method: RsrAlreadyRegistered
+method: RsrAlreadyRegisteredWithAnotherConnection
 intendedConnection: aConnection
 
 	intendedConnection := aConnection
 %
 
 category: 'accessing'
-method: RsrAlreadyRegistered
+method: RsrAlreadyRegisteredWithAnotherConnection
 service
 
 	^service
 %
 
 category: 'accessing'
-method: RsrAlreadyRegistered
+method: RsrAlreadyRegisteredWithAnotherConnection
 service: aService
 
 	service := aService
@@ -4684,41 +5259,6 @@ trace
 		cr
 %
 
-!		Instance methods for 'RsrObject'
-
-category: 'notes'
-method: RsrObject
-flag: aSymbol
-
-	"Send this message, with a relevant symbol as argument, to flag a message for subsequent retrieval.  For example, you might put the following line in a number of messages:
-	self flag: #returnHereUrgently
-	Then, to retrieve all such messages, browse all senders of #returnHereUrgently."
-%
-
-category: 'delaying'
-method: RsrObject
-minimalWait
-	"Ensure the calling process is not schedulable for a short period of time."
-
-	(Delay forMilliseconds: 1) wait
-%
-
-category: 'notes'
-method: RsrObject
-note: aString
-	"This method can be used to leave a note in code. For instance, a code path that needs to be tested."
-%
-
-category: 'tracing'
-method: RsrObject
-trace
-
-	Transcript
-		show: RsrProcessModel currentStackDump;
-		cr;
-		cr
-%
-
 ! Class implementation for 'RsrAbstractPolicy'
 
 !		Instance methods for 'RsrAbstractPolicy'
@@ -4807,13 +5347,6 @@ exception: anException
 
 category: 'accessing'
 classmethod: RsrService
-clientClass
-
-	^RsrClassResolver classNamed: self clientClassName
-%
-
-category: 'accessing'
-classmethod: RsrService
 clientClassName
 
 	^(self templateClassName, 'Client') asSymbol
@@ -4842,23 +5375,9 @@ isTemplateClass
 
 category: 'accessing'
 classmethod: RsrService
-serverClass
-
-	^RsrClassResolver classNamed: self serverClassName
-%
-
-category: 'accessing'
-classmethod: RsrService
 serverClassName
 
 	^(self templateClassName, 'Server') asSymbol
-%
-
-category: 'accessing'
-classmethod: RsrService
-templateClass
-
-	^RsrClassResolver classNamed: self templateClassName
 %
 
 category: 'accessing'
@@ -5001,10 +5520,9 @@ synchronize
 category: 'public-accessing'
 method: RsrService
 template
-	"Returns the template associated with this Service.
-	This method should NOT be redefined."
+	"Returns the template associated with this Service."
 
-	^self _template
+	^_connection templateResolver templateFor: self
 %
 
 category: 'private-accessing'
@@ -5042,12 +5560,15 @@ _synchronize
 	^self
 %
 
-category: 'private-accessing'
-method: RsrService
-_template
-	"Returns the template associated with this Service. General users should use #template."
+! Class implementation for 'RsrTestTemplate'
 
-	^_connection templateResolver templateFor: self
+!		Class methods for 'RsrTestTemplate'
+
+category: 'accessing'
+classmethod: RsrTestTemplate
+templateClassName
+
+	^#RsrTestTemplate
 %
 
 ! Class implementation for 'RsrConcurrentTestService'
@@ -5402,6 +5923,28 @@ service
 	^self
 %
 
+! Class implementation for 'RsrNoClientService'
+
+!		Class methods for 'RsrNoClientService'
+
+category: 'accessing'
+classmethod: RsrNoClientService
+templateClassName
+
+	^#RsrNoClientService
+%
+
+! Class implementation for 'RsrNoServerService'
+
+!		Class methods for 'RsrNoServerService'
+
+category: 'accessing'
+classmethod: RsrNoServerService
+templateClassName
+
+	^#RsrNoServerService
+%
+
 ! Class implementation for 'RsrPolicyRejectedService'
 
 !		Class methods for 'RsrPolicyRejectedService'
@@ -5415,7 +5958,7 @@ templateName: aTemplateName
 	The client will GC and the server will later GC. We don't care to have
 	a server hanging around if we don't need it."
 
-	^self clientClass new
+	^RsrPolicyRejectedServiceClient new
 		sid: aSID;
 		templateName: aTemplateName;
 		yourself
@@ -5487,7 +6030,7 @@ from: anException
 			[[anException tag asString]
 				on: Error
 				do: [:ex | ex return: 'Unable to pack #tag containing an instance of ', anException tag class name]].
-	^self clientClass new
+	^RsrRemoteExceptionClient new
 		exceptionClassName: anException class name;
 		tag: tag;
 		messageText: anException messageText;
@@ -6155,10 +6698,52 @@ templateClassName
 
 category: 'resolving'
 method: RsrAbstractTemplateResolver
+clientClassForTemplate: aTemplate
+	"Lookup the client class for the provided template."
+
+	^self
+		clientClassForTemplate: aTemplate
+		ifAbsent: [ RsrUnknownClass signal: aTemplate clientClassName ]
+%
+
+category: 'resolving'
+method: RsrAbstractTemplateResolver
+clientClassForTemplate: aTemplate
+ifAbsent: absentBlock
+	"Lookup the client class for the provided template."
+	
+	self subclassResponsibility
+%
+
+category: 'resolving'
+method: RsrAbstractTemplateResolver
+serverClassForTemplate: aTemplate
+	"Lookup the server class for the provided template."
+
+	^self
+		serverClassForTemplate: aTemplate
+		ifAbsent: [ RsrUnknownClass signal: aTemplate serverClassName ]
+%
+
+category: 'resolving'
+method: RsrAbstractTemplateResolver
+serverClassForTemplate: aTemplate
+ifAbsent: absentBlock
+	"Lookup the server class for the provided template."
+
+	self subclassResponsibility
+%
+
+category: 'resolving'
+method: RsrAbstractTemplateResolver
 templateFor: aService
 	"Resolve the template associated with the provided Service."
 
-	self subclassResponsibility
+	| template |
+	template := aService class.
+	[template isTemplateClass]
+		whileFalse: [template := template superclass].
+	^template
 %
 
 category: 'resolving'
@@ -6177,8 +6762,7 @@ templateNamed: aTemplateName
 ifAbsent: aBlock
 	"Resolve a template with the provided name."
 
-	self flag: 'This should not send #templateClass. This can go away once ServiceSnapshot wire encoding is updated.'.
-	^(RsrClassResolver classNamed: aTemplateName ifAbsent: aBlock) templateClass
+	self subclassResponsibility
 %
 
 ! Class implementation for 'RsrTemplateResolver'
@@ -6187,14 +6771,24 @@ ifAbsent: aBlock
 
 category: 'resolving'
 method: RsrTemplateResolver
-templateFor: aService
-	"Resolve the template associated with the provided Service."
+clientClassForTemplate: aTemplate
+ifAbsent: absentBlock
+	"Lookup the client class for the provided template."
 
-	| template |
-	template := aService class.
-	[template isTemplateClass]
-		whileFalse: [template := template superclass].
-	^template
+	^RsrClassResolver
+		classNamed: aTemplate clientClassName
+		ifAbsent: absentBlock
+%
+
+category: 'resolving'
+method: RsrTemplateResolver
+serverClassForTemplate: aTemplate
+ifAbsent: absentBlock
+	"Lookup the server class for the provided template."
+
+	^RsrClassResolver
+		classNamed: aTemplate serverClassName
+		ifAbsent: absentBlock
 %
 
 category: 'resolving'
@@ -6203,8 +6797,63 @@ templateNamed: aTemplateName
 ifAbsent: aBlock
 	"Resolve a template with the provided name."
 
-	self flag: 'This should not send #templateClass. This can go away once ServiceSnapshot wire encoding is updated.'.
-	^(RsrClassResolver classNamed: aTemplateName ifAbsent: [^aBlock value]) templateClass
+	^RsrClassResolver
+		classNamed: aTemplateName
+		ifAbsent: aBlock
+%
+
+! Class implementation for 'RsrTestTemplateResolver'
+
+!		Instance methods for 'RsrTestTemplateResolver'
+
+category: 'adding'
+method: RsrTestTemplateResolver
+addTemplate: aTemplate
+
+	^templates add: aTemplate
+%
+
+category: 'resolving'
+method: RsrTestTemplateResolver
+clientClassForTemplate: aTemplate
+ifAbsent: absentBlock
+	"Lookup the client class for the provided template."
+
+	| clientClassName |
+	clientClassName := aTemplate clientClassName.
+	templates do: [:template | template allSubclasses do: [:sc | sc name == clientClassName ifTrue: [^sc]]].
+	^absentBlock value
+%
+
+category: 'initializing'
+method: RsrTestTemplateResolver
+initialize
+
+	super initialize.
+	templates := OrderedCollection new
+%
+
+category: 'resolving'
+method: RsrTestTemplateResolver
+serverClassForTemplate: aTemplate
+ifAbsent: absentBlock
+	"Lookup the server class for the provided template."
+
+	| serverClassName |
+	serverClassName := aTemplate serverClassName.
+	templates do: [:template | template allSubclasses do: [:sc | sc name == serverClassName ifTrue: [^sc]]].
+	^absentBlock value
+%
+
+category: 'resolving'
+method: RsrTestTemplateResolver
+templateNamed: aTemplateName
+ifAbsent: aBlock
+	"Resolve a template with the provided name."
+
+	^templates
+		detect: [:template | template name == aTemplateName]
+		ifNone: aBlock
 %
 
 ! Class implementation for 'RsrAsyncMournHandler'
@@ -6259,15 +6908,18 @@ process
 	^process
 %
 
-category: 'other'
+category: 'lifecycle'
 method: RsrAsyncMournHandler
 runLoop
 
 	[[self isActive]
 		whileTrue:
 			[[notifier readNotification]
-				on: GcFinalizeNotification
-				do: [:ex | ex _finalizeEphemerons]]]
+				onException: { GcFinalizeNotification. TransactionBacklog. }
+				do: {
+					[:ex | ex _finalizeEphemerons].
+					[:ex | System abortTransaction].
+				}]]
 		on: SocketError
 		do: [:ex | ex return]
 %
@@ -6276,7 +6928,7 @@ category: 'lifecycle'
 method: RsrAsyncMournHandler
 start
 
-	[notifier := GsSignalingSocket newForAsyncExceptions: {GcFinalizeNotification }.
+	[notifier := GsSignalingSocket newForAsyncExceptions: {GcFinalizeNotification. TransactionBacklog. }.
 	notifier interrupting: true]
 		on: SocketError
 		do:
@@ -6305,116 +6957,6 @@ stop
 		ifTrue:
 			[GsSignalingSocket disableAsyncExceptions.
 			Processor yield]
-%
-
-! Class implementation for 'RsrBufferedSocketStream'
-
-!		Class methods for 'RsrBufferedSocketStream'
-
-category: 'instance creation'
-classmethod: RsrBufferedSocketStream
-on: aSocketStream
-
-	^self new
-		stream: aSocketStream;
-		yourself
-%
-
-!		Instance methods for 'RsrBufferedSocketStream'
-
-category: 'writing'
-method: RsrBufferedSocketStream
-atEnd
-
-	^stream atEnd
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-checkAutoFlush
-
-	nextToWrite > 4096
-		ifTrue: [ self flush ]
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-close
-
-	stream close
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-flush
-
-	writePosition = nextToWrite
-		ifTrue: [^self].
-	stream nextPutAll: (outBuffer copyFrom: writePosition to: nextToWrite - 1).
-	writePosition := nextToWrite := 1.
-	stream flush
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-growOutBufferTo: aNumberOfBytes
-
-	| rounding |
-	rounding := ((aNumberOfBytes \\ 4096) + 1) * 4096.
-	outBuffer := outBuffer , (ByteArray new: rounding - outBuffer size)
-%
-
-category: 'initialization'
-method: RsrBufferedSocketStream
-initialize
-
-	super initialize.
-	outBuffer := ByteArray new: 4096.
-	nextToWrite := 1.
-	writePosition := 1
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-isConnected
-
-	^stream isConnected
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-next
-
-	^self next: 1
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-next: aCount
-
-	^stream next: aCount
-%
-
-category: 'writing'
-method: RsrBufferedSocketStream
-nextPutAll: aByteArray
-
-	(outBuffer size >= (aByteArray size + nextToWrite))
-		ifFalse: [self growOutBufferTo: outBuffer size + nextToWrite].
-	outBuffer
-		replaceFrom: nextToWrite
-		to: nextToWrite + aByteArray size - 1
-		with: aByteArray
-		startingAt: 1.
-	nextToWrite := nextToWrite + aByteArray size.
-	self checkAutoFlush
-%
-
-category: 'accessing'
-method: RsrBufferedSocketStream
-stream: aStream
-
-	stream := aStream
 %
 
 ! Class implementation for 'RsrChannel'
@@ -6506,7 +7048,20 @@ classmethod: RsrBinaryStreamChannel
 inStream: inStream
 outStream: outStream
 
+	^self
+		wireProtocol: RsrWireProtocolV2 new
+		inStream: inStream
+		outStream: outStream
+%
+
+category: 'instance creation'
+classmethod: RsrBinaryStreamChannel
+wireProtocol: aWireProtocol
+inStream: inStream
+outStream: outStream
+
 	^self new
+		wireProtocol: aWireProtocol;
 		inStream: inStream;
 		outStream: outStream;
 		yourself
@@ -6530,9 +7085,7 @@ close
 
 	source stop.
 	sink stop.
-	outStream
-		flush;
-		close.
+	outStream close.
 	inStream close
 %
 
@@ -6621,6 +7174,22 @@ method: RsrBinaryStreamChannel
 source
 
 	^source
+%
+
+category: 'accessing'
+method: RsrBinaryStreamChannel
+wireProtocol
+	"Returns the wire protocol instance."
+	
+	^wireProtocol
+%
+
+category: 'accessing'
+method: RsrBinaryStreamChannel
+wireProtocol: aWireProtocol
+	"Set the wire protocol instance to use"
+	
+	wireProtocol := aWireProtocol
 %
 
 ! Class implementation for 'RsrInMemoryChannel'
@@ -6879,62 +7448,201 @@ sizeOfInteger
 	^8
 %
 
-! Class implementation for 'RsrCommandCodec'
+! Class implementation for 'RsrProtocolCodec'
 
-!		Instance methods for 'RsrCommandCodec'
+!		Instance methods for 'RsrProtocolCodec'
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+arrayIdentifier
+
+	^9
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+byteArrayIdentifier
+
+	^10
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+characterIdentifier
+
+	^5
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+dateAndTimeIdentifier
+
+	^14
+%
 
 category: 'private-accessing-commands'
-method: RsrCommandCodec
+method: RsrProtocolCodec
 deliverErrorResponseCommand
 
 	^4
 %
 
 category: 'private-accessing-commands'
-method: RsrCommandCodec
+method: RsrProtocolCodec
 deliverResponseCommand
 
 	^2
 %
 
+category: 'accessing-types'
+method: RsrProtocolCodec
+dictionaryIdentifier
+
+	^13
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+doubleIdentifier
+
+	^15
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+falseIdentifier
+
+	^8
+%
+
 category: 'private-accessing'
-method: RsrCommandCodec
+method: RsrProtocolCodec
 immediateOID
 
 	^0
 %
 
+category: 'accessing-types'
+method: RsrProtocolCodec
+negativeIntegerIdentifier
+
+	^4
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+nilIdentifier
+
+	^6
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+orderedCollectionIdentifier
+
+	^12
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+positiveIntegerIdentifier
+
+	^3
+%
+
 category: 'private-accessing-commands'
-method: RsrCommandCodec
+method: RsrProtocolCodec
 releaseObjectsCommand
 
 	^3
 %
 
 category: 'private-accessing-commands'
-method: RsrCommandCodec
+method: RsrProtocolCodec
 sendMessageCommand
 
 	^1
 %
 
-! Class implementation for 'RsrCommandDecoder'
+category: 'accessing-types'
+method: RsrProtocolCodec
+setIdentifier
 
-!		Class methods for 'RsrCommandDecoder'
-
-category: 'instance creation'
-classmethod: RsrCommandDecoder
-registry: aRegistry
-
-	^self new
-		registry: aRegistry;
-		yourself
+	^11
 %
 
-!		Instance methods for 'RsrCommandDecoder'
+category: 'accessing-types'
+method: RsrProtocolCodec
+snapshotIdentifier
+
+	^0
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+stringIdentifier
+
+	^2
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+symbolIdentifier
+
+	^1
+%
+
+category: 'accessing-types'
+method: RsrProtocolCodec
+trueIdentifier
+
+	^7
+%
+
+! Class implementation for 'RsrProtocolDecoder'
+
+!		Instance methods for 'RsrProtocolDecoder'
+
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeByteArrayReference: aByteArrayReference
+from: aStream
+
+	| length |
+	length := self decodeControlWord: aStream.
+	aByteArrayReference intermediate: (aStream next: length)
+%
+
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeCharacterArrayReference: aCharacterArrayReference
+from: aStream
+
+	| length |
+	length := self decodeControlWord: aStream.
+	aCharacterArrayReference intermediate: (aStream next: length)
+%
+
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeCharacterReference: aCharacterReference
+from: aStream
+
+	aCharacterReference intermediate: (self decodeControlWord: aStream)
+%
+
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeCollectionReference: aCollectionReference
+from: aStream
+
+	| size |
+	size := self decodeControlWord: aStream.
+	aCollectionReference intermediate: ((1 to: size) collect: [:i | self decodeReference: aStream])
+%
 
 category: 'decoding-commands'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 decodeCommand: aStream
 	"Decode an object from the stream"
 
@@ -6946,8 +7654,16 @@ decodeCommand: aStream
 	^RsrError signal: 'Unknown command identifier: ', command printString
 %
 
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeDateAndTimeReference: aDateAndTimeReference
+from: aStream
+
+	aDateAndTimeReference intermediate: (self decodeControlWord: aStream)
+%
+
 category: 'decoding-commands'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 decodeDeliverResponse: aStream
 
     | transaction numServices serviceSnapshots response |
@@ -6962,8 +7678,33 @@ decodeDeliverResponse: aStream
         yourself
 %
 
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeDictionaryReference: aDictionaryReference
+from: aStream
+
+	| size |
+	size := self decodeControlWord: aStream.
+	aDictionaryReference intermediate: ((1 to: size * 2) collect: [:each | self decodeReference: aStream])
+%
+
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeDoubleReference: aDoubleReference
+from: aStream
+
+	aDoubleReference intermediate: (aStream next: 8)
+%
+
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeFalseReference: aTrueReference
+from: aStream
+	"No additional information to decode."
+%
+
 category: 'decoding-services'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 decodeImmediateReference: aStream
 
 	| referenceType |
@@ -6973,8 +7714,25 @@ decodeImmediateReference: aStream
 		using: self
 %
 
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeIntegerReference: anIntegerReference
+from: aStream
+
+	| length |
+	length := self decodeControlWord: aStream.
+	anIntegerReference intermediate: (aStream next: length)
+%
+
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeNilReference: aNilReference
+from: aStream
+	"No additional information to decode."
+%
+
 category: 'decoding'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 decodeReference: aStream
 
 	| oid |
@@ -6984,7 +7742,7 @@ decodeReference: aStream
 %
 
 category: 'decoding-commands'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 decodeReleaseServices: aStream
 
 	| count oids |
@@ -7000,7 +7758,7 @@ decodeReleaseServices: aStream
 %
 
 category: 'decoding-commands'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 decodeSendMessage: aStream
 
 	| transaction argCount receiverReference selector numServices serviceSnapshots arguments instance |
@@ -7021,67 +7779,207 @@ decodeSendMessage: aStream
 %
 
 category: 'decoding-services'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 decodeServiceSnapshot: aStream
+	"This is different between protocol version."
+	
+	self subclassResponsibility
+%
 
-	| snapshot |
-	snapshot := RsrServiceSnapshot new.
-	snapshot
-		decode: aStream
-		using: self.
-	^snapshot
+category: 'decoding-references'
+method: RsrProtocolDecoder
+decodeTrueReference: aTrueReference
+from: aStream
+	"No additional information to decode."
 %
 
 category: 'decoding-services'
-method: RsrCommandDecoder
+method: RsrProtocolDecoder
 instanceOfImmediate: aReferenceType
 
-	aReferenceType = 1
+	aReferenceType = self symbolIdentifier
 		ifTrue: [^RsrSymbolReference new].
-	aReferenceType = 2
+	aReferenceType = self stringIdentifier
 		ifTrue: [^RsrStringReference new].
-	aReferenceType = 3
+	aReferenceType = self positiveIntegerIdentifier
 		ifTrue: [^RsrPositiveIntegerReference new].
-	aReferenceType = 4
+	aReferenceType = self negativeIntegerIdentifier
 		ifTrue: [^RsrNegativeIntegerReference new].
-	aReferenceType = 5
+	aReferenceType = self characterIdentifier
 		ifTrue: [^RsrCharacterReference new].
-	aReferenceType = 6
+	aReferenceType = self nilIdentifier
 		ifTrue: [^RsrNilReference new].
-	aReferenceType = 7
+	aReferenceType = self trueIdentifier
 		ifTrue: [^RsrTrueReference new].
-	aReferenceType = 8
+	aReferenceType = self falseIdentifier
 		ifTrue: [^RsrFalseReference new].
-	aReferenceType = 9
+	aReferenceType = self arrayIdentifier
 		ifTrue: [^RsrArrayReference new].
-	aReferenceType = 10
+	aReferenceType = self byteArrayIdentifier
 		ifTrue: [^RsrByteArrayReference new].
-	aReferenceType = 11
+	aReferenceType = self setIdentifier
 		ifTrue: [^RsrSetReference new].
-	aReferenceType = 12
+	aReferenceType = self orderedCollectionIdentifier
 		ifTrue: [^RsrOrderedCollectionReference new].
-	aReferenceType = 13
+	aReferenceType = self dictionaryIdentifier
 		ifTrue: [^RsrDictionaryReference new].
-	aReferenceType = 14
+	aReferenceType = self dateAndTimeIdentifier
 		ifTrue: [^RsrDateAndTimeReference new].
-	aReferenceType = 15
+	aReferenceType = self doubleIdentifier
 		ifTrue: [^RsrDoubleReference new].
 	self error: 'ReferenceType(', aReferenceType printString, ') not yet implemented'.
 %
 
-! Class implementation for 'RsrCommandEncoder'
+! Class implementation for 'RsrProtocolDecoderV1'
 
-!		Instance methods for 'RsrCommandEncoder'
+!		Instance methods for 'RsrProtocolDecoderV1'
 
-category: 'private-encoding'
-method: RsrCommandEncoder
-encodeDeliverResponse: aDeliverResponse
+category: 'decoding-services'
+method: RsrProtocolDecoderV1
+decodeServiceSnapshot: aStream
 
-	^ByteArray streamContents: [:stream | self encodeDeliverResponse: aDeliverResponse onto: stream]
+	| species sid targetClassName slots instVarCount templateName targetClass template persona |
+	species := self decodeControlWord: aStream.
+	sid := self decodeControlWord: aStream.
+	instVarCount := self decodeControlWord: aStream.
+	targetClassName := (self decodeReference: aStream) resolve: nil.
+	slots := OrderedCollection new: instVarCount.
+	instVarCount timesRepeat: [slots add: (self decodeReference: aStream)].
+	
+	"This is an effort to duplicate old behavior and quirks.
+	See: https://github.com/GemTalk/RemoteServiceReplication/blob/f84398f10f4bebe213450ee80ef35c1813287903/src/RemoteServiceReplication/RsrServiceSnapshot.class.st#L93"
+	targetClass := RsrClassResolver
+		classNamed: targetClassName
+		ifAbsent: [^nil].
+	templateName := targetClass templateClassName.
+	template := RsrClassResolver
+		classNamed: templateName
+		ifAbsent: [^nil].
+	persona := targetClassName == template serverClassName
+		ifTrue: [#server]
+		ifFalse: [#client].
+
+	^RsrServiceSnapshot new
+		sid: sid;
+		templateName: templateName;
+		persona: persona;
+		slots: slots;
+		yourself
 %
 
-category: 'private-encoding'
-method: RsrCommandEncoder
+! Class implementation for 'RsrProtocolDecoderV2'
+
+!		Class methods for 'RsrProtocolDecoderV2'
+
+category: 'instance creation'
+classmethod: RsrProtocolDecoderV2
+registry: aRegistry
+
+	^self new
+		registry: aRegistry;
+		yourself
+%
+
+!		Instance methods for 'RsrProtocolDecoderV2'
+
+category: 'decoding-services'
+method: RsrProtocolDecoderV2
+decodeServiceSnapshot: aStream
+
+	| species sid templateName persona slots instVarCount |
+	species := self decodeControlWord: aStream.
+	sid := self decodeControlWord: aStream.
+	instVarCount := self decodeControlWord: aStream.
+	templateName := (self decodeReference: aStream) resolve: nil.
+	persona := (self decodeReference: aStream) resolve: nil.
+	slots := OrderedCollection new: instVarCount.
+	instVarCount timesRepeat: [slots add: (self decodeReference: aStream)].
+
+	^RsrServiceSnapshot new
+		sid: sid;
+		templateName: templateName;
+		persona: persona;
+		slots: slots;
+		yourself
+%
+
+! Class implementation for 'RsrProtocolEncoder'
+
+!		Instance methods for 'RsrProtocolEncoder'
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeArrayReference: aArrayReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self arrayIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aArrayReference intermediate size
+		onto: aStream.
+	aArrayReference intermediate
+		do:
+			[:each |
+			each
+				encode: aStream
+				using: self]
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeByteArrayReference: aByteArrayReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self byteArrayIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aByteArrayReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aByteArrayReference intermediate
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeCharacterReference: aCharacterReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self characterIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aCharacterReference intermediate
+		onto: aStream
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeDateAndTimeReference: aDateAndTimeReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self dateAndTimeIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aDateAndTimeReference intermediate
+		onto: aStream
+%
+
+category: 'encoding-commands'
+method: RsrProtocolEncoder
 encodeDeliverResponse: aDeliverResponse
 onto: aStream
 
@@ -7100,8 +7998,121 @@ onto: aStream
 		onto: aStream
 %
 
-category: 'private-encoding'
-method: RsrCommandEncoder
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeDictionaryReference: aDictionaryReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self dictionaryIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aDictionaryReference intermediate size / 2
+		onto: aStream.
+	aDictionaryReference intermediate do: [:each | each encode: aStream using: self]
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeDoubleReference: aDoubleReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self doubleIdentifier
+		onto: aStream.
+	aStream nextPutAll: aDoubleReference intermediate
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeFalseReference: aFalseReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self falseIdentifier
+		onto: aStream
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeNegativeIntegerReference: aNegativeIntegerReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self negativeIntegerIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aNegativeIntegerReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aNegativeIntegerReference intermediate
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeNilReference: aNilReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self nilIdentifier
+		onto: aStream
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeOrderedCollectionReference: anOrderedCollectionReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self orderedCollectionIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: anOrderedCollectionReference intermediate size
+		onto: aStream.
+	anOrderedCollectionReference intermediate
+		do:
+			[:each |
+			each
+				encode: aStream
+				using: self]
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodePositiveIntegerReference: aPositiveIntegerReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self positiveIntegerIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aPositiveIntegerReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aPositiveIntegerReference intermediate
+%
+
+category: 'encoding-commands'
+method: RsrProtocolEncoder
 encodeReference: aReference
 onto: aStream
 
@@ -7110,15 +8121,8 @@ onto: aStream
 		using: self
 %
 
-category: 'private-encoding'
-method: RsrCommandEncoder
-encodeReleaseServices: aReleaseServices
-
-	^ByteArray streamContents: [:stream | self encodeReleaseServices: aReleaseServices onto: stream]
-%
-
-category: 'private-encoding'
-method: RsrCommandEncoder
+category: 'encoding-commands'
+method: RsrProtocolEncoder
 encodeReleaseServices: aReleaseServices
 onto: aStream
 
@@ -7136,15 +8140,8 @@ onto: aStream
 				onto: aStream]
 %
 
-category: 'private-encoding'
-method: RsrCommandEncoder
-encodeSendMessage: aSendMessage
-
-	^ByteArray streamContents: [:stream | self encodeSendMessage: aSendMessage onto: stream]
-%
-
-category: 'private-encoding'
-method: RsrCommandEncoder
+category: 'encoding-commands'
+method: RsrProtocolEncoder
 encodeSendMessage: aSendMessage
 onto: aStream
 
@@ -7180,26 +8177,155 @@ onto: aStream
 				onto: aStream]
 %
 
-category: 'encoding'
-method: RsrCommandEncoder
-encodeServiceSnapshot: aServiceSnapshot
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeServiceReference: aServiceReference
+onto: aStream
 
-	^ByteArray
-		streamContents:
-			[:stream |
-			self
-				encodeServiceSnapshot: aServiceSnapshot
-				onto: stream]
+	self
+		encodeControlWord: aServiceReference sid
+		onto: aStream
 %
 
-category: 'private-encoding'
-method: RsrCommandEncoder
+category: 'encoding-services'
+method: RsrProtocolEncoder
+encodeServiceSnapshot: aServiceSnapshot
+onto: aStream
+	"Service encoding differs between protocol version."
+	
+	self subclassResponsibility
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeSetReference: aSetReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self setIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aSetReference intermediate size
+		onto: aStream.
+	aSetReference intermediate
+		do:
+			[:each |
+			each
+				encode: aStream
+				using: self]
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeStringReference: aStringReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self stringIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aStringReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aStringReference intermediate
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeSymbolReference: aSymbolReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self symbolIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aSymbolReference intermediate size
+		onto: aStream.
+	aStream nextPutAll: aSymbolReference intermediate
+%
+
+category: 'encoding-references'
+method: RsrProtocolEncoder
+encodeTrueReference: aTrueReference
+onto: aStream
+
+	self
+		encodeControlWord: self immediateOID
+		onto: aStream.
+	self
+		encodeControlWord: self trueIdentifier
+		onto: aStream
+%
+
+! Class implementation for 'RsrProtocolEncoderV1'
+
+!		Instance methods for 'RsrProtocolEncoderV1'
+
+category: 'encoding-services'
+method: RsrProtocolEncoderV1
 encodeServiceSnapshot: aServiceSnapshot
 onto: aStream
 
-	aServiceSnapshot
+	self
+		encodeControlWord: self snapshotIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aServiceSnapshot sid
+		onto: aStream.
+	self
+		encodeControlWord: aServiceSnapshot slots size
+		onto: aStream.
+	(self targetClassReferenceFor: aServiceSnapshot)
 		encode: aStream
-		using: self
+		using: self.
+	aServiceSnapshot slots do: [:each | each encode: aStream using: self]
+%
+
+category: 'accessing'
+method: RsrProtocolEncoderV1
+targetClassReferenceFor: aServiceSnapshot
+
+	| template targetClassName |
+	template := RsrClassResolver classNamed: aServiceSnapshot templateName.
+	targetClassName := aServiceSnapshot shouldCreateServer
+		ifTrue: [template serverClassName]
+		ifFalse: [template clientClassName].
+	^RsrSymbolReference from: targetClassName
+%
+
+! Class implementation for 'RsrProtocolEncoderV2'
+
+!		Instance methods for 'RsrProtocolEncoderV2'
+
+category: 'encoding-services'
+method: RsrProtocolEncoderV2
+encodeServiceSnapshot: aServiceSnapshot
+onto: aStream
+
+	self
+		encodeControlWord: self snapshotIdentifier
+		onto: aStream.
+	self
+		encodeControlWord: aServiceSnapshot sid
+		onto: aStream.
+	self
+		encodeControlWord: aServiceSnapshot slots size
+		onto: aStream.
+	aServiceSnapshot templateNameReference
+		encode: aStream
+		using: self.
+	aServiceSnapshot personaReference
+		encode: aStream
+		using: self.
+	aServiceSnapshot slots do: [:each | each encode: aStream using: self]
 %
 
 ! Class implementation for 'RsrProtocolVersionNegotiationCodec'
@@ -8030,6 +9156,26 @@ connect
 
 ! Class implementation for 'RsrInternalSocketConnectionSpecification'
 
+!		Class methods for 'RsrInternalSocketConnectionSpecification'
+
+category: 'instance creation'
+classmethod: RsrInternalSocketConnectionSpecification
+new
+	"Create a Spec w/ WireProtocolV2."
+
+	^self wireProtocols: { RsrWireProtocolV2 new }
+%
+
+category: 'instance creation'
+classmethod: RsrInternalSocketConnectionSpecification
+wireProtocols: prioritizedWireProtocols
+	"Create a Spec w/ a specific set of supported WireProtocols."
+
+	^super new
+		wireProtocols: prioritizedWireProtocols;
+		yourself
+%
+
 !		Instance methods for 'RsrInternalSocketConnectionSpecification'
 
 category: 'connecting'
@@ -8038,8 +9184,8 @@ connect
 	"Establish an internal Connection pair via socket."
 
 	| acceptor initiator |
-	acceptor := RsrAcceptConnection port: self defaultPort.
-	initiator := RsrInitiateConnection host: '127.0.0.1' port: self defaultPort.
+	acceptor := RsrAcceptConnection port: self defaultPort wireProtocols: self wireProtocols.
+	initiator := RsrInitiateConnection host: '127.0.0.1' port: self defaultPort wireProtocols: self wireProtocols.
 	RsrProcessModel
 		fork: [connectionA := acceptor waitForConnection]
 		named: 'Pending AcceptConnection'.
@@ -8060,19 +9206,40 @@ defaultPort
 	^61982
 %
 
+category: 'waiting'
+method: RsrInternalSocketConnectionSpecification
+minimalWait
+	"Ensure the calling process is not schedulable for a short period of time."
+
+	(Delay forMilliseconds: 1) wait
+%
+
+category: 'accessing'
+method: RsrInternalSocketConnectionSpecification
+wireProtocols
+	"Configured WireProtocols to be used during negotiation."
+
+	^wireProtocols
+%
+
+category: 'accessing'
+method: RsrInternalSocketConnectionSpecification
+wireProtocols: prioritizedWireProtocols
+	"Configured WireProtocols to be used during negotiation."
+
+	wireProtocols := prioritizedWireProtocols
+%
+
 ! Class implementation for 'RsrSocketConnectionSpecification'
 
 !		Class methods for 'RsrSocketConnectionSpecification'
 
-category: 'instance creation'
+category: 'accessing'
 classmethod: RsrSocketConnectionSpecification
-host: hostnameOrAddress
-port: port
+defaultWireProtocols
+	"Return the default list of supported WireProtocol version."
 
-	^self new
-		host: hostnameOrAddress;
-		port: port;
-		yourself
+	^{ RsrWireProtocolV2 new. RsrWireProtocolV1 new }
 %
 
 !		Instance methods for 'RsrSocketConnectionSpecification'
@@ -8095,26 +9262,27 @@ host: hostnameOrAddress
 
 category: 'accessing'
 method: RsrSocketConnectionSpecification
-port
-	"The port number used for establishing a socket"
-
-	^port
-%
-
-category: 'accessing'
-method: RsrSocketConnectionSpecification
-port: aPort
-	"The port number used for establishing a socket"
-
-	port := aPort
-%
-
-category: 'accessing'
-method: RsrSocketConnectionSpecification
 socketClass
 	"Return the class that should be used for creating Socket instances."
 
 	^RsrSocket
+%
+
+category: 'accessing'
+method: RsrSocketConnectionSpecification
+wireProtocols
+	"Returns the prioritized protocols that should be used
+	when negotiating a connection."
+
+	^wireProtocols ifNil: [^self class defaultWireProtocols]
+%
+
+category: 'accessing'
+method: RsrSocketConnectionSpecification
+wireProtocols: prioritizedWireProtocols
+	"Configure the list of supported WireProtocols."
+
+	wireProtocols := prioritizedWireProtocols
 %
 
 ! Class implementation for 'RsrAcceptConnection'
@@ -8123,11 +9291,59 @@ socketClass
 
 category: 'instance creation'
 classmethod: RsrAcceptConnection
+host: hostnameOrAddress port: portNumber
+
+	^ self
+		  host: hostnameOrAddress
+		  portRange: (portNumber to: portNumber)
+%
+
+category: 'instance creation'
+classmethod: RsrAcceptConnection
+host: hostnameOrAddress portRange: anInterval
+
+	^self
+		host: hostnameOrAddress
+		portRange: anInterval
+		wireProtocols: self defaultWireProtocols
+%
+
+category: 'instance creation'
+classmethod: RsrAcceptConnection
+host: hostnameOrAddress
+portRange: anInterval
+wireProtocols: prioritizedWireProtocols
+
+	^self new
+		host: hostnameOrAddress;
+		portRange: anInterval;
+		wireProtocols: prioritizedWireProtocols;
+		yourself
+%
+
+category: 'instance creation'
+classmethod: RsrAcceptConnection
 port: aPortInteger
 
-	^super
+	^ self host: self wildcardAddress port: aPortInteger
+%
+
+category: 'instance creation'
+classmethod: RsrAcceptConnection
+port: aPortInteger
+wireProtocols: prioritizedWireProtocols
+
+	^self
 		host: self wildcardAddress
-		port: aPortInteger
+		portRange: (aPortInteger to: aPortInteger)
+		wireProtocols: prioritizedWireProtocols
+%
+
+category: 'instance creation'
+classmethod: RsrAcceptConnection
+portRange: anInterval
+
+	^ self host: self wildcardAddress portRange: anInterval
 %
 
 category: 'accessing'
@@ -8146,6 +9362,22 @@ wildcardPort
 
 !		Instance methods for 'RsrAcceptConnection'
 
+category: 'private'
+method: RsrAcceptConnection
+bind
+
+	"Attempt to listen on each of the port range, answer the successful port or signal RsrInvalidBind"
+
+	portRange do: [ :portToTry | 
+		[ 
+		listener bindAddress: self host port: portToTry.
+		^ portToTry ]
+			on: RsrInvalidBind
+			do: [ :ex | ex return ] ].
+	RsrInvalidBind signal:
+		'Cannot bind to any port in range ' , portRange printString
+%
+
 category: 'actions'
 method: RsrAcceptConnection
 cancelWaitForConnection
@@ -8158,10 +9390,8 @@ method: RsrAcceptConnection
 ensureListening
 
 	isListening ifTrue: [^self].
-	listener
-		bindAddress: self host
-		port: self port.
-	listener listen: 1.
+	self bind.
+	listener listen: 5.
 	isListening := true
 %
 
@@ -8171,7 +9401,7 @@ handshakeSteps
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationServer new
+		with: (RsrProtocolVersionNegotiationServer wireProtocols: self wireProtocols)
 %
 
 category: 'other'
@@ -8202,6 +9432,20 @@ listeningPort
 	^listener port
 %
 
+category: 'accessing'
+method: RsrAcceptConnection
+portRange
+
+	^ portRange
+%
+
+category: 'accessing'
+method: RsrAcceptConnection
+portRange: anObject
+
+	portRange := anObject
+%
+
 category: 'actions'
 method: RsrAcceptConnection
 waitForConnection
@@ -8216,12 +9460,13 @@ waitForConnection
 				[listener close.
 				listener := nil.
 				isWaitingForConnection := false].
-	stream := RsrSocketStream on: socket.
+	stream := socket bufferedSocketStream.
 	handshake := RsrHandshake
 		steps: self handshakeSteps
 		stream: stream.
 	handshake perform.
 	channel := RsrBinaryStreamChannel
+		wireProtocol: handshake wireProtocol
 		inStream: stream
 		outStream: stream.
 	connection := RsrConnection
@@ -8257,7 +9502,7 @@ handshakeSteps
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationServer new
+		with: (RsrProtocolVersionNegotiationServer wireProtocols: self wireProtocols)
 		with: (RsrTokenReceiver token: self token)
 %
 
@@ -8287,6 +9532,31 @@ token: aToken
 
 ! Class implementation for 'RsrInitiateConnection'
 
+!		Class methods for 'RsrInitiateConnection'
+
+category: 'instance creation'
+classmethod: RsrInitiateConnection
+host: hostnameOrAddress port: port
+
+	^self
+		host: hostnameOrAddress
+		port: port
+		wireProtocols: self defaultWireProtocols
+%
+
+category: 'instance creation'
+classmethod: RsrInitiateConnection
+host: hostnameOrAddress
+port: port
+wireProtocols: prioritizedProtocols
+
+	^self new
+		host: hostnameOrAddress;
+		port: port;
+		wireProtocols: prioritizedProtocols;
+		yourself
+%
+
 !		Instance methods for 'RsrInitiateConnection'
 
 category: 'connecting'
@@ -8298,12 +9568,13 @@ connect
 	socket
 		connectToHost: self host
 		port: self port.
-	stream := RsrSocketStream on: socket.
+	stream := socket bufferedSocketStream.
 	handshake := RsrHandshake
 		steps: self handshakeSteps
 		stream: stream.
 	handshake perform.
 	channel := RsrBinaryStreamChannel
+		wireProtocol: handshake wireProtocol
 		inStream: stream
 		outStream: stream.
 	connection := RsrConnection
@@ -8320,7 +9591,23 @@ handshakeSteps
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationClient new
+		with: (RsrProtocolVersionNegotiationClient wireProtocols: self wireProtocols)
+%
+
+category: 'accessing'
+method: RsrInitiateConnection
+port
+	"The port number used for establishing a socket"
+
+	^port
+%
+
+category: 'accessing'
+method: RsrInitiateConnection
+port: aPort
+	"The port number used for establishing a socket"
+
+	port := aPort
 %
 
 ! Class implementation for 'RsrGciInitiateConnection'
@@ -8333,9 +9620,24 @@ host: hostnameOrAddress
 port: port
 token: aToken
 
+	^self
+		host: hostnameOrAddress
+		port: port
+		wireProtocols: self defaultWireProtocols
+		token: aToken
+%
+
+category: 'instance creation'
+classmethod: RsrGciInitiateConnection
+host: hostnameOrAddress
+port: port
+wireProtocols: prioritizedWireProtocols
+token: aToken
+
 	^self new
 		host: hostnameOrAddress;
 		port: port;
+		wireProtocols: prioritizedWireProtocols;
 		token: aToken;
 		yourself
 %
@@ -8348,7 +9650,7 @@ handshakeSteps
 	"Returns a sequence of steps needed to perform a successful handshake."
 
 	^Array
-		with: RsrProtocolVersionNegotiationClient new
+		with: (RsrProtocolVersionNegotiationClient wireProtocols: self wireProtocols)
 		with: (RsrTokenSender token: self token)
 %
 
@@ -8476,7 +9778,7 @@ method: RsrHandshake
 perform
 	"Perform the sequence of configured steps."
 
-	self steps do: [:each | each performOver: self stream]
+	self steps do: [:each | each performFor: self over: self stream]
 %
 
 category: 'accessing'
@@ -8511,19 +9813,68 @@ stream: aStream
 	stream := aStream
 %
 
+category: 'accessing'
+method: RsrHandshake
+wireProtocol
+	"Returns the chosen wire protocol.
+	nil - if no protocol negotiation happened."
+
+	^wireProtocol
+%
+
+category: 'accessing'
+method: RsrHandshake
+wireProtocol: aWireProtocol
+	"Sets the chosen wire protocol."
+
+	wireProtocol := aWireProtocol
+%
+
 ! Class implementation for 'RsrHandshakeStep'
 
 !		Instance methods for 'RsrHandshakeStep'
 
 category: 'performing'
 method: RsrHandshakeStep
-performOver: aStream
+performFor: aHandshake
+over: aStream
 	"Perform the work for this step."
 
-	^self subclassResponsibility
+	^self performOver: aStream
+%
+
+category: 'performing'
+method: RsrHandshakeStep
+performOver: aStream
+	"By default, this method is called from
+	#performFor:over: for backwards-compatibility
+	reasons.
+	
+	#performFor:over: is the prefered method and
+	should be used for new steps."
+
+	"NOP by default"
 %
 
 ! Class implementation for 'RsrProtocolVersionNegotiation'
+
+!		Class methods for 'RsrProtocolVersionNegotiation'
+
+category: 'instance creation'
+classmethod: RsrProtocolVersionNegotiation
+new
+
+	^self wireProtocols: { RsrWireProtocolV2 new }
+%
+
+category: 'instance creation'
+classmethod: RsrProtocolVersionNegotiation
+wireProtocols: aPrioritizedListOfWireProtocols
+
+	^super new
+		wireProtocols: aPrioritizedListOfWireProtocols;
+		yourself
+%
 
 !		Instance methods for 'RsrProtocolVersionNegotiation'
 
@@ -8534,49 +9885,78 @@ codec
 	^RsrProtocolVersionNegotiationCodec new
 %
 
+category: 'accessing'
+method: RsrProtocolVersionNegotiation
+wireProtocols
+	"Return the supported protocols."
+
+	^wireProtocols
+%
+
+category: 'accessing'
+method: RsrProtocolVersionNegotiation
+wireProtocols: aPrioritizedListOfWireProtocols
+	"Configure the list and priority of supported wire protocols."
+
+	wireProtocols := aPrioritizedListOfWireProtocols
+%
+
 ! Class implementation for 'RsrProtocolVersionNegotiationClient'
 
 !		Instance methods for 'RsrProtocolVersionNegotiationClient'
 
-category: 'handshaking'
+category: 'performing'
 method: RsrProtocolVersionNegotiationClient
-performOver: aStream
+performFor: aHandshake
+over: aStream
 	"Perform the Client's porition of the handshake"
 
-	| supportedVersions answer |
-	supportedVersions := RsrSupportedVersions versions: #(1).
+	| answer wireProtocol |
 	self codec
-		encodeSupportedVersions: supportedVersions
+		encodeSupportedVersions: self supportedVersions
 		onto: aStream.
 	aStream flush.
 	answer := self codec decode: aStream.
 	answer hasSharedVersion
-		ifFalse: [^RsrProtocolVersionNegotiationFailed signal: 'The Client and Server could not agree on an RSR protocol version.']
+		ifFalse: [^RsrProtocolVersionNegotiationFailed signal: 'The Client and Server could not agree on an RSR protocol version.'].
+	wireProtocol := self wireProtocols
+		detect: [:each | each version = answer version]
+		ifNone: [^RsrProtocolVersionNegotiationFailed signal: 'Server''s chosen protocol version is unsupported.'].
+	aHandshake wireProtocol: wireProtocol
+%
+
+category: 'accessing'
+method: RsrProtocolVersionNegotiationClient
+supportedVersions
+
+	^RsrSupportedVersions versions: (self wireProtocols collect: [:each | each version])
 %
 
 ! Class implementation for 'RsrProtocolVersionNegotiationServer'
 
 !		Instance methods for 'RsrProtocolVersionNegotiationServer'
 
-category: 'handshaking'
+category: 'performing'
 method: RsrProtocolVersionNegotiationServer
-performOver: aStream
-	"Peform the Server's side of the handshake."
+performFor: aHandshake
+over: aStream
+	"Perform the Server's side of the handshake."
 
-	| supportedVersions |
+	| supportedVersions selectedProtocol |
 	supportedVersions := self codec decode: aStream.
-	(supportedVersions versions includes: 1)
-		ifTrue:
-			[self codec
-				encodeChosenVersion: (RsrChosenVersion version: 1)
-				onto: aStream.
-			aStream flush]
-		ifFalse:
+	selectedProtocol := self wireProtocols
+		detect: [:protocol | supportedVersions versions includes: protocol version]
+		ifNone:
 			[self codec
 				encodeNoVersionOverlap: RsrNoVersionOverlap new
 				onto: aStream.
 			aStream flush; close.
-			^RsrProtocolVersionNegotiationFailed signal: 'Client versions did not overlap w/ Server']
+			^RsrProtocolVersionNegotiationFailed signal: 'Client versions do not overlap w/ Server'].
+	self codec
+		encodeChosenVersion: (RsrChosenVersion version: selectedProtocol version)
+		onto: aStream.
+	aStream flush.
+	aHandshake wireProtocol: selectedProtocol
 %
 
 ! Class implementation for 'RsrTokenExchange'
@@ -8665,9 +10045,10 @@ performOver: aStream
 
 category: 'configuring'
 method: RsrLog
-addSink: aLogSink
+addDestination: aLogDestination
+	"Add an additional destination for logs"
 
-	sinks add: aLogSink
+	destinations add: aLogDestination
 %
 
 category: 'logging'
@@ -8708,7 +10089,7 @@ initialize
 
 	super initialize.
 	verbosity := self levelTrace.
-	sinks := OrderedCollection new
+	destinations := OrderedCollection new
 %
 
 category: 'accessing'
@@ -8760,7 +10141,7 @@ level: aLevelString
 
 	| message |
 	message := RsrDateAndTime now printString, '-', aLevelString, '-', aMessage.
-	sinks do: [:each | each write: message]
+	destinations do: [:each | each write: message]
 %
 
 category: 'logging'
@@ -8793,23 +10174,36 @@ warning: aString
 		ifTrue: [self log: aString level: #warning]
 %
 
-! Class implementation for 'RsrLogSink'
+! Class implementation for 'RsrLogDestination'
 
-!		Instance methods for 'RsrLogSink'
+!		Instance methods for 'RsrLogDestination'
 
 category: 'writing'
-method: RsrLogSink
+method: RsrLogDestination
 write: aMessage
 
 	self subclassResponsibility
 %
 
-! Class implementation for 'RsrCustomSink'
+! Class implementation for 'RsrLogToTranscript'
 
-!		Class methods for 'RsrCustomSink'
+!		Instance methods for 'RsrLogToTranscript'
+
+category: 'writing'
+method: RsrLogToTranscript
+write: aMessageString
+
+	Transcript
+		show: aMessageString;
+		cr
+%
+
+! Class implementation for 'RsrLogViaBlock'
+
+!		Class methods for 'RsrLogViaBlock'
 
 category: 'instance creation'
-classmethod: RsrCustomSink
+classmethod: RsrLogViaBlock
 action: aBlock
 
 	^self new
@@ -8817,40 +10211,27 @@ action: aBlock
 		yourself
 %
 
-!		Instance methods for 'RsrCustomSink'
+!		Instance methods for 'RsrLogViaBlock'
 
 category: 'accessing'
-method: RsrCustomSink
+method: RsrLogViaBlock
 action
 
 	^action
 %
 
 category: 'accessing'
-method: RsrCustomSink
+method: RsrLogViaBlock
 action: aBlock
 
 	action := aBlock
 %
 
 category: 'writing'
-method: RsrCustomSink
+method: RsrLogViaBlock
 write: aMessage
 
 	self action value: aMessage
-%
-
-! Class implementation for 'RsrTranscriptSink'
-
-!		Instance methods for 'RsrTranscriptSink'
-
-category: 'writing'
-method: RsrTranscriptSink
-write: aMessageString
-
-	Transcript
-		show: aMessageString;
-		cr
 %
 
 ! Class implementation for 'RsrLogWithPrefix'
@@ -9224,8 +10605,8 @@ notifyActions
 		do:
 			[:each |
 			self isFulfilled
-				ifTrue: [RsrProcessModel fork: [each when value: value] named: 'Promise Fulfillment Notification']
-				ifFalse: [RsrProcessModel fork: [each catch value: value] named: 'Promise Break Notification']]
+				ifTrue: [RsrProcessModel fork: [each when cull: value] named: 'Promise Fulfillment Notification']
+				ifFalse: [RsrProcessModel fork: [each catch cull: value] named: 'Promise Break Notification']]
 %
 
 category: 'observing'
@@ -9468,21 +10849,25 @@ from: anObject
 	^referenceClass from: anObject
 %
 
-category: 'accessing'
-classmethod: RsrReference
-referenceMapping
-
-	^referenceMapping
-%
-
-category: 'accessing'
-classmethod: RsrReference
-typeIdentifier
-
-	^self subclassResponsibility
-%
-
 !		Instance methods for 'RsrReference'
+
+category: 'encoding/decoding'
+method: RsrReference
+decode: aStream
+using: aDecoder
+	"Double dispatch - tell the encoder to decode the receiver from the stream"
+
+	self subclassResponsibility
+%
+
+category: 'encoding/decoding'
+method: RsrReference
+encode: aStream
+using: anEncoder
+	"Double dispatch - tell the encoder to encode the receiver onto the stream"
+
+	self subclassResponsibility
+%
 
 category: 'resolving'
 method: RsrReference
@@ -9490,13 +10875,6 @@ resolve: aConnection
 	"Resolve the reference in the context of the provided Connection."
 
 	^self subclassResponsibility
-%
-
-category: 'accessing'
-method: RsrReference
-typeIdentifier
-
-	^self class typeIdentifier
 %
 
 ! Class implementation for 'RsrImmediateReference'
@@ -9515,7 +10893,7 @@ category: 'instance creation'
 classmethod: RsrImmediateReference
 from: anObject
 
-	^self subclassResponsiblity
+	self subclassResponsibility 
 %
 
 !		Instance methods for 'RsrImmediateReference'
@@ -9535,46 +10913,36 @@ category: 'instance creation'
 classmethod: RsrBooleanReference
 from: aBoolean
 
+	"True and False are Boolean instances in GemStone. This correctly distinguishes
+	the appropriate subclass in all Smalltalk environments."
 	^aBoolean
 		ifTrue: [RsrTrueReference new]
 		ifFalse: [RsrFalseReference new]
 %
 
-!		Instance methods for 'RsrBooleanReference'
+! Class implementation for 'RsrFalseReference'
+
+!		Instance methods for 'RsrFalseReference'
 
 category: 'encoding/decoding'
-method: RsrBooleanReference
+method: RsrFalseReference
 decode: aStream
 using: aDecoder
 
-	"Boolean has no additional value"
+	aDecoder
+		decodeFalseReference: self
+		from: aStream
 %
 
 category: 'encoding/decoding'
-method: RsrBooleanReference
+method: RsrFalseReference
 encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
+		encodeFalseReference: self
 		onto: aStream
 %
-
-! Class implementation for 'RsrFalseReference'
-
-!		Class methods for 'RsrFalseReference'
-
-category: 'accessing'
-classmethod: RsrFalseReference
-typeIdentifier
-
-	^8
-%
-
-!		Instance methods for 'RsrFalseReference'
 
 category: 'resolving'
 method: RsrFalseReference
@@ -9585,16 +10953,27 @@ resolve: aConnection
 
 ! Class implementation for 'RsrTrueReference'
 
-!		Class methods for 'RsrTrueReference'
+!		Instance methods for 'RsrTrueReference'
 
-category: 'accessing'
-classmethod: RsrTrueReference
-typeIdentifier
+category: 'encoding/decoding'
+method: RsrTrueReference
+decode: aStream
+using: aDecoder
 
-	^7
+	aDecoder
+		decodeTrueReference: self
+		from: aStream
 %
 
-!		Instance methods for 'RsrTrueReference'
+category: 'encoding/decoding'
+method: RsrTrueReference
+encode: aStream
+using: anEncoder
+
+	anEncoder
+		encodeTrueReference: self
+		onto: aStream
+%
 
 category: 'resolving'
 method: RsrTrueReference
@@ -9614,13 +10993,6 @@ from: aNil
 	^self new
 %
 
-category: 'accessing'
-classmethod: RsrNilReference
-typeIdentifier
-
-	^6
-%
-
 !		Instance methods for 'RsrNilReference'
 
 category: 'encoding/decoding'
@@ -9628,7 +11000,9 @@ method: RsrNilReference
 decode: aStream
 using: aDecoder
 
-	"Nil has no additional value"
+	aDecoder
+		decodeNilReference: self
+		from: aStream
 %
 
 category: 'encoding/decoding'
@@ -9637,10 +11011,7 @@ encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
+		encodeNilReference: self
 		onto: aStream
 %
 
@@ -9666,7 +11037,14 @@ intermediate: anObject
 
 !		Instance methods for 'RsrValueReference'
 
-category: 'private-accessing'
+category: 'accessing'
+method: RsrValueReference
+intermediate
+
+	^intermediate
+%
+
+category: 'accessing'
 method: RsrValueReference
 intermediate: anObject
 	"Store the intermediate form of this object"
@@ -9692,13 +11070,6 @@ from: aByteArray
 	^self intermediate: aByteArray copy
 %
 
-category: 'accessing'
-classmethod: RsrByteArrayReference
-typeIdentifier
-
-	^10
-%
-
 !		Instance methods for 'RsrByteArrayReference'
 
 category: 'encoding/decoding'
@@ -9706,9 +11077,9 @@ method: RsrByteArrayReference
 decode: aStream
 using: aDecoder
 
-	| length |
-	length := aDecoder decodeControlWord: aStream.
-	intermediate := aStream next: length
+	aDecoder
+		decodeByteArrayReference: self
+		from: aStream
 %
 
 category: 'encoding/decoding'
@@ -9717,15 +11088,8 @@ encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	aStream nextPutAll: intermediate
+		encodeByteArrayReference: self
+		onto: aStream
 %
 
 ! Class implementation for 'RsrCharacterArrayReference'
@@ -9748,26 +11112,9 @@ method: RsrCharacterArrayReference
 decode: aStream
 using: aDecoder
 
-	| length |
-	length := aDecoder decodeControlWord: aStream.
-	intermediate := aStream next: length
-%
-
-category: 'encoding/decoding'
-method: RsrCharacterArrayReference
-encode: aStream
-using: anEncoder
-
-	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	aStream nextPutAll: intermediate
+	aDecoder
+		decodeCharacterArrayReference: self
+		from: aStream
 %
 
 category: 'resolving'
@@ -9779,25 +11126,19 @@ resolve: aConnection
 
 ! Class implementation for 'RsrStringReference'
 
-!		Class methods for 'RsrStringReference'
+!		Instance methods for 'RsrStringReference'
 
-category: 'accessing'
-classmethod: RsrStringReference
-typeIdentifier
+category: 'encoding/decoding'
+method: RsrStringReference
+encode: aStream
+using: anEncoder
 
-	^2
+	anEncoder
+		encodeStringReference: self
+		onto: aStream
 %
 
 ! Class implementation for 'RsrSymbolReference'
-
-!		Class methods for 'RsrSymbolReference'
-
-category: 'accessing'
-classmethod: RsrSymbolReference
-typeIdentifier
-
-	^1
-%
 
 !		Instance methods for 'RsrSymbolReference'
 
@@ -9806,6 +11147,16 @@ method: RsrSymbolReference
 convertBytes: aByteArray
 
 	^(super convertBytes: aByteArray) asSymbol
+%
+
+category: 'encoding/decoding'
+method: RsrSymbolReference
+encode: aStream
+using: anEncoder
+
+	anEncoder
+		encodeSymbolReference: self
+		onto: aStream
 %
 
 ! Class implementation for 'RsrCharacterReference'
@@ -9819,13 +11170,6 @@ from: aCharacter
 	^self intermediate: aCharacter codePoint
 %
 
-category: 'accessing'
-classmethod: RsrCharacterReference
-typeIdentifier
-
-	^5
-%
-
 !		Instance methods for 'RsrCharacterReference'
 
 category: 'encoding/decoding'
@@ -9833,7 +11177,9 @@ method: RsrCharacterReference
 decode: aStream
 using: aDecoder
 
-	intermediate := aDecoder decodeControlWord: aStream
+	aDecoder
+		decodeCharacterReference: self
+		from: aStream
 %
 
 category: 'encoding/decoding'
@@ -9842,13 +11188,7 @@ encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate
+		encodeCharacterReference: self
 		onto: aStream
 %
 
@@ -9887,45 +11227,24 @@ method: RsrCollectionReference
 decode: aStream
 using: aDecoder
 
-	| size |
-	size := aDecoder decodeControlWord: aStream.
-	intermediate := (1 to: size) collect: [:i | aDecoder decodeReference: aStream]
-%
-
-category: 'encoding/decoding'
-method: RsrCollectionReference
-encode: aStream
-using: anEncoder
-
-	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	intermediate
-		do:
-			[:each |
-			each
-				encode: aStream
-				using: anEncoder]
+	aDecoder
+		decodeCollectionReference: self
+		from: aStream
 %
 
 ! Class implementation for 'RsrArrayReference'
 
-!		Class methods for 'RsrArrayReference'
-
-category: 'accessing'
-classmethod: RsrArrayReference
-typeIdentifier
-
-	^9
-%
-
 !		Instance methods for 'RsrArrayReference'
+
+category: 'encoding/decoding'
+method: RsrArrayReference
+encode: aStream
+using: anEncoder
+
+	anEncoder
+		encodeArrayReference: self
+		onto: aStream
+%
 
 category: 'resolving'
 method: RsrArrayReference
@@ -9961,13 +11280,6 @@ from: aDictionary
 	^self intermediate: referenceStream contents
 %
 
-category: 'accessing'
-classmethod: RsrDictionaryReference
-typeIdentifier
-
-	^13
-%
-
 !		Instance methods for 'RsrDictionaryReference'
 
 category: 'encoding/decoding'
@@ -9975,9 +11287,9 @@ method: RsrDictionaryReference
 decode: aStream
 using: aDecoder
 
-	| size |
-	size := aDecoder decodeControlWord: aStream.
-	intermediate := (1 to: size * 2) collect: [:each | aDecoder decodeReference: aStream]
+	aDecoder
+		decodeDictionaryReference: self
+		from: aStream
 %
 
 category: 'encoding/decoding'
@@ -9986,15 +11298,8 @@ encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size / 2
-		onto: aStream.
-	intermediate do: [:each | each encode: aStream using: anEncoder]
+		encodeDictionaryReference: self
+		onto: aStream
 %
 
 category: 'resolving'
@@ -10015,16 +11320,17 @@ resolve: aConnection
 
 ! Class implementation for 'RsrOrderedCollectionReference'
 
-!		Class methods for 'RsrOrderedCollectionReference'
-
-category: 'accessing'
-classmethod: RsrOrderedCollectionReference
-typeIdentifier
-
-	^12
-%
-
 !		Instance methods for 'RsrOrderedCollectionReference'
+
+category: 'encoding/decoding'
+method: RsrOrderedCollectionReference
+encode: aStream
+using: anEncoder
+
+	anEncoder
+		encodeOrderedCollectionReference: self
+		onto: aStream
+%
 
 category: 'other'
 method: RsrOrderedCollectionReference
@@ -10050,14 +11356,17 @@ from: aSet
 	^self intermediate: referenceStream contents
 %
 
-category: 'accessing'
-classmethod: RsrSetReference
-typeIdentifier
-
-	^11
-%
-
 !		Instance methods for 'RsrSetReference'
+
+category: 'encoding/decoding'
+method: RsrSetReference
+encode: aStream
+using: anEncoder
+
+	anEncoder
+		encodeSetReference: self
+		onto: aStream
+%
 
 category: 'resolving'
 method: RsrSetReference
@@ -10082,13 +11391,6 @@ from: aDateAndTime
 	^self intermediate: intermediate
 %
 
-category: 'accessing'
-classmethod: RsrDateAndTimeReference
-typeIdentifier
-
-	^14
-%
-
 !		Instance methods for 'RsrDateAndTimeReference'
 
 category: 'encoding/decoding'
@@ -10096,7 +11398,9 @@ method: RsrDateAndTimeReference
 decode: aStream
 using: aDecoder
 
-	intermediate := aDecoder decodeControlWord: aStream
+	aDecoder
+		decodeDateAndTimeReference: self
+		from: aStream
 %
 
 category: 'encoding/decoding'
@@ -10105,13 +11409,7 @@ encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate
+		encodeDateAndTimeReference: self 
 		onto: aStream
 %
 
@@ -10135,13 +11433,6 @@ from: aFloat
 	^self intermediate: intermediate
 %
 
-category: 'accessing'
-classmethod: RsrDoubleReference
-typeIdentifier
-
-	^15
-%
-
 !		Instance methods for 'RsrDoubleReference'
 
 category: 'encoding/decoding'
@@ -10149,7 +11440,9 @@ method: RsrDoubleReference
 decode: aStream
 using: aDecoder
 
-	intermediate := aStream next: 8
+	aDecoder
+		decodeDoubleReference: self
+		from: aStream
 %
 
 category: 'encoding/decoding'
@@ -10158,12 +11451,8 @@ encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	aStream nextPutAll: intermediate
+		encodeDoubleReference: self
+		onto: aStream
 %
 
 category: 'resolving'
@@ -10220,26 +11509,9 @@ method: RsrIntegerReference
 decode: aStream
 using: aDecoder
 
-	| length |
-	length := aDecoder decodeControlWord: aStream.
-	intermediate := aStream next: length
-%
-
-category: 'encoding/decoding'
-method: RsrIntegerReference
-encode: aStream
-using: anEncoder
-
-	anEncoder
-		encodeControlWord: anEncoder immediateOID
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self typeIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: intermediate size
-		onto: aStream.
-	aStream nextPutAll: intermediate
+	aDecoder
+		decodeIntegerReference: self
+		from: aStream
 %
 
 category: 'resolving'
@@ -10251,15 +11523,6 @@ resolve: aConnection
 
 ! Class implementation for 'RsrNegativeIntegerReference'
 
-!		Class methods for 'RsrNegativeIntegerReference'
-
-category: 'accessing'
-classmethod: RsrNegativeIntegerReference
-typeIdentifier
-
-	^4
-%
-
 !		Instance methods for 'RsrNegativeIntegerReference'
 
 category: 'converting'
@@ -10269,15 +11532,28 @@ convertBytes: aByteArray
 	^(super convertBytes: aByteArray) negated
 %
 
+category: 'encoding/decoding'
+method: RsrNegativeIntegerReference
+encode: aStream
+using: anEncoder
+
+	anEncoder
+		encodeNegativeIntegerReference: self
+		onto: aStream
+%
+
 ! Class implementation for 'RsrPositiveIntegerReference'
 
-!		Class methods for 'RsrPositiveIntegerReference'
+!		Instance methods for 'RsrPositiveIntegerReference'
 
-category: 'accessing'
-classmethod: RsrPositiveIntegerReference
-typeIdentifier
+category: 'encoding/decoding'
+method: RsrPositiveIntegerReference
+encode: aStream
+using: anEncoder
 
-	^3
+	anEncoder
+		encodePositiveIntegerReference: self
+		onto: aStream
 %
 
 ! Class implementation for 'RsrServiceReference'
@@ -10316,7 +11592,7 @@ encode: aStream
 using: anEncoder
 
 	anEncoder
-		encodeControlWord: self sid
+		encodeServiceReference: self
 		onto: aStream
 %
 
@@ -10649,9 +11925,10 @@ category: 'variable utilites'
 classmethod: RsrServiceSnapshot
 reflectedVariablesFor: aService
 
-	| currentClass variables template |
+	| currentClass variables templateResolver template |
 	variables := OrderedCollection new.
-	template := aService _template.
+	templateResolver := aService _connection templateResolver.
+	template := templateResolver templateFor: aService.
 	currentClass := template.
 	[currentClass == RsrService]
 		whileFalse:
@@ -10676,59 +11953,19 @@ category: 'accessing'
 method: RsrServiceSnapshot
 createInstanceRegisteredIn: aConnection
 
-	| instance template |
-	templateName isNil
-		ifTrue:
-			[self flag: 'This should go away once we cleanup the on-the-wire encoding.'.
-			RsrUnknownClass signal].
-	template := aConnection templateResolver templateNamed: self templateName.
+	| templateResolver template instanceClass instance |
+	templateResolver := aConnection templateResolver.
+	template := templateResolver templateNamed: self templateName.
 	((aConnection policy permits: template) or: [template inheritsFrom: RsrReasonService])
 		ifFalse: [RsrServiceRejected signalReason: (RsrPolicyRejectedService sid: sid templateName: templateName)].
-	instance := self shouldCreateServer
-		ifTrue: [template serverClass basicNew]
-		ifFalse: [template clientClass basicNew].
+	instanceClass := self shouldCreateServer
+		ifTrue: [templateResolver serverClassForTemplate: template]
+		ifFalse: [templateResolver clientClassForTemplate: template].
+	instance := instanceClass basicNew.
 	aConnection
 		_register: instance
 		as: self sid.
 	^instance
-%
-
-category: 'other'
-method: RsrServiceSnapshot
-decode: aStream
-using: aDecoder
-
-	| species instVarCount targetClassName resolver template |
-	species := aDecoder decodeControlWord: aStream.
-	sid := aDecoder decodeControlWord: aStream.
-	instVarCount := aDecoder decodeControlWord: aStream.
-	targetClassName := (aDecoder decodeReference: aStream) resolve: nil.
-	slots := OrderedCollection new: instVarCount.
-	instVarCount timesRepeat: [slots add: (aDecoder decodeReference: aStream)].
-	resolver := RsrTemplateResolver new.
-	template := resolver templateNamed: targetClassName ifAbsent: [^nil].
-	templateName := template name.
-	shouldCreateServer := template serverClassName = targetClassName.
-%
-
-category: 'encoding/decoding'
-method: RsrServiceSnapshot
-encode: aStream
-using: anEncoder
-
-	anEncoder
-		encodeControlWord: self snapshotIdentifier
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self sid
-		onto: aStream.
-	anEncoder
-		encodeControlWord: self slots size
-		onto: aStream.
-	self targetClassNameReference
-		encode: aStream
-		using: anEncoder.
-	self slots do: [:each | each encode: aStream using: anEncoder]
 %
 
 category: 'accessing'
@@ -10744,6 +11981,31 @@ instanceIn: aConnection
 	^instance
 %
 
+category: 'accessing'
+method: RsrServiceSnapshot
+persona
+	"What persona should be used when this ServiceSnapshot is reified?"
+	
+	^persona
+%
+
+category: 'accessing'
+method: RsrServiceSnapshot
+persona: aSymbol
+	"What persona should be used when this ServiceSnapshot is reified?"
+	
+	persona := aSymbol
+%
+
+category: 'accessing'
+method: RsrServiceSnapshot
+personaReference
+	"What persona should be used when this ServiceSnapshot is reified?
+	As an RsrReference object."
+	
+	^RsrSymbolReference from: self persona
+%
+
 category: 'reifying'
 method: RsrServiceSnapshot
 reifyIn: aConnection
@@ -10751,7 +12013,7 @@ reifyIn: aConnection
 	| instance referenceStream |
 	instance := self instanceIn: aConnection.
 	(self class reflectedVariablesFor: instance) size = slots size 
-		ifFalse: [ self error: 'Incorrectly encoded instance detected' ].
+		ifFalse: [ self error: 'Expected ', (self class reflectedVariablesFor: instance) size printString, ' value(s) for template ', templateName, ' but received ', slots size printString, ' value(s) instead. Verify peers have compatible template definitions.'  ].
 	referenceStream := ReadStream on: slots.
 	self class reflectedVariableIndicesFor: instance do: [ :index | 
 		instance
@@ -10764,7 +12026,7 @@ category: 'testing'
 method: RsrServiceSnapshot
 shouldCreateServer
 
-	^shouldCreateServer
+	^persona == #server
 %
 
 category: 'accessing'
@@ -10795,52 +12057,44 @@ slots: anArrayOfReferences
 	slots := anArrayOfReferences
 %
 
-category: 'other'
+category: 'snapshotting'
 method: RsrServiceSnapshot
 snapshot: aService
 
-	| template |
-	template := aService _template.
+	| templateResolver template |
+	templateResolver := aService _connection templateResolver.
+	template := templateResolver templateFor: aService.
 	sid := aService _id.
 	templateName := template name.
 	"If I am snapshotting a Client, the Snapshot represents a Server."
-	shouldCreateServer := aService class isClientClass.
+	persona := aService class isClientClass
+		ifTrue: [ #server ]
+		ifFalse: [ #client ].
 	slots := OrderedCollection new.
-	RsrServiceSnapshot
+	self class
 		reflectedVariablesFor: aService
 		do: [:each | slots add: (RsrReference from: each)]
 %
 
 category: 'accessing'
 method: RsrServiceSnapshot
-snapshotIdentifier
-
-	^0
-%
-
-category: 'other'
-method: RsrServiceSnapshot
-targetClassName
-
-	| template |
-	template := RsrTemplateResolver new templateNamed: self templateName.
-	^self shouldCreateServer
-		ifTrue: [template serverClassName]
-		ifFalse: [template clientClassName]
-%
-
-category: 'other'
-method: RsrServiceSnapshot
-targetClassNameReference
-
-	^RsrSymbolReference from: self targetClassName
-%
-
-category: 'other'
-method: RsrServiceSnapshot
 templateName
 
 	^templateName
+%
+
+category: 'accessing'
+method: RsrServiceSnapshot
+templateName: aSymbol
+
+	templateName := aSymbol
+%
+
+category: 'accessing'
+method: RsrServiceSnapshot
+templateNameReference
+
+	^RsrSymbolReference from: self templateName
 %
 
 ! Class implementation for 'RsrSignalErrorInAsString'
@@ -11074,7 +12328,7 @@ method: RsrSocket
 initialize
 
 	super initialize.
-	nativeSocket := GsSignalingSocket new.
+	self _nativeSocket: GsSignalingSocket new.
 %
 
 category: 'testing'
@@ -11099,7 +12353,9 @@ method: RsrSocket
 port
 	"Return the port associated with the socket."
 
-	^nativeSocket port
+	^[nativeSocket port]
+		on: SocketError
+		do: [:ex | ex return: 0]
 %
 
 category: 'read/write'
@@ -11148,6 +12404,12 @@ _nativeSocket: aGsSignalingSocket
 	"Private - Configure w/ a platform socket"
 
 	nativeSocket := aGsSignalingSocket.
+	nativeSocket
+		option: 'NODELAY'
+		put: true.
+	nativeSocket
+		option: 'KEEPALIVE'
+		put: true.
 	nativeSocket interrupting: true
 %
 
@@ -11233,7 +12495,7 @@ category: 'accessing'
 method: RsrSocketPair
 firstStream
 
-	^self socketStreamClass on: firstSocket
+	^firstSocket bufferedSocketStream
 %
 
 category: 'accessing'
@@ -11254,14 +12516,7 @@ category: 'accessing'
 method: RsrSocketPair
 secondStream
 
-	^self socketStreamClass on: secondSocket
-%
-
-category: 'accessing'
-method: RsrSocketPair
-socketStreamClass
-
-	^(RsrClassResolver classNamed: #RsrSocketStream)
+	^secondSocket bufferedSocketStream
 %
 
 ! Class implementation for 'RsrStream'
@@ -11274,6 +12529,14 @@ atEnd
 	"Answers when the Stream cannot take or provide any additional bytes."
 
 	^self subclassResponsibility
+%
+
+category: 'closing'
+method: RsrStream
+chunkSize
+	"Size of each chunk"
+
+	^16384
 %
 
 category: 'closing'
@@ -11315,6 +12578,124 @@ nextPutAll: aByteArray
 	^self subclassResponsibility
 %
 
+! Class implementation for 'RsrBufferedStream'
+
+!		Class methods for 'RsrBufferedStream'
+
+category: 'instance creation'
+classmethod: RsrBufferedStream
+on: aSocketStream
+
+	^self new
+		stream: aSocketStream;
+		yourself
+%
+
+!		Instance methods for 'RsrBufferedStream'
+
+category: 'writing'
+method: RsrBufferedStream
+atEnd
+
+	^stream atEnd
+%
+
+category: 'writing'
+method: RsrBufferedStream
+checkAutoFlush
+
+	nextToWrite > self flushThreshold
+		ifTrue: [ self flush ]
+%
+
+category: 'writing'
+method: RsrBufferedStream
+close
+
+	stream close
+%
+
+category: 'writing'
+method: RsrBufferedStream
+flush
+
+	firstByte = nextToWrite
+		ifTrue: [^self].
+	stream nextPutAll: (outBuffer copyFrom: firstByte to: nextToWrite - 1).
+	firstByte := nextToWrite := 1.
+	stream flush
+%
+
+category: 'accessing'
+method: RsrBufferedStream
+flushThreshold
+	"After how much data should we automatically flush?"
+
+	^self chunkSize
+%
+
+category: 'writing'
+method: RsrBufferedStream
+growOutBufferTo: aNumberOfBytes
+
+	| rounding |
+	rounding := ((aNumberOfBytes // self chunkSize) + 1) * self chunkSize.
+	outBuffer := outBuffer , (ByteArray new: rounding - outBuffer size)
+%
+
+category: 'initialization'
+method: RsrBufferedStream
+initialize
+
+	super initialize.
+	outBuffer := ByteArray new: self chunkSize.
+	nextToWrite := 1.
+	firstByte := 1
+%
+
+category: 'writing'
+method: RsrBufferedStream
+isConnected
+
+	^stream isConnected
+%
+
+category: 'writing'
+method: RsrBufferedStream
+next
+
+	^self next: 1
+%
+
+category: 'writing'
+method: RsrBufferedStream
+next: aCount
+
+	^stream next: aCount
+%
+
+category: 'writing'
+method: RsrBufferedStream
+nextPutAll: aByteArray
+
+	(outBuffer size >= (aByteArray size + nextToWrite))
+		ifFalse: [self growOutBufferTo: aByteArray size + (nextToWrite - firstByte)].
+	outBuffer
+		replaceFrom: nextToWrite
+		to: nextToWrite + aByteArray size - 1
+		with: aByteArray
+		startingAt: 1.
+	nextToWrite := nextToWrite + aByteArray size.
+	self checkAutoFlush
+%
+
+category: 'accessing'
+method: RsrBufferedStream
+stream: aStream
+
+	stream := aStream
+%
+
 ! Class implementation for 'RsrSocketStream'
 
 !		Class methods for 'RsrSocketStream'
@@ -11336,14 +12717,6 @@ atEnd
 	"Return whether additional bytes could become available on the socket."
 
 	^socket isConnected not
-%
-
-category: 'accessing'
-method: RsrSocketStream
-chunkSize
-	"The largest size that should be read from or written to a Socket in each attempt."
-
-	^4096
 %
 
 category: 'closing'
@@ -11552,6 +12925,14 @@ stoppedState
 	^#Stop
 %
 
+category: 'accessing'
+method: RsrStreamChannelLoop
+wireProtocol
+	"Return the protocol we are using to talk on the wire"
+
+	^self channel wireProtocol
+%
+
 ! Class implementation for 'RsrCommandSink'
 
 !		Instance methods for 'RsrCommandSink'
@@ -11568,7 +12949,7 @@ category: 'accessing'
 method: RsrCommandSink
 encoder
 
-	^RsrCommandEncoder new
+	^self wireProtocol encoder
 %
 
 category: 'commands'
@@ -11593,7 +12974,7 @@ executeCycle
 		do:
 			[:ex |
 			self reportException: ex.
-			self channel channelDisconnected]
+			self channel disconnected]
 %
 
 category: 'commands'
@@ -11673,7 +13054,7 @@ category: 'accessing'
 method: RsrCommandSource
 decoder
 
-	^RsrCommandDecoder new
+	^self wireProtocol decoder
 %
 
 category: 'commands'
@@ -11688,7 +13069,7 @@ executeCycle
 		do:
 			[:ex |
 			self reportException: ex.
-			self channel channelDisconnected]
+			self channel disconnected]
 %
 
 category: 'accessing'
@@ -11867,15 +13248,88 @@ wasAccepted
 	^false
 %
 
-! Class implementation for 'RsrPlatformInitializer'
+! Class implementation for 'RsrWireProtocol'
 
-!		Class methods for 'RsrPlatformInitializer'
+!		Instance methods for 'RsrWireProtocol'
 
-category: 'class initialization'
-classmethod: RsrPlatformInitializer
-initialize
+category: 'accessing'
+method: RsrWireProtocol
+decoder
+	"Returns the decoder to use for this wire protocol version."
+	
+	self subclassResponsibility
+%
 
-	RsrReference initializeReferenceMapping
+category: 'accessing'
+method: RsrWireProtocol
+encoder
+	"Returns the encoder to use for this wire protocol version."
+	
+	self subclassResponsibility
+%
+
+category: 'accessing'
+method: RsrWireProtocol
+version
+	"Returns the wire protocol version number."
+	
+	self subclassResponsibility
+%
+
+! Class implementation for 'RsrWireProtocolV1'
+
+!		Instance methods for 'RsrWireProtocolV1'
+
+category: 'accessing'
+method: RsrWireProtocolV1
+decoder
+	"Returns the decoder to use for this wire protocol version."
+	
+	^RsrProtocolDecoderV1 new
+%
+
+category: 'accessing'
+method: RsrWireProtocolV1
+encoder
+	"Returns the encoder to use for this wire protocol version."
+	
+	^RsrProtocolEncoderV1 new
+%
+
+category: 'accessing'
+method: RsrWireProtocolV1
+version
+	"Returns the wire protocol version number."
+	
+	^1
+%
+
+! Class implementation for 'RsrWireProtocolV2'
+
+!		Instance methods for 'RsrWireProtocolV2'
+
+category: 'accessing'
+method: RsrWireProtocolV2
+decoder
+	"Returns the decoder to use for this wire protocol version."
+	
+	^RsrProtocolDecoderV2 new
+%
+
+category: 'accessing'
+method: RsrWireProtocolV2
+encoder
+	"Returns the encoder to use for this wire protocol version."
+	
+	^RsrProtocolEncoderV2 new
+%
+
+category: 'accessing'
+method: RsrWireProtocolV2
+version
+	"Returns the wire protocol version number."
+	
+	^2
 %
 
 ! Class implementation for 'RsrProcessModel'
@@ -12297,982 +13751,6 @@ testSuccessfulResolution
 		identicalTo: Object
 %
 
-! Class implementation for 'RsrCommandCodecTest'
-
-!		Class methods for 'RsrCommandCodecTest'
-
-category: 'testing'
-classmethod: RsrCommandCodecTest
-isAbstract
-
-	^self == RsrCommandCodecTest
-%
-
-!		Instance methods for 'RsrCommandCodecTest'
-
-category: 'accessing'
-method: RsrCommandCodecTest
-connection
-
-	^connection
-%
-
-category: 'other'
-method: RsrCommandCodecTest
-decoder
-
-	^RsrCommandDecoder new
-%
-
-category: 'accessing'
-method: RsrCommandCodecTest
-encoder
-
-	^RsrCommandEncoder new
-%
-
-category: 'encode/decode'
-method: RsrCommandCodecTest
-encodeReferenceOf: anObject
-
-	| reference |
-	reference := RsrReference from: anObject.
-	^ByteArray streamContents: [:stream | self encoder encodeReference: reference onto: stream]
-%
-
-category: 'running-symbol'
-method: RsrCommandCodecTest
-genericSymbol
-
-	^#genericSymbol
-%
-
-category: 'running-symbol'
-method: RsrCommandCodecTest
-genericSymbolEncoding
-
-	^#[0 0 0 0 0 0 0 0], "OID = 0"
-	#[0 0 0 0 0 0 0 1], "Immediate Type = 1"
-	#[0 0 0 0 0 0 0 13], "Length of UTF-8 data"
-	#[103 101 110 101 114 105 99 83 121 109 98 111 108]	"#genericSymbol"
-%
-
-category: 'accessing-objects'
-method: RsrCommandCodecTest
-referencedServiceEncoding
-
-	^#[0 0 0 0 0 0 0 0], "type"
-	#[0 0 0 0 0 0 0 2], "referencedService's OID = 2"
-	#[0 0 0 0 0 0 0 0], "Inst Var Count"
-	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
-	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
-	#[0 0 0 0 0 0 0 19], "Length of UTF-8 encoded bytes"
-	#[82 115 114 83 101 114 118 101 114 78 111 73 110 115 116 86 97 114 115]. "#RsrServerNoInstVars"
-%
-
-category: 'accessing-objects'
-method: RsrCommandCodecTest
-rootServiceEncoding
-
-	^#[0 0 0 0 0 0 0 0], "type"
-	#[0 0 0 0 0 0 0 1], "rootService's OID = 1"
-	#[0 0 0 0 0 0 0 1], "Inst Var Count"
-	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
-	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
-	#[0 0 0 0 0 0 0 25], "Length of UTF-8 encoded bytes"
-	#[82 115 114 83 101 114 118 101 114 82 101 102 101 114 101 110 99 101 83 101 114 118 105 99 101],
-	#[0 0 0 0 0 0 0 2]. "#RsrServerReferenceService"
-%
-
-category: 'running'
-method: RsrCommandCodecTest
-serviceNoInstVarsEncoding
-
-	^#[0 0 0 0 0 0 0 0], "type"
-	#[0 0 0 0 0 0 0 1], "rootService's OID = 1"
-	#[0 0 0 0 0 0 0 0], "Inst Var Count"
-	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
-	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
-	#[0 0 0 0 0 0 0 19], "Length of UTF-8 encoded bytes"
-	#[82 115 114 83 101 114 118 101 114 78 111 73 110 115 116 86 97 114 115] "#RsrServerNoInstVars"
-%
-
-category: 'other'
-method: RsrCommandCodecTest
-setUp
-
-	super setUp.
-	connection := RsrConnection
-		channel: RsrNullChannel new
-		transactionSpigot: RsrThreadSafeNumericSpigot naturals
-		oidSpigot: RsrThreadSafeNumericSpigot naturals.
-	connection open
-%
-
-category: 'other'
-method: RsrCommandCodecTest
-tearDown
-
-	connection close.
-	connection := nil.
-	super tearDown
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testArray
-
-	| array encoding |
-	array := Array
-		with: self genericSymbol
-		with: 5
-		with: nil.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
-		#[0 0 0 0 0 0 0 9], "Array type"
-		#[0 0 0 0 0 0 0 3], "3 elements"
-		self genericSymbolEncoding, "Generic Symbol"
-		#[0 0 0 0 0 0 0 0], "Immediate OID"
-		#[0 0 0 0 0 0 0 3], "Positive Integer"
-		#[0 0 0 0 0 0 0 1], "num bytes"
-		#[5], "5"
-		#[0 0 0 0 0 0 0 0], "Immediate OID"
-		#[0 0 0 0 0 0 0 6].
-	self
-		verifyImmediate: array
-		encoding: encoding.
-	array := Array new.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "Immediate OID"
-		#[0 0 0 0 0 0 0 9], "Array type"
-		#[0 0 0 0 0 0 0 0].
-	self
-		verifyImmediate: array
-		encoding: encoding
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testBoolean
-
-	| encoding |
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 7].
-	self
-		verifyImmediate: true
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 8].
-	self
-		verifyImmediate: false
-		encoding: encoding.
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testByteArray
-
-	| bytes encoding |
-	bytes := #[].
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
-		#[0 0 0 0 0 0 0 10], "ByteArray type"
-		#[0 0 0 0 0 0 0 0], "size"
-		bytes.
-	self
-		verifyImmediate: bytes
-		encoding: encoding.
-	bytes := #[1 2 3 4 5].
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 10],
-		#[0 0 0 0 0 0 0 5],
-		bytes.
-	self
-		verifyImmediate: bytes
-		encoding: encoding
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testCharacter
-
-	| encoding |
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 5],
-		#[0 0 0 0 0 0 0 0].
-	self
-		verifyImmediate: (Character codePoint: 0)
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 5],
-		#[0 0 0 0 0 0 0 65].
-	self
-		verifyImmediate: (Character codePoint: 65)
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 5],
-		#[0 0 0 0 0 0 0 65].
-	self
-		verifyImmediate: $A
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 5],
-		#[0 0 0 0 0 0 1 212].
-	self
-		verifyImmediate: (Character codePoint: 16r01D4)
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 5],
-		#[0 0 0 0 0 0 131 52].
-	self
-		verifyImmediate: (Character codePoint: 16r8334)
-		encoding: encoding.
-%
-
-category: 'running-control words'
-method: RsrCommandCodecTest
-testControlWord
-	
-	self
-		verifyControlWord: 0
-		encoding: #[0 0 0 0 0 0 0 0].
-	self
-		verifyControlWord: 1
-		encoding: #[0 0 0 0 0 0 0 1].
-	self
-		verifyControlWord: -1
-		encoding: #[255 255 255 255 255 255 255 255].
-	self
-		verifyControlWord: (2 raisedTo: 63) - 1
-		encoding: #[127 255 255 255 255 255 255 255].
-	self
-		verifyControlWord: (2 raisedTo: 63) negated
-		encoding: #[128 0 0 0 0 0 0 0]
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testDateTime
-
-	| dt encoding |
-	dt := RsrDateAndTime posixEpoch.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 14],
-		#[0 0 0 0 0 0 0 0].
-	self
-		verifyImmediate: dt
-		encoding: encoding.
-	dt := RsrDateAndTime fromMicroseconds: 1562692562657612. "2019-07-09T10:16:02.657612-07:00"
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 14],
-		#[0 5 141 66 183 23 33 76].
-	self
-		verifyImmediate: dt
-		encoding: encoding.
-	dt := RsrDateAndTime fromMicroseconds: -1000000. "1969-12-31T23:59:59-00:00"
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 14],
-		#[255 255 255 255 255 240 189 192].
-	self
-		verifyImmediate: dt
-		encoding: encoding.
-	dt := RsrDateAndTime fromMicroseconds: -491277642567488. "1954-06-07T14:59:17.432512-07:00"
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 14],
-		#[255 254 65 47 130 160 240 192].
-	self
-		verifyImmediate: dt
-		encoding: encoding
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testDictionary
-
-	| dictionary encoding result |
-	dictionary := Dictionary new.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
-		#[0 0 0 0 0 0 0 13], "Dictionary type"
-		#[0 0 0 0 0 0 0 0]. "0 associations"
-	self
-		verifyImmediate: dictionary
-		encoding: encoding.
-	dictionary := Dictionary new
-		at: 1 put: self genericSymbol;
-		at: false put: true;
-		yourself.
-	encoding := self encodeReferenceOf: dictionary.
-	result := (self decoder decodeReference: encoding readStream) resolve: self connection.
-	self
-		assert: result
-		equals: dictionary.
-	self
-		deny: result
-		identicalTo: dictionary.
-	"self hack: 'Order is not guaranteed in a dictionary'.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], ""Immediate OID""
-		#[0 0 0 0 0 0 0 13], ""Dictionary Type""
-		#[0 0 0 0 0 0 0 2], ""Two assocs""
-		#[0 0 0 0 0 0 0 0], ""nil""
-		#[0 0 0 0 0 0 0 6],
-		#[0 0 0 0 0 0 0 0], ""true""
-		#[0 0 0 0 0 0 0 7],
-		#[0 0 0 0 0 0 0 0], ""Integer 1""
-		#[0 0 0 0 0 0 0 3],
-		#[0 0 0 0 0 0 0 1],
-		#[1],
-		self genericSymbolEncoding.
-	self
-		verifyImmediate: dictionary
-		encoding: encoding"
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testDouble
-
-	| encoding |
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[128 0 0 0 0 0 0 0].
-	self
-		verifyImmediate: -0.0
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[0 0 0 0 0 0 0 0].
-	self
-		verifyImmediate: 0.0
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[191 240 0 0 0 0 0 0].
-	self
-		verifyImmediate: -1.0
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[63 240 0 0 0 0 0 0].
-	self
-		verifyImmediate: 1.0
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[63 185 153 153 153 153 153 154].
-	self
-		verifyImmediate: 0.1
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[191 185 153 153 153 153 153 154].
-	self
-		verifyImmediate: -0.1
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[127 240 0 0 0 0 0 0].
-	self
-		verifyImmediate: RsrDoubleReference infinity
-		encoding: encoding
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testInteger
-
-	| encoding |
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 3],
-		#[0 0 0 0 0 0 0 1],
-		#[0].
-	self
-		verifyImmediate: 0
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 3],
-		#[0 0 0 0 0 0 0 1],
-		#[4].
-	self
-		verifyImmediate: 4
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 3],
-		#[0 0 0 0 0 0 0 5],
-		#[1 15 248 235 121].
-	self
-		verifyImmediate: 4562938745
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 4],
-		#[0 0 0 0 0 0 0 5],
-		#[1 15 248 235 121].
-	self
-		verifyImmediate: -4562938745
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 3],
-		#[0 0 0 0 0 0 0 13],
-		#[10 101 181 177 179 46 128 92 96 64 190 76 107].
-	self
-		verifyImmediate: 823759265872134912569713249387
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 4],
-		#[0 0 0 0 0 0 0 13],
-		#[10 101 181 177 179 46 128 92 96 64 190 76 107].
-	self
-		verifyImmediate: -823759265872134912569713249387
-		encoding: encoding.
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testNil
-
-	| encoding |
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 6].
-	self
-		verifyImmediate: nil
-		encoding: encoding
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testOrderedCollection
-
-	| oc encoding |
-	oc := OrderedCollection new.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "Immediate OID"
-		#[0 0 0 0 0 0 0 12], "OrderedCollection type"
-		#[0 0 0 0 0 0 0 0].
-	self
-		verifyImmediate: oc
-		encoding: encoding.
-	oc := OrderedCollection
-		with: self genericSymbol
-		with: 5
-		with: nil.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
-		#[0 0 0 0 0 0 0 12], "OrderedCollection type"
-		#[0 0 0 0 0 0 0 3], "3 elements"
-		self genericSymbolEncoding, "Generic Symbol"
-		#[0 0 0 0 0 0 0 0], "Immediate OID"
-		#[0 0 0 0 0 0 0 3], "Positive Integer"
-		#[0 0 0 0 0 0 0 1], "num bytes"
-		#[5], "5"
-		#[0 0 0 0 0 0 0 0], "Immediate OID"
-		#[0 0 0 0 0 0 0 6].
-	self
-		verifyImmediate: oc
-		encoding: encoding
-%
-
-category: 'running-immediates'
-method: RsrCommandCodecTest
-testSet
-
-	| set encoding result |
-	set := Set new.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "OID"
-		#[0 0 0 0 0 0 0 11], "Set"
-		#[0 0 0 0 0 0 0 0]. "0 elements"
-	self
-		verifyImmediate: set
-		encoding: encoding.
-	set := Set
-		with: true
-		with: nil.
-	encoding := self encodeReferenceOf: set.
-	result := (self decoder decodeReference: encoding readStream) resolve: self connection.
-	self
-		assert: result
-		equals: set.
-	self
-		deny: result
-		identicalTo: set.
-	"self hack: 'Hashed collections do not have an ordering'.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], ""OID""
-		#[0 0 0 0 0 0 0 11], ""Set""
-		#[0 0 0 0 0 0 0 2], ""2 elements""
-		#[0 0 0 0 0 0 0 0], ""true""
-		#[0 0 0 0 0 0 0 7],
-		#[0 0 0 0 0 0 0 0], ""nil""
-		#[0 0 0 0 0 0 0 6].
-	self
-		verifyImmediate: set
-		encoding: encoding"
-%
-
-category: 'running-symbol'
-method: RsrCommandCodecTest
-testString
-
-	| encoding |
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "OID = 0"
-		#[0 0 0 0 0 0 0 2], "Immediate Type = 2"
-		#[0 0 0 0 0 0 0 0], "length"
-		#[].	 "empty string"
-	self
-		verifyImmediate: ''
-		encoding: encoding.
-	encoding :=
-		#[0 0 0 0 0 0 0 0], "OID = 0"
-		#[0 0 0 0 0 0 0 2], "Immediate Type = 2"
-		#[0 0 0 0 0 0 0 13], "length"
-		#[103 101 110 101 114 105 99 83 116 114 105 110 103].	 "genericString"
-	self
-		verifyImmediate: 'genericString'
-		encoding: encoding
-%
-
-category: 'running-symbol'
-method: RsrCommandCodecTest
-testSymbol
-
-	self
-		verifyImmediate: self genericSymbol
-		encoding: self genericSymbolEncoding
-%
-
-category: 'asserting'
-method: RsrCommandCodecTest
-verifyControlWord: anInteger
-encoding: bytes
-
-	self subclassResponsibility
-%
-
-category: 'asserting'
-method: RsrCommandCodecTest
-verifyImmediate: anImmediateObject
-encoding: encoding
-
-	self subclassResponsibility
-%
-
-! Class implementation for 'RsrCommandDecoderTest'
-
-!		Instance methods for 'RsrCommandDecoderTest'
-
-category: 'asserting'
-method: RsrCommandDecoderTest
-assertReference: bytes
-decodesTo: expected
-
-	| actual |
-	actual := self decodeReference: bytes.
-	self
-		assert: actual
-		equals: expected
-%
-
-category: 'decoding'
-method: RsrCommandDecoderTest
-decodeReference: bytes
-
-	^(self decoder decodeReference: bytes readStream) resolve: self connection
-%
-
-category: 'decoding'
-method: RsrCommandDecoderTest
-decodeService: anObjectBytes
-
-	^(self decoder decodeServiceSnapshot: anObjectBytes readStream) reifyIn: self connection
-%
-
-category: 'running'
-method: RsrCommandDecoderTest
-testDeliverResponse
-
-	| service response encoding command decodedService |
-	service := RsrServerNoInstVars new.
-	self connection _ensureRegistered: service.
-	response := #responseSymbol.
-	encoding :=
-		#[0 0 0 0 0 0 0 2], "DeliverResponse Command"
-		#[0 0 0 0 0 0 0 1], "Transaction Id"
-		#[0 0 0 0 0 0 0 1], "Number of services"
-		self serviceNoInstVarsEncoding,
-		#[0 0 0 0 0 0 0 0], "Service Name Symbol Reference"
-		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
-		#[0 0 0 0 0 0 0 14], "Length of UTF-8 bytes"
-		#[114 101 115 112 111 110 115 101 83 121 109 98 111 108]. "#responseSymbol"
-	command := self decoder decodeCommand: encoding readStream.
-	self
-		assert: command class
-		equals: RsrDeliverResponse.
-	self
-		assert: command transaction
-		equals: 1.
-	self
-		assert: command snapshots size
-		equals: 1.
-	decodedService := command snapshots first reifyIn: self connection.
-	self
-		assert: decodedService
-		equals: service.
-	self
-		assert: (command response resolve: self connection)
-		equals: response
-%
-
-category: 'running'
-method: RsrCommandDecoderTest
-testReleaseServices
-
-	| command encoding |
-	encoding :=
-		#[0 0 0 0 0 0 0 3], "ReleaseObjects Command"
-		#[0 0 0 0 0 0 0 5], "Num OIDS"
-		#[0 0 0 0 0 0 0 1], "First OID"
-		#[0 0 0 0 0 0 0 2],
-		#[0 0 0 0 0 0 0 3],
-		#[0 0 0 0 0 0 0 4],
-		#[0 0 0 0 0 0 0 5]. "Last OID"
-	command := self decoder decodeCommand: encoding readStream.
-	self
-		assert: command sids
-		equals: #(1 2 3 4 5)
-%
-
-category: 'running'
-method: RsrCommandDecoderTest
-testSendMessage
-
-	| service encoding command |
-	service := RsrServerNoInstVars new.
-	self connection _ensureRegistered: service.
-	encoding :=
-		#[0 0 0 0 0 0 0 1], "SendMessage Command"
-		#[0 0 0 0 0 0 0 1], "Transaction ID"
-		#[0 0 0 0 0 0 0 1], "One service is part of this message"
-		self serviceNoInstVarsEncoding,
-		#[0 0 0 0 0 0 0 1], "Receiver OID"
-		#[0 0 0 0 0 0 0 0], "Selector Reference"
-		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
-		#[0 0 0 0 0 0 0 8], "Length of UTF-8 bytes"
-		#[114 101 116 117 114 110 52 50], "#return42"
-		#[0 0 0 0 0 0 0 0]. "Argument Count"
-	command := self decoder decodeCommand: encoding readStream.
-	self
-		assert: command class
-		equals: RsrSendMessage.
-	self
-		assert: command transaction
-		equals: 1.
-	self
-		assert: (command receiverReference resolve: self connection)
-		identicalTo: service.
-	self
-		assert: (command selectorReference resolve: self connection)
-		identicalTo: #return42.
-	self
-		assert: command argumentReferences
-		equals: #().
-	self
-		assert: command snapshots size
-		equals: 1
-%
-
-category: 'running'
-method: RsrCommandDecoderTest
-testServiceDecodeIdentity
-	"Ensure that decoding an object multiple times results in
-	a single object getting created."
-
-	| firstService secondService |
-	firstService := self decodeService: self serviceNoInstVarsEncoding.
-	secondService := self decodeService: self serviceNoInstVarsEncoding.
-	self
-		assert: firstService
-		identicalTo: secondService
-%
-
-category: 'running'
-method: RsrCommandDecoderTest
-testServiceNoInstVars
-
-	| decodedService |
-	decodedService := self decodeService: self serviceNoInstVarsEncoding.
-	self
-		assert: decodedService class
-		equals: RsrServerNoInstVars.
-	self
-		assert: decodedService _id
-		equals: 1
-%
-
-category: 'running'
-method: RsrCommandDecoderTest
-testServiceReferenceService
-
-	| rootService referencedService |
-	referencedService := self decodeService: self referencedServiceEncoding.
-	self
-		assert: referencedService class
-		equals: RsrServerNoInstVars.
-	self
-		assert: referencedService _id
-		equals: 2.
-	rootService := self decodeService: self rootServiceEncoding.
-	self
-		assert: rootService class
-		equals: RsrServerReferenceService.
-	self
-		assert: rootService service
-		equals: referencedService
-%
-
-category: 'asserting'
-method: RsrCommandDecoderTest
-verifyControlWord: expected
-encoding: bytes
-
-	| actual |
-	actual := self decoder decodeControlWord: bytes readStream.
-	self
-		assert: actual
-		equals: expected
-%
-
-category: 'asserting'
-method: RsrCommandDecoderTest
-verifyImmediate: expected
-encoding: encoding
-
-	| actual |
-	actual := (self decoder decodeReference: encoding readStream) resolve: self connection.
-	self
-		assert: actual
-		equals: expected
-%
-
-! Class implementation for 'RsrCommandEncoderTest'
-
-!		Instance methods for 'RsrCommandEncoderTest'
-
-category: 'other'
-method: RsrCommandEncoderTest
-register: aService
-
-	self connection _ensureRegistered: aService
-%
-
-category: 'running-immediates'
-method: RsrCommandEncoderTest
-testDeliverResponse
-
-	| service response command result expectedEncoding |
-	service := RsrClientNoInstVars new.
-	self register: service.
-	response := #responseSymbol.
-	command := RsrDeliverResponse
-		transaction: 1
-		responseReference: (RsrReference from: response)
-		snapshots: (Array with: (RsrServiceSnapshot from: service)).
-	result := self encoder encodeDeliverResponse: command.
-	expectedEncoding :=
-		#[0 0 0 0 0 0 0 2], "DeliverResponse Command"
-		#[0 0 0 0 0 0 0 1], "Transaction Id"
-		#[0 0 0 0 0 0 0 1], "One service is part of this response"
-		self serviceNoInstVarsEncoding,
-		#[0 0 0 0 0 0 0 0], "Service Name Symbol Reference"
-		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
-		#[0 0 0 0 0 0 0 14], "Length of UTF-8 bytes"
-		#[114 101 115 112 111 110 115 101 83 121 109 98 111 108]. "#responseSymbol"
-	self
-		assert: result
-		equals: expectedEncoding
-%
-
-category: 'running'
-method: RsrCommandEncoderTest
-testNaN
-
-	| encoding |
-	"Signaling NaN is not tested.
-	Negative NaN is not tested."
-	encoding :=
-		#[0 0 0 0 0 0 0 0],
-		#[0 0 0 0 0 0 0 15],
-		#[255 248 0 0 0 0 0 0].
-	self
-		verifyImmediate: RsrDoubleReference nan
-		encoding: encoding.
-%
-
-category: 'running-immediates'
-method: RsrCommandEncoderTest
-testReleaseServices
-
-	| command result expectedEncoding |
-	command := RsrReleaseServices sids: #(1 2 3 4 5).
-	result := self encoder encodeReleaseServices: command.
-	expectedEncoding :=
-		#[0 0 0 0 0 0 0 3], "ReleaseObjects Command"
-		#[0 0 0 0 0 0 0 5], "Num OIDS"
-		#[0 0 0 0 0 0 0 1], "First OID"
-		#[0 0 0 0 0 0 0 2],
-		#[0 0 0 0 0 0 0 3],
-		#[0 0 0 0 0 0 0 4],
-		#[0 0 0 0 0 0 0 5]. "Last OID"
-	self
-		assert: result
-		equals: expectedEncoding
-%
-
-category: 'running-immediates'
-method: RsrCommandEncoderTest
-testSendMessage
-
-	| service analysis command result expectedEncoding |
-	service := RsrClientNoInstVars new.
-	self register: service.
-	analysis := RsrSnapshotAnalysis
-		roots: (Array with: service)
-		connection: self connection.
-	analysis perform.
-	command := RsrSendMessage
-		transaction: 1
-		receiverReference: (RsrReference from: service)
-		selectorReference: (RsrSymbolReference from: #return42)
-		argumentReferences: #().
-	command snapshots: analysis snapshots.
-	result := self encoder encodeSendMessage: command.
-	expectedEncoding :=
-		#[0 0 0 0 0 0 0 1], "SendMessage Command"
-		#[0 0 0 0 0 0 0 1], "Transaction ID"
-		#[0 0 0 0 0 0 0 1], "One service is part of this message"
-		self serviceNoInstVarsEncoding,
-		#[0 0 0 0 0 0 0 1], "Receiver OID"
-		#[0 0 0 0 0 0 0 0], "Selector Reference"
-		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
-		#[0 0 0 0 0 0 0 8], "Length of UTF-8 bytes"
-		#[114 101 116 117 114 110 52 50], "#return42"
-		#[0 0 0 0 0 0 0 0]. "Argument Count"
-	self
-		assert: result
-		equals: expectedEncoding
-%
-
-category: 'running'
-method: RsrCommandEncoderTest
-testServiceNoInstVars
-
-	| rootService encodedBytes expectedEncoding |
-	rootService := RsrClientNoInstVars new.
-	self register: rootService.
-	encodedBytes := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: rootService).
-	expectedEncoding := self serviceNoInstVarsEncoding.
-	self
-		assert: encodedBytes
-		equals: expectedEncoding
-%
-
-category: 'running'
-method: RsrCommandEncoderTest
-testServiceReferenceService
-
-	| rootService referencedService encodedObject expectedEncoding |
-	referencedService := RsrClientNoInstVars new.
-	rootService := RsrClientReferenceService service: referencedService.
-	self
-		register: rootService;
-		register: referencedService.
-	encodedObject := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: rootService).
-	expectedEncoding :=
-		#[0 0 0 0 0 0 0 0], "type"
-		#[0 0 0 0 0 0 0 1], "rootService's OID = 1"
-		#[0 0 0 0 0 0 0 1], "Inst Var Count"
-		#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
-		#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
-		#[0 0 0 0 0 0 0 25], "Length of UTF-8 encoded bytes"
-		#[82 115 114 83 101 114 118 101 114 82 101 102 101 114 101 110 99 101 83 101 114 118 105 99 101],
-		#[0 0 0 0 0 0 0 2]. "#RsrServerReferenceService"
-	self
-		assert: encodedObject
-		equals: expectedEncoding.
-	encodedObject := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: referencedService).
-	expectedEncoding :=
-		#[0 0 0 0 0 0 0 0], "type"
-		#[0 0 0 0 0 0 0 2], "referencedService's OID = 2"
-		#[0 0 0 0 0 0 0 0], "Inst Var Count"
-		#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
-		#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
-		#[0 0 0 0 0 0 0 19], "Length of UTF-8 encoded bytes"
-		#[82 115 114 83 101 114 118 101 114 78 111 73 110 115 116 86 97 114 115]. "#RsrServerNoInstVars"
-	self
-		assert: encodedObject
-		equals: expectedEncoding
-%
-
-category: 'running'
-method: RsrCommandEncoderTest
-testUnsupportedObject
-
-	self
-		should: [self encoder encodeReference: (RsrReference from: Object new) onto: (WriteStream on: ByteArray new)]
-		raise: RsrUnsupportedObject
-%
-
-category: 'running-immediates'
-method: RsrCommandEncoderTest
-verifyControlWord: anInteger
-encoding: expected
-
-	| actual |
-	actual := ByteArray streamContents: [:stream | self encoder encodeControlWord: anInteger onto: stream].
-	self
-		assert: actual
-		equals: expected
-%
-
-category: 'running-immediates'
-method: RsrCommandEncoderTest
-verifyImmediate: anObject
-encoding: expected
-
-	| actual |
-	actual := ByteArray streamContents: [:stream | self encoder encodeReference: (RsrReference from: anObject) onto: stream].
-	self
-		assert: actual
-		equals: expected
-%
-
 ! Class implementation for 'RsrConnectionSpecificationTestCase'
 
 !		Instance methods for 'RsrConnectionSpecificationTestCase'
@@ -13298,27 +13776,139 @@ port
 	^47652
 %
 
+category: 'accessing'
+method: RsrConnectionSpecificationTestCase
+portAsRange
+
+	^self port to: self port
+%
+
 category: 'running'
 method: RsrConnectionSpecificationTestCase
 testAcceptOnLocalhost
 
 	| acceptor initiator semaphore connectionA connectionB |
-	acceptor := RsrAcceptConnection
-		host: self localhost 
-		port: self port.
+	acceptor := RsrAcceptConnection host: self localhost port: self port.
+	acceptor ensureListening.
+	self assert: acceptor listeningPort equals: self port.
 	initiator := RsrInitiateConnection
-		host: self localhost
-		port: self port.
+		             host: self localhost
+		             port: self port.
 	semaphore := Semaphore new.
 	RsrProcessModel
-		fork: [[connectionA := acceptor waitForConnection] ensure: [semaphore signal]] named: 'Pending AcceptConnection';
-		fork: [[connectionB := initiator connect] ensure: [semaphore signal]] named: 'Pending InitiateConnection'.
-	semaphore wait; wait.
+		fork: [ 
+			[ connectionA := acceptor waitForConnection ] ensure: [ 
+					semaphore signal ] ]
+		named: 'Pending AcceptConnection';
+		fork: [ 
+			[ connectionB := initiator connect ] ensure: [ semaphore signal ] ]
+		named: 'Pending InitiateConnection'.
+	semaphore
+		wait;
+		wait.
 	self
 		assert: connectionA isOpen;
 		assert: connectionB isOpen.
 	connectionA close.
 	connectionB close
+%
+
+category: 'running'
+method: RsrConnectionSpecificationTestCase
+testBindToAvailablePortRange
+
+	"If no one is listening on self port, we should get that port."
+
+	| acceptor initiator semaphore connectionA connectionB |
+	acceptor := RsrAcceptConnection
+		            host: self localhost
+		            portRange: (self port to: self port + 1).
+	acceptor ensureListening.
+	self assert: acceptor listeningPort equals: self port.
+	initiator := RsrInitiateConnection
+		             host: self localhost
+		             port: acceptor listeningPort.
+	semaphore := Semaphore new.
+	RsrProcessModel
+		fork: [ 
+			[ connectionA := acceptor waitForConnection ] ensure: [ 
+					semaphore signal ] ]
+		named: 'Pending AcceptConnection';
+		fork: [ 
+			[ connectionB := initiator connect ] ensure: [ semaphore signal ] ]
+		named: 'Pending InitiateConnection'.
+	semaphore
+		wait;
+		wait.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	connectionA close.
+	connectionB close
+%
+
+category: 'running'
+method: RsrConnectionSpecificationTestCase
+testBindToPartlyAvailablePortRange
+
+	"Listen on first port to force range to listen on second port."
+
+	| blocker acceptor initiator semaphore connectionA connectionB |
+	blocker := RsrAcceptConnection host: self localhost port: self port.
+	[ 
+	blocker ensureListening.
+	self assert: blocker listeningPort equals: self port.
+	acceptor := RsrAcceptConnection
+		            host: self localhost
+		            portRange: (self port to: self port + 1).
+	acceptor ensureListening.
+	self assert: acceptor listeningPort equals: self port + 1.
+	initiator := RsrInitiateConnection
+		             host: self localhost
+		             port: acceptor listeningPort.
+	semaphore := Semaphore new.
+	RsrProcessModel
+		fork: [ 
+			[ connectionA := acceptor waitForConnection ] ensure: [ 
+					semaphore signal ] ]
+		named: 'Pending AcceptConnection';
+		fork: [ 
+			[ connectionB := initiator connect ] ensure: [ semaphore signal ] ]
+		named: 'Pending InitiateConnection'.
+	semaphore
+		wait;
+		wait.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	connectionA close.
+	connectionB close ] ensure: [ blocker cancelWaitForConnection ]
+%
+
+category: 'running'
+method: RsrConnectionSpecificationTestCase
+testBindToUnavailablePortRange
+
+	"Listen on both ports in range -- range should then fail."
+
+	| blocker1 blocker2 acceptor |
+	blocker1 := RsrAcceptConnection host: self localhost port: self port.
+	blocker2 := RsrAcceptConnection
+		            host: self localhost
+		            port: self port + 1.
+	[ 
+	blocker1 ensureListening.
+	self assert: blocker1 listeningPort equals: self port.
+	blocker2 ensureListening.
+	self assert: blocker2 listeningPort equals: self port + 1.
+	acceptor := RsrAcceptConnection
+		            host: self localhost
+		            portRange: (self port to: self port + 1).
+	self should: [ acceptor ensureListening ] raise: RsrInvalidBind ] 
+		ensure: [ 
+			{ 
+				blocker1.
+				blocker2 } do: [ :each | each cancelWaitForConnection ] ]
 %
 
 category: 'running'
@@ -13362,6 +13952,57 @@ testCancelWaitForConnection
 
 category: 'running'
 method: RsrConnectionSpecificationTestCase
+testConfiguredInternalSocketConnectionSpecification
+	"Ensure that sending #connect to an InternalConnectionSpecification
+	results in returning one of the created Connections."
+
+	| spec connection |
+	"Only v1"
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV1 new }.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 1.
+	connection close.
+	
+	"v1 is prioritized"
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV1 new. RsrWireProtocolV2 new }.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 1.
+	connection close.
+	
+	"v2 is prioritized"
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV2 new. RsrWireProtocolV1 new }.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 2.
+	connection close.
+%
+
+category: 'running'
+method: RsrConnectionSpecificationTestCase
+testDefaultInternalSocketConnectionSpecification
+	"Ensure that sending #connect to an InternalConnectionSpecification
+	results in returning one of the created Connections."
+
+	| spec connection |
+	spec := RsrInternalSocketConnectionSpecification new.
+	connection := spec connect.
+	self assert: connection isOpen.
+	self
+		assert: connection channel wireProtocol version
+		equals: 2.
+	connection close
+%
+
+category: 'running'
+method: RsrConnectionSpecificationTestCase
 testEstablishConnection
 
 	| acceptor initiator semaphore connectionA connectionB |
@@ -13383,29 +14024,20 @@ testEstablishConnection
 
 category: 'running'
 method: RsrConnectionSpecificationTestCase
-testFailedAcceptOnAlternativeLocalhost
+testFailedConnect
 
-	| acceptor initiator semaphore |
-	acceptor := RsrAcceptConnection
-		host: self alternativeLocalhost
-		port: self port.
+	| initiator |
 	initiator := RsrInitiateConnection
 		host: self localhost
 		port: self port.
-	semaphore := Semaphore new.
-	RsrProcessModel
-		fork: [[semaphore signal. acceptor waitForConnection] on: RsrWaitForConnectionCancelled do: [:ex | ex return]]
-		named: 'Pending WaitForConnectionCancelled'.
-	[semaphore wait.
 	self
 		should: [initiator connect]
-		raise: RsrSocketError]
-			ensure: [acceptor cancelWaitForConnection]
+		raise: RsrSocketError
 %
 
 category: 'running'
 method: RsrConnectionSpecificationTestCase
-testInternalConnectionSpecificationConnectReturnsConnection
+testInternalInMemoryConnectionSpecificationConnectReturnsConnection
 	"Ensure that sending #connect to an InternalConnectionSpecification
 	results in returning one of the created Connections."
 
@@ -13414,10 +14046,6 @@ testInternalConnectionSpecificationConnectReturnsConnection
 	connection := spec connect.
 	self assert: connection isOpen.
 	connection close.
-	spec := RsrInternalSocketConnectionSpecification new.
-	connection := spec connect.
-	self assert: connection isOpen.
-	connection close
 %
 
 category: 'running'
@@ -13446,6 +14074,40 @@ testListenThenLaterAccept
 	connectionB close
 %
 
+category: 'running'
+method: RsrConnectionSpecificationTestCase
+testV1ClientV2V1Server
+
+	| acceptor initiator semaphore connectionA connectionB |
+	acceptor := RsrAcceptConnection
+		host: self localhost 
+		portRange: self portAsRange
+		wireProtocols: { RsrWireProtocolV2 new. RsrWireProtocolV1 new }.
+	initiator := RsrInitiateConnection
+		host: self localhost
+		port: self port
+		wireProtocols: { RsrWireProtocolV1 new }.
+	semaphore := Semaphore new.
+	acceptor ensureListening.
+	RsrProcessModel
+		fork: [semaphore signal. [connectionB := initiator connect] ensure: [semaphore signal]]
+		named: 'Pending InitiateConnection'.
+	semaphore wait.
+	connectionA := acceptor waitForConnection.
+	semaphore wait.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	self
+		assert: connectionA channel wireProtocol version
+		equals: 1.
+	self
+		assert: connectionB channel wireProtocol version
+		equals: 1.
+	connectionA close.
+	connectionB close
+%
+
 ! Class implementation for 'RsrForwarderTest'
 
 !		Instance methods for 'RsrForwarderTest'
@@ -13456,7 +14118,7 @@ testForwarding
 	"This test needs to be improved. It is out of sync."
 
 	| service id connection forwarder sendMessage |
-	service := RsrTestService clientClass new.
+	service := RsrClientTestService new.
 	id := 1.
 	connection := RsrConnection
 		channel: RsrNullChannel new
@@ -13687,6 +14349,51 @@ testAsyncFulfill
 
 category: 'running'
 method: RsrPromiseTest
+testNoArgWhenCatchBlocks
+
+	| promise semaphore whenRan catchRan |
+	promise := RsrPromise new.
+	semaphore := Semaphore new.
+	whenRan := false.
+	catchRan := false.
+	promise
+		when: [whenRan := true. semaphore signal]
+		catch: [catchRan := true. semaphore signal].
+	self
+		deny: promise isResolved;
+		deny: promise isBroken;
+		deny: promise isFulfilled.
+	promise fulfill: Object new.
+	semaphore wait.
+	self
+		assert: whenRan;
+		deny: catchRan;
+		assert: promise isResolved;
+		deny: promise isBroken;
+		assert: promise isFulfilled.
+
+	promise := RsrPromise new.
+	whenRan := false.
+	catchRan := false.
+	promise
+		when: [whenRan := true. semaphore signal]
+		catch: [catchRan := true. semaphore signal].
+	self
+		deny: promise isResolved;
+		deny: promise isBroken;
+		deny: promise isFulfilled.
+	promise break: Object new.
+	semaphore wait.
+	self
+		deny: whenRan;
+		assert: catchRan;
+		assert: promise isResolved;
+		assert: promise isBroken;
+		deny: promise isFulfilled.
+%
+
+category: 'running'
+method: RsrPromiseTest
 testSyncBreak
 
 	| promise expected exceptionRaised first second third |
@@ -13745,6 +14452,1122 @@ testSyncFulfill
 	self
 		assert: promise wait
 		identicalTo: expected
+%
+
+! Class implementation for 'RsrProtocolCodecTest'
+
+!		Class methods for 'RsrProtocolCodecTest'
+
+category: 'testing'
+classmethod: RsrProtocolCodecTest
+isAbstract
+
+	^self == RsrProtocolCodecTest
+%
+
+!		Instance methods for 'RsrProtocolCodecTest'
+
+category: 'accessing'
+method: RsrProtocolCodecTest
+connection
+
+	^connection
+%
+
+category: 'other'
+method: RsrProtocolCodecTest
+decoder
+
+	self protocolVersion == 1
+		ifTrue: [^RsrProtocolDecoderV1 new].
+	self protocolVersion == 2
+		ifTrue: [^RsrProtocolDecoderV2 new].
+	^self error
+%
+
+category: 'accessing'
+method: RsrProtocolCodecTest
+encoder
+
+	self protocolVersion == 1
+		ifTrue: [^RsrProtocolEncoderV1 new].
+	self protocolVersion == 2
+		ifTrue: [^RsrProtocolEncoderV2 new].
+	^self error
+%
+
+category: 'encode/decode'
+method: RsrProtocolCodecTest
+encodeReferenceOf: anObject
+
+	| reference |
+	reference := RsrReference from: anObject.
+	^ByteArray streamContents: [:stream | self encoder encodeReference: reference onto: stream]
+%
+
+category: 'running-symbol'
+method: RsrProtocolCodecTest
+genericSymbol
+
+	^#genericSymbol
+%
+
+category: 'running-symbol'
+method: RsrProtocolCodecTest
+genericSymbolEncoding
+
+	^#[0 0 0 0 0 0 0 0], "OID = 0"
+	#[0 0 0 0 0 0 0 1], "Immediate Type = 1"
+	#[0 0 0 0 0 0 0 13], "Length of UTF-8 data"
+	#[103 101 110 101 114 105 99 83 121 109 98 111 108]	"#genericSymbol"
+%
+
+category: 'accessing'
+method: RsrProtocolCodecTest
+protocolVersion
+
+	self subclassResponsibility
+%
+
+category: 'accessing-objects'
+method: RsrProtocolCodecTest
+serviceNoInstVarsServerPersonaEncoding
+
+	self protocolVersion == 1
+		ifTrue: [^self serviceNoInstVarsServerPersonaEncodingV1].
+	self protocolVersion == 2
+		ifTrue: [^self serviceNoInstVarsServerPersonaEncodingV2].
+	^self error
+%
+
+category: 'accessing-objects'
+method: RsrProtocolCodecTest
+serviceNoInstVarsServerPersonaEncodingV1
+
+	^#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 1], "referencedService's OID = 1"
+	#[0 0 0 0 0 0 0 0], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 19], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 101 114 78 111 73 110 115 116 86 97 114 115] "#RsrServerNoInstVars"
+%
+
+category: 'accessing-objects'
+method: RsrProtocolCodecTest
+serviceNoInstVarsServerPersonaEncodingV2
+
+	^#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 1], "referencedService's OID = 1"
+	#[0 0 0 0 0 0 0 0], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 20], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 105 99 101 78 111 73 110 115 116 86 97 114 115], "#RsrServiceNoInstVars"
+	#[0 0 0 0 0 0 0 0], "Start of persona. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 6], "Length of UTF-8 encoded bytes"
+	#[115 101 114 118 101 114] "#server"
+%
+
+category: 'accessing-objects'
+method: RsrProtocolCodecTest
+serviceReferenceServiceServerPersonaEncoding
+
+	self protocolVersion == 1
+		ifTrue: [^self serviceReferenceServiceServerPersonaEncodingV1].
+	self protocolVersion == 2
+		ifTrue: [^self serviceReferenceServiceServerPersonaEncodingV2].
+	^self error
+%
+
+category: 'accessing-objects'
+method: RsrProtocolCodecTest
+serviceReferenceServiceServerPersonaEncodingV1
+
+	^#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 2], "rootService's OID = 2"
+	#[0 0 0 0 0 0 0 1], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 25], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 101 114 82 101 102 101 114 101 110 99 101 83 101
+114 118 105 99 101], "#RsrServerReferenceService"
+	"inst var  to the nested service w/ SID 1"
+	#[0 0 0 0 0 0 0 1]
+%
+
+category: 'accessing-objects'
+method: RsrProtocolCodecTest
+serviceReferenceServiceServerPersonaEncodingV2
+
+	^#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 2], "rootService's OID = 2"
+	#[0 0 0 0 0 0 0 1], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 26], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 105 99 101 82 101 102 101 114 101 110 99 101 83 101
+114 118 105 99 101], "#RsrServiceReferenceService"
+	#[0 0 0 0 0 0 0 0], "Start of persona. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 6], "Length of UTF-8 encoded bytes"
+	#[115 101 114 118 101 114], "#server"
+	"inst var  to the nested service w/ SID 1"
+	#[0 0 0 0 0 0 0 1]
+%
+
+category: 'other'
+method: RsrProtocolCodecTest
+setUp
+
+	super setUp.
+	connection := RsrConnection
+		channel: RsrNullChannel new
+		transactionSpigot: RsrThreadSafeNumericSpigot naturals
+		oidSpigot: RsrThreadSafeNumericSpigot naturals.
+	connection open
+%
+
+category: 'other'
+method: RsrProtocolCodecTest
+tearDown
+
+	connection close.
+	connection := nil.
+	super tearDown
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testArray
+
+	| array encoding |
+	array := Array
+		with: self genericSymbol
+		with: 5
+		with: nil.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
+		#[0 0 0 0 0 0 0 9], "Array type"
+		#[0 0 0 0 0 0 0 3], "3 elements"
+		self genericSymbolEncoding, "Generic Symbol"
+		#[0 0 0 0 0 0 0 0], "Immediate OID"
+		#[0 0 0 0 0 0 0 3], "Positive Integer"
+		#[0 0 0 0 0 0 0 1], "num bytes"
+		#[5], "5"
+		#[0 0 0 0 0 0 0 0], "Immediate OID"
+		#[0 0 0 0 0 0 0 6].
+	self
+		verifyImmediate: array
+		encoding: encoding.
+	array := Array new.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "Immediate OID"
+		#[0 0 0 0 0 0 0 9], "Array type"
+		#[0 0 0 0 0 0 0 0].
+	self
+		verifyImmediate: array
+		encoding: encoding
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testBoolean
+
+	| encoding |
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 7].
+	self
+		verifyImmediate: true
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 8].
+	self
+		verifyImmediate: false
+		encoding: encoding.
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testByteArray
+
+	| bytes encoding |
+	bytes := #[].
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
+		#[0 0 0 0 0 0 0 10], "ByteArray type"
+		#[0 0 0 0 0 0 0 0], "size"
+		bytes.
+	self
+		verifyImmediate: bytes
+		encoding: encoding.
+	bytes := #[1 2 3 4 5].
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 10],
+		#[0 0 0 0 0 0 0 5],
+		bytes.
+	self
+		verifyImmediate: bytes
+		encoding: encoding
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testCharacter
+
+	| encoding |
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 5],
+		#[0 0 0 0 0 0 0 0].
+	self
+		verifyImmediate: (Character codePoint: 0)
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 5],
+		#[0 0 0 0 0 0 0 65].
+	self
+		verifyImmediate: (Character codePoint: 65)
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 5],
+		#[0 0 0 0 0 0 0 65].
+	self
+		verifyImmediate: $A
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 5],
+		#[0 0 0 0 0 0 1 212].
+	self
+		verifyImmediate: (Character codePoint: 16r01D4)
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 5],
+		#[0 0 0 0 0 0 131 52].
+	self
+		verifyImmediate: (Character codePoint: 16r8334)
+		encoding: encoding.
+%
+
+category: 'running-control words'
+method: RsrProtocolCodecTest
+testControlWord
+	
+	self
+		verifyControlWord: 0
+		encoding: #[0 0 0 0 0 0 0 0].
+	self
+		verifyControlWord: 1
+		encoding: #[0 0 0 0 0 0 0 1].
+	self
+		verifyControlWord: -1
+		encoding: #[255 255 255 255 255 255 255 255].
+	self
+		verifyControlWord: (2 raisedTo: 63) - 1
+		encoding: #[127 255 255 255 255 255 255 255].
+	self
+		verifyControlWord: (2 raisedTo: 63) negated
+		encoding: #[128 0 0 0 0 0 0 0]
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testDateTime
+
+	| dt encoding |
+	dt := RsrDateAndTime posixEpoch.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 14],
+		#[0 0 0 0 0 0 0 0].
+	self
+		verifyImmediate: dt
+		encoding: encoding.
+	dt := RsrDateAndTime fromMicroseconds: 1562692562657612. "2019-07-09T10:16:02.657612-07:00"
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 14],
+		#[0 5 141 66 183 23 33 76].
+	self
+		verifyImmediate: dt
+		encoding: encoding.
+	dt := RsrDateAndTime fromMicroseconds: -1000000. "1969-12-31T23:59:59-00:00"
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 14],
+		#[255 255 255 255 255 240 189 192].
+	self
+		verifyImmediate: dt
+		encoding: encoding.
+	dt := RsrDateAndTime fromMicroseconds: -491277642567488. "1954-06-07T14:59:17.432512-07:00"
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 14],
+		#[255 254 65 47 130 160 240 192].
+	self
+		verifyImmediate: dt
+		encoding: encoding
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testDictionary
+
+	| dictionary encoding result |
+	dictionary := Dictionary new.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
+		#[0 0 0 0 0 0 0 13], "Dictionary type"
+		#[0 0 0 0 0 0 0 0]. "0 associations"
+	self
+		verifyImmediate: dictionary
+		encoding: encoding.
+	dictionary := Dictionary new
+		at: 1 put: self genericSymbol;
+		at: false put: true;
+		yourself.
+	encoding := self encodeReferenceOf: dictionary.
+	result := (self decoder decodeReference: encoding readStream) resolve: self connection.
+	self
+		assert: result
+		equals: dictionary.
+	self
+		deny: result
+		identicalTo: dictionary.
+	"self hack: 'Order is not guaranteed in a dictionary'.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], ""Immediate OID""
+		#[0 0 0 0 0 0 0 13], ""Dictionary Type""
+		#[0 0 0 0 0 0 0 2], ""Two assocs""
+		#[0 0 0 0 0 0 0 0], ""nil""
+		#[0 0 0 0 0 0 0 6],
+		#[0 0 0 0 0 0 0 0], ""true""
+		#[0 0 0 0 0 0 0 7],
+		#[0 0 0 0 0 0 0 0], ""Integer 1""
+		#[0 0 0 0 0 0 0 3],
+		#[0 0 0 0 0 0 0 1],
+		#[1],
+		self genericSymbolEncoding.
+	self
+		verifyImmediate: dictionary
+		encoding: encoding"
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testDouble
+
+	| encoding |
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[128 0 0 0 0 0 0 0].
+	self
+		verifyImmediate: -0.0
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[0 0 0 0 0 0 0 0].
+	self
+		verifyImmediate: 0.0
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[191 240 0 0 0 0 0 0].
+	self
+		verifyImmediate: -1.0
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[63 240 0 0 0 0 0 0].
+	self
+		verifyImmediate: 1.0
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[63 185 153 153 153 153 153 154].
+	self
+		verifyImmediate: 0.1
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[191 185 153 153 153 153 153 154].
+	self
+		verifyImmediate: -0.1
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[127 240 0 0 0 0 0 0].
+	self
+		verifyImmediate: RsrDoubleReference infinity
+		encoding: encoding
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testInteger
+
+	| encoding |
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 3],
+		#[0 0 0 0 0 0 0 1],
+		#[0].
+	self
+		verifyImmediate: 0
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 3],
+		#[0 0 0 0 0 0 0 1],
+		#[4].
+	self
+		verifyImmediate: 4
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 3],
+		#[0 0 0 0 0 0 0 5],
+		#[1 15 248 235 121].
+	self
+		verifyImmediate: 4562938745
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 4],
+		#[0 0 0 0 0 0 0 5],
+		#[1 15 248 235 121].
+	self
+		verifyImmediate: -4562938745
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 3],
+		#[0 0 0 0 0 0 0 13],
+		#[10 101 181 177 179 46 128 92 96 64 190 76 107].
+	self
+		verifyImmediate: 823759265872134912569713249387
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 4],
+		#[0 0 0 0 0 0 0 13],
+		#[10 101 181 177 179 46 128 92 96 64 190 76 107].
+	self
+		verifyImmediate: -823759265872134912569713249387
+		encoding: encoding.
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testNil
+
+	| encoding |
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 6].
+	self
+		verifyImmediate: nil
+		encoding: encoding
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testOrderedCollection
+
+	| oc encoding |
+	oc := OrderedCollection new.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "Immediate OID"
+		#[0 0 0 0 0 0 0 12], "OrderedCollection type"
+		#[0 0 0 0 0 0 0 0].
+	self
+		verifyImmediate: oc
+		encoding: encoding.
+	oc := OrderedCollection
+		with: self genericSymbol
+		with: 5
+		with: nil.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "Immediate Object OID"
+		#[0 0 0 0 0 0 0 12], "OrderedCollection type"
+		#[0 0 0 0 0 0 0 3], "3 elements"
+		self genericSymbolEncoding, "Generic Symbol"
+		#[0 0 0 0 0 0 0 0], "Immediate OID"
+		#[0 0 0 0 0 0 0 3], "Positive Integer"
+		#[0 0 0 0 0 0 0 1], "num bytes"
+		#[5], "5"
+		#[0 0 0 0 0 0 0 0], "Immediate OID"
+		#[0 0 0 0 0 0 0 6].
+	self
+		verifyImmediate: oc
+		encoding: encoding
+%
+
+category: 'running-immediates'
+method: RsrProtocolCodecTest
+testSet
+
+	| set encoding result |
+	set := Set new.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "OID"
+		#[0 0 0 0 0 0 0 11], "Set"
+		#[0 0 0 0 0 0 0 0]. "0 elements"
+	self
+		verifyImmediate: set
+		encoding: encoding.
+	set := Set
+		with: true
+		with: nil.
+	encoding := self encodeReferenceOf: set.
+	result := (self decoder decodeReference: encoding readStream) resolve: self connection.
+	self
+		assert: result
+		equals: set.
+	self
+		deny: result
+		identicalTo: set.
+	"self hack: 'Hashed collections do not have an ordering'.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], ""OID""
+		#[0 0 0 0 0 0 0 11], ""Set""
+		#[0 0 0 0 0 0 0 2], ""2 elements""
+		#[0 0 0 0 0 0 0 0], ""true""
+		#[0 0 0 0 0 0 0 7],
+		#[0 0 0 0 0 0 0 0], ""nil""
+		#[0 0 0 0 0 0 0 6].
+	self
+		verifyImmediate: set
+		encoding: encoding"
+%
+
+category: 'running-symbol'
+method: RsrProtocolCodecTest
+testString
+
+	| encoding |
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "OID = 0"
+		#[0 0 0 0 0 0 0 2], "Immediate Type = 2"
+		#[0 0 0 0 0 0 0 0], "length"
+		#[].	 "empty string"
+	self
+		verifyImmediate: ''
+		encoding: encoding.
+	encoding :=
+		#[0 0 0 0 0 0 0 0], "OID = 0"
+		#[0 0 0 0 0 0 0 2], "Immediate Type = 2"
+		#[0 0 0 0 0 0 0 13], "length"
+		#[103 101 110 101 114 105 99 83 116 114 105 110 103].	 "genericString"
+	self
+		verifyImmediate: 'genericString'
+		encoding: encoding
+%
+
+category: 'running-symbol'
+method: RsrProtocolCodecTest
+testSymbol
+
+	self
+		verifyImmediate: self genericSymbol
+		encoding: self genericSymbolEncoding
+%
+
+category: 'asserting'
+method: RsrProtocolCodecTest
+verifyControlWord: anInteger
+encoding: bytes
+
+	self subclassResponsibility
+%
+
+category: 'asserting'
+method: RsrProtocolCodecTest
+verifyImmediate: anImmediateObject
+encoding: encoding
+
+	self subclassResponsibility
+%
+
+! Class implementation for 'RsrProtocolDecoderTest'
+
+!		Class methods for 'RsrProtocolDecoderTest'
+
+category: 'testing'
+classmethod: RsrProtocolDecoderTest
+isAbstract
+
+	^self == RsrProtocolDecoderTest
+%
+
+!		Instance methods for 'RsrProtocolDecoderTest'
+
+category: 'asserting'
+method: RsrProtocolDecoderTest
+assertReference: bytes
+decodesTo: expected
+
+	| actual |
+	actual := self decodeReference: bytes.
+	self
+		assert: actual
+		equals: expected
+%
+
+category: 'decoding'
+method: RsrProtocolDecoderTest
+decodeReference: bytes
+
+	^(self decoder decodeReference: bytes readStream) resolve: self connection
+%
+
+category: 'decoding'
+method: RsrProtocolDecoderTest
+decodeService: anObjectBytes
+
+	^(self decoder decodeServiceSnapshot: anObjectBytes readStream) reifyIn: self connection
+%
+
+category: 'running'
+method: RsrProtocolDecoderTest
+testDecodeIncompatibleServiceWithExtraInstVar
+	"Ensure that there is a reasonable error message when decoding failes due to incompatible templates."
+
+	| encoding exception |
+	encoding := 	#[0 0 0 0 0 0 0 0], "type"
+	#[0 0 0 0 0 0 0 1], "referencedService's OID = 1"
+	#[0 0 0 0 0 0 0 1], "Inst Var Count"
+	#[0 0 0 0 0 0 0 0], "Start of service name. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 20], "Length of UTF-8 encoded bytes"
+	#[82 115 114 83 101 114 118 105 99 101 78 111 73 110 115 116 86 97 114 115], "#RsrServiceNoInstVars"
+	#[0 0 0 0 0 0 0 0], "Start of persona. OID = 0"
+	#[0 0 0 0 0 0 0 1], "Service name = 1 -> Symbol"
+	#[0 0 0 0 0 0 0 6], "Length of UTF-8 encoded bytes"
+	#[115 101 114 118 101 114], "#server"
+	"inst var referencing itself"
+	#[0 0 0 0 0 0 0 1].
+	exception := [self decodeService: encoding]
+		on: Error
+		do: [:ex | ex return: ex].
+	self
+		assert: exception messageText
+		equals: 'Expected 0 value(s) for template RsrServiceNoInstVars but received 1 value(s) instead. Verify peers have compatible template definitions.'
+%
+
+category: 'running'
+method: RsrProtocolDecoderTest
+testDeliverResponse
+
+	| service response encoding command decodedService |
+	service := RsrServerNoInstVars new.
+	self connection _ensureRegistered: service.
+	response := #responseSymbol.
+	encoding :=
+		#[0 0 0 0 0 0 0 2], "DeliverResponse Command"
+		#[0 0 0 0 0 0 0 1], "Transaction Id"
+		#[0 0 0 0 0 0 0 1], "Number of services"
+		self serviceNoInstVarsServerPersonaEncoding,
+		#[0 0 0 0 0 0 0 0], "Service Name Symbol Reference"
+		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
+		#[0 0 0 0 0 0 0 14], "Length of UTF-8 bytes"
+		#[114 101 115 112 111 110 115 101 83 121 109 98 111 108]. "#responseSymbol"
+	command := self decoder decodeCommand: encoding readStream.
+	self
+		assert: command class
+		equals: RsrDeliverResponse.
+	self
+		assert: command transaction
+		equals: 1.
+	self
+		assert: command snapshots size
+		equals: 1.
+	decodedService := command snapshots first reifyIn: self connection.
+	self
+		assert: decodedService
+		equals: service.
+	self
+		assert: (command response resolve: self connection)
+		equals: response
+%
+
+category: 'running'
+method: RsrProtocolDecoderTest
+testReleaseServices
+
+	| command encoding |
+	encoding :=
+		#[0 0 0 0 0 0 0 3], "ReleaseObjects Command"
+		#[0 0 0 0 0 0 0 5], "Num OIDS"
+		#[0 0 0 0 0 0 0 1], "First OID"
+		#[0 0 0 0 0 0 0 2],
+		#[0 0 0 0 0 0 0 3],
+		#[0 0 0 0 0 0 0 4],
+		#[0 0 0 0 0 0 0 5]. "Last OID"
+	command := self decoder decodeCommand: encoding readStream.
+	self
+		assert: command sids
+		equals: #(1 2 3 4 5)
+%
+
+category: 'running'
+method: RsrProtocolDecoderTest
+testSendMessage
+
+	| service encoding command |
+	service := RsrServerNoInstVars new.
+	self connection _ensureRegistered: service.
+	encoding :=
+		#[0 0 0 0 0 0 0 1], "SendMessage Command"
+		#[0 0 0 0 0 0 0 1], "Transaction ID"
+		#[0 0 0 0 0 0 0 1], "One service is part of this message"
+		self serviceNoInstVarsServerPersonaEncoding,
+		#[0 0 0 0 0 0 0 1], "Receiver OID"
+		#[0 0 0 0 0 0 0 0], "Selector Reference"
+		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
+		#[0 0 0 0 0 0 0 8], "Length of UTF-8 bytes"
+		#[114 101 116 117 114 110 52 50], "#return42"
+		#[0 0 0 0 0 0 0 0]. "Argument Count"
+	command := self decoder decodeCommand: encoding readStream.
+	self
+		assert: command class
+		equals: RsrSendMessage.
+	self
+		assert: command transaction
+		equals: 1.
+	self
+		assert: (command receiverReference resolve: self connection)
+		identicalTo: service.
+	self
+		assert: (command selectorReference resolve: self connection)
+		identicalTo: #return42.
+	self
+		assert: command argumentReferences
+		equals: #().
+	self
+		assert: command snapshots size
+		equals: 1
+%
+
+category: 'running'
+method: RsrProtocolDecoderTest
+testServiceDecodeIdentity
+	"Ensure that decoding an object multiple times results in
+	a single object getting created."
+
+	| firstService secondService |
+	firstService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
+	secondService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
+	self
+		assert: firstService
+		identicalTo: secondService
+%
+
+category: 'running'
+method: RsrProtocolDecoderTest
+testServiceNoInstVars
+
+	| decodedService |
+	decodedService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
+	self
+		assert: decodedService class
+		equals: RsrServerNoInstVars.
+	self
+		assert: decodedService _id
+		equals: 1
+%
+
+category: 'running'
+method: RsrProtocolDecoderTest
+testServiceReferenceService
+
+	| rootService referencedService |
+	referencedService := self decodeService: self serviceNoInstVarsServerPersonaEncoding.
+	self
+		assert: referencedService class
+		equals: RsrServerNoInstVars.
+	self
+		assert: referencedService _id
+		equals: 1.
+	rootService := self decodeService: self serviceReferenceServiceServerPersonaEncoding.
+	self
+		assert: rootService class
+		equals: RsrServerReferenceService.
+	self
+		assert: rootService _id
+		equals: 2.
+	self
+		assert: rootService service
+		equals: referencedService
+%
+
+category: 'asserting'
+method: RsrProtocolDecoderTest
+verifyControlWord: expected
+encoding: bytes
+
+	| actual |
+	actual := self decoder decodeControlWord: bytes readStream.
+	self
+		assert: actual
+		equals: expected
+%
+
+category: 'asserting'
+method: RsrProtocolDecoderTest
+verifyImmediate: expected
+encoding: encoding
+
+	| actual |
+	actual := (self decoder decodeReference: encoding readStream) resolve: self connection.
+	self
+		assert: actual
+		equals: expected
+%
+
+! Class implementation for 'RsrProtocolDecoderV1Test'
+
+!		Instance methods for 'RsrProtocolDecoderV1Test'
+
+category: 'accessing'
+method: RsrProtocolDecoderV1Test
+protocolVersion
+
+	^1
+%
+
+! Class implementation for 'RsrProtocolDecoderV2Test'
+
+!		Instance methods for 'RsrProtocolDecoderV2Test'
+
+category: 'accessing'
+method: RsrProtocolDecoderV2Test
+protocolVersion
+
+	^2
+%
+
+! Class implementation for 'RsrProtocolEncoderTest'
+
+!		Class methods for 'RsrProtocolEncoderTest'
+
+category: 'testing'
+classmethod: RsrProtocolEncoderTest
+isAbstract
+
+	^self == RsrProtocolEncoderTest
+%
+
+!		Instance methods for 'RsrProtocolEncoderTest'
+
+category: 'other'
+method: RsrProtocolEncoderTest
+register: aService
+
+	self connection _ensureRegistered: aService
+%
+
+category: 'running-immediates'
+method: RsrProtocolEncoderTest
+testDeliverResponse
+
+	| service response command result expectedEncoding |
+	service := RsrClientNoInstVars new.
+	self register: service.
+	response := #responseSymbol.
+	command := RsrDeliverResponse
+		transaction: 1
+		responseReference: (RsrReference from: response)
+		snapshots: (Array with: (RsrServiceSnapshot from: service)).
+	result := self encoder encodeDeliverResponse: command.
+	expectedEncoding :=
+		#[0 0 0 0 0 0 0 2], "DeliverResponse Command"
+		#[0 0 0 0 0 0 0 1], "Transaction Id"
+		#[0 0 0 0 0 0 0 1], "One service is part of this response"
+		self serviceNoInstVarsServerPersonaEncoding,
+		#[0 0 0 0 0 0 0 0], "Service Name Symbol Reference"
+		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
+		#[0 0 0 0 0 0 0 14], "Length of UTF-8 bytes"
+		#[114 101 115 112 111 110 115 101 83 121 109 98 111 108]. "#responseSymbol"
+	self
+		assert: result
+		equals: expectedEncoding
+%
+
+category: 'running'
+method: RsrProtocolEncoderTest
+testNaN
+
+	| encoding |
+	"Signaling NaN is not tested.
+	Negative NaN is not tested."
+	encoding :=
+		#[0 0 0 0 0 0 0 0],
+		#[0 0 0 0 0 0 0 15],
+		#[255 248 0 0 0 0 0 0].
+	self
+		verifyImmediate: RsrDoubleReference nan
+		encoding: encoding.
+%
+
+category: 'running-immediates'
+method: RsrProtocolEncoderTest
+testReleaseServices
+
+	| command result expectedEncoding |
+	command := RsrReleaseServices sids: #(1 2 3 4 5).
+	result := self encoder encodeReleaseServices: command.
+	expectedEncoding :=
+		#[0 0 0 0 0 0 0 3], "ReleaseObjects Command"
+		#[0 0 0 0 0 0 0 5], "Num OIDS"
+		#[0 0 0 0 0 0 0 1], "First OID"
+		#[0 0 0 0 0 0 0 2],
+		#[0 0 0 0 0 0 0 3],
+		#[0 0 0 0 0 0 0 4],
+		#[0 0 0 0 0 0 0 5]. "Last OID"
+	self
+		assert: result
+		equals: expectedEncoding
+%
+
+category: 'running-immediates'
+method: RsrProtocolEncoderTest
+testSendMessage
+
+	| service analysis command result expectedEncoding |
+	service := RsrClientNoInstVars new.
+	self register: service.
+	analysis := RsrSnapshotAnalysis
+		roots: (Array with: service)
+		connection: self connection.
+	analysis perform.
+	command := RsrSendMessage
+		transaction: 1
+		receiverReference: (RsrReference from: service)
+		selectorReference: (RsrSymbolReference from: #return42)
+		argumentReferences: #().
+	command snapshots: analysis snapshots.
+	result := self encoder encodeSendMessage: command.
+	expectedEncoding :=
+		#[0 0 0 0 0 0 0 1], "SendMessage Command"
+		#[0 0 0 0 0 0 0 1], "Transaction ID"
+		#[0 0 0 0 0 0 0 1], "One service is part of this message"
+		self serviceNoInstVarsServerPersonaEncoding,
+		#[0 0 0 0 0 0 0 1], "Receiver OID"
+		#[0 0 0 0 0 0 0 0], "Selector Reference"
+		#[0 0 0 0 0 0 0 1], "Object Type for Symbol"
+		#[0 0 0 0 0 0 0 8], "Length of UTF-8 bytes"
+		#[114 101 116 117 114 110 52 50], "#return42"
+		#[0 0 0 0 0 0 0 0]. "Argument Count"
+	self
+		assert: result
+		equals: expectedEncoding
+%
+
+category: 'running'
+method: RsrProtocolEncoderTest
+testServiceNoInstVars
+
+	| rootService encodedBytes expectedEncoding |
+	rootService := RsrClientNoInstVars new.
+	self register: rootService.
+	encodedBytes := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: rootService).
+	expectedEncoding := self serviceNoInstVarsServerPersonaEncoding.
+	self
+		assert: encodedBytes
+		equals: expectedEncoding
+%
+
+category: 'running'
+method: RsrProtocolEncoderTest
+testServiceReferenceService
+
+	| rootService referencedService encodedObject expectedEncoding |
+	referencedService := RsrClientNoInstVars new.
+	rootService := RsrClientReferenceService service: referencedService.
+	self
+		register: referencedService;
+		register: rootService.
+	encodedObject := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: rootService).
+	expectedEncoding := self serviceReferenceServiceServerPersonaEncoding.
+	self
+		assert: encodedObject
+		equals: expectedEncoding.
+	encodedObject := self encoder encodeServiceSnapshot: (RsrServiceSnapshot from: referencedService).
+	expectedEncoding := self serviceNoInstVarsServerPersonaEncoding.
+	self
+		assert: encodedObject
+		equals: expectedEncoding
+%
+
+category: 'running'
+method: RsrProtocolEncoderTest
+testUnsupportedObject
+
+	self
+		should: [self encoder encodeReference: (RsrReference from: Object new) onto: (WriteStream on: ByteArray new)]
+		raise: RsrUnsupportedObject
+%
+
+category: 'running-immediates'
+method: RsrProtocolEncoderTest
+verifyControlWord: anInteger
+encoding: expected
+
+	| actual |
+	actual := ByteArray streamContents: [:stream | self encoder encodeControlWord: anInteger onto: stream].
+	self
+		assert: actual
+		equals: expected
+%
+
+category: 'running-immediates'
+method: RsrProtocolEncoderTest
+verifyImmediate: anObject
+encoding: expected
+
+	| actual |
+	actual := ByteArray streamContents: [:stream | self encoder encodeReference: (RsrReference from: anObject) onto: stream].
+	self
+		assert: actual
+		equals: expected
+%
+
+! Class implementation for 'RsrProtocolEncoderV1Test'
+
+!		Instance methods for 'RsrProtocolEncoderV1Test'
+
+category: 'accessing'
+method: RsrProtocolEncoderV1Test
+protocolVersion
+
+	^1
+%
+
+! Class implementation for 'RsrProtocolEncoderV2Test'
+
+!		Instance methods for 'RsrProtocolEncoderV2Test'
+
+category: 'accessing'
+method: RsrProtocolEncoderV2Test
+protocolVersion
+
+	^2
 %
 
 ! Class implementation for 'RsrProtocolVersionNegotiationCodecTestCase'
@@ -13906,8 +15729,8 @@ testMultiPathsToSameService
 	"Tests issue 76, Unnecessary duplicate snapshots being sent."
 
 	| childService parentService orderedCollection analysis |
-	childService := RsrRemoteAction clientClass new.
-	parentService := RsrRemoteAction clientClass sharedVariable:
+	childService := RsrRemoteActionClient new.
+	parentService := RsrRemoteActionClient sharedVariable:
 		                 childService.
 	orderedCollection := OrderedCollection
 		                     with: childService
@@ -13980,7 +15803,7 @@ testServiceAllDataObjects
 	that Data Objects are actually encoded in-line."
 
 	| client analysis expected |
-	client := RsrRemoteAction clientClass new.
+	client := RsrRemoteActionClient new.
 	analysis := self analyze: client.
 	expected := OrderedCollection with: client.
 	self
@@ -14009,7 +15832,7 @@ testServiceNoInstVars
 	snapshotTemplate := connection templateResolver templateNamed: snapshot templateName.
 	self
 		assert: snapshotTemplate
-		equals: client _template
+		equals: RsrServiceNoInstVars
 %
 
 category: 'running'
@@ -14019,8 +15842,8 @@ testServiceReferencingAnotherService
 	that Data Objects are actually encoded in-line."
 
 	| referencedService client analysis |
-	referencedService := RsrRemoteAction clientClass new.
-	client := RsrRemoteAction clientClass sharedVariable: referencedService.
+	referencedService := RsrRemoteActionClient new.
+	client := RsrRemoteActionClient sharedVariable: referencedService.
 	analysis := self analyze: client.
 	self
 		assert: analysis snapshots size
@@ -14116,7 +15939,7 @@ testNextPutAllAfterClose
 	aStream close.
 	self assert: aStream atEnd.
 	self
-		should: [aStream nextPutAll: #[1 2 3]]
+		should: [aStream nextPutAll: #[1 2 3]; flush]
 		raise: RsrSocketClosed
 %
 
@@ -14159,7 +15982,7 @@ createPair: aBlock
 	listener
 		bindAddress: address
 		port: port.
-	listener listen: 1.
+	listener listen: 2.
 	peerB := self newSocket.
 	semaphore := Semaphore new.
 	RsrProcessModel
@@ -14374,17 +16197,6 @@ testPartialRead
 		equals: writeBuffer
 %
 
-category: 'running'
-method: RsrSocketTestCase
-testPort
-
-	| socket |
-	socket := self newSocket.
-	self
-		assert: socket port
-		equals: 0
-%
-
 category: 'running-read/write'
 method: RsrSocketTestCase
 testReadAfterPeerClose
@@ -14552,6 +16364,46 @@ initializeSocketConnections
 		assert: connectionB isOpen
 %
 
+category: 'initialization'
+method: RsrSystemTestCase
+initializeSocketConnectionsV1
+
+	| spec |
+	spec := RsrInternalSocketConnectionSpecification wireProtocols: { RsrWireProtocolV1 new }.
+	spec connect.
+	connectionA := spec connectionA.
+	connectionB := spec connectionB.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	self
+		assert: connectionA channel wireProtocol version
+		equals: 1.
+	self
+		assert: connectionB channel wireProtocol version
+		equals: 1.
+%
+
+category: 'initialization'
+method: RsrSystemTestCase
+initializeSocketConnectionsV2
+
+	| spec |
+	spec := RsrInternalSocketConnectionSpecification new.
+	spec connect.
+	connectionA := spec connectionA.
+	connectionB := spec connectionB.
+	self
+		assert: connectionA isOpen;
+		assert: connectionB isOpen.
+	self
+		assert: connectionA channel wireProtocol version
+		equals: 2.
+	self
+		assert: connectionB channel wireProtocol version
+		equals: 2.
+%
+
 category: 'accessing'
 method: RsrSystemTestCase
 peerOf: aService
@@ -14608,7 +16460,7 @@ testAllowExistingInstancesOfDeniedTemplate
 	value := Time millisecondClockValue.
 
 	"Send a new instance before Policy denies it."
-	allow := template clientClass new.
+	allow := RsrClientNoInstVars new.
 	allow registerWith: connectionA.
 	promise := allow asyncSendReturnArgument: value.
 	result := self expectWhen: promise.
@@ -14636,7 +16488,7 @@ testPolicyRejection
 	value := Time millisecondClockValue.
 
 	"Send a new instance before Policy denies it."
-	allow := template clientClass new.
+	allow := RsrClientNoInstVars new.
 	allow registerWith: connectionA.
 	promise := allow asyncSendReturnArgument: value.
 	result := self expectWhen: promise.
@@ -14646,7 +16498,7 @@ testPolicyRejection
 
 	"Reject the template and try again with a new instance."
 	policy deny: template.
-	reject := template clientClass new.
+	reject := RsrClientNoInstVars new.
 	reject registerWith: connectionA.
 	promise := reject asyncSendReturnArgument: value.
 	reason := self expectCatch: promise.
@@ -14670,11 +16522,11 @@ testPolicyRejectsFrameworkTemplate
 	template := RsrPolicyRejectedService.
 	connectionA policy: policy.
 	connectionB policy: policy.
-	service := RsrServiceNoInstVars clientClass new.
+	service := RsrClientNoInstVars new.
 	service registerWith: connectionA.
 
 	"Send a new instance before Policy denies it."
-	frameworkService := template clientClass new.
+	frameworkService := RsrPolicyRejectedServiceClient new.
 	promise := service asyncSendReturnArgument: frameworkService.
 	result := self expectWhen: promise.
 	self
@@ -14683,7 +16535,7 @@ testPolicyRejectsFrameworkTemplate
 
 	"Ensure it is allowed even if the Policy rejects it."
 	policy deny: template.
-	frameworkService := template clientClass new.
+	frameworkService := RsrPolicyRejectedServiceClient new.
 	promise := service asyncSendReturnArgument: frameworkService.
 	result := self expectWhen: promise.
 	self
@@ -14726,14 +16578,37 @@ setUp
 
 ! Class implementation for 'RsrSocketConnectionTestCase'
 
-!		Instance methods for 'RsrSocketConnectionTestCase'
+!		Class methods for 'RsrSocketConnectionTestCase'
+
+category: 'testing'
+classmethod: RsrSocketConnectionTestCase
+isAbstract
+
+	^self == RsrSocketConnectionTestCase
+%
+
+! Class implementation for 'RsrSocketConnectionTestCaseV1'
+
+!		Instance methods for 'RsrSocketConnectionTestCaseV1'
 
 category: 'running'
-method: RsrSocketConnectionTestCase
+method: RsrSocketConnectionTestCaseV1
 setUp
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketConnectionsV1
+%
+
+! Class implementation for 'RsrSocketConnectionTestCaseV2'
+
+!		Instance methods for 'RsrSocketConnectionTestCaseV2'
+
+category: 'running'
+method: RsrSocketConnectionTestCaseV2
+setUp
+
+	super setUp.
+	self initializeSocketConnectionsV2
 %
 
 ! Class implementation for 'RsrEphemeronMourningDeadlock'
@@ -14955,14 +16830,37 @@ setUp
 
 ! Class implementation for 'RsrSocketLifetimeTest'
 
-!		Instance methods for 'RsrSocketLifetimeTest'
+!		Class methods for 'RsrSocketLifetimeTest'
+
+category: 'testing'
+classmethod: RsrSocketLifetimeTest
+isAbstract
+
+	^self == RsrSocketLifetimeTest
+%
+
+! Class implementation for 'RsrSocketLifetimeTestV1'
+
+!		Instance methods for 'RsrSocketLifetimeTestV1'
 
 category: 'running'
-method: RsrSocketLifetimeTest
+method: RsrSocketLifetimeTestV1
 setUp
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketConnectionsV1
+%
+
+! Class implementation for 'RsrSocketLifetimeTestV2'
+
+!		Instance methods for 'RsrSocketLifetimeTestV2'
+
+category: 'running'
+method: RsrSocketLifetimeTestV2
+setUp
+
+	super setUp.
+	self initializeSocketConnectionsV2
 %
 
 ! Class implementation for 'RsrMessageSendingTest'
@@ -15580,14 +17478,37 @@ setUp
 
 ! Class implementation for 'RsrSocketMessageSendingTest'
 
-!		Instance methods for 'RsrSocketMessageSendingTest'
+!		Class methods for 'RsrSocketMessageSendingTest'
+
+category: 'testing'
+classmethod: RsrSocketMessageSendingTest
+isAbstract
+
+	^self == RsrSocketMessageSendingTest
+%
+
+! Class implementation for 'RsrSocketMessageSendingTestV1'
+
+!		Instance methods for 'RsrSocketMessageSendingTestV1'
 
 category: 'running'
-method: RsrSocketMessageSendingTest
+method: RsrSocketMessageSendingTestV1
 setUp
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketConnectionsV1
+%
+
+! Class implementation for 'RsrSocketMessageSendingTestV2'
+
+!		Instance methods for 'RsrSocketMessageSendingTestV2'
+
+category: 'running'
+method: RsrSocketMessageSendingTestV2
+setUp
+
+	super setUp.
+	self initializeSocketConnectionsV2
 %
 
 ! Class implementation for 'RsrServiceTest'
@@ -15619,7 +17540,7 @@ method: RsrServiceTest
 testAnalyzeServiceRegisteredWithDifferentConnection
 
 	| instance analysis |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	analysis := RsrSnapshotAnalysis
 		roots: (Array with: instance)
 		connection: connectionA.
@@ -15630,7 +17551,42 @@ testAnalyzeServiceRegisteredWithDifferentConnection
 		connection: connectionB.
 	self
 		should: [analysis perform]
-		raise: RsrAlreadyRegistered
+		raise: RsrAlreadyRegisteredWithAnotherConnection
+%
+
+category: 'running'
+method: RsrServiceTest
+testCustomTemplateResolver
+
+	| serviceClass templateClass replicatedService testResolver newService |
+	"Replicate a service initially to verify it continues to function."
+	serviceClass := RsrRemoteActionClient.
+	templateClass := RsrRemoteAction.
+	replicatedService := serviceClass new.
+	replicatedService
+		registerWith: connectionA;
+		synchronize.
+	self
+		assert: (connectionB serviceAt: replicatedService _id) class
+		equals: RsrRemoteActionServer.
+
+	"Set the template resolver to a test resolver which cannot resolve any templates initially."
+	testResolver := RsrTestTemplateResolver new.
+	connectionB templateResolver: testResolver.
+	self "Ensure that the existing service continues to function."
+		shouldnt: [replicatedService synchronize]
+		raise: RsrBrokenPromise.
+	newService := serviceClass new.
+	newService registerWith: connectionA.
+	self
+		should: [newService synchronize]
+		raise: RsrBrokenPromise.
+	
+	"Add the template to the resolver. The service should now replicate successfully."
+	testResolver addTemplate: templateClass.
+	self
+		shouldnt: [newService synchronize]
+		raise: RsrBrokenPromise.
 %
 
 category: 'running'
@@ -15654,7 +17610,7 @@ method: RsrServiceTest
 testHasRemoteSelf
 
 	| service |
-	service := RsrTestService clientClass new.
+	service := RsrClientTestService new.
 	self mirror: service.
 	self deny: nil == service remoteSelf
 %
@@ -15664,7 +17620,7 @@ method: RsrServiceTest
 testInitialization
 
 	| instance |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	self
 		assert: instance isMirrored
 		equals: false.
@@ -15681,7 +17637,7 @@ method: RsrServiceTest
 testIsMirrored
 
 	| instance |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	self deny: instance isMirrored.
 	self mirror: instance.
 	self assert: instance isMirrored
@@ -15876,40 +17832,33 @@ category: 'running'
 method: RsrServiceTest
 testReflectedVariableNames
 
-	| client server clientNames serverNames |
-	client := RsrClientTestService new
+	| client server expectedNames clientNames serverNames |
+	client := RsrTestTemplateClient new
 		registerWith: connectionA;
 		synchronize.
 	server := connectionB serviceAt: client _id.
+	expectedNames := #(#abstractTemplateVariable #templateVariable) asOrderedCollection.
 	clientNames := RsrServiceSnapshot reflectedVariablesFor: client.
 	serverNames := RsrServiceSnapshot reflectedVariablesFor: server.
 	self
 		assert: clientNames
-		equals: serverNames.
+		equals: expectedNames.
 	self
-		assert: clientNames size
-		equals: 1.
-	self
-		assert: (clientNames at: 1) asSymbol
-		equals: #sharedVariable.
+		assert: serverNames
+		equals: expectedNames.
 	client := RsrReflectedVariableTestClient new
 		registerWith: connectionA;
 		synchronize.
 	server := connectionB serviceAt: client _id.
+	expectedNames := #( #varA #varB ) asOrderedCollection.
 	clientNames := RsrServiceSnapshot reflectedVariablesFor: client.
 	serverNames := RsrServiceSnapshot reflectedVariablesFor: server.
 	self
 		assert: clientNames
-		equals: serverNames.
+		equals: expectedNames.
 	self
-		assert: clientNames size
-		equals: 2.
-	self
-		assert: (clientNames at: 1) asSymbol
-		equals: #varA.
-	self
-		assert: (clientNames at: 2) asSymbol
-		equals: #varB
+		assert: serverNames
+		equals: expectedNames
 %
 
 category: 'running'
@@ -15917,13 +17866,13 @@ method: RsrServiceTest
 testRegisterWith
 
 	| instance |
-	instance := RsrRemoteAction clientClass new.
+	instance := RsrRemoteActionClient new.
 	self deny: instance isMirrored.
 	instance registerWith: connectionA.
 	self assert: instance isMirrored.
 	self
 		should: [instance registerWith: connectionB]
-		raise: RsrAlreadyRegistered
+		raise: RsrAlreadyRegisteredWithAnotherConnection
 %
 
 category: 'running'
@@ -15944,29 +17893,10 @@ testReturnServerWithoutAssociatedClient
 
 category: 'running'
 method: RsrServiceTest
-testSendClientWithoutAssociatedServer
-
-	| client server reason |
-	client := RsrRemoteActionClient new
-		registerWith: connectionA;
-		synchronize.
-	server := connectionB serviceAt: client _id.
-	server action: [:x | x].
-	reason := self expectCatch: (client asyncValue: RsrKnownClient new).
-	self
-		assert: reason class
-		equals: RsrRemoteExceptionServer.
-	self
-		assert: reason exceptionClassName
-		equals: #RsrUnknownClass
-%
-
-category: 'running'
-method: RsrServiceTest
 testVariableReflection
 
 	| localService remoteService |
-	localService := RsrTestService clientClass new
+	localService := RsrClientTestService new
 		sharedVariable: #shared;
 		privateVariable: #private;
 		yourself.
@@ -15995,16 +17925,79 @@ setUp
 	self initializeInMemoryConnections
 %
 
+category: 'running'
+method: RsrInMemoryServiceTest
+testSendClientWithoutAssociatedServer
+	"See RsrSocketServiceTestV2>>testSendClientWithoutAssociatedServer"
+
+	| client server reason |
+	client := RsrRemoteActionClient new
+		registerWith: connectionA;
+		synchronize.
+	server := connectionB serviceAt: client _id.
+	server action: [:x | x].
+	reason := self expectCatch: (client asyncValue: RsrKnownClient new).
+	self
+		assert: reason class
+		equals: RsrRemoteExceptionServer.
+	self
+		assert: reason exceptionClassName
+		equals: #RsrUnknownClass
+%
+
 ! Class implementation for 'RsrSocketServiceTest'
 
-!		Instance methods for 'RsrSocketServiceTest'
+!		Class methods for 'RsrSocketServiceTest'
+
+category: 'testing'
+classmethod: RsrSocketServiceTest
+isAbstract
+
+	^self == RsrSocketServiceTest
+%
+
+! Class implementation for 'RsrSocketServiceTestV1'
+
+!		Instance methods for 'RsrSocketServiceTestV1'
 
 category: 'running'
-method: RsrSocketServiceTest
+method: RsrSocketServiceTestV1
 setUp
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketConnectionsV1
+%
+
+! Class implementation for 'RsrSocketServiceTestV2'
+
+!		Instance methods for 'RsrSocketServiceTestV2'
+
+category: 'running'
+method: RsrSocketServiceTestV2
+setUp
+
+	super setUp.
+	self initializeSocketConnectionsV2
+%
+
+category: 'running'
+method: RsrSocketServiceTestV2
+testSendClientWithoutAssociatedServer
+	"See RsrInMemoryServiceTest>>testSendClientWithoutAssociatedServer"
+
+	| client server reason |
+	client := RsrRemoteActionClient new
+		registerWith: connectionA;
+		synchronize.
+	server := connectionB serviceAt: client _id.
+	server action: [:x | x].
+	reason := self expectCatch: (client asyncValue: RsrKnownClient new).
+	self
+		assert: reason class
+		equals: RsrRemoteExceptionServer.
+	self
+		assert: reason exceptionClassName
+		equals: #RsrUnknownClass
 %
 
 ! Class implementation for 'RsrSpeciesEquality'
@@ -16142,8 +18135,8 @@ method: RsrSpeciesEquality
 testService
 
 	| clientClass serverClass |
-	clientClass := RsrRemoteAction clientClass.
-	serverClass := RsrRemoteAction serverClass.
+	clientClass := RsrRemoteActionClient.
+	serverClass := RsrRemoteActionServer.
 	self
 		verify: clientClass new;
 		verify: (clientClass sharedVariable: clientClass new);
@@ -16254,14 +18247,37 @@ setUp
 
 ! Class implementation for 'RsrSocketSpeciesEquality'
 
-!		Instance methods for 'RsrSocketSpeciesEquality'
+!		Class methods for 'RsrSocketSpeciesEquality'
+
+category: 'testing'
+classmethod: RsrSocketSpeciesEquality
+isAbstract
+
+	^self == RsrSocketSpeciesEquality
+%
+
+! Class implementation for 'RsrSocketSpeciesEqualityV1'
+
+!		Instance methods for 'RsrSocketSpeciesEqualityV1'
 
 category: 'running'
-method: RsrSocketSpeciesEquality
+method: RsrSocketSpeciesEqualityV1
 setUp
 
 	super setUp.
-	self initializeSocketConnections
+	self initializeSocketConnectionsV1
+%
+
+! Class implementation for 'RsrSocketSpeciesEqualityV2'
+
+!		Instance methods for 'RsrSocketSpeciesEqualityV2'
+
+category: 'running'
+method: RsrSocketSpeciesEqualityV2
+setUp
+
+	super setUp.
+	self initializeSocketConnectionsV2
 %
 
 ! Class implementation for 'RsrStressTest'
@@ -16272,7 +18288,7 @@ category: 'accessing'
 classmethod: RsrStressTest
 defaultTimeLimit
 
-	^30 seconds
+	^Duration seconds: 60
 %
 
 category: 'testing'
@@ -16310,6 +18326,13 @@ concurrentlyRun: aBlock
 	self deny: anyCurtailed
 %
 
+category: 'accessing'
+method: RsrStressTest
+defaultTestDuration
+
+	^self class defaultTimeLimit / 4
+%
+
 category: 'initialize/release'
 method: RsrStressTest
 initializeServices
@@ -16332,7 +18355,20 @@ category: 'running-utilities'
 method: RsrStressTest
 repeatedlyRun: aBlock
 
-	self repetitions timesRepeat: aBlock
+	| endTime |
+	endTime := DateAndTime now + self defaultTestDuration.
+	self
+		repeatedlyRun: aBlock
+		until: endTime
+%
+
+category: 'running-utilities'
+method: RsrStressTest
+repeatedlyRun: aBlock
+until: endTime
+
+	[DateAndTime now < endTime]
+		whileTrue: [aBlock value]
 %
 
 category: 'running-utilities'
@@ -16340,13 +18376,6 @@ method: RsrStressTest
 repeatedlySend: anObject
 
 	self repeatedlyRun: [self send: anObject]
-%
-
-category: 'accessing'
-method: RsrStressTest
-repetitions
-
-	^1000
 %
 
 category: 'running-utilities'
@@ -16385,9 +18414,7 @@ category: 'running'
 method: RsrStressTest
 test10MBytes
 
-	| bytes |
-	bytes := ByteArray new: 1024 * 1024 * 10.
-	50 timesRepeat: [self send: bytes]
+	self repeatedlySend: (ByteArray new: 1024 * 1024 * 10)
 %
 
 category: 'running'
@@ -16402,13 +18429,6 @@ method: RsrStressTest
 test1MBytes
 
 	self repeatedlySend: (ByteArray new: 1024 squared)
-%
-
-category: 'running'
-method: RsrStressTest
-test2KBytes
-
-	self repeatedlySend: (ByteArray new: 1024 *2)
 %
 
 category: 'running'
@@ -16452,13 +18472,35 @@ initializeConnections
 
 ! Class implementation for 'RsrSocketStressTest'
 
-!		Instance methods for 'RsrSocketStressTest'
+!		Class methods for 'RsrSocketStressTest'
+
+category: 'testing'
+classmethod: RsrSocketStressTest
+isAbstract
+
+	^self == RsrSocketStressTest
+%
+
+! Class implementation for 'RsrSocketStressTestV1'
+
+!		Instance methods for 'RsrSocketStressTestV1'
 
 category: 'initializing'
-method: RsrSocketStressTest
+method: RsrSocketStressTestV1
 initializeConnections
 
-	self initializeSocketConnections
+	self initializeSocketConnectionsV1
+%
+
+! Class implementation for 'RsrSocketStressTestV2'
+
+!		Instance methods for 'RsrSocketStressTestV2'
+
+category: 'initializing'
+method: RsrSocketStressTestV2
+initializeConnections
+
+	self initializeSocketConnectionsV2
 %
 
 ! Class implementation for 'RsrTemplateResolverTestCase'
@@ -16470,6 +18512,74 @@ method: RsrTemplateResolverTestCase
 resolver
 
 	^RsrTemplateResolver new
+%
+
+category: 'running'
+method: RsrTemplateResolverTestCase
+testClientClassForTemplate
+
+	| result |
+	result := self resolver clientClassForTemplate: RsrNoServerService.
+	self
+		assert: result
+		equals: RsrNoServerServiceClient.
+	self
+		should: [ self resolver clientClassForTemplate: RsrNoClientService ]
+		raise: RsrUnknownClass
+%
+
+category: 'running'
+method: RsrTemplateResolverTestCase
+testClientClassForTemplateIfAbsent
+
+	| marker result |
+	marker := Object new.
+	result := self resolver
+		clientClassForTemplate: RsrNoServerService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: RsrNoServerServiceClient.
+	result := self resolver
+		clientClassForTemplate: RsrNoClientService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: marker
+%
+
+category: 'running'
+method: RsrTemplateResolverTestCase
+testServerClassForTemplate
+
+	| result |
+	result := self resolver serverClassForTemplate: RsrNoClientService.
+	self
+		assert: result
+		equals: RsrNoClientServiceServer.
+	self
+		should: [ self resolver serverClassForTemplate: RsrNoServerService ]
+		raise: RsrUnknownClass
+%
+
+category: 'running'
+method: RsrTemplateResolverTestCase
+testServerClassForTemplateIfAbsent
+
+	| marker result |
+	marker := Object new.
+	result := self resolver
+		serverClassForTemplate: RsrNoClientService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: RsrNoClientServiceServer.
+	result := self resolver
+		serverClassForTemplate: RsrNoServerService
+		ifAbsent: [ marker ].
+	self
+		assert: result
+		equals: marker
 %
 
 category: 'running'
@@ -16538,14 +18648,16 @@ category: 'cleanup'
 method: RsrTemplateResolverWithClassVersions
 tearDown
 
-	RsrService
+	[RsrService
 		rwSubclass: 'RsrVersionService'
 		instVarNames: #()
 		classVars: #()
 		classInstVars: #()
 		poolDictionaries: #()
 		category: 'RemoteServiceReplication-GemStone-Test'
-		options: #().
+		options: #().]
+    on: SecurityError "Ignore errors indicating we cannot version the test class."
+    do: [:ex | ex return].
 	super tearDown
 %
 
@@ -16555,20 +18667,22 @@ testVersionClassAfterCreatingService
 
 	| template service result |
 	template := RsrVersionService.
-	service := template clientClass new.
+	service := RsrVersionServiceClient new.
 	result := self resolver templateFor: service.
 	self
 		assert: result
 		identicalTo: template.
 	"Revision the Service class and Template"
-	RsrService
+	[RsrService
 		rwSubclass: 'RsrVersionService'
-		instVarNames: {'a' + Time millisecondClockValue printString}
+		instVarNames: {'a', Time millisecondClockValue printString}
 		classVars: #()
 		classInstVars: #()
 		poolDictionaries: #()
 		category: 'RemoteServiceReplication-GemStone-Test'
-		options: #().
+		options: #().]
+    on: SecurityError "This user does not have permissions to alter this class. Skip the test."
+    do: [:ex | ^self].
 	result := self resolver templateFor: service.
 	self
 		assert: result
@@ -16576,7 +18690,7 @@ testVersionClassAfterCreatingService
 	self
 		deny: result
 		identicalTo: RsrVersionService.
-	result := self resolver templateFor: RsrVersionService clientClass new.
+	result := self resolver templateFor: RsrVersionServiceClient new.
 	self
 		assert: result
 		identicalTo: RsrVersionService
@@ -16882,7 +18996,7 @@ _ensureRegistered: aService
 			aService postRegistration.
 			^ self ].
 	aService _connection == self
-		ifFalse: [ ^ RsrAlreadyRegistered signalService: aService intendedConnection: self ]
+		ifFalse: [ ^ RsrAlreadyRegisteredWithAnotherConnection signalService: aService intendedConnection: self ]
 %
 
 category: '*remoteservicereplication'
@@ -17200,91 +19314,139 @@ currentStackDump
 	^GsProcess stackReportToLevel: 1000
 %
 
+! Class extensions for 'RsrProtocolEncoder'
+
+!		Instance methods for 'RsrProtocolEncoder'
+
+category: '*RemoteServiceReplication-Test'
+method: RsrProtocolEncoder
+encodeDeliverResponse: aDeliverResponse
+
+	^ByteArray streamContents: [:stream | self encodeDeliverResponse: aDeliverResponse onto: stream]
+%
+
+category: '*RemoteServiceReplication-Test'
+method: RsrProtocolEncoder
+encodeReleaseServices: aReleaseServices
+
+	^ByteArray streamContents: [:stream | self encodeReleaseServices: aReleaseServices onto: stream]
+%
+
+category: '*RemoteServiceReplication-Test'
+method: RsrProtocolEncoder
+encodeSendMessage: aSendMessage
+
+	^ByteArray streamContents: [:stream | self encodeSendMessage: aSendMessage onto: stream]
+%
+
+category: '*RemoteServiceReplication-Test'
+method: RsrProtocolEncoder
+encodeServiceSnapshot: aServiceSnapshot
+
+	^ByteArray
+		streamContents:
+			[:stream |
+			self
+				encodeServiceSnapshot: aServiceSnapshot
+				onto: stream]
+%
+
 ! Class extensions for 'RsrReference'
 
 !		Class methods for 'RsrReference'
 
 category: '*remoteservicereplication-gemstone'
 classmethod: RsrReference
-initializeReferenceMapping
-	"RsrReference initializeReferenceMapping"
-
-	referenceMapping := Dictionary new.
-	referenceMapping
-		at: Symbol
-		put: RsrSymbolReference.
-	referenceMapping
-		at: DoubleByteSymbol
-		put: RsrSymbolReference.
-	referenceMapping
-		at: QuadByteSymbol
-		put: RsrSymbolReference.
-	referenceMapping
-		at: String
-		put: RsrStringReference.
-    referenceMapping
-        at: Unicode7
-        put: RsrStringReference.
-    referenceMapping
-        at: DoubleByteString
-        put: RsrStringReference.
-    referenceMapping
-        at: QuadByteString
-        put: RsrStringReference.
-	referenceMapping
-		at: LargeInteger
-		put: RsrIntegerReference.
-	referenceMapping
-		at: SmallInteger
-		put: RsrIntegerReference.
-	referenceMapping
-		at: Character
-		put: RsrCharacterReference.
-	referenceMapping
-		at: UndefinedObject
-		put: RsrNilReference.
-	referenceMapping
-		at: Boolean
-		put: RsrTrueReference.
-	referenceMapping
-		at: Array
-		put: RsrArrayReference.
-	referenceMapping
-		at: ByteArray
-		put: RsrByteArrayReference.
-	referenceMapping
-		at: Set
-		put: RsrSetReference.
-	referenceMapping
-		at: OrderedCollection
-		put: RsrOrderedCollectionReference.
-	referenceMapping
-		at: Dictionary
-		put: RsrDictionaryReference.
-	referenceMapping
-		at: DateAndTime
-		put: RsrDateAndTimeReference.
-	referenceMapping
-		at: SmallDateAndTime
-		put: RsrDateAndTimeReference.
-	referenceMapping
-		at: SmallDouble
-		put: RsrDoubleReference.
-	referenceMapping
-		at: Float
-		put: RsrDoubleReference.
-	^referenceMapping
-%
-
-category: '*remoteservicereplication'
-classmethod: RsrReference
 referenceClassFor: anObject
+	"This method is called for each object in the transitive closure of a send to #remoteSelf.
 
+	This implementation takes advantage of open-coded selectors. Testing in Pharo showed this
+	is 2.5x faster than a Dictionary lookup. This multiplier is likely different in GemStone
+	but hasn't be tested."
+
+	| oc |
+	oc := anObject class.
+
+	"Text"
+	oc == Symbol
+		ifTrue: [^RsrSymbolReference].
+	oc == DoubleByteSymbol
+		ifTrue: [^RsrSymbolReference].
+	oc == QuadByteSymbol
+		ifTrue: [^RsrSymbolReference].
+	oc == String
+		ifTrue: [^RsrStringReference].
+	oc == Unicode7
+		ifTrue: [^RsrStringReference].
+	oc == Unicode16
+		ifTrue: [^RsrStringReference].
+	oc == Unicode32
+		ifTrue: [^RsrStringReference].
+	oc == DoubleByteString
+		ifTrue: [^RsrStringReference].
+	oc == QuadByteString
+		ifTrue: [^RsrStringReference].
+	oc == Character
+		ifTrue: [^RsrCharacterReference].
+
+	"Numbers"
+	oc == LargeInteger
+		ifTrue: [^RsrIntegerReference].
+	oc == SmallInteger
+		ifTrue: [^RsrIntegerReference].
+	oc == SmallDouble
+		ifTrue: [^RsrDoubleReference].
+	oc == Float
+		ifTrue: [^RsrDoubleReference].
+
+	"Keywords"
+	oc == UndefinedObject
+		ifTrue: [^RsrNilReference].
+	oc == Boolean
+		ifTrue: [^RsrTrueReference].
+
+	"Collections"
+	oc == Array
+		ifTrue: [^RsrArrayReference].
+	oc == ByteArray
+		ifTrue: [^RsrByteArrayReference].
+	oc == Set
+		ifTrue: [^RsrSetReference].
+	oc == OrderedCollection
+		ifTrue: [^RsrOrderedCollectionReference].
+	oc == Dictionary
+		ifTrue: [^RsrDictionaryReference].
+	oc == DateAndTime
+		ifTrue: [^RsrDateAndTimeReference].
+	oc == SmallDateAndTime
+		ifTrue: [^RsrDateAndTimeReference].
+
+	"Services"
 	(anObject isKindOf: RsrService)
 		ifTrue: [^RsrServiceReference].
-	^self referenceMapping
-		at: anObject class
-		ifAbsent: [RsrUnsupportedObject signal: anObject]
+
+	"Unsupported"
+	^RsrUnsupportedObject signal: anObject
+%
+
+! Class extensions for 'RsrSocket'
+
+!		Instance methods for 'RsrSocket'
+
+category: '*RemoteServiceReplication'
+method: RsrSocket
+bufferedSocketStream
+	"Return a SocketStream on the receiver"
+	
+	^RsrBufferedStream on: self socketStream
+%
+
+category: '*RemoteServiceReplication'
+method: RsrSocket
+socketStream
+	"Return a SocketStream on the receiver"
+	
+	^RsrSocketStream on: self
 %
 
 ! Class extensions for 'RsrToken'
@@ -17306,9 +19468,3 @@ newRandom
 	^self bytes: bytes
 %
 
-! Class Initialization
-
-run
-RsrPlatformInitializer initialize.
-true
-%
