@@ -1,6 +1,15 @@
 Extension { #name : 'RsrForwarder' }
 
 { #category : '*remoteservicereplication' }
+RsrForwarder class >> on: anRsrObject [
+
+	| instance |
+	instance := self new.
+	instance _service: anRsrObject.
+	^instance
+]
+
+{ #category : '*remoteservicereplication' }
 RsrForwarder >> _service: aService [
 
 	_service := aService
@@ -14,11 +23,3 @@ RsrForwarder >> doesNotUnderstand: aMessage [
 		to: _service
 ]
 
-{ #category : '*remoteservicereplication' }
-RsrForwarder class >> on: anRsrObject [
-
-	| instance |
-	instance := self new.
-	instance _service: anRsrObject.
-	^instance
-]
