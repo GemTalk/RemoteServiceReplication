@@ -53,6 +53,12 @@ RsrSnapshotAnalysis >> analyzeDictionary: aDictionary [
 	^ aDictionary
 ]
 
+{ #category : 'accessing' }
+RsrSnapshotAnalysis >> analyzedObjects [
+
+	^ analyzedObjects
+]
+
 { #category : 'analyzing' }
 RsrSnapshotAnalysis >> analyzeImmediate: anImmediateObject [
 
@@ -67,12 +73,6 @@ RsrSnapshotAnalysis >> analyzeService: aService [
 		reflectedVariablesFor: aService
 		do: [ :each | self analyze: each ].
 	snapshots add: (RsrServiceSnapshot from: aService)
-]
-
-{ #category : 'accessing' }
-RsrSnapshotAnalysis >> analyzedObjects [
-
-	^ analyzedObjects
 ]
 
 { #category : 'accessing' }

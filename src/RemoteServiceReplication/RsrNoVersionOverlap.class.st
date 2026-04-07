@@ -14,6 +14,12 @@ RsrNoVersionOverlap >> = aNoVersionOverlap [
 	^self class = aNoVersionOverlap class
 ]
 
+{ #category : 'comparing' }
+RsrNoVersionOverlap >> hash [
+
+	^self class hash
+]
+
 { #category : 'testing' }
 RsrNoVersionOverlap >> hasSharedVersion [
 	"Answer whether there is a valid shared protocol version between the Client and Server."
@@ -21,8 +27,3 @@ RsrNoVersionOverlap >> hasSharedVersion [
 	^false
 ]
 
-{ #category : 'comparing' }
-RsrNoVersionOverlap >> hash [
-
-	^self class hash
-]

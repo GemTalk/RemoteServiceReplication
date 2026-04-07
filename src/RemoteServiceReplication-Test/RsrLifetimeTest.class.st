@@ -66,6 +66,48 @@ RsrLifetimeTest >> testEnsurePushedClientServerLifetime [
 ]
 
 { #category : 'running' }
+RsrLifetimeTest >> testEnsureReturnedServerLifetime [
+	"Return a newly created Server (that is not registered.) It should persist in the framework until 
+	both the associated Client is garbage collected and local references are dropped.
+
+	If you change this method -- change #testEnsureReturnRegisteredServerLifetime as well."
+
+	| client sid server result |
+	client := self evaluateAsRemoteAction: [RsrServerNoInstVars new].
+	sid := client _id.
+	self maximumReclamation. "Ensure the Server instance is referenced."
+	server := connectionB
+		serviceAt: sid
+		ifAbsent: [self assert: false].
+	client := nil.
+	self maximumReclamation.
+	(Delay forSeconds: 1) wait. "Release Client."
+	self maximumReclamation.
+	"Ensure Client is released."
+	result := connectionA
+		serviceAt: sid
+		ifAbsent: [nil].
+	self
+		assert: result
+		equals: nil.
+	"Ensure Server is still registered."
+	result := connectionB
+		serviceAt: sid
+		ifAbsent: [self assert: false].
+	self
+		assert: result
+		equals: server.
+	result := server := nil.
+	self maximumReclamation.
+	result := connectionB
+		serviceAt: sid
+		ifAbsent: [nil].
+	self
+		assert: result
+		equals: nil
+]
+
+{ #category : 'running' }
 RsrLifetimeTest >> testEnsureReturnRegisteredServerLifetime [
 	"Return a newly created Server (that is registered.) It should persist in the framework until 
 	both the associated Client is garbage collected and local references are dropped.
@@ -107,44 +149,3 @@ RsrLifetimeTest >> testEnsureReturnRegisteredServerLifetime [
 		equals: nil
 ]
 
-{ #category : 'running' }
-RsrLifetimeTest >> testEnsureReturnedServerLifetime [
-	"Return a newly created Server (that is not registered.) It should persist in the framework until 
-	both the associated Client is garbage collected and local references are dropped.
-
-	If you change this method -- change #testEnsureReturnRegisteredServerLifetime as well."
-
-	| client sid server result |
-	client := self evaluateAsRemoteAction: [RsrServerNoInstVars new].
-	sid := client _id.
-	self maximumReclamation. "Ensure the Server instance is referenced."
-	server := connectionB
-		serviceAt: sid
-		ifAbsent: [self assert: false].
-	client := nil.
-	self maximumReclamation.
-	(Delay forSeconds: 1) wait. "Release Client."
-	self maximumReclamation.
-	"Ensure Client is released."
-	result := connectionA
-		serviceAt: sid
-		ifAbsent: [nil].
-	self
-		assert: result
-		equals: nil.
-	"Ensure Server is still registered."
-	result := connectionB
-		serviceAt: sid
-		ifAbsent: [self assert: false].
-	self
-		assert: result
-		equals: server.
-	result := server := nil.
-	self maximumReclamation.
-	result := connectionB
-		serviceAt: sid
-		ifAbsent: [nil].
-	self
-		assert: result
-		equals: nil
-]

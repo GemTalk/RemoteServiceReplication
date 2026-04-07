@@ -30,14 +30,6 @@ RsrProtocolCodecTest >> decoder [
 	^self error
 ]
 
-{ #category : 'encode/decode' }
-RsrProtocolCodecTest >> encodeReferenceOf: anObject [
-
-	| reference |
-	reference := RsrReference from: anObject.
-	^ByteArray streamContents: [:stream | self encoder encodeReference: reference onto: stream]
-]
-
 { #category : 'accessing' }
 RsrProtocolCodecTest >> encoder [
 
@@ -46,6 +38,14 @@ RsrProtocolCodecTest >> encoder [
 	self protocolVersion == 2
 		ifTrue: [^RsrProtocolEncoderV2 new].
 	^self error
+]
+
+{ #category : 'encode/decode' }
+RsrProtocolCodecTest >> encodeReferenceOf: anObject [
+
+	| reference |
+	reference := RsrReference from: anObject.
+	^ByteArray streamContents: [:stream | self encoder encodeReference: reference onto: stream]
 ]
 
 { #category : 'running-symbol' }
